@@ -1,86 +1,125 @@
 {{ define "main" }}
-<div class="vh-100 dt w-100 tc bg-white">
-  <div class="dtc v-mid">
+<link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet"
+/>
 
-    <!-- App Name -->
-    <h1 class="f2 f1-ns athelas mb1 black">WLLT</h1>
+<div
+    class="vh-100 dt w-100 tc bg-white"
+    style="font-family: &quot;Open Sans&quot;, sans-serif"
+>
+    <div class="dtc v-mid">
+        <!-- App Name -->
+        <h1 class="f3 mb2 black" style="font-weight: 700">WLLT</h1>
 
-    <!-- Tagline -->
-    <p class="f4 f3-ns lh-copy measure center black-60 mb4">
-      The open source alternative to Google Wallet
-    </p>
-
-    <!-- Product Image Placeholder -->
-    <div class="mb4 center" style="width: 200px; height: 400px;">
-      <div class="ba b--light-gray bg-near-white flex items-center justify-center h-100">
-        <p class="f6 gray">iPhone Mockup<br>Coming Soon</p>
-      </div>
-    </div>
-
-    <!-- Waitlist Form -->
-    <div class="measure center">
-      <form class="mb4" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="waitlist" />
-
-        <!-- Honeypot field for spam protection -->
-        <p style="display: none;">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        <!-- Tagline -->
+        <p
+            class="f4 lh-copy measure center black-70 mb3"
+            style="font-weight: 400"
+        >
+            A drop-in replacement to Google Wallet
         </p>
 
-        <div class="flex flex-column flex-row-ns">
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            required
-            class="input-reset ba b--black-20 pa3 mr2-ns mb3 mb0-ns db w-100 w-70-ns f5"
-          />
-          <input
-            type="submit"
-            value="Join Waitlist"
-            class="input-reset bg-black white pa3 ba b--black pointer dim db w-100 w-30-ns f5"
-          />
+        <!-- Privacy Features -->
+        <div class="measure center mb4">
+            <div class="f6 lh-copy black-60 mb2" style="font-weight: 300">
+                ✓ Data stored locally on your Android phone<br />
+                ✓ Your data never leaves your device<br />
+                ✓ 100% open source code<br />
+                ✓ No data collection or profit from your information
+            </div>
         </div>
-      </form>
 
-      <!-- Success/Error Messages -->
-      <div id="success-message" class="dn bg-light-green pa3 mb3 br2">
-        <p class="ma0 f6 dark-green">Thanks! You've been added to our waitlist.</p>
-      </div>
+        <!-- Product Image Placeholder -->
+        <div class="mb4 center" style="width: 200px; height: 400px">
+            <div
+                class="ba b--light-gray bg-near-white flex items-center justify-center h-100"
+            >
+                <p class="f6 gray">Android Phone Mockup<br />Coming Soon</p>
+            </div>
+        </div>
 
-      <div id="error-message" class="dn bg-light-red pa3 mb3 br2">
-        <p class="ma0 f6 dark-red">Oops! Something went wrong. Please try again.</p>
-      </div>
+        <!-- Waitlist Form -->
+        <div class="measure center">
+            <form
+                class="mb4"
+                name="waitlist"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+            >
+                <input type="hidden" name="form-name" value="waitlist" />
+
+                <!-- Honeypot field for spam protection -->
+                <p style="display: none">
+                    <label
+                        >Don't fill this out if you're human:
+                        <input name="bot-field"
+                    /></label>
+                </p>
+
+                <div class="flex flex-column flex-row-ns">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                        class="input-reset ba b--black-20 pa3 mr2-ns mb3 mb0-ns db w-100 w-70-ns f5"
+                        style="font-family: &quot;Open Sans&quot;, sans-serif"
+                    />
+                    <input
+                        type="submit"
+                        value="Join Waitlist"
+                        class="input-reset bg-black white pa3 ba b--black pointer dim db w-100 w-30-ns f5"
+                        style="
+                            font-family: &quot;Open Sans&quot;, sans-serif;
+                            font-weight: 600;
+                        "
+                    />
+                </div>
+            </form>
+
+            <!-- Success/Error Messages -->
+            <div id="success-message" class="dn bg-light-green pa3 mb3 br2">
+                <p class="ma0 f6 dark-green" style="font-weight: 400">
+                    Thanks! You've been added to our waitlist.
+                </p>
+            </div>
+
+            <div id="error-message" class="dn bg-light-red pa3 mb3 br2">
+                <p class="ma0 f6 dark-red" style="font-weight: 400">
+                    Oops! Something went wrong. Please try again.
+                </p>
+            </div>
+        </div>
+
+        <!-- Social Sharing Prompt -->
+        <p class="f6 gray mt4 lh-copy" style="font-weight: 300">
+            Know someone who might be interested? Share the word!
+        </p>
     </div>
-
-    <!-- Social Sharing Prompt -->
-    <p class="f6 gray mt4 lh-copy">
-      Know someone who might be interested? Share the word!
-    </p>
-
-  </div>
 </div>
 
 <script>
-  // Simple form feedback handling
-  const form = document.querySelector('form[name="waitlist"]');
-  const successMessage = document.getElementById('success-message');
-  const errorMessage = document.getElementById('error-message');
+    // Simple form feedback handling
+    const form = document.querySelector('form[name="waitlist"]');
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      // Hide any existing messages
-      successMessage.classList.add('dn');
-      errorMessage.classList.add('dn');
-    });
-  }
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            // Hide any existing messages
+            successMessage.classList.add("dn");
+            errorMessage.classList.add("dn");
+        });
+    }
 
-  // Check for success/error parameters in URL
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('success') === 'true') {
-    successMessage.classList.remove('dn');
-  } else if (urlParams.get('error') === 'true') {
-    errorMessage.classList.remove('dn');
-  }
+    // Check for success/error parameters in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("success") === "true") {
+        successMessage.classList.remove("dn");
+    } else if (urlParams.get("error") === "true") {
+        errorMessage.classList.remove("dn");
+    }
 </script>
 {{ end }}
