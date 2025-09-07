@@ -1,9 +1,12 @@
 {{ define "main" }}
 <div class="signup-container">
     <div class="signup-content">
-        <h1 class="main-headline">
-            WALT: The new way to accomplish tasks and get ahead in life
+        <h1 class="primary-headline">
+            WALT
         </h1>
+        <h2 class="secondary-headline">
+            The open source alternative to Google Wallet and Google Pay.
+        </h2>
 
         <form class="signup-form" action="#" method="POST">
             <div class="input-container">
@@ -41,14 +44,23 @@
         transform: translateX(-40%);
     }
 
-    .main-headline {
+    .primary-headline {
         font-family: "Merriweather", serif;
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: 3rem;
+        font-weight: 900;
         color: white;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .secondary-headline {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #cccccc;
         margin-bottom: 2rem;
-        line-height: 1.3;
-        letter-spacing: -0.5px;
+        line-height: 1.4;
     }
 
     .signup-form {
@@ -110,8 +122,12 @@
             transform: none;
         }
 
-        .main-headline {
-            font-size: 2rem;
+        .primary-headline {
+            font-size: 2.5rem;
+        }
+
+        .secondary-headline {
+            font-size: 1.1rem;
         }
 
         .input-container {
