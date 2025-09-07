@@ -2,9 +2,7 @@
 <div class="scroll-container">
     <div class="section signup-container">
         <div class="signup-content">
-            <h1 class="primary-headline">
-                WALT
-            </h1>
+            <h1 class="primary-headline">WALT</h1>
             <h2 class="secondary-headline">
                 The open source alternative to Google Wallet and Google Pay.
             </h2>
@@ -28,19 +26,47 @@
 
     <div class="section second-section">
         <div class="second-content">
-            <h2 class="section-title">Why Choose WALT?</h2>
+            <h2 class="section-title">Why</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Transaction data is sacred</h3>
+                    <p>
+                        What you spend your money on is one of the most
+                        important personal and private choices you make.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Google can't be trusted</h3>
+                    <p>
+                        Google takes advantage of your spending in Google Wallet
+                        and Google Pay to understand how to influence you to buy
+                        what they want to sell you.
+                    </p>
+                </div>
+            </div>
+            <p class="belief-statement">We believe that what you spend your money on is private</p>
+        </div>
+    </div>
+
+    <div class="section third-section">
+        <div class="second-content">
+            <h2 class="section-title">How</h2>
             <div class="features-grid">
                 <div class="feature">
                     <h3>Open Source</h3>
-                    <p>Fully transparent and community-driven</p>
+                    <p>Fully transparent and community-driven development</p>
                 </div>
                 <div class="feature">
-                    <h3>Privacy First</h3>
-                    <p>Your data stays with you</p>
+                    <h3>Self-Hosted</h3>
+                    <p>Keep your data on your own servers</p>
                 </div>
                 <div class="feature">
-                    <h3>No Fees</h3>
-                    <p>Free to use, forever</p>
+                    <h3>Encrypted</h3>
+                    <p>End-to-end encryption for all transactions</p>
+                </div>
+                <div class="feature">
+                    <h3>Decentralized</h3>
+                    <p>No single point of failure or control</p>
                 </div>
             </div>
         </div>
@@ -76,6 +102,15 @@
     /* Second Section */
     .second-section {
         background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 40px;
+    }
+
+    /* Third Section */
+    .third-section {
+        background: #f8f9fa;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -123,6 +158,16 @@
         font-weight: 400;
         color: #666666;
         line-height: 1.5;
+    }
+
+    .belief-statement {
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #000000;
+        text-align: center;
+        margin-top: 3rem;
+        font-style: italic;
     }
 
     .signup-content {
@@ -233,7 +278,7 @@
         }
 
         /* Mobile adjustments for second section */
-        .second-section {
+        .second-section, .third-section {
             padding: 20px;
         }
 
