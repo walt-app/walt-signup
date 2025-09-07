@@ -1,112 +1,113 @@
 {{ define "main" }}
-<link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-    rel="stylesheet"
-/>
-
-<div
-    class="vh-100 w-100 bg-white overflow-hidden"
-    style="font-family: &quot;Open Sans&quot;, sans-serif"
->
-    <div class="h-100 flex flex-column justify-center pl4 pl5-l pr4 pr5-l">
-        <!-- Main Content Container -->
-        <div class="w-100 mw6">
-            <!-- App Name -->
-            <h1
-                class="f2f1 mb3f-headline-l mb3 black lh-solid"
-                style="font-weight: 700"
-            >
-                WALT
-            </h1>
-
-            <!-- Description -->
-            <p class="f3 f2-l black-70 mb4mb4 measure" style="font-weight: 400">
-                Open sourcesource Google Wallet alternative alternative
-            </p>
-            <!-- Waitlist Form -->
-            <div class="mb4">
-                <form
-                    name="waitlist"
-                    method="POST"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                    class="flex flex-column flex-row-l"
-                >
-                    <input type="hidden" name="form-name" value="waitlist" />
-
-                    <!-- Honeypot field for spam protection -->
-                    <p style="display: none">
-                        <label
-                            >Don't fill this out if you're human:
-                            <input name="bot-field"
-                        /></label>
-                    </p>
-
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email address"
-                        required
-                        class="input-reset ba b--black-20 pa3 f4 w-100 w-60-l mr3-l mb3 mb0-l"
-                        style="font-family: &quot;Open Sans&quot;, sans-serif"
-                    />
-                    <input
-                        type="submit"
-                        value="Join Waitlist"
-                        class="input-reset bg-black white pa3 f4 pointer dim w-100 w-auto-l"
-                        style="
-                            font-family: &quot;Open Sans&quot;, sans-serif;
-                            font-weight: 600;
-                            border: none;
-                        "
-                    />
-                </form>
-            </div>
-
-            <!-- Success/Error Messages -->
-            <div
-                id="success-message"
-                class="dn bg-light-green pa3 mb3 br2 measure"
-            >
-                <p class="ma0 f5 dark-green" style="font-weight: 400">
-                    Thanks! You've been added to our waitlist.
-                </p>
-            </div>
-
-            <div id="error-message" class="dn bg-light-red pa3 mb3 br2 measure">
-                <p class="ma0 f5 dark-red" style="font-weight: 400">
-                    Oops! Something went wrong. Please try again.
-                </p>
-            </div>
-
-            <!-- Share Message -->
-            <p class="f5 gray lh-copy measure" style="font-weight: 300">
-                Know someone who might be interested? Share the word!
-            </p>
-        </div>
+<div class="signup-container">
+  <div class="signup-content">
+    <h1 class="main-headline">WALT: The new way to accomplish tasks and get ahead in life</h1>
+    
+    <form class="signup-form" action="#" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" class="email-input" required>
+      <button type="submit" class="signup-button">Get Early Access</button>
+    </form>
+    
+    <div class="app-preview">
+      <img src="/images/phone-preview.png" alt="WALT App Preview" class="phone-image">
     </div>
+    
+    <div class="social-share">
+      <p>Share with friends to help us grow!</p>
+    </div>
+  </div>
 </div>
 
-<script>
-    // Simple form feedback handling
-    const form = document.querySelector('form[name="waitlist"]');
-    const successMessage = document.getElementById("success-message");
-    const errorMessage = document.getElementById("error-message");
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Lily+Script+One&display=swap');
 
-    if (form) {
-        form.addEventListener("submit", function (e) {
-            // Hide any existing messages
-            successMessage.classList.add("dn");
-            errorMessage.classList.add("dn");
-        });
-    }
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
-    // Check for success/error parameters in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("success") === "true") {
-        successMessage.classList.remove("dn");
-    } else if (urlParams.get("error") === "true") {
-        errorMessage.classList.remove("dn");
-    }
-</script>
+.signup-content {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.main-headline {
+  font-family: 'Lily Script One', cursive;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.signup-form {
+  margin-bottom: 3rem;
+}
+
+.email-input {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.signup-button {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+}
+
+.app-preview {
+  margin-bottom: 2rem;
+}
+
+.phone-image {
+  max-width: 200px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.social-share {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .main-headline {
+    font-size: 2rem;
+  }
+  
+  .email-input,
+  .signup-button {
+    max-width: 100%;
+  }
+}
+</style>
 {{ end }}
