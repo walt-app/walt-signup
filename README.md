@@ -1,19 +1,48 @@
-# Hugo Example
+# WALT Signup Page
 
-This directory is a brief example of a [Hugo](https://gohugo.io/) app that can be deployed to Vercel with zero configuration.
+A beautiful, modern signup page built with Hugo and inspired by Webflow design principles.
 
-## Deploy Your Own
+## Overview
 
-Deploy your own Hugo project with Vercel.
+WALT (Work And Life Tracker) is a productivity application that helps users accomplish tasks and get ahead in life. This repository contains the signup page for collecting early access registrations.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/hugo&template=hugo)
+## Features
 
-_Live Example: https://hugo-template.vercel.app_
+- **Modern Design**: Webflow-inspired layout with gradient backgrounds and clean typography
+- **Responsive**: Mobile-first design that works on all devices
+- **Typography**: Uses Lily Script One for headlines and Open Sans for body text
+- **Interactive**: Hover effects and smooth transitions
+- **Fast**: Built with Hugo for lightning-fast static site generation
 
-### How We Created This Example
+## Development
 
-To get started with Hugo for deployment with Vercel, you can use the [Hugo CLI](https://gohugo.io/commands/) to initialize the project:
+### Prerequisites
 
-```shell
-$ hugo new site project-name
+- [Hugo](https://gohugo.io/) (Extended version)
+
+### Running Locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/bittelc/wllt-signup.git
+cd wllt-signup
 ```
+
+2. Start the Hugo development server:
+```bash
+hugo server --port 8080
+```
+
+3. Visit `http://localhost:8080` to see the site
+
+### Building for Production
+
+```bash
+hugo
+```
+
+The built site will be in the `public/` directory.
+
+## Deployment
+
+This site can be deployed to any static hosting service like Vercel, Netlify, or GitHub Pages.
