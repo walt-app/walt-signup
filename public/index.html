@@ -56,15 +56,17 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 20px 40px;
   background: #000000;
 }
 
 .signup-content {
-  text-align: center;
+  text-align: left;
   max-width: 500px;
-  width: 100%;
+  width: 33.33%;
+  margin-right: auto;
+  padding-right: 40px;
 }
 
 .main-headline {
@@ -85,12 +87,12 @@
   position: relative;
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .email-input {
   width: 100%;
-  padding: 15px 150px 15px 20px;
+  padding: 15px calc(33.33% + 10px) 15px 20px;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -103,44 +105,56 @@
 
 .signup-button {
   position: absolute;
-  right: 4px;
-  top: 4px;
-  bottom: 4px;
-  width: 140px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: calc(33.33% - 2px);
   padding: 0;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: white;
-  background: #1e3a8a;
+  background: #000000;
   border: none;
-  border-radius: 46px;
+  border-radius: 0 48px 48px 0;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .signup-button:hover {
-  background: #1e40af;
+  background: #333333;
   transform: scale(1.02);
 }
 
 
 
 @media (max-width: 768px) {
+  .signup-container {
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .signup-content {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+  
   .main-headline {
     font-size: 2rem;
   }
   
   .input-container {
     max-width: 100%;
+    margin: 0 auto;
   }
   
   .email-input {
-    padding: 12px 130px 12px 16px;
+    padding: 12px calc(33.33% + 8px) 12px 16px;
   }
   
   .signup-button {
-    width: 120px;
+    width: calc(33.33% - 2px);
     font-size: 13px;
   }
 }
