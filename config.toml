@@ -4,5 +4,7 @@ title = "WLLT"
 theme = "ananke"
 
 [params]
+  description = "The new way to accomplish tasks and get ahead in life"
+  env = "development"
   show_reading_time = false
   recent_posts_number = 0
