@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "WLLT"
+title = "WALT"
 theme = "ananke"
 
 [params]
