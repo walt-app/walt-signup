@@ -1,6 +1,6 @@
 ---
 title: "WALT"
-description: "The new way to accomplish tasks and get ahead in life"
+description: "Goodbye Google Wallet"
 ---
 
 Welcome to WALT - your personal productivity companion.
