@@ -96,11 +96,8 @@
                     <h3>2025</h3>
                     <p>
                         Establish relationships with card issuer and payment
-                        provider.
-                    </p>
-                    <p>
-                        Initial backend developmetn of DPAN and cryptogram
-                        standards to be used with payment provider.
+                        provider. Initial backend developmetn of DPAN and
+                        cryptogram standards to be used with payment provider.
                     </p>
                 </div>
                 <div class="feature">
@@ -114,18 +111,13 @@
                     <h3>H1 2026</h3>
                     <p>
                         Initial PoC development. Development of Android app
-                        relying on HCE APIs.
-                    </p>
-                    <p>
-                        Establish relationships with at least one bank for "Push
-                        to Wallet" functionality.
+                        relying on HCE APIs. Establish relationships with at
+                        least one bank for "Push to Wallet" functionality.
                     </p>
                 </div>
                 <div class="feature">
                     <h3>2027</h3>
-                    <p>
-                        Beta availability
-                    </p>
+                    <p>Beta availability</p>
                 </div>
             </div>
         </div>
@@ -363,32 +355,49 @@
 
         /* Mobile adjustments for second section */
         .second-section,
-        .third-section,
         .fourth-section {
-            padding: 20px;
+            padding: 40px 20px;
+        }
+
+        .third-section {
+            padding: 20px 20px 40px 20px;
+            align-items: flex-start;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .third-section .second-content {
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
 
         .section-title {
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .features-grid {
             grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .third-section .features-grid {
             gap: 1rem;
         }
 
         .feature {
-            padding: 0.75rem;
+            padding: 0.75rem 0.5rem;
         }
 
         .feature h3 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 0.5rem;
         }
 
         .feature p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
     }
 </style>
