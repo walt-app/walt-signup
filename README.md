@@ -1,6 +1,6 @@
 # Walt Waitlist Signup
 
-A Hugo-based landing page with waitlist signup functionality using Vercel Edge Functions and Resend Audiences.
+A Next.js landing page with waitlist signup functionality using Vercel and Resend Audiences.
 
 ## Overview
 
@@ -30,10 +30,10 @@ RESEND_AUDIENCE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 # Install dependencies
 npm install
 
-# Start Hugo development server
-hugo server
+# Start Next.js development server
+npm run dev
 
-# The site will be available at http://localhost:1313
+# The site will be available at http://localhost:3000
 ```
 
 ### 4. Deployment to Vercel
@@ -47,12 +47,12 @@ hugo server
 
 ## Features
 
-- ✅ Responsive Hugo static site
+- ✅ Responsive Next.js application
 - ✅ AJAX form submission without page reload  
 - ✅ Email validation and duplicate prevention
 - ✅ Success/error user feedback
 - ✅ Loading states
-- ✅ Vercel Edge Functions for serverless API
+- ✅ Next.js API routes for serverless API
 - ✅ Direct integration with Resend Audiences
 
 ## API Endpoint
@@ -67,9 +67,14 @@ hugo server
 
 ```
 walt-signup/
-├── api/subscribe.js           # Vercel Edge Function
-├── layouts/index.html         # Hugo template
-├── static/js/signup.js        # Form handling JavaScript
+├── pages/
+│   ├── _app.js               # Next.js app configuration
+│   ├── index.js              # Main landing page
+│   └── api/
+│       └── subscribe.js      # API route for form submissions
+├── styles/
+│   └── globals.css           # Global styles
+├── next.config.js            # Next.js configuration
 ├── vercel.json               # Vercel configuration
 ├── package.json              # Dependencies
 └── .env.example              # Environment variables template
