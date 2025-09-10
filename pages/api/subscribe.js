@@ -18,6 +18,15 @@ export default async function handler(req, res) {
 
   try {
     const { email } = req.body;
+    
+    // Debug: Log environment variables (first 4 characters only for security)
+    console.log('Environment check:', {
+      hasApiKey: !!process.env.RESEND_API_KEY,
+      apiKeyPrefix: process.env.RESEND_API_KEY ? process.env.RESEND_API_KEY.substring(0, 4) + '...' : 'undefined',
+      hasAudienceId: !!process.env.RESEND_AUDIENCE_ID,
+      audienceIdPrefix: process.env.RESEND_AUDIENCE_ID ? process.env.RESEND_AUDIENCE_ID.substring(0, 8) + '...' : 'undefined',
+      nodeEnv: process.env.NODE_ENV
+    });
 
     // Validate email
     if (!email || !email.includes('@')) {
@@ -27,14 +36,11 @@ export default async function handler(req, res) {
       });
     }
 
-    // Initialize Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY not configured');
       return res.status(500).json({ 
         success: false, 
-        error: 'Server configuration error' 
+        error: 'Server configuration error - API key missing' 
       });
     }
 
@@ -42,9 +48,12 @@ export default async function handler(req, res) {
       console.error('RESEND_AUDIENCE_ID not configured');
       return res.status(500).json({ 
         success: false, 
-        error: 'Server configuration error' 
+        error: 'Server configuration error - audience ID missing' 
       });
     }
+
+    // Initialize Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Create contact in Resend audience
     const { data, error } = await resend.contacts.create({
