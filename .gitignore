@@ -36,5 +36,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Hugo build output (keeping for reference)
-/public
+# Next.js build output
+/.next/
+/out/
