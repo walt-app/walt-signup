@@ -1,6 +1,3 @@
 {
-  "buildCommand": "hugo --minify",
-  "outputDirectory": "public",
-  "installCommand": "npm install",
-  "framework": null
+  "framework": "nextjs"
 }

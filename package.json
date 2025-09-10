@@ -3,15 +3,26 @@
   "version": "1.0.0",
   "description": "Walt waitlist signup page",
   "scripts": {
-    "build": "hugo --minify",
-    "dev": "hugo server",
-    "start": "hugo server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "resend": "^4.0.1"
   },
-  "devDependencies": {},
-  "keywords": ["hugo", "vercel", "resend", "waitlist"],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": ["nextjs", "vercel", "resend", "waitlist"],
   "author": "",
   "license": "MIT"
 }
