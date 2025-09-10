@@ -1,48 +1,76 @@
-# WALT Signup Page
+# Walt Waitlist Signup
 
-A beautiful, modern signup page built with Hugo and inspired by Webflow design principles.
+A Hugo-based landing page with waitlist signup functionality using Vercel Edge Functions and Resend Audiences.
 
 ## Overview
 
-WALT (Work And Life Tracker) is a productivity application that helps users accomplish tasks and get ahead in life. This repository contains the signup page for collecting early access registrations.
+Walt is the open source alternative to Google Wallet and Google Pay. This repository contains the waitlist signup page with integrated email collection.
+
+## Setup Instructions
+
+### 1. Resend Configuration
+
+1. Create account at [Resend](https://resend.com)
+2. Get API key from [API Keys page](https://resend.com/api-keys)
+3. Create an audience at [Audiences page](https://resend.com/audiences)
+4. Copy the audience ID from the audience settings
+
+### 2. Environment Variables
+
+1. Copy `.env.example` to `.env.local`
+2. Fill in your Resend API key and audience ID:
+```
+RESEND_API_KEY=re_xxxxxxxxx
+RESEND_AUDIENCE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+
+### 3. Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start Hugo development server
+hugo server
+
+# The site will be available at http://localhost:1313
+```
+
+### 4. Deployment to Vercel
+
+1. Push code to GitHub repository
+2. Connect repository to Vercel
+3. Add environment variables in Vercel project settings:
+   - `RESEND_API_KEY`
+   - `RESEND_AUDIENCE_ID`
+4. Deploy!
 
 ## Features
 
-- **Modern Design**: Webflow-inspired layout with gradient backgrounds and clean typography
-- **Responsive**: Mobile-first design that works on all devices
-- **Typography**: Uses Lily Script One for headlines and Open Sans for body text
-- **Interactive**: Hover effects and smooth transitions
-- **Fast**: Built with Hugo for lightning-fast static site generation
+- ✅ Responsive Hugo static site
+- ✅ AJAX form submission without page reload  
+- ✅ Email validation and duplicate prevention
+- ✅ Success/error user feedback
+- ✅ Loading states
+- ✅ Vercel Edge Functions for serverless API
+- ✅ Direct integration with Resend Audiences
 
-## Development
+## API Endpoint
 
-### Prerequisites
+`POST /api/subscribe`
+- Validates email format
+- Prevents duplicate subscriptions
+- Creates contact in Resend audience
+- Returns JSON response with success/error status
 
-- [Hugo](https://gohugo.io/) (Extended version)
+## File Structure
 
-### Running Locally
-
-1. Clone the repository:
-```bash
-git clone https://github.com/bittelc/wllt-signup.git
-cd wllt-signup
 ```
-
-2. Start the Hugo development server:
-```bash
-hugo server --port 8080
+walt-signup/
+├── api/subscribe.js           # Vercel Edge Function
+├── layouts/index.html         # Hugo template
+├── static/js/signup.js        # Form handling JavaScript
+├── vercel.json               # Vercel configuration
+├── package.json              # Dependencies
+└── .env.example              # Environment variables template
 ```
-
-3. Visit `http://localhost:8080` to see the site
-
-### Building for Production
-
-```bash
-hugo
-```
-
-The built site will be in the `public/` directory.
-
-## Deployment
-
-This site can be deployed to any static hosting service like Vercel, Netlify, or GitHub Pages.

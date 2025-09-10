@@ -1,0 +1,17 @@
+{
+  "name": "walt-signup",
+  "version": "1.0.0",
+  "description": "Walt waitlist signup page",
+  "scripts": {
+    "build": "hugo --minify",
+    "dev": "hugo server",
+    "start": "hugo server"
+  },
+  "dependencies": {
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {},
+  "keywords": ["hugo", "vercel", "resend", "waitlist"],
+  "author": "",
+  "license": "MIT"
+}

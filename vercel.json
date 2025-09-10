@@ -1,0 +1,11 @@
+{
+  "buildCommand": "hugo --minify",
+  "outputDirectory": "public",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/subscribe.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
