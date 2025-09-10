@@ -236,15 +236,15 @@ html, body {
 }
 
 .form-message.success {
-  background-color: #d1fae5;
-  color: #065f46;
-  border: 1px solid #34d399;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #333333;
 }
 
 .form-message.error {
-  background-color: #fee2e2;
-  color: #dc2626;
-  border: 1px solid #f87171;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #cccccc;
 }
 
 .form-message:empty {
