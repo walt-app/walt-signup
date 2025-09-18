@@ -156,7 +156,6 @@ export default function Home() {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <span className="hero-badge">Open source wallet</span>
               <h1 className="hero-title">Own your wallet, not the data it collects.</h1>
               <p className="hero-subtitle">
                 Walt mirrors the tap-to-pay experience you expect, keeps every token on your
