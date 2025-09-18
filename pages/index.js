@@ -7,6 +7,82 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
 
+  const whyFeatures = [
+    {
+      title: 'Transaction data is sacred',
+      description: 'What you spend signals who you are. Walt keeps that signal between you and your wallet; no data harvesting, no shadow profiles.'
+    },
+    {
+      title: "Google can't be trusted",
+      description: 'Closed-source wallets turn tap-to-pay into behavioral targeting. Walt is open source, so you can audit the code that touches your payments.'
+    },
+    {
+      title: 'Belief in privacy',
+      description: "We believe your receipts should never fund someone else's ad business. Walt pairs transparency with strong defaults so privacy is automatic."
+    }
+  ];
+
+  const howFeatures = [
+    {
+      title: 'Open source by design',
+      description: 'Review every line, fork the repo, or build on top of Walt. A community wallet that earns trust instead of demanding it.'
+    },
+    {
+      title: 'No transaction storage',
+      description: "Tokens stay on-device inside a lightweight, encrypted SQLite database. What you tap never leaves the phone you tapped with."
+    },
+    {
+      title: 'Compliant and secure',
+      description: 'PCI and SOC 3 controls from the start, so privacy never means cutting corners on audit trails or payment network rules.'
+    },
+    {
+      title: 'Funded by members',
+      description: '$3 a month sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.'
+    }
+  ];
+
+  const useSteps = [
+    {
+      title: 'Download & install',
+      description: 'Grab Walt from Google Play or F-Droid. Works on any Android device running 7.0 or higher.'
+    },
+    {
+      title: 'Add your cards',
+      description: 'Scan or enter details manually. Everything stays encrypted locally, ready for tap-to-pay.'
+    },
+    {
+      title: 'Tap to pay',
+      description: "Hold your phone near any NFC-enabled terminal. Walt uses the same secure tokenization you're used to."
+    },
+    {
+      title: 'Stay private',
+      description: 'No transaction logs, no tracking, no data resale. Just the wallet experience without the surveillance.'
+    }
+  ];
+
+  const roadmap = [
+    {
+      period: 'H2 2025',
+      title: 'Find the fit',
+      description: 'Public waitlist, community marketing, and interviews to align Walt with privacy-first adopters.'
+    },
+    {
+      period: 'H1 2026',
+      title: 'Issue the first tokens',
+      description: 'Relationships with payment providers, first DPAN issued, and heavy R&D against HCE APIs.'
+    },
+    {
+      period: 'H2 2026',
+      title: 'Prototype in the wild',
+      description: 'Pilot Android builds with partner banks exploring "load card to Walt" push provisioning.'
+    },
+    {
+      period: '2027',
+      title: 'Open beta',
+      description: "Walt rolls out to early supporters with the privacy guarantees and polish we'd demand for ourselves."
+    }
+  ];
+
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -77,167 +153,134 @@ export default function Home() {
       </Head>
 
       <div className="scroll-container">
-        <div className="section signup-container">
-          <div className="signup-content">
-            <h1 className="primary-headline">WALT</h1>
-            <h2 className="secondary-headline">
-              The open source alternative to Google Wallet and Google Pay.
-            </h2>
-
-            <form onSubmit={handleSubmit} className="signup-form">
-              <div className="input-container">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="email-input"
-                  required
-                />
-                <button 
-                  type="submit" 
-                  className="signup-button"
-                  disabled={isLoading}
-                  style={{ opacity: isLoading ? '0.7' : '1' }}
-                >
-                  <span>{isLoading ? 'Joining...' : 'Join Waitlist'}</span>
-                </button>
-              </div>
-              {message && (
-                <div className={`form-message ${messageType}`}>
-                  {message}
+        <div className="section hero-section">
+          <div className="hero-inner">
+            <div className="hero-copy">
+              <span className="hero-badge">Open source wallet</span>
+              <h1 className="hero-title">Own your wallet, not the data it collects.</h1>
+              <p className="hero-subtitle">
+                Walt mirrors the tap-to-pay experience you expect, keeps every token on your
+                device, and leaves big-tech tracking out of every transaction.
+              </p>
+              <form onSubmit={handleSubmit} className="hero-form">
+                <div className="hero-input-group">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="hero-input"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="hero-button"
+                    disabled={isLoading}
+                  >
+                    <span>{isLoading ? 'Joining...' : 'Join the waitlist'}</span>
+                  </button>
                 </div>
-              )}
-            </form>
-          </div>
-        </div>
-
-        <div className="section second-section">
-          <div className="second-content">
-            <h2 className="section-title">Why</h2>
-            <div className="features-grid">
-              <div className="feature">
-                <h3>Transaction data is sacred</h3>
-                <p>
-                  What you spend your money on is one of the most
-                  important personal and private choices you make.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>Google can&apos;t be trusted</h3>
-                <p>
-                  Google takes advantage of your spending in Google Wallet
-                  and Google Pay to understand how to influence you to buy
-                  what they want to sell you.
-                </p>
-              </div>
-            </div>
-            <p className="belief-statement">
-              We believe that what you spend your money on is private
-            </p>
-          </div>
-        </div>
-
-        <div className="section third-section">
-          <div className="second-content">
-            <h2 className="section-title">How</h2>
-            <div className="features-grid">
-              <div className="feature">
-                <h3>Open Source</h3>
-                <p>
-                  Walt is an open-source, drop-in replacement to Google
-                  Wallet. Download the app, create your cards within the
-                  app, and start using it at stores
-                </p>
-              </div>
-              <div className="feature">
-                <h3>No Data Storage</h3>
-                <p>
-                  We don&apos;t store any transaction data. All data is stored
-                  locally on your Android device in a small SQLite db.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>Compliant and Secure</h3>
-                <p>
-                  PCI and SOC3 compliant. Your cards comply with the
-                  highest security and compliance standards.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>$3 / Month</h3>
-                <p>
-                  To run the servers and pay for the annual audits, you
-                  will fund the project with a $3 a month fee. This is the
-                  alternative to how Google harvests and sells your data.
-                </p>
+                {message && (
+                  <div className={`form-message ${messageType}`}>
+                    {message}
+                  </div>
+                )}
+              </form>
+              <div className="hero-footnote">
+                <div className="hero-avatars" aria-hidden="true">
+                  <span className="hero-avatar" />
+                  <span className="hero-avatar" />
+                  <span className="hero-avatar" />
+                </div>
+                <p>Maintained by builders who think payments should stay private.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="section fifth-section">
-          <div className="second-content">
-            <h2 className="section-title">Use</h2>
-            <div className="features-grid">
-              <div className="feature">
-                <h3>Download &amp; Install</h3>
-                <p>
-                  Download the Walt app from the Google Play Store or F-Droid repository. Install on any Android device running Android 7.0 or higher.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>Add Your Cards</h3>
-                <p>
-                  Scan or manually enter your debit and credit card details. All information is encrypted and stored locally on your device only.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>Tap to Pay</h3>
-                <p>
-                  Hold your phone near any NFC-enabled payment terminal. Walt uses the same secure tokenization as Google Pay.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>Stay Private</h3>
-                <p>
-                  No transaction data leaves your device. No tracking, no profiling, no data mining. Your spending habits remain yours alone.
-                </p>
-              </div>
+        <div className="section section-light">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="section-eyebrow">Why Walt</span>
+              <h2 className="section-heading">Privacy-first rails for everyday spending</h2>
+              <p className="section-lead">
+                Walt exists for people who refuse to trade convenience for surveillance. Here's what makes that possible.
+              </p>
+            </div>
+            <div className="card-grid">
+              {whyFeatures.map((item) => (
+                <article key={item.title} className="info-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="section fourth-section">
-          <div className="second-content">
-            <h2 className="section-title">Timeline</h2>
-            <div className="features-grid">
-              <div className="feature">
-                <h3>H1 2026</h3>
-                <p>
-                  Establish relationships payment providers, acquirers, and initiate conversations with pilot bank for &quot;load card to Walt&quot; functionality. First DPAN and issued, and development against HCE APIs explored.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>H2 2025</h3>
-                <p>
-                  Establish and gain understanding of market fit, with
-                  signup link and marketing of product.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>H1 2026</h3>
-                <p>
-                  Initial PoC development. Development of Android app
-                  relying on HCE APIs. Establish relationships with at
-                  least one bank for &quot;Push to Wallet&quot; functionality.
-                </p>
-              </div>
-              <div className="feature">
-                <h3>2027</h3>
-                <p>Beta availability</p>
-              </div>
+        <div className="section section-muted">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="section-eyebrow">How it works</span>
+              <h2 className="section-heading">Transparent architecture, proven controls</h2>
+              <p className="section-lead">
+                Every technical decision favors clarity and restraint, so you know exactly how your wallet behaves.
+              </p>
             </div>
+            <div className="card-grid">
+              {howFeatures.map((item) => (
+                <article key={item.title} className="info-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="section section-light">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="section-eyebrow">Using Walt</span>
+              <h2 className="section-heading">Tap-to-pay without the data trail</h2>
+              <p className="section-lead">
+                From install to checkout, Walt mirrors the wallet you already know, minus the compromises.
+              </p>
+            </div>
+            <div className="card-grid card-grid-steps">
+              {useSteps.map((step, index) => (
+                <article key={step.title} className="info-card step-card">
+                  <span className="step-counter">{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="section section-dark">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="section-eyebrow">Roadmap</span>
+              <h2 className="section-heading">A transparent path to launch</h2>
+              <p className="section-lead">
+                We're shipping Walt in the open. Here's how the next milestones stack up.
+              </p>
+            </div>
+            <ol className="timeline">
+              {roadmap.map((item) => (
+                <li key={item.period} className="timeline-item">
+                  <span className="timeline-period">{item.period}</span>
+                  <div className="timeline-content">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>
