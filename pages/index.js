@@ -11,17 +11,17 @@ export default function Home() {
     {
       title: "Transaction data is sacred",
       description:
-        "What you spend signals who you are. Walt keeps that signal between you and your wallet; no data harvesting, no shadow profiles.",
+        "What you spend your money on is private. Companies should not be able to take advantage of your spending habits.",
     },
     {
-      title: "Google can't be trusted",
+      title: "Big Tech can't be trusted",
       description:
-        "Closed-source wallets turn tap-to-pay into behavioral targeting. Walt is open source, so you can audit the code that touches your payments.",
+        "Closed-source wallets turn tap-to-pay into behavioral targeting. Walt is open source and we have no databases storing transaction history.",
     },
     {
-      title: "Belief in privacy",
+      title: "Focused and simple",
       description:
-        "We believe your receipts should never fund someone else's ad business. Walt pairs transparency with strong defaults so privacy is automatic.",
+        "No AI. Few features. Walt was built with one goal and will never stray from it.",
     },
   ];
 
@@ -29,17 +29,12 @@ export default function Home() {
     {
       title: "Open source by design",
       description:
-        "Review every line, fork the repo, or build on top of Walt. A community wallet that earns trust instead of demanding it.",
+        "A community wallet is one where we own the code. Walt runs on a simple, open-source architecture.",
     },
     {
       title: "No transaction storage",
       description:
         "Tokens stay on-device inside a lightweight, encrypted SQLite database. What you tap never leaves the phone you tapped with.",
-    },
-    {
-      title: "Compliant and secure",
-      description:
-        "PCI and SOC 3 controls from the start, so privacy never means cutting corners on audit trails or payment network rules.",
     },
     {
       title: "Funded by members",
@@ -63,11 +58,6 @@ export default function Home() {
       title: "Tap to pay",
       description:
         "Hold your phone near any NFC-enabled terminal. Walt uses the same secure tokenization you're used to.",
-    },
-    {
-      title: "Stay private",
-      description:
-        "No transaction logs, no tracking, no data resale. Just the wallet experience without the surveillance.",
     },
   ];
 
@@ -192,9 +182,12 @@ export default function Home() {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title">Own your wallet, not the data it collects.</h1>
+              <h1 className="hero-title">
+                Own your wallet, not the data it collects.
+              </h1>
               <p className="hero-subtitle">
-                The open-source alternative. We don't store your transactions, we don't even keep a database.
+                The open-source alternative. We don't store your transactions,
+                we don't even keep a database.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
@@ -229,11 +222,10 @@ export default function Home() {
             <div className="section-header">
               <span className="section-eyebrow">Why Walt</span>
               <h2 className="section-heading">
-                Privacy-first rails for everyday spending
+                Privacy-first mobile wallet app
               </h2>
               <p className="section-lead">
-                A drop-in Google Wallet replacement for tap-to-pay. Walt exists
-                for people who refuse to trade convenience for surveillance.
+                A drop-in Google Wallet replacement for tap-to-pay.
               </p>
             </div>
             <div className="card-grid">
