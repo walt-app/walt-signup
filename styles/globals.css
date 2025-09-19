@@ -97,17 +97,19 @@ body {
 
 .hero-inner {
   width: 100%;
-  max-width: 720px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   padding-top: 32px;
+  margin: 0 auto;
 }
 
 .hero-copy {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  align-items: flex-start;
 }
 
 .hero-title {
@@ -117,6 +119,14 @@ body {
   line-height: 1.1;
   letter-spacing: -1px;
   color: #f8fafc;
+}
+
+.hero-subhead {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(242, 215, 166, 0.9);
 }
 
 .hero-subtitle {
@@ -132,6 +142,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  width: 100%;
 }
 
 .hero-input-group {
@@ -210,6 +221,52 @@ body {
   cursor: not-allowed;
   transform: none;
   box-shadow: 0 12px 24px rgba(79, 70, 229, 0.3);
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrap {
+  position: relative;
+  width: min(520px, 85vw);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  background: transparent;
+}
+
+.hero-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-12deg) translateY(2%);
+  transform-origin: center;
+  filter: drop-shadow(0 18px 30px rgba(15, 23, 42, 0.15));
+}
+
+@media (min-width: 960px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .hero-copy {
+    max-width: 520px;
+  }
+
+  .hero-visual {
+    justify-content: flex-end;
+  }
 }
 
 /* Shared section styling */
@@ -489,6 +546,15 @@ body {
     text-align: left;
   }
 
+  .hero-visual {
+    width: 100%;
+    margin-top: 2.5rem;
+  }
+
+  .hero-image-wrap {
+    width: min(420px, 88vw);
+  }
+
   .card-grid,
   .card-grid-steps {
     grid-template-columns: 1fr;
@@ -539,6 +605,7 @@ body {
     border-radius: 18px;
     background: rgba(15, 23, 42, 0.55);
     border: 1px solid rgba(148, 163, 184, 0.28);
+    color: #f8fafc;
   }
 
   .hero-button {
@@ -546,6 +613,15 @@ body {
     border-radius: 18px;
     padding: 0.9rem 1.25rem;
     box-shadow: 0 18px 32px rgba(17, 17, 17, 0.45);
+  }
+
+  .hero-visual {
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+
+  .hero-image-wrap {
+    width: min(320px, 90vw);
   }
 
   .hero-input:focus {

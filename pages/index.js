@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -183,9 +184,12 @@ export default function Home() {
           <div className="hero-inner">
             <div className="hero-copy">
               <h1 className="hero-title">Private tap-to-pay for Android.</h1>
+              <p className="hero-subhead">
+                Private tap-to-pay for Android. No purchase tracking. Ever.
+              </p>
               <p className="hero-subtitle">
-                The open-source, private Android wallet application. Contactless
-                payments, without the surveillance.
+                The open-source wallet that keeps every tap on-device—no
+                surveillance, no databases, just instant contactless payments.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
@@ -211,6 +215,18 @@ export default function Home() {
                   <div className={`form-message ${messageType}`}>{message}</div>
                 )}
               </form>
+            </div>
+            <div className="hero-visual">
+              <div className="hero-image-wrap">
+                <Image
+                  src="/hero-wallet.png"
+                  alt="Digital wallet tap-to-pay illustration"
+                  fill
+                  className="hero-image"
+                  priority
+                  sizes="(min-width: 960px) 520px, 80vw"
+                />
+              </div>
             </div>
           </div>
         </div>
