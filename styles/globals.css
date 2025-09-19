@@ -586,10 +586,6 @@ body {
     padding: 1.25rem;
   }
 
-  .step-counter {
-    left: 1.25rem;
-  }
-
   .timeline {
     padding-left: 0.5rem;
   }
@@ -600,5 +596,16 @@ body {
 
   .timeline-content {
     padding: 1.25rem;
+  }
+
+  .step-card {
+    padding: 1.5rem;
+  }
+
+  .step-counter {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+    left: auto;
   }
 }
