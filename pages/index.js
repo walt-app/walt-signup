@@ -10,19 +10,19 @@ export default function Home() {
 
   const whyFeatures = [
     {
-      title: "Transaction data is sacred",
-      description:
-        "What you spend your money on is private. Companies should not be able to take advantage of your spending habits.",
-    },
-    {
       title: "Big Tech can't be trusted",
       description:
         "Closed-source wallets turn tap-to-pay into behavioral targeting. Walt is open source and we have no databases storing transaction history.",
     },
     {
-      title: "Focused and simple",
+      title: "Transaction data is sacred",
       description:
-        "No AI. Few features. Walt was built with one goal and will never stray from it.",
+        "What you spend your money on is private. Companies should not be able to take advantage of your spending habits.",
+    },
+    {
+      title: "Now is the time",
+      description:
+        "With the rise of capable LLMs, Big Tech is benefitting from more intimate understandings of our habits and needs.",
     },
   ];
 
@@ -30,12 +30,12 @@ export default function Home() {
     {
       title: "Open source by design",
       description:
-        "A community wallet is one where we own the code. Walt runs on a simple, open-source architecture.",
+        "A community wallet is one where we own the code. Walt runs on a simple, open-source codebase.",
     },
     {
-      title: "No transaction storage",
+      title: "Simple and focused",
       description:
-        "Tokens stay on-device inside a lightweight, encrypted SQLite database. What you tap never leaves the phone you tapped with.",
+        "No AI. Limited features. No premium subscription. Just a simple, straightforward mission of taking back our data.",
     },
     {
       title: "Funded by members",
@@ -48,17 +48,17 @@ export default function Home() {
     {
       title: "Download & install",
       description:
-        "Grab Walt from Google Play or F-Droid. Works on any Android device running 7.0 or higher.",
+        "Once Walt reaches general availability, download Walt from our website to your Android device.",
     },
     {
       title: "Add your cards",
       description:
-        "Scan or enter details manually. Everything stays encrypted locally, ready for tap-to-pay.",
+        "Scan or enter details manually. Everything stays encrypted locally. Your card details never leave your device.",
     },
     {
       title: "Tap to pay",
       description:
-        "Hold your phone near any NFC-enabled terminal. Walt uses the same secure tokenization you're used to.",
+        "Hold your phone near any NFC-enabled terminal just like you're used to.",
     },
   ];
 
@@ -182,8 +182,8 @@ export default function Home() {
                 Private tap-to-pay for Android. No purchase tracking. Ever.
               </p>
               <p className="hero-subtitle">
-                The open-source wallet that keeps every tap on-device—no
-                surveillance, no databases, just instant contactless payments.
+                The open-source wallet that keeps every payment on-device. No
+                tracking, no algorithms.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
@@ -230,10 +230,10 @@ export default function Home() {
             <div className="section-header">
               <span className="section-eyebrow">Why Walt</span>
               <h2 className="section-heading">
-                Privacy-first mobile wallet app
+                We deserve to spend without being targeted.
               </h2>
               <p className="section-lead">
-                A drop-in Google Wallet replacement for tap-to-pay.
+                It is your right to spend as you please without being tracked.
               </p>
             </div>
             <div className="card-grid">
