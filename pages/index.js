@@ -173,12 +173,6 @@ export default function Home() {
         />
       </Head>
 
-      <header className="site-header">
-        <a href="#top" className="site-logo" aria-label="Walt home">
-          WALT
-        </a>
-      </header>
-
       <div className="scroll-container" id="top">
         <div className="section hero-section">
           <div className="hero-inner">
