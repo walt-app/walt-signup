@@ -64,22 +64,22 @@ export default function Home() {
 
   const roadmap = [
     {
-      period: "H2 2025",
+      period: "H1 2026",
       title: "Find the fit",
       description:
-        "Public waitlist, community marketing, and interviews to align Walt with privacy-first adopters.",
-    },
-    {
-      period: "H1 2026",
-      title: "Issue the first tokens",
-      description:
-        "Relationships with payment providers, first DPAN issued, and heavy R&D against HCE APIs.",
+        "Business: Initial agreement with chosen aggregators. Create public waitlist.<br />Product: Wire Android HCE + Wallet role + CDCVM",
     },
     {
       period: "H2 2026",
+      title: "Issue the first tokens",
+      description:
+        "Business: Relationships with DPAN issuer signed and first DPAN issued. Kickoff with Visa for token approval process.<br>Product: Stand up Attestation Verifier (server) and collect Play Integrity + Key Attestation",
+    },
+    {
+      period: "H1 2027",
       title: "Prototype in the wild",
       description:
-        'Pilot Android builds with partner banks exploring "load card to Walt" push provisioning.',
+        "Business: PCI DSS audit and certification.<br>Product: Integration of tokenization authorization and DPAN APIs into app.",
     },
     {
       period: "2027",
@@ -314,7 +314,9 @@ export default function Home() {
                   <span className="timeline-period">{item.period}</span>
                   <div className="timeline-content">
                     <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{ __html: item.description }}
+                    ></p>
                   </div>
                 </li>
               ))}

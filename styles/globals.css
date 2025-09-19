@@ -36,13 +36,14 @@ body {
 
 /* Scroll Container */
 .scroll-container {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 0;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 /* Sections */
@@ -458,6 +459,7 @@ body {
   gap: 1.75rem;
   position: relative;
   padding-left: 1rem;
+  padding-bottom: 3rem;
 }
 
 .timeline::before {
