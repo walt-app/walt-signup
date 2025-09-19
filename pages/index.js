@@ -193,7 +193,7 @@ export default function Home() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     className="hero-input"
                     required
                   />
