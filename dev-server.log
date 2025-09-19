@@ -15,3 +15,20 @@ See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-comp
  GET / 200 in 258ms
  ⚠ Cross origin request detected from 192.168.0.147 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 16ms
+ ✓ Compiled in 150ms (268 modules)
+ ✓ Compiled in 85ms (268 modules)
+ ✓ Compiled in 74ms (268 modules)
+ ✓ Compiled in 68ms (268 modules)
+ ✓ Compiled in 60ms (268 modules)
+ ✓ Compiled in 73ms (268 modules)
+ ✓ Compiled in 58ms (268 modules)
+ ✓ Compiled in 66ms (268 modules)
+ ✓ Compiled in 59ms (268 modules)
+ ✓ Compiled in 64ms (268 modules)
+ ✓ Compiled in 266ms (268 modules)
+ ✓ Compiled in 49ms (268 modules)
+ ✓ Compiled in 72ms (268 modules)
+ GET / 200 in 38ms
+ ✓ Compiled in 37ms (268 modules)
+ ✓ Compiled in 76ms (268 modules)

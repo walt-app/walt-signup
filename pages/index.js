@@ -182,12 +182,10 @@ export default function Home() {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title">
-                Own your wallet, not the data it collects.
-              </h1>
+              <h1 className="hero-title">Private tap-to-pay for Android.</h1>
               <p className="hero-subtitle">
-                The open-source alternative. We don't store your transactions,
-                we don't even keep a database.
+                The open-source, private Android wallet application. Contactless
+                payments, without the surveillance.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
