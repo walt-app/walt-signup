@@ -79,7 +79,7 @@ export default function Home() {
       period: "H1 2027",
       title: "Audits, regulation, compliance",
       description:
-        "Business: PCI DSS audit and certification.<br>Product: Integration of tokenization authorization and DPAN APIs into app.",
+        "Business: PCI DSS audit and certification.<br>Product: Integration of tokenization authorization and DPAN APIs into app. E2E TSP complete flow.",
     },
     {
       period: "2027",
