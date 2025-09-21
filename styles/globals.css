@@ -42,7 +42,7 @@ body {
   flex-direction: column;
   gap: 0;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 /* Sections */
@@ -54,6 +54,11 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   min-height: 100vh;
+}
+
+.section:last-of-type {
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
 }
 
 .site-header {
@@ -339,6 +344,7 @@ body {
 .section-dark {
   background: linear-gradient(200deg, #0b0a0d 0%, #18141d 55%, #0b0a0d 100%);
   color: var(--text-primary);
+  padding-bottom: 0;
 }
 
 .section-shell {
@@ -458,7 +464,7 @@ body {
   gap: 1.75rem;
   position: relative;
   padding-left: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: clamp(80px, 12vh, 120px);
 }
 
 .timeline::before {
@@ -466,7 +472,7 @@ body {
   position: absolute;
   left: 0.75rem;
   top: 0;
-  bottom: 0;
+  bottom: clamp(80px, 12vh, 120px);
   width: 1px;
   background: rgba(242, 210, 151, 0.28);
 }
@@ -476,6 +482,10 @@ body {
   grid-template-columns: 140px 1fr;
   gap: 1.5rem;
   position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: clamp(80px, 16vh, 200px);
 }
 
 .timeline-item::before {
@@ -520,6 +530,67 @@ body {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+
+/* Footer */
+.site-footer {
+  background: linear-gradient(200deg, #0b0a0d 0%, #18141d 55%, #0b0a0d 100%);
+  border-top: 1px solid rgba(242, 210, 151, 0.25);
+  padding: 64px min(6vw, 40px) 84px;
+  margin-top: clamp(120px, 15vh, 180px);
+  position: relative;
+  z-index: 1;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
+
+.footer-shell {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.footer-mark {
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.footer-credit {
+  font-size: 0.95rem;
+  color: rgba(242, 210, 151, 0.66);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(242, 210, 151, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #f2d297;
 }
 
 /* Form Message Styles */
@@ -596,16 +667,22 @@ body {
 
   .timeline {
     padding-left: 0.75rem;
+    padding-bottom: clamp(60px, 10vh, 100px);
   }
 
   .timeline::before {
     left: 0.2rem;
+    bottom: clamp(60px, 10vh, 100px);
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding-left: 1.5rem;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: clamp(72px, 16vh, 160px);
   }
 
   .timeline-item::before {
@@ -615,6 +692,18 @@ body {
   .scroll-container {
     height: auto;
     scroll-snap-type: none;
+  }
+
+  .footer-shell {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 
@@ -694,10 +783,19 @@ body {
 
   .timeline {
     padding-left: 0.5rem;
+    padding-bottom: clamp(50px, 8vh, 80px);
   }
 
   .timeline-item {
     padding-left: 1.25rem;
+  }
+
+  .timeline::before {
+    bottom: clamp(50px, 8vh, 80px);
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: clamp(56px, 18vh, 140px);
   }
 
   .timeline-content {
