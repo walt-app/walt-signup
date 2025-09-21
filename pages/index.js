@@ -65,7 +65,7 @@ export default function Home() {
   const roadmap = [
     {
       period: "H1 2026",
-      title: "Find the fit",
+      title: "Business and product feasibility",
       description:
         "Business: Initial agreement with chosen aggregators. Create public waitlist.<br />Product: Wire Android HCE + Wallet role + CDCVM",
     },
@@ -87,6 +87,15 @@ export default function Home() {
       description:
         "Walt rolls out to early supporters with the privacy guarantees and polish we'd demand for ourselves.",
     },
+  ];
+
+  const footerLinks = [
+    { label: "GitHub", href: "https://github.com/embedded-engineering-aps" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/embedded-engineering-aps/",
+    },
+    { label: "Whitepaper", href: "https://embedded.engineering/walt-whitepaper" },
   ];
 
   const isValidEmail = (email) => {
@@ -323,6 +332,30 @@ export default function Home() {
             </ol>
           </div>
         </div>
+
+        <footer className="site-footer">
+          <div className="footer-shell">
+            <div className="footer-meta">
+              <span className="footer-mark">© 2025 Walt</span>
+              <span className="footer-credit">
+                Developed by Embedded Engineering ApS
+              </span>
+            </div>
+            <nav className="footer-links" aria-label="Footer navigation">
+              {footerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </footer>
       </div>
     </>
   );
