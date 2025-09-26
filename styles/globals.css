@@ -850,10 +850,10 @@ body {
   color: var(--accent);
 }
 
-.whitepaper-footer {
-  background: linear-gradient(200deg, #0b0a0d 0%, #18141d 55%, #0b0a0d 100%);
-  border-top: 1px solid rgba(242, 210, 151, 0.25);
-  padding: 64px min(6vw, 40px) 84px;
+.whitepaper-footer-override {
+  margin-top: 0;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
 }
 
 @media (max-width: 768px) {

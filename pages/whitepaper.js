@@ -255,7 +255,7 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <footer className="whitepaper-footer">
+        <footer className="site-footer whitepaper-footer-override">
           <div className="footer-shell">
             <div className="footer-meta">
               <span className="footer-mark">© 2025 Walt</span>
