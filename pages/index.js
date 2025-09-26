@@ -9,21 +9,21 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
-  const whyFeatures = [
+  const whatIsFeatures = [
     {
-      title: "Big Tech can't be trusted",
+      title: "Your data is local",
       description:
-        "Closed-source wallets turn tap-to-pay into behavioral targeting. Walt is open source and we have no databases storing transaction history.",
+        "Your transaction data stays on your phone. It is never shared or sold or tracked.",
     },
     {
-      title: "Transaction data is sacred",
+      title: "Spend like you're used to",
       description:
-        "What you spend your money on is private. Companies should not be able to take advantage of your spending habits.",
+        "Tap your phone at your coffeeshop like you're used to with other wallets.",
     },
     {
-      title: "Now is the time",
+      title: "Funded by members",
       description:
-        "With the rise of capable LLMs, Big Tech is benefitting from more intimate understandings of our habits and needs.",
+        "$3 a month sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
     },
   ];
 
@@ -39,9 +39,9 @@ export default function Home() {
         "No AI. Limited features. No premium subscription. Just a simple, straightforward mission of taking back our data.",
     },
     {
-      title: "Funded by members",
+      title: "Secure and regulated",
       description:
-        "$3 a month sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
+        "We pass through the same certification and regulatory gates that all software that deals with transactions and cards must.",
     },
   ];
 
@@ -89,7 +89,6 @@ export default function Home() {
         "Walt rolls out to early supporters with the privacy guarantees and polish we'd demand for ourselves.",
     },
   ];
-
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -230,16 +229,14 @@ export default function Home() {
         <div className="section section-light">
           <div className="section-shell">
             <div className="section-header">
-              <span className="section-eyebrow">Why Walt</span>
+              <span className="section-eyebrow">What Is Walt</span>
               <h2 className="section-heading">
-                We deserve to spend without being targeted.
+                An Android wallet app that respects your privacy.
               </h2>
-              <p className="section-lead">
-                It is your right to spend as you please without being tracked.
-              </p>
+              <p className="section-lead">Your data is sacred.</p>
             </div>
             <div className="card-grid">
-              {whyFeatures.map((item) => (
+              {whatIsFeatures.map((item) => (
                 <article key={item.title} className="info-card">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
