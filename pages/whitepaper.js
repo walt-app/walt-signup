@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 export default function Whitepaper() {
   return (
@@ -255,40 +256,7 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <footer className="site-footer whitepaper-footer-override">
-          <div className="footer-shell">
-            <div className="footer-meta">
-              <span className="footer-mark">© 2025 Walt</span>
-              <span className="footer-credit">
-                Developed by Embedded Engineering ApS
-              </span>
-            </div>
-            <nav className="footer-links" aria-label="Footer navigation">
-              <a
-                href="https://github.com/embedded-engineering-aps"
-                className="footer-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/company/embedded-engineering-aps/"
-                className="footer-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="/"
-                className="footer-link"
-              >
-                Home
-              </a>
-            </nav>
-          </div>
-        </footer>
+        <Footer variant="whitepaper" />
       </div>
     </>
   );
