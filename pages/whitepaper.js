@@ -19,12 +19,6 @@ export default function Whitepaper() {
       </Head>
 
       <div className="whitepaper-page">
-        <header className="site-header">
-          <a href="/" className="site-logo">
-            Walt
-          </a>
-        </header>
-
         <div className="whitepaper-hero">
           <div className="section-shell">
             <div className="section-header">
@@ -169,7 +163,7 @@ export default function Whitepaper() {
                 .
               </p>
 
-              <p className="signature">
+              <p>
                 With hope,<br />
                 Cole Bittel<br />
                 Creator of Walt.
