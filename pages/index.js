@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -89,14 +90,6 @@ export default function Home() {
     },
   ];
 
-  const footerLinks = [
-    { label: "GitHub", href: "https://github.com/embedded-engineering-aps" },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/company/embedded-engineering-aps/",
-    },
-    { label: "Whitepaper", href: "/whitepaper" },
-  ];
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -333,29 +326,7 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="site-footer">
-          <div className="footer-shell">
-            <div className="footer-meta">
-              <span className="footer-mark">© 2025 Walt</span>
-              <span className="footer-credit">
-                Developed by Embedded Engineering ApS
-              </span>
-            </div>
-            <nav className="footer-links" aria-label="Footer navigation">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="footer-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
