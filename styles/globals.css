@@ -243,6 +243,43 @@ body {
   box-shadow: 0 12px 24px rgba(242, 210, 151, 0.25);
 }
 
+.hero-secondary-action {
+  margin-top: 0.75rem;
+}
+
+.hero-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(242, 210, 151, 0.45);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(242, 210, 151, 0.85);
+  background: rgba(12, 12, 13, 0.75);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(18, 10, 4, 0.55);
+  background: #f2d297;
+  border-color: #f2d297;
+  color: #120906;
+}
+
+.hero-secondary-button:focus-visible {
+  outline: 2px solid #f2d297;
+  outline-offset: 4px;
+}
+
 .hero-visual {
   flex: 1;
   display: flex;
@@ -278,6 +315,14 @@ body {
   .hero-inner {
     align-items: flex-start;
     gap: 2rem;
+  }
+
+  .hero-secondary-action {
+    width: 100%;
+  }
+
+  .hero-secondary-button {
+    width: 100%;
   }
 
   .hero-visual {

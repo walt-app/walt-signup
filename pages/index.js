@@ -210,6 +210,11 @@ export default function Home() {
                   <div className={`form-message ${messageType}`}>{message}</div>
                 )}
               </form>
+              <div className="hero-secondary-action">
+                <a className="hero-secondary-button" href="/whitepaper">
+                  Read the whitepaper
+                </a>
+              </div>
             </div>
             <div className="hero-visual">
               <div className="hero-image-wrap">
