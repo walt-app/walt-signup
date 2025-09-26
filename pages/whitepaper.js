@@ -17,14 +17,14 @@ export default function Whitepaper() {
         />
       </Head>
 
-      <div className="scroll-container">
+      <div className="whitepaper-page">
         <header className="site-header">
           <a href="/" className="site-logo">
             Walt
           </a>
         </header>
 
-        <div className="section hero-section whitepaper-hero">
+        <div className="whitepaper-hero">
           <div className="section-shell">
             <div className="section-header">
               <h1 className="section-heading">Why Walt Exists</h1>
@@ -35,7 +35,7 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <div className="section section-light">
+        <div className="whitepaper-main">
           <div className="section-shell">
             <div className="whitepaper-content">
               <p>
@@ -255,7 +255,7 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <footer className="site-footer">
+        <footer className="whitepaper-footer">
           <div className="footer-shell">
             <div className="footer-meta">
               <span className="footer-mark">© 2025 Walt</span>
