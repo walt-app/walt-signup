@@ -464,7 +464,7 @@ body {
   gap: 1.75rem;
   position: relative;
   padding-left: 1rem;
-  padding-bottom: clamp(80px, 12vh, 120px);
+  padding-bottom: clamp(20px, 4vh, 40px);
 }
 
 .timeline::before {
@@ -472,7 +472,7 @@ body {
   position: absolute;
   left: 0.75rem;
   top: 0;
-  bottom: clamp(80px, 12vh, 120px);
+  bottom: clamp(20px, 4vh, 40px);
   width: 1px;
   background: rgba(242, 210, 151, 0.28);
 }
@@ -485,7 +485,7 @@ body {
 }
 
 .timeline-item:last-child {
-  margin-bottom: clamp(80px, 16vh, 200px);
+  margin-bottom: clamp(20px, 4vh, 40px);
 }
 
 .timeline-item::before {
@@ -668,12 +668,12 @@ body {
 
   .timeline {
     padding-left: 0.75rem;
-    padding-bottom: clamp(60px, 10vh, 100px);
+    padding-bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline::before {
     left: 0.2rem;
-    bottom: clamp(60px, 10vh, 100px);
+    bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline-item {
@@ -683,7 +683,7 @@ body {
   }
 
   .timeline-item:last-child {
-    margin-bottom: clamp(72px, 16vh, 160px);
+    margin-bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline-item::before {
@@ -721,6 +721,11 @@ body {
   padding: 96px 40px 48px;
 }
 
+.whitepaper-hero .section-shell,
+.whitepaper-main .section-shell {
+  max-width: 900px;
+}
+
 .whitepaper-main {
   flex: 1;
   background: linear-gradient(180deg, #09080c 0%, #111018 65%, #09070c 100%);
@@ -728,7 +733,7 @@ body {
 }
 
 .whitepaper-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   font-family: "Inter", sans-serif;
   font-size: 1.05rem;
@@ -957,7 +962,7 @@ body {
 
   .timeline {
     padding-left: 0.5rem;
-    padding-bottom: clamp(50px, 8vh, 80px);
+    padding-bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline-item {
@@ -965,11 +970,11 @@ body {
   }
 
   .timeline::before {
-    bottom: clamp(50px, 8vh, 80px);
+    bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline-item:last-child {
-    margin-bottom: clamp(56px, 18vh, 140px);
+    margin-bottom: clamp(20px, 4vh, 40px);
   }
 
   .timeline-content {
