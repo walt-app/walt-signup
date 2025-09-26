@@ -23,9 +23,6 @@ export default function Whitepaper() {
           <div className="section-shell">
             <div className="section-header">
               <h1 className="section-heading">Why Walt Exists</h1>
-              <p className="section-lead">
-                <em>(no generative AI was used to produce the following)</em>
-              </p>
             </div>
           </div>
         </div>
@@ -33,6 +30,9 @@ export default function Whitepaper() {
         <div className="whitepaper-main">
           <div className="section-shell">
             <div className="whitepaper-content">
+              <p>
+                <em>(no generative AI was used to produce the following)</em>
+              </p>
               <p>
                 In the late 90's, the internet was largely one-directional; large tech companies like AOL, Yahoo, and some large newspapers were able to publish content onto it. The customer base, those with internet connections, would consume that content. Some technical hobbyists were able to produce simple content through things like listservs, but these hobbyists were not attempting to reach larger audiences because of the complexity of distribution. The idea an individual distributing to the masses was unthinkable.
               </p>
