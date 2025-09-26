@@ -95,7 +95,7 @@ export default function Home() {
       label: "LinkedIn",
       href: "https://www.linkedin.com/company/embedded-engineering-aps/",
     },
-    { label: "Whitepaper", href: "https://embedded.engineering/walt-whitepaper" },
+    { label: "Whitepaper", href: "/whitepaper" },
   ];
 
   const isValidEmail = (email) => {
