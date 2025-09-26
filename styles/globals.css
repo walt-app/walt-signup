@@ -36,7 +36,7 @@ body {
 
 /* Scroll Container */
 .scroll-container {
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -536,12 +536,13 @@ body {
 .site-footer {
   background: linear-gradient(200deg, #0b0a0d 0%, #18141d 55%, #0b0a0d 100%);
   border-top: 1px solid rgba(242, 210, 151, 0.25);
-  padding: 64px min(6vw, 40px) 84px;
-  margin-top: clamp(120px, 15vh, 180px);
+  padding: 32px min(6vw, 40px) 40px;
+  margin-top: auto;
   position: relative;
   z-index: 1;
   scroll-snap-align: none;
   scroll-snap-stop: normal;
+  min-height: auto;
 }
 
 .footer-shell {
@@ -563,7 +564,7 @@ body {
 }
 
 .footer-mark {
-  font-family: "Merriweather", serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   color: var(--text-primary);
 }
@@ -806,13 +807,6 @@ body {
   margin: 3rem 0;
 }
 
-.signature {
-  font-style: italic;
-  color: var(--text-muted);
-  margin-top: 2rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--outline);
-}
 
 .references {
   margin-top: 3rem;
