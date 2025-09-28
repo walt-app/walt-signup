@@ -146,7 +146,7 @@ export default function Home() {
         <title>Walt - A Better Android Wallet</title>
         <meta
           name="description"
-          content="Wal is the Android wallet app that never shares your data"
+          content="Walt is the Android wallet app that never shares your data"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -160,14 +160,12 @@ export default function Home() {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title">Tap-to-pay for Android.</h1>
+              <h1 className="hero-title">Private tap-to-pay for Android.</h1>
               <p className="hero-subhead">
-                No purchase tracking. Your transaction history stays on your
-                phone.
+                No purchase tracking, no data harvesting, no AI.
               </p>
               <p className="hero-subtitle">
-                No AI and limited features. Just a predictable, respectful
-                wallet app.
+                Just a predictable, respectful wallet app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
