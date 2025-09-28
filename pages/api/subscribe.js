@@ -111,7 +111,7 @@ export default async function handler(req, res) {
               Thanks for joining our waitlist for Walt, the Android wallet that respects your data.
             </p>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-              We'll keep you updated on our progress as we work toward our 2027 launch. In the meantime, feel free to check out our whitepaper to learn more about Walt's privacy-first approach.
+              We'll keep you updated on our progress as we work toward our 2027 launch. In the meantime, <a href="${getBaseUrl()}/whitepaper" style="color: #007bff; text-decoration: none;">check out our whitepaper</a> to learn more about Walt's privacy-first approach.
             </p>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 30px;">
               Best,<br>
