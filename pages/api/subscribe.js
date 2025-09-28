@@ -80,11 +80,46 @@ export default async function handler(req, res) {
     }
 
     console.log('Contact created successfully:', data);
-    
-    return res.status(200).json({ 
-      success: true, 
+
+    // Send welcome email
+    try {
+      const emailResult = await resend.emails.send({
+        from: 'Cole <cole@updates.walt.is>',
+        to: email,
+        replyTo: 'cole@walt.is',
+        subject: 'Welcome to the Walt waitlist!',
+        // Add your welcome email template here
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h1 style="color: #333; font-size: 24px; margin-bottom: 20px;">Welcome to Walt!</h1>
+            <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
+              Thanks for joining our waitlist! We're building the open-source alternative to Google Wallet that keeps your payment data private and on-device.
+            </p>
+            <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
+              We'll keep you updated on our progress as we work toward our 2027 launch. In the meantime, feel free to check out our whitepaper to learn more about Walt's privacy-first approach.
+            </p>
+            <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 30px;">
+              Best,<br>
+              Cole & the Walt team
+            </p>
+            <div style="border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; color: #999;">
+              <p>You're receiving this because you signed up for the Walt waitlist. If you'd like to unsubscribe, you can do so at any time.</p>
+            </div>
+          </div>
+        `
+      });
+
+      console.log('Welcome email sent successfully:', emailResult);
+    } catch (emailError) {
+      // Log email error but don't fail the signup
+      console.error('Failed to send welcome email:', emailError);
+      // Continue with success response since contact was created successfully
+    }
+
+    return res.status(200).json({
+      success: true,
       message: 'Successfully joined the waitlist!',
-      contactId: data.id 
+      contactId: data.id
     });
 
   } catch (error) {
