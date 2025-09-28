@@ -38,9 +38,6 @@ export default function Unsubscribed() {
                   </>
                 )}
               </p>
-              <p className="hero-subtitle">
-                You will no longer receive emails from us. If you change your mind, you can always sign up again on our website.
-              </p>
               <div className="hero-secondary-action">
                 <a className="hero-secondary-button" href="/">
                   Return to home
