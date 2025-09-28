@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
+import { Resend } from "resend";
 
-export default function Unsubscribe({ email }) {
+export default function Unsubscribe({ email, unsubscribeSuccess }) {
 
   return (
     <>
@@ -23,9 +24,19 @@ export default function Unsubscribe({ email }) {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title">You've been unsubscribed</h1>
+              <h1 className="hero-title">
+                {unsubscribeSuccess ? "You've been unsubscribed" : "Unsubscribe failed"}
+              </h1>
               <p className="hero-subtitle">
-                <strong>{email}</strong> has been successfully removed from the Walt waitlist.
+                {unsubscribeSuccess ? (
+                  <>
+                    <strong>{email}</strong> has been successfully removed from the Walt waitlist.
+                  </>
+                ) : (
+                  <>
+                    We couldn't unsubscribe <strong>{email}</strong>. Please try again or contact support.
+                  </>
+                )}
               </p>
               <div className="hero-secondary-action">
                 <a className="hero-secondary-button" href="/">
@@ -44,20 +55,41 @@ export default function Unsubscribe({ email }) {
 
 export async function getServerSideProps(context) {
   const { email } = context.query;
+  let unsubscribeSuccess = false;
 
   if (email) {
-    // Perform unsubscribe on server side
+    // Perform unsubscribe directly with Resend API
     try {
-      const response = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/unsubscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
+      if (!process.env.RESEND_API_KEY || !process.env.RESEND_AUDIENCE_ID) {
+        console.error("Missing Resend configuration");
+        return {
+          props: {
+            email: email,
+            unsubscribeSuccess: false,
+          },
+        };
+      }
+
+      const resend = new Resend(process.env.RESEND_API_KEY);
+
+      // Update contact status to unsubscribed in Resend audience
+      const { data, error } = await resend.contacts.update({
+        email: email,
+        audienceId: process.env.RESEND_AUDIENCE_ID,
+        unsubscribed: true,
       });
 
-      const data = await response.json();
-      console.log("Unsubscribe result:", data);
+      if (error) {
+        console.error("Resend unsubscribe error:", error);
+
+        // Check if contact doesn't exist (treat as success since they're effectively unsubscribed)
+        if (error.message && error.message.includes("not found")) {
+          unsubscribeSuccess = true;
+        }
+      } else {
+        console.log("Contact marked as unsubscribed successfully:", data);
+        unsubscribeSuccess = true;
+      }
     } catch (error) {
       console.error("Error unsubscribing:", error);
     }
@@ -66,6 +98,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       email: email || null,
+      unsubscribeSuccess,
     },
   };
 }
