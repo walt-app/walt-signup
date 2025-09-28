@@ -11,37 +11,19 @@ export default function Home() {
 
   const whatIsFeatures = [
     {
-      title: "Your data is local",
-      description:
-        "Your transaction data stays on your phone. It is never shared or sold or tracked.",
-    },
-    {
       title: "Spend like you're used to",
       description:
         "Tap your phone at your coffeeshop like you're used to with other wallets.",
     },
     {
+      title: "Your data, your privacy",
+      description:
+        "Your transaction data stays on your phone. Never shared or sold or tracked.",
+    },
+    {
       title: "Funded by members",
       description:
         "$3 a month sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
-    },
-  ];
-
-  const howFeatures = [
-    {
-      title: "Open source by design",
-      description:
-        "A community wallet is one where we own the code. Walt runs on a simple, open-source codebase.",
-    },
-    {
-      title: "Simple and focused",
-      description:
-        "No AI. Limited features. No premium subscription. Just a simple, straightforward mission of taking back our data.",
-    },
-    {
-      title: "Secure and regulated",
-      description:
-        "We pass through the same certification and regulatory gates that all software that deals with transactions and cards must.",
     },
   ];
 
@@ -183,8 +165,10 @@ export default function Home() {
                 Private tap-to-pay for Android. No purchase tracking. Ever.
               </p>
               <p className="hero-subtitle">
-                The open-source wallet that keeps every payment on-device. No
-                tracking, no algorithms.
+                {/* The open-source wallet that keeps every payment on-device. No*/}
+                {/* tracking, no algorithms.*/}
+                No AI. Few features. Just load your card, and start tapping to
+                pay without worrying about your data.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
@@ -242,29 +226,6 @@ export default function Home() {
             </div>
             <div className="card-grid">
               {whatIsFeatures.map((item) => (
-                <article key={item.title} className="info-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="section section-muted">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="section-eyebrow">How it works</span>
-              <h2 className="section-heading">
-                Transparent architecture, proven controls
-              </h2>
-              <p className="section-lead">
-                Every technical decision favors clarity and restraint, so you
-                know exactly how your wallet behaves.
-              </p>
-            </div>
-            <div className="card-grid">
-              {howFeatures.map((item) => (
                 <article key={item.title} className="info-card">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
