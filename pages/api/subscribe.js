@@ -2,11 +2,12 @@ import { Resend } from "resend";
 
 // Helper function to get the base URL for the current environment
 function getBaseUrl() {
+  // Always use walt.is for production, regardless of VERCEL_URL
+  if (process.env.NODE_ENV === "production") {
+    return "https://walt.is";
+  }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
-  }
-  if (process.env.NODE_ENV === "production") {
-    return "https://walt.is"; // Replace with your production domain
   }
   return "http://localhost:3000";
 }
