@@ -98,11 +98,17 @@ export default async function handler(req, res) {
 
     // Send welcome email
     try {
+      const unsubscribeUrl = `${getBaseUrl()}/api/public-unsubscribe?email=${encodeURIComponent(email)}`;
+
       const emailResult = await resend.emails.send({
         from: "Cole <cole@updates.walt.is>",
         to: email,
         replyTo: "cole@walt.is",
         subject: "Welcome to Walt",
+        headers: {
+          'List-Unsubscribe': `<${unsubscribeUrl}>`,
+          'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click'
+        },
         // Add your welcome email template here
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -119,7 +125,7 @@ export default async function handler(req, res) {
             </p>
             <div style="border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; color: #999;">
               <p>You're receiving this because you signed up for the Walt waitlist.</p>
-              <p><a href="${getBaseUrl()}/unsubscribe?email=${encodeURIComponent(email)}" style="color: #666; text-decoration: underline;">Click here to unsubscribe</a></p>
+              <p><a href="${unsubscribeUrl}" style="color: #666; text-decoration: underline;">Click here to unsubscribe</a></p>
             </div>
           </div>
         `,
