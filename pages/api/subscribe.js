@@ -102,7 +102,7 @@ export default async function handler(req, res) {
         from: "Cole <cole@updates.walt.is>",
         to: email,
         replyTo: "cole@walt.is",
-        subject: "Welcome to the Walt waitlist",
+        subject: "Welcome to Walt",
         // Add your welcome email template here
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -111,7 +111,7 @@ export default async function handler(req, res) {
               Thanks for joining our waitlist for Walt, the Android wallet that respects your data.
             </p>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-              We'll keep you updated on our progress as we work toward our 2027 launch. In the meantime, <a href="${getBaseUrl()}/whitepaper" style="color: #007bff; text-decoration: none;">check out our whitepaper</a> to learn more about Walt's privacy-first approach.
+              We'll keep you updated on our progress. In the meantime, <a href="${getBaseUrl()}/whitepaper" style="color: #007bff; text-decoration: none;">check out the whitepaper</a>.
             </p>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 30px;">
               Best,<br>
