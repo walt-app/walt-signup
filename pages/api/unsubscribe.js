@@ -47,10 +47,11 @@ export default async function handler(req, res) {
     // Initialize Resend
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Remove contact from Resend audience
-    const { data, error } = await resend.contacts.remove({
+    // Update contact status to unsubscribed in Resend audience
+    const { data, error } = await resend.contacts.update({
       email: email,
       audienceId: process.env.RESEND_AUDIENCE_ID,
+      unsubscribed: true,
     });
 
     if (error) {
@@ -70,7 +71,7 @@ export default async function handler(req, res) {
       });
     }
 
-    console.log("Contact unsubscribed successfully:", data);
+    console.log("Contact marked as unsubscribed successfully:", data);
 
     return res.status(200).json({
       success: true,
