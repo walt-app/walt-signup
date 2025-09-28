@@ -143,10 +143,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Walt - The open source alternative to Google Wallet</title>
+        <title>Walt - A Better Android Wallet</title>
         <meta
           name="description"
-          content="Walt is the open source alternative to Google Wallet and Google Pay. Join our waitlist."
+          content="Wal is the Android wallet app that never shares your data"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -160,15 +160,14 @@ export default function Home() {
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title">Private tap-to-pay for Android.</h1>
+              <h1 className="hero-title">Tap-to-pay for Android.</h1>
               <p className="hero-subhead">
-                Private tap-to-pay for Android. No purchase tracking. Ever.
+                No purchase tracking. Your transaction history stays on your
+                phone.
               </p>
               <p className="hero-subtitle">
-                {/* The open-source wallet that keeps every payment on-device. No*/}
-                {/* tracking, no algorithms.*/}
-                No AI. Few features. Just load your card, and start tapping to
-                pay without worrying about your data.
+                No AI, limited features. Just a predictable, respectful wallet
+                app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
