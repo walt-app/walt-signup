@@ -146,17 +146,9 @@ body {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: rgba(242, 210, 151, 0.92);
+  color: #f5e8d4;
 }
 
-.hero-subtitle {
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(249, 232, 207, 0.78);
-  max-width: 520px;
-}
 
 .hero-form {
   display: flex;

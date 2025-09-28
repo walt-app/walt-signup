@@ -162,10 +162,8 @@ export default function Home() {
             <div className="hero-copy">
               <h1 className="hero-title">Private tap-to-pay for Android.</h1>
               <p className="hero-subhead">
-                No purchase tracking, no data harvesting, no AI.
-              </p>
-              <p className="hero-subtitle">
-                Just a predictable, respectful wallet app.
+                No purchase tracking, no data harvesting, no AI. Just a
+                predictable, respectful wallet app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
