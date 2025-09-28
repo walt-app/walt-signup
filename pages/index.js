@@ -13,7 +13,7 @@ export default function Home() {
     {
       title: "Spend like you're used to",
       description:
-        "Tap your phone at your coffeeshop like you're used to with other wallets.",
+        "Load your card and start tapping your phone at your coffeeshop like you're used to.",
     },
     {
       title: "Your data, your privacy",
@@ -166,8 +166,8 @@ export default function Home() {
                 phone.
               </p>
               <p className="hero-subtitle">
-                No AI, limited features. Just a predictable, respectful wallet
-                app.
+                No AI and limited features. Just a predictable, respectful
+                wallet app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="hero-input-group">
@@ -221,7 +221,10 @@ export default function Home() {
               <h2 className="section-heading">
                 An Android wallet app that respects your privacy.
               </h2>
-              <p className="section-lead">Your data is sacred.</p>
+              <p className="section-lead">
+                Know that your your transaction data is never collected, stored,
+                or sold.
+              </p>
             </div>
             <div className="card-grid">
               {whatIsFeatures.map((item) => (
@@ -238,12 +241,9 @@ export default function Home() {
           <div className="section-shell">
             <div className="section-header">
               <span className="section-eyebrow">Using Walt</span>
-              <h2 className="section-heading">
-                Tap-to-pay without the data trail
-              </h2>
+              <h2 className="section-heading">Tap-to-pay, as you know it</h2>
               <p className="section-lead">
-                From install to checkout, Walt mirrors the wallet you already
-                know, minus the compromises.
+                A predictable, familiar wallet app.
               </p>
             </div>
             <div className="card-grid card-grid-steps">
@@ -266,10 +266,9 @@ export default function Home() {
           <div className="section-shell">
             <div className="section-header">
               <span className="section-eyebrow">Roadmap</span>
-              <h2 className="section-heading">A transparent path to launch</h2>
+              <h2 className="section-heading">How we'll deliver Walt</h2>
               <p className="section-lead">
-                We're shipping Walt in the open. Here's how the next milestones
-                stack up.
+                Here's what you can expect from us.
               </p>
             </div>
             <ol className="timeline">
