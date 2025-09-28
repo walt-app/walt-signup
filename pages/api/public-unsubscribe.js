@@ -16,8 +16,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get email from query params (for GET) or body (for POST)
-    const email = req.method === "GET" ? req.query.email : req.body?.email;
+    // For both GET and POST (one-click unsubscribe), get email from query params
+    // Email clients send POST with List-Unsubscribe=One-Click in body, but email is in URL
+    const email = req.query.email;
 
     // Basic email validation
     if (!email || !email.includes("@")) {
