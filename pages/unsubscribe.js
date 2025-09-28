@@ -105,7 +105,7 @@ export default function Unsubscribe() {
       <div className="scroll-container">
         <div className="section hero-section">
           <div className="hero-inner">
-            <div className="hero-copy" style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto" }}>
+            <div className="hero-copy">
               <h1 className="hero-title">Unsubscribe from Walt waitlist</h1>
 
               {autoUnsubscribed ? (
