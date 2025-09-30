@@ -218,8 +218,8 @@ export default function Home() {
                 An Android wallet app that respects your privacy.
               </h2>
               <p className="section-lead">
-                Know that your your transaction data is never collected, stored,
-                or sold.
+                Know that your transaction data is never collected, stored, or
+                sold.
               </p>
             </div>
             <div className="card-grid">
