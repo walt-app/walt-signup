@@ -1,12 +1,12 @@
 export default function Footer({ variant = "default" }) {
   const footerLinks = variant === "whitepaper"
     ? [
-        { label: "GitHub", href: "https://github.com/Walt-App/walt-architecture" },
+        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
         { label: "Home", href: "/" },
       ]
     : [
-        { label: "GitHub", href: "https://github.com/Walt-App/walt-architecture" },
+        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
         { label: "Whitepaper", href: "/whitepaper" },
       ];
