@@ -1,7 +1,3 @@
-# Walt Waitlist Signup
-
-A Next.js landing page with waitlist signup functionality using Vercel and Resend Audiences.
-
 ## Overview
 
 Walt is the open source alternative to Google Wallet and Google Pay. This repository contains the waitlist signup page with integrated email collection.
@@ -48,7 +44,7 @@ npm run dev
 ## Features
 
 - ✅ Responsive Next.js application
-- ✅ AJAX form submission without page reload  
+- ✅ AJAX form submission without page reload
 - ✅ Email validation and duplicate prevention
 - ✅ Success/error user feedback
 - ✅ Loading states
