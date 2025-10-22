@@ -149,10 +149,83 @@ export default function Home() {
           content="Walt is the Android wallet app that never shares your data"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://walt.is" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://walt.is" />
+        <meta property="og:title" content="Walt - A Better Android Wallet" />
+        <meta property="og:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
+        <meta property="og:image" content="https://walt.is/hero-wallet.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://walt.is" />
+        <meta property="twitter:title" content="Walt - A Better Android Wallet" />
+        <meta property="twitter:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
+        <meta property="twitter:image" content="https://walt.is/hero-wallet.png" />
+
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap"
           rel="stylesheet"
+        />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Walt",
+              "url": "https://walt.is",
+              "logo": "https://walt.is/hero-wallet.png",
+              "description": "Walt is the Android wallet app that never shares your data. Private tap-to-pay for Android.",
+              "sameAs": [
+                "https://github.com/walt-app/walt-architecture",
+                "https://www.linkedin.com/in/bittelc/"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Walt",
+              "url": "https://walt.is",
+              "description": "Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI."
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Walt",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Android",
+              "offers": {
+                "@type": "Offer",
+                "price": "3.00",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "3.00",
+                  "priceCurrency": "USD",
+                  "billingDuration": "P1M"
+                }
+              },
+              "description": "Private tap-to-pay wallet for Android that never shares your transaction data"
+            })
+          }}
         />
       </Head>
 

@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow unsubscribe pages from indexing
+Disallow: /unsubscribe
+Disallow: /unsubscribed
+
+# Sitemap location
+Sitemap: https://walt.is/sitemap.xml
