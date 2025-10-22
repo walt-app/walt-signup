@@ -11,10 +11,58 @@ export default function Whitepaper() {
           content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://walt.is/whitepaper" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://walt.is/whitepaper" />
+        <meta property="og:title" content="Why Walt Exists - Whitepaper" />
+        <meta property="og:description" content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
+        <meta property="og:image" content="https://walt.is/hero-wallet.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://walt.is/whitepaper" />
+        <meta property="twitter:title" content="Why Walt Exists - Whitepaper" />
+        <meta property="twitter:description" content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
+        <meta property="twitter:image" content="https://walt.is/hero-wallet.png" />
+
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap"
           rel="stylesheet"
+        />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Why Walt Exists - Whitepaper",
+              "description": "The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android.",
+              "author": {
+                "@type": "Person",
+                "name": "Cole Bittel",
+                "url": "https://www.linkedin.com/in/bittelc/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Walt",
+                "url": "https://walt.is"
+              },
+              "datePublished": "2025-10-22",
+              "dateModified": "2025-10-22",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://walt.is/whitepaper"
+              },
+              "image": "https://walt.is/hero-wallet.png"
+            })
+          }}
         />
       </Head>
 
