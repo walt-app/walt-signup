@@ -264,7 +264,7 @@ export default function Home() {
               </form>
               <div className="hero-secondary-action">
                 <a className="hero-secondary-button" href="/motivation">
-                  Read the motivation
+                  Why we created Walt
                 </a>
               </div>
             </div>
