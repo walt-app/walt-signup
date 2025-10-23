@@ -1,32 +1,32 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 
-export default function Whitepaper() {
+export default function Motivation() {
   return (
     <>
       <Head>
-        <title>Why Walt Exists - Whitepaper</title>
+        <title>Why Walt Exists - Motivation</title>
         <meta
           name="description"
-          content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet."
+          content="The complete motivation explaining why Walt exists and the need for a privacy-first wallet."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://walt.is/whitepaper" />
+        <link rel="canonical" href="https://walt.is/motivation" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://walt.is/whitepaper" />
-        <meta property="og:title" content="Why Walt Exists - Whitepaper" />
-        <meta property="og:description" content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
+        <meta property="og:url" content="https://walt.is/motivation" />
+        <meta property="og:title" content="Why Walt Exists - Motivation" />
+        <meta property="og:description" content="The complete motivation explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
         <meta property="og:image" content="https://walt.is/hero-wallet.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://walt.is/whitepaper" />
-        <meta property="twitter:title" content="Why Walt Exists - Whitepaper" />
-        <meta property="twitter:description" content="The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
+        <meta property="twitter:url" content="https://walt.is/motivation" />
+        <meta property="twitter:title" content="Why Walt Exists - Motivation" />
+        <meta property="twitter:description" content="The complete motivation explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android." />
         <meta property="twitter:image" content="https://walt.is/hero-wallet.png" />
 
         <link rel="icon" href="/favicon.ico" />
@@ -42,8 +42,8 @@ export default function Whitepaper() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": "Why Walt Exists - Whitepaper",
-              "description": "The complete whitepaper explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android.",
+              "headline": "Why Walt Exists - Motivation",
+              "description": "The complete motivation explaining why Walt exists and the need for a privacy-first wallet. Learn about data privacy, Google's dominance, and the future of tap-to-pay on Android.",
               "author": {
                 "@type": "Person",
                 "name": "Cole Bittel",
@@ -58,7 +58,7 @@ export default function Whitepaper() {
               "dateModified": "2025-10-22",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://walt.is/whitepaper"
+                "@id": "https://walt.is/motivation"
               },
               "image": "https://walt.is/hero-wallet.png"
             })
@@ -66,8 +66,8 @@ export default function Whitepaper() {
         />
       </Head>
 
-      <div className="whitepaper-page">
-        <div className="whitepaper-hero">
+      <div className="motivation-page">
+        <div className="motivation-hero">
           <div className="section-shell">
             <div className="section-header">
               <h1 className="section-heading">Why Walt Exists</h1>
@@ -75,9 +75,9 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <div className="whitepaper-main">
+        <div className="motivation-main">
           <div className="section-shell">
-            <div className="whitepaper-content">
+            <div className="motivation-content">
               <p>
                 <em>(no generative AI was used to produce the following)</em>
               </p>
@@ -298,7 +298,7 @@ export default function Whitepaper() {
           </div>
         </div>
 
-        <Footer variant="whitepaper" />
+        <Footer variant="motivation" />
       </div>
     </>
   );

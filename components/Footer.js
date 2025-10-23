@@ -1,5 +1,5 @@
 export default function Footer({ variant = "default" }) {
-  const footerLinks = variant === "whitepaper"
+  const footerLinks = variant === "motivation"
     ? [
         { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
@@ -8,11 +8,11 @@ export default function Footer({ variant = "default" }) {
     : [
         { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
-        { label: "Whitepaper", href: "/whitepaper" },
+        { label: "Motivation", href: "/motivation" },
       ];
 
-  const footerClass = variant === "whitepaper"
-    ? "site-footer whitepaper-footer-override"
+  const footerClass = variant === "motivation"
+    ? "site-footer motivation-footer-override"
     : "site-footer";
 
   return (

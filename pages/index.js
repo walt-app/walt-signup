@@ -263,8 +263,8 @@ export default function Home() {
                 )}
               </form>
               <div className="hero-secondary-action">
-                <a className="hero-secondary-button" href="/whitepaper">
-                  Read the whitepaper
+                <a className="hero-secondary-button" href="/motivation">
+                  Read the motivation
                 </a>
               </div>
             </div>
