@@ -239,7 +239,7 @@ body {
 
 .hero-secondary-action {
   margin-top: 0.75rem;
-  text-align: right;
+  align-self: flex-end;
 }
 
 .hero-secondary-button {
