@@ -143,7 +143,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Walt - A Better Android Wallet</title>
+        <title>Walt - Private Wallet for Android</title>
         <meta
           name="description"
           content="Walt is the Android wallet app that never shares your data"
@@ -156,14 +156,14 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://walt.is" />
-        <meta property="og:title" content="Walt - A Better Android Wallet" />
+        <meta property="og:title" content="Walt - Private Wallet for Android" />
         <meta property="og:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
         <meta property="og:image" content="https://walt.is/hero-wallet.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://walt.is" />
-        <meta property="twitter:title" content="Walt - A Better Android Wallet" />
+        <meta property="twitter:title" content="Walt - Private Wallet for Android" />
         <meta property="twitter:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
         <meta property="twitter:image" content="https://walt.is/hero-wallet.png" />
 
