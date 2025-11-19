@@ -54,7 +54,7 @@ export default function Home() {
     },
     {
       period: "H2 2026",
-      title: "Issue the first tokens",
+      title: "Issue first DPAN numbers",
       description:
         "Business: Relationships with DPAN issuer signed and first DPAN issued. Kickoff with Visa for token approval process.<br>Product: Stand up Attestation Verifier (server) and collect Play Integrity + Key Attestation",
     },
