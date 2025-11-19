@@ -235,7 +235,7 @@ export default function Home() {
             <div className="hero-copy">
               <h1 className="hero-title">Private tap-to-pay for Android.</h1>
               <p className="hero-subhead">
-                The private alternative to Google Wallet. No purchase tracking, no data harvesting, no AI, no crypto. Just a
+                No purchase tracking, no data harvesting, no AI, no crypto. Just a
                 predictable, respectful wallet app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
