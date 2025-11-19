@@ -54,7 +54,7 @@ export default function Home() {
     },
     {
       period: "H2 2026",
-      title: "Issue the first tokens",
+      title: "Issue first DPAN numbers",
       description:
         "Business: Relationships with DPAN issuer signed and first DPAN issued. Kickoff with Visa for token approval process.<br>Product: Stand up Attestation Verifier (server) and collect Play Integrity + Key Attestation",
     },
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="hero-copy">
               <h1 className="hero-title">Private tap-to-pay for Android.</h1>
               <p className="hero-subhead">
-                No purchase tracking, no data harvesting, no AI. Just a
+                No purchase tracking, no data harvesting, no AI, no crypto. Just a
                 predictable, respectful wallet app.
               </p>
               <form onSubmit={handleSubmit} className="hero-form">
@@ -288,7 +288,7 @@ export default function Home() {
             <div className="section-header">
               <span className="section-eyebrow">What Is Walt</span>
               <h2 className="section-heading">
-                An Android wallet app that respects your privacy.
+                The private alternative to Google Wallet.
               </h2>
               <p className="section-lead">
                 Know that your transaction data is never collected, stored, or
