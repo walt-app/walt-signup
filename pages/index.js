@@ -56,13 +56,13 @@ export default function Home() {
       period: "Q1 2026",
       title: "Team and partnerships",
       description:
-        "Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.",
+        "Business: Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.<br />Application: Integrate with aggregator SDKs, establish e2e PCI compliance, integrate card load mechanism based on chosen bank's preferences.",
     },
     {
       period: "Q2 2026",
-      title: "Go live",
+      title: "First transactions",
       description:
-        "First bank onboarded, first cards loaded, first transactions made. Assess market viability to iPhone sister application.",
+        "Business: First bank onboarded, targeted geographic marketing, geographic outbound marketing, expand geographies.<br />Application: First cards loaded, first transactions made.",
     },
   ];
 
