@@ -47,28 +47,22 @@ export default function Home() {
 
   const roadmap = [
     {
-      period: "H1 2026",
-      title: "Business and product feasibility",
+      period: "H2 2025",
+      title: "Foundation and development",
       description:
-        "Business: Initial agreement with chosen aggregators. Create public waitlist.<br />Product: Wire Android HCE + Wallet role + CDCVM",
+        "Business: Create public waitlist, establish shortlist of aggregator candidates, assess geographic market viability.<br />Application: Complete Android app with mocks and fakes for aggregator SDKs.",
     },
     {
-      period: "H2 2026",
-      title: "Issue first DPAN numbers",
+      period: "Q1 2026",
+      title: "Team and partnerships",
       description:
-        "Business: Relationships with DPAN issuer signed and first DPAN issued. Kickoff with Visa for token approval process.<br>Product: Stand up Attestation Verifier (server) and collect Play Integrity + Key Attestation",
+        "Business: Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.<br />Application: Integrate with aggregator SDKs, establish e2e PCI compliance, integrate card load mechanism based on chosen bank's preferences.",
     },
     {
-      period: "H1 2027",
-      title: "Audits, regulation, compliance",
+      period: "Q2 2026",
+      title: "First transactions",
       description:
-        "Business: PCI DSS audit and certification.<br>Product: Integration of tokenization authorization and DPAN APIs into app. E2E TSP complete flow.",
-    },
-    {
-      period: "2027",
-      title: "Open beta",
-      description:
-        "Walt rolls out to early supporters with the privacy guarantees and polish we'd demand for ourselves.",
+        "Business: First bank onboarded, targeted geographic marketing, geographic outbound marketing, expand geographies.<br />Application: First cards loaded, first transactions made.",
     },
   ];
 
