@@ -195,8 +195,6 @@ export default function Motivation() {
 
               <p>We don't store your data in our servers. We don't store your card details on our servers. Everything that we believe to be sacred data lives encrypted on your own phone.</p>
 
-              <p>We open source as much as possible. Being able to see the code is how communities of confidence are built.</p>
-
               <p>
                 There's no AI. We won't add features. There's only one user flow that matters- Load a card into Walt, set Walt as your default wallet provider, tap to pay at your next coffee shop.
               </p>
