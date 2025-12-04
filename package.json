@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^14.0.0",
+    "next": "^14.2.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "resend": "^4.0.1"
@@ -19,10 +19,15 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "eslint": "^8.0.0",
-    "eslint-config-next": "^14.0.0",
+    "eslint-config-next": "^14.2.33",
     "typescript": "^5.0.0"
   },
-  "keywords": ["nextjs", "vercel", "resend", "waitlist"],
+  "keywords": [
+    "nextjs",
+    "vercel",
+    "resend",
+    "waitlist"
+  ],
   "author": "",
   "license": "MIT"
 }
