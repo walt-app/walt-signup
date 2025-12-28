@@ -152,14 +152,14 @@ export default function Home() {
         <meta property="og:url" content="https://walt.is" />
         <meta property="og:title" content="Walt - Private Wallet for Android" />
         <meta property="og:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
-        <meta property="og:image" content="https://walt.is/intro-screen.png" />
+        <meta property="og:image" content="https://walt.is/intro-screen.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://walt.is" />
         <meta property="twitter:title" content="Walt - Private Wallet for Android" />
         <meta property="twitter:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
-        <meta property="twitter:image" content="https://walt.is/intro-screen.png" />
+        <meta property="twitter:image" content="https://walt.is/intro-screen.jpg" />
 
         <link rel="icon" href="/favicon.ico" />
 
@@ -172,7 +172,7 @@ export default function Home() {
               "@type": "Organization",
               "name": "Walt",
               "url": "https://walt.is",
-              "logo": "https://walt.is/intro-screen.png",
+              "logo": "https://walt.is/intro-screen.jpg",
               "description": "Walt is the Android wallet app that never shares your data. Private tap-to-pay for Android.",
               "sameAs": [
                 "https://github.com/walt-app/walt-architecture",
@@ -261,7 +261,7 @@ export default function Home() {
             <div className="hero-visual">
               <div className="hero-image-wrap">
                 <Image
-                  src="/intro-screen.png"
+                  src="/intro-screen.jpg"
                   alt="Walt app intro screen"
                   fill
                   className="hero-image"
@@ -284,7 +284,7 @@ export default function Home() {
             <div className="hero-visual" style={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}>
               <div className="hero-image-wrap">
                 <Image
-                  src="/home-screen.png"
+                  src="/home-screen.jpg"
                   alt="Walt app home screen showing cards"
                   fill
                   className="hero-image"
