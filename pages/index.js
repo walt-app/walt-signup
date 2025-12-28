@@ -259,7 +259,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-visual">
-              <div className="hero-image-wrap">
+              <div className="phone-mockup">
                 <Image
                   src="/intro-screen.jpg"
                   alt="Walt app intro screen"
@@ -282,7 +282,7 @@ export default function Home() {
               </p>
             </div>
             <div className="hero-visual" style={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}>
-              <div className="hero-image-wrap">
+              <div className="phone-mockup">
                 <Image
                   src="/home-screen.jpg"
                   alt="Walt app home screen showing cards"
