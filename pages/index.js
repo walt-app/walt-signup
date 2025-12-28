@@ -323,6 +323,9 @@ export default function Home() {
                 A predictable, familiar wallet app.
               </p>
             </div>
+            {/* TODO: Implement enhanced step cards with Figma images */}
+            {/* Desktop: 3-column grid with images */}
+            {/* Mobile: Horizontal scrollable cards */}
             <div className="card-grid">
               {useSteps.map((step, index) => (
                 <article key={step.title} className="info-card">
