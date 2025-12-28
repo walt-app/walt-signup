@@ -306,20 +306,20 @@ h6 {
 /* Phone frame mockup styling - static pixel dimensions matching phone-frame.png (356×750px) */
 .phone-mockup {
   position: relative;
-  width: 356px;
-  height: 780px;
+  width: 320px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
 
-/* Target Next.js Image wrapper span - fill entire 356×750px container */
+/* Target Next.js Image wrapper span - fill entire container */
 .phone-mockup > span {
   position: absolute !important;
   inset: 0 !important;
-  width: 360px !important;
-  height: 720px !important;
+  width: 100% !important;
+  height: 100% !important;
   z-index: 1 !important;
 }
 
@@ -327,9 +327,9 @@ h6 {
 .phone-mockup img {
   object-fit: contain !important;
   object-position: center !important;
-  border-radius: 32px !important;
-  width: 340px !important;
-  height: 700px !important;
+  border-radius: 40px !important;
+  width: 100% !important;
+  height: 95% !important;
   position: relative !important;
 }
 
