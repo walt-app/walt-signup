@@ -40,8 +40,13 @@
   --radius-sm: 6px;
 }
 
-html, body {
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+html,
+body {
+  font-family:
+    "Geist",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   min-height: 100%;
   background: var(--bg-white);
   color: var(--text-black);
@@ -55,8 +60,13 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Geist', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Geist", sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -96,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-eyebrow {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.24em;
@@ -105,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-heading {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: clamp(2rem, 3.6vw, 3rem);
   font-weight: 600;
   line-height: 1.1;
@@ -114,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-lead {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.6;
@@ -128,7 +138,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 80px var(--padding-xl) 96px;
-  background: linear-gradient(180deg, var(--orange-gradient-start) 0%, var(--orange-gradient-end) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--orange-gradient-start) 0%,
+    var(--orange-gradient-end) 100%
+  );
   color: var(--text-black);
   min-height: 100vh;
 }
@@ -160,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: clamp(2.5rem, 5vw, 3rem);
   font-weight: 600;
   line-height: 1;
@@ -169,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subhead {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -198,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-white);
   border: none;
   color: var(--text-black);
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   padding: var(--padding-sm) var(--padding-xl);
@@ -223,13 +237,15 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--padding-sm) var(--padding-xl);
   border: none;
   border-radius: var(--radius-pill);
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--text-white);
   background: var(--bg-black);
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .hero-button:hover:not(:disabled) {
@@ -254,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--padding-xs) var(--padding-lg);
   border-radius: var(--radius-pill);
   border: 2px solid var(--text-black);
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-black);
@@ -284,8 +300,53 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0;
   overflow: visible;
+}
+
+/* Phone frame mockup styling - static pixel dimensions matching phone-frame.png (356×750px) */
+.phone-mockup {
+  position: relative;
+  width: 320px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Target Next.js Image wrapper span - fill entire container */
+.phone-mockup > span {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+/* Target the actual img element inside - scale to fit without cropping */
+.phone-mockup img {
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 40px !important;
+  width: 100% !important;
+  height: 95% !important;
+  position: relative !important;
+}
+
+/* Phone frame overlay on top */
+.phone-mockup::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/phone-frame.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-image {
@@ -324,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .info-card h3 {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-white);
@@ -351,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0.5rem;
   top: 0;
@@ -368,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -0.5rem;
   top: 0.5rem;
@@ -380,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-period {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -397,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-content h3 {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: var(--gap-xxs);
@@ -440,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-mark {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-black);
@@ -459,7 +520,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-link {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-black);
@@ -477,7 +538,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--gap-sm);
   padding: var(--gap-sm) var(--padding-md);
   border-radius: var(--radius-sm);
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;
   text-align: center;
@@ -582,7 +643,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .motivation-hero {
-  background: linear-gradient(180deg, var(--orange-gradient-start) 0%, var(--orange-gradient-end) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--orange-gradient-start) 0%,
+    var(--orange-gradient-end) 100%
+  );
   padding: 96px var(--padding-xl) 48px;
 }
 
@@ -600,7 +665,7 @@ h1, h2, h3, h4, h5, h6 {
 .motivation-content {
   max-width: 900px;
   margin: 0 auto;
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.7;
@@ -615,7 +680,7 @@ h1, h2, h3, h4, h5, h6 {
 .motivation-content h1,
 .motivation-content h2,
 .motivation-content h3 {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   color: var(--text-black);
   margin-bottom: 1rem;
   margin-top: 2rem;
@@ -692,7 +757,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .references h3 {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-black);
