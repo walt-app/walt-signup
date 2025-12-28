@@ -152,20 +152,16 @@ export default function Home() {
         <meta property="og:url" content="https://walt.is" />
         <meta property="og:title" content="Walt - Private Wallet for Android" />
         <meta property="og:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
-        <meta property="og:image" content="https://walt.is/hero-wallet.png" />
+        <meta property="og:image" content="https://walt.is/intro-screen.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://walt.is" />
         <meta property="twitter:title" content="Walt - Private Wallet for Android" />
         <meta property="twitter:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
-        <meta property="twitter:image" content="https://walt.is/hero-wallet.png" />
+        <meta property="twitter:image" content="https://walt.is/intro-screen.jpg" />
 
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap"
-          rel="stylesheet"
-        />
 
         {/* JSON-LD Structured Data */}
         <script
@@ -176,7 +172,7 @@ export default function Home() {
               "@type": "Organization",
               "name": "Walt",
               "url": "https://walt.is",
-              "logo": "https://walt.is/hero-wallet.png",
+              "logo": "https://walt.is/intro-screen.jpg",
               "description": "Walt is the Android wallet app that never shares your data. Private tap-to-pay for Android.",
               "sameAs": [
                 "https://github.com/walt-app/walt-architecture",
@@ -265,12 +261,34 @@ export default function Home() {
             <div className="hero-visual">
               <div className="hero-image-wrap">
                 <Image
-                  src="/hero-wallet.png"
-                  alt="Digital wallet tap-to-pay illustration"
+                  src="/intro-screen.jpg"
+                  alt="Walt app intro screen"
                   fill
                   className="hero-image"
                   priority
-                  sizes="(min-width: 960px) 520px, 80vw"
+                  sizes="(min-width: 960px) 360px, 320px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section section-white">
+          <div className="section-shell">
+            <div className="section-header">
+              <h2 className="section-heading">Tap-to-pay, as you know it</h2>
+              <p className="section-lead">
+                A predictable, familiar wallet experience that keeps your data private.
+              </p>
+            </div>
+            <div className="hero-visual" style={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}>
+              <div className="hero-image-wrap">
+                <Image
+                  src="/home-screen.jpg"
+                  alt="Walt app home screen showing cards"
+                  fill
+                  className="hero-image"
+                  sizes="(min-width: 960px) 360px, 320px"
                 />
               </div>
             </div>
@@ -300,32 +318,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="section section-light">
+        <div className="section section-white">
           <div className="section-shell">
             <div className="section-header">
               <span className="section-eyebrow">Using Walt</span>
-              <h2 className="section-heading">Tap-to-pay, as you know it</h2>
+              <h2 className="section-heading">Simple and straightforward</h2>
               <p className="section-lead">
                 A predictable, familiar wallet app.
               </p>
             </div>
-            <div className="card-grid card-grid-steps">
+            <div className="card-grid">
               {useSteps.map((step, index) => (
-                <article key={step.title} className="info-card step-card">
-                  <span className="step-counter">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
+                <article key={step.title} className="info-card">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
                 </article>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="section section-dark">
+        <div className="section section-light">
           <div className="section-shell">
             <div className="section-header">
               <span className="section-eyebrow">Roadmap</span>
