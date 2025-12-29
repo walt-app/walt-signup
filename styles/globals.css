@@ -359,18 +359,46 @@ h6 {
 
 /* Smaller phone mockup for step cards */
 .phone-mockup-small {
-  width: 142px;
+  position: relative;
+  width: 140px;
   height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .phone-mockup-small > span {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
+  z-index: 1 !important;
 }
 
 .phone-mockup-small img {
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 18px !important;
   width: 100% !important;
   height: 95% !important;
+  position: relative !important;
+}
+
+/* Phone frame overlay for small mockup */
+.phone-mockup-small::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/phone-frame.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* Steps container - desktop grid, mobile horizontal scroll */
@@ -389,7 +417,6 @@ h6 {
   padding: var(--padding-lg);
   background: var(--bg-white);
   border-radius: var(--radius-card);
-  border: 2px solid var(--orange-primary);
 }
 
 .step-image-container {
@@ -407,7 +434,7 @@ h6 {
 }
 
 .step-content h3 {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-black);
