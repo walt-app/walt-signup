@@ -357,6 +357,88 @@ h6 {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+/* Smaller phone mockup for step cards */
+.phone-mockup-small {
+  width: 142px;
+  height: 310px;
+}
+
+.phone-mockup-small > span {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.phone-mockup-small img {
+  width: 100% !important;
+  height: 95% !important;
+}
+
+/* Steps container - desktop grid, mobile horizontal scroll */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+  width: 100%;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+  padding: var(--padding-lg);
+  background: var(--bg-white);
+  border-radius: var(--radius-card);
+  border: 2px solid var(--orange-primary);
+}
+
+.step-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  text-align: center;
+}
+
+.step-content h3 {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-black);
+  letter-spacing: -0.01em;
+}
+
+.step-content p {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+}
+
+/* Mobile: Horizontal scroll */
+@media (max-width: 768px) {
+  .steps-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--gap-md);
+    padding-bottom: var(--gap-sm);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .step-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+}
+
 /* Section Backgrounds */
 .section-light {
   background: linear-gradient(180deg, #ffe9dc 0%, #ffd4c0 50%, #ffbfa0 100%);
