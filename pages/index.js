@@ -32,16 +32,22 @@ export default function Home() {
       title: "Download & install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
+      image: "/intro-screen.jpg",
+      alt: "Walt app intro screen"
     },
     {
       title: "Add your cards",
       description:
         "Scan or enter details manually. Everything stays encrypted locally. Your card details never leave your device.",
+      image: "/add-card.jpg",
+      alt: "Walt app add card screen"
     },
     {
       title: "Tap to pay",
       description:
         "Hold your phone near any NFC-enabled terminal just like you're used to.",
+      image: "/home-screen.jpg",
+      alt: "Walt app home screen with cards"
     },
   ];
 
@@ -269,28 +275,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="section section-white">
-          <div className="section-shell">
-            <div className="section-header">
-              <h2 className="section-heading">Tap-to-pay, as you know it</h2>
-              <p className="section-lead">
-                A predictable, familiar wallet experience that keeps your data private.
-              </p>
-            </div>
-            <div className="hero-visual" style={{ width: '100%', maxWidth: '360px', margin: '0 auto' }}>
-              <div className="phone-mockup">
-                <Image
-                  src="/home-screen.jpg"
-                  alt="Walt app home screen showing cards"
-                  fill
-                  className="hero-image"
-                  sizes="(min-width: 960px) 360px, 320px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="section section-light">
           <div className="section-shell">
             <div className="section-header">
@@ -323,11 +307,24 @@ export default function Home() {
                 A predictable, familiar wallet app.
               </p>
             </div>
-            <div className="card-grid">
+            <div className="steps-container">
               {useSteps.map((step, index) => (
-                <article key={step.title} className="info-card">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
+                <article key={step.title} className="step-card">
+                  <div className="step-image-container">
+                    <div className="phone-mockup phone-mockup-small">
+                      <Image
+                        src={step.image}
+                        alt={step.alt}
+                        fill
+                        className="hero-image"
+                        sizes="240px"
+                      />
+                    </div>
+                  </div>
+                  <div className="step-content">
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
                 </article>
               ))}
             </div>
