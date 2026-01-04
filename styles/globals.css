@@ -208,6 +208,7 @@ h6 {
 }
 
 .hero-input {
+  display: block;
   width: 100%;
   background: var(--bg-white);
   border: none;
@@ -230,7 +231,7 @@ h6 {
 }
 
 .hero-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
