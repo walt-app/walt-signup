@@ -216,9 +216,10 @@ h6 {
   font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  padding: var(--padding-xs) var(--padding-md);
+  padding: 10px 18px;
   border-radius: var(--radius-pill);
   outline: none;
+  line-height: 1.5;
 }
 
 .hero-input::placeholder {
@@ -235,7 +236,7 @@ h6 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: var(--padding-xs) var(--padding-md);
+  padding: 10px 18px;
   border: none;
   border-radius: var(--radius-pill);
   font-family: "Geist", sans-serif;
@@ -244,6 +245,7 @@ h6 {
   color: var(--text-white);
   background: var(--bg-black);
   cursor: pointer;
+  line-height: 1.5;
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
@@ -268,12 +270,13 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-xs) var(--padding-md);
+  padding: 10px 18px;
   border-radius: var(--radius-pill);
   border: 2px solid var(--text-black);
   font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.5;
   color: var(--text-black);
   background: transparent;
   text-decoration: none;
