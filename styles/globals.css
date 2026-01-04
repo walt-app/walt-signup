@@ -216,7 +216,7 @@ h6 {
   font-family: "Geist", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  padding: var(--padding-sm) var(--padding-xl);
+  padding: var(--padding-xs) var(--padding-md);
   border-radius: var(--radius-pill);
   outline: none;
 }
@@ -235,12 +235,12 @@ h6 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: var(--padding-sm) var(--padding-xl);
+  padding: var(--padding-xs) var(--padding-md);
   border: none;
   border-radius: var(--radius-pill);
   font-family: "Geist", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-white);
   background: var(--bg-black);
   cursor: pointer;
