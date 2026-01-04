@@ -277,6 +277,7 @@ h6 {
   background: transparent;
   text-decoration: none;
   transition: all 0.2s ease;
+  min-width: 200px;
 }
 
 .hero-secondary-button:hover {
