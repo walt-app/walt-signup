@@ -268,7 +268,7 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-xs) var(--padding-lg);
+  padding: var(--padding-xs) var(--padding-md);
   border-radius: var(--radius-pill);
   border: 2px solid var(--text-black);
   font-family: "Geist", sans-serif;
@@ -945,13 +945,9 @@ h6 {
 @media (min-width: 768px) {
   .hero-secondary-actions {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     gap: var(--gap-md);
     flex-wrap: nowrap;
-  }
-
-  .hero-secondary-button {
-    flex: 1;
   }
 }
 
