@@ -277,6 +277,8 @@ h6 {
   background: transparent;
   text-decoration: none;
   transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .hero-secondary-button:hover {
@@ -921,5 +923,168 @@ h6 {
 
   .references {
     padding: 1.5rem;
+  }
+}
+
+/* =============================================================================
+   Pitch Deck Page Styles
+   ============================================================================= */
+
+/* Hero Secondary Actions - Responsive Button Container */
+.hero-secondary-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-sm);
+  margin-top: var(--gap-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .hero-secondary-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap-md);
+    flex-wrap: nowrap;
+  }
+}
+
+/* Pitch Page Container */
+.pitch-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+}
+
+/* Pitch Hero Section */
+.pitch-hero {
+  background: linear-gradient(
+    180deg,
+    var(--orange-gradient-start) 0%,
+    var(--orange-gradient-end) 100%
+  );
+  padding: 96px var(--padding-xl) 48px;
+}
+
+.pitch-hero .section-shell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pitch-hero h1 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-black);
+  margin-bottom: var(--gap-md);
+}
+
+.pitch-hero p {
+  font-family: "Geist", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  color: var(--text-black);
+  margin-bottom: var(--gap-lg);
+}
+
+/* Download Buttons */
+.pitch-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  width: fit-content;
+}
+
+.pitch-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+  padding: var(--padding-sm) var(--padding-lg);
+  border-radius: var(--radius-pill);
+  background: var(--bg-black);
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: "Geist", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 2px solid var(--bg-black);
+}
+
+.pitch-download-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.pitch-download-button.outline {
+  background: transparent;
+  color: var(--text-black);
+  border: 2px solid var(--text-black);
+}
+
+.pitch-download-button.outline:hover {
+  background: var(--text-black);
+  color: var(--text-white);
+}
+
+/* Slides Section */
+.pitch-slides {
+  flex: 1;
+  padding: 96px var(--padding-xl);
+  background: var(--bg-white);
+}
+
+.slides-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap-lg);
+}
+
+/* Individual Slide Card */
+.slide-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.slide-card:hover {
+  border-color: var(--orange-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive - Pitch Page */
+@media (max-width: 768px) {
+  .pitch-hero {
+    padding: 72px var(--padding-md) 36px;
+  }
+
+  .pitch-slides {
+    padding: 72px var(--padding-md);
+  }
+
+  .slides-container {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+
+  .pitch-downloads {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pitch-download-button {
+    width: 100%;
   }
 }
