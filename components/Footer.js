@@ -5,14 +5,22 @@ export default function Footer({ variant = "default" }) {
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
         { label: "Home", href: "/" },
       ]
+    : variant === "pitch"
+    ? [
+        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
+        { label: "Home", href: "/" },
+        { label: "Motivation", href: "/motivation" },
+      ]
     : [
         { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/bittelc/" },
         { label: "Motivation", href: "/motivation" },
+        { label: "Pitch Deck", href: "/pitch" },
       ];
 
-  const footerClass = variant === "motivation"
-    ? "site-footer motivation-footer-override"
+  const footerClass = variant === "motivation" || variant === "pitch"
+    ? `site-footer ${variant}-footer-override`
     : "site-footer";
 
   return (
