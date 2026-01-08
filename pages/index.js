@@ -343,19 +343,17 @@ export default function Home() {
                 Here's what you can expect from us.
               </p>
             </div>
-            <ol className="timeline">
+            <div className="roadmap-grid">
               {roadmap.map((item) => (
-                <li key={item.period} className="timeline-item">
-                  <span className="timeline-period">{item.period}</span>
-                  <div className="timeline-content">
-                    <h3>{item.title}</h3>
-                    <p
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    ></p>
-                  </div>
-                </li>
+                <article key={item.period} className="roadmap-card">
+                  <span className="roadmap-period">{item.period}</span>
+                  <h3>{item.title}</h3>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></p>
+                </article>
               ))}
-            </ol>
+            </div>
           </div>
         </div>
 
