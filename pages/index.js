@@ -56,20 +56,42 @@ export default function Home() {
     {
       period: "H2 2025",
       title: "Foundation and development",
-      business: "Create public waitlist, establish shortlist of aggregator candidates, assess geographic market viability.",
-      application: "Complete Android app with mocks and fakes for aggregator SDKs.",
+      business: [
+        { text: "Create public waitlist", completed: true },
+        { text: "Establish shortlist of aggregator candidates", completed: true },
+        { text: "Assess geographic market viability", completed: true }
+      ],
+      application: [
+        { text: "Complete Android app with mocks and fakes for aggregator SDKs", completed: true }
+      ],
     },
     {
       period: "Q1 2026",
       title: "Team and partnerships",
-      business: "Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.",
-      application: "Integrate with aggregator SDKs, establish e2e PCI compliance, integrate card load mechanism based on chosen bank's preferences.",
+      business: [
+        { text: "Find a cofounder", completed: false },
+        { text: "Decide on aggregator", completed: true },
+        { text: "Create first contract with supporting bank in chosen geographic focus", completed: false }
+      ],
+      application: [
+        { text: "Integrate with aggregator SDKs", completed: true },
+        { text: "Establish e2e PCI compliance", completed: true },
+        { text: "Integrate card load mechanism based on chosen bank's preferences", completed: false }
+      ],
     },
     {
       period: "Q2 2026",
       title: "First transactions",
-      business: "First bank onboarded, targeted geographic marketing, geographic outbound marketing, expand geographies.",
-      application: "First cards loaded, first transactions made.",
+      business: [
+        { text: "First bank onboarded", completed: false },
+        { text: "Targeted geographic marketing", completed: false },
+        { text: "Geographic outbound marketing", completed: false },
+        { text: "Expand geographies", completed: false }
+      ],
+      application: [
+        { text: "First cards loaded", completed: false },
+        { text: "First transactions made", completed: false }
+      ],
     },
   ];
 
@@ -360,14 +382,36 @@ export default function Home() {
                       <div className="roadmap-phase">
                         <h3 className="roadmap-phase-title">{item.title}</h3>
                         <div className="roadmap-details">
-                          <p className="roadmap-detail">
+                          <div className="roadmap-detail-section">
                             <strong>Business</strong>
-                            {item.business}
-                          </p>
-                          <p className="roadmap-detail">
+                            <ul className="roadmap-checklist">
+                              {item.business.map((businessItem, idx) => (
+                                <li key={idx} className="roadmap-checklist-item">
+                                  {businessItem.completed && (
+                                    <svg className="roadmap-check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M16.6667 5L7.50002 14.1667L3.33335 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                  )}
+                                  <span className={businessItem.completed ? "" : "roadmap-item-no-check"}>{businessItem.text}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="roadmap-detail-section">
                             <strong>Application</strong>
-                            {item.application}
-                          </p>
+                            <ul className="roadmap-checklist">
+                              {item.application.map((appItem, idx) => (
+                                <li key={idx} className="roadmap-checklist-item">
+                                  {appItem.completed && (
+                                    <svg className="roadmap-check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M16.6667 5L7.50002 14.1667L3.33335 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                  )}
+                                  <span className={appItem.completed ? "" : "roadmap-item-no-check"}>{appItem.text}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>

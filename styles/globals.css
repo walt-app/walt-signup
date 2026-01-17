@@ -636,6 +636,51 @@ h6 {
   display: block;
 }
 
+.roadmap-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.roadmap-detail-section strong {
+  font-family: "Geist", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+}
+
+.roadmap-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.roadmap-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-sm);
+  font-family: "Geist", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+}
+
+.roadmap-check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--orange-primary);
+}
+
+.roadmap-item-no-check {
+  margin-left: 32px;
+}
+
 /* Legacy Timeline (keep for backwards compatibility) */
 .timeline {
   list-style: none;
