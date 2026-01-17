@@ -243,6 +243,24 @@ h6 {
   text-decoration: underline;
 }
 
+.pitch-link {
+  font-family: "Geist", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text-dark);
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-top: var(--gap-sm);
+}
+
+.pitch-link:hover {
+  text-decoration: underline;
+}
+
 .hero-form {
   display: flex;
   flex-direction: column;

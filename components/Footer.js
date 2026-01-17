@@ -27,7 +27,7 @@ export default function Footer({ variant = "default" }) {
     <footer className={footerClass}>
       <div className="footer-shell">
         <div className="footer-meta">
-          <span className="footer-mark">© 2025 Walt</span>
+          <span className="footer-mark">© 2026 Walt</span>
           <span className="footer-credit">
             Developed by Embedded Engineering ApS
           </span>

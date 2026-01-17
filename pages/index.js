@@ -33,7 +33,7 @@ export default function Home() {
       title: "Download and install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
-      image: "/image1-new.jpg",
+      image: "/intro-screen.jpg",
       alt: "Walt app download screen"
     },
     {
@@ -266,6 +266,9 @@ export default function Home() {
                     <div className={`form-message ${messageType}`}>{message}</div>
                   )}
                 </form>
+                <Link href="/pitch" className="pitch-link">
+                  View pitch deck →
+                </Link>
               </div>
               <div className="hero-visual">
                 <div className="phone-mockup">
