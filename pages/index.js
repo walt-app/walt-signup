@@ -241,6 +241,9 @@ export default function Home() {
                   <Link href="/motivation" className="hero-subhead">
                     Why we created Walt →
                   </Link>
+                  <Link href="/pitch" className="hero-subhead">
+                    View pitch deck →
+                  </Link>
                 </div>
                 <form onSubmit={handleSubmit} className="hero-form">
                   <div className="hero-input-group">
@@ -266,9 +269,6 @@ export default function Home() {
                     <div className={`form-message ${messageType}`}>{message}</div>
                   )}
                 </form>
-                <Link href="/pitch" className="hero-button outline">
-                  View pitch deck →
-                </Link>
               </div>
               <div className="hero-visual">
                 <div className="phone-mockup">

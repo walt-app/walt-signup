@@ -311,17 +311,6 @@ h6 {
   transform: none;
 }
 
-.hero-button.outline {
-  background: transparent;
-  color: var(--text-dark);
-  border: 2px solid var(--text-dark);
-}
-
-.hero-button.outline:hover {
-  background: var(--text-dark);
-  color: var(--text-white);
-}
-
 .hero-secondary-action {
   margin-top: var(--gap-sm);
 }
