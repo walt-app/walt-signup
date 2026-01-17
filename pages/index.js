@@ -266,7 +266,7 @@ export default function Home() {
                     <div className={`form-message ${messageType}`}>{message}</div>
                   )}
                 </form>
-                <Link href="/pitch" className="hero-secondary-button">
+                <Link href="/pitch" className="hero-button-outline">
                   View pitch deck →
                 </Link>
               </div>
