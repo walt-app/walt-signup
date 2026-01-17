@@ -311,29 +311,13 @@ h6 {
   transform: none;
 }
 
-.hero-button-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: var(--padding-md) var(--padding-lg);
-  border: 2px solid var(--text-dark);
-  border-radius: var(--radius-pill);
-  font-family: "Geist", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--text-dark);
+.hero-button.outline {
   background: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
+  color: var(--text-dark);
+  border: 2px solid var(--text-dark);
 }
 
-.hero-button-outline:hover {
-  transform: translateY(-2px);
+.hero-button.outline:hover {
   background: var(--text-dark);
   color: var(--text-white);
 }
