@@ -33,7 +33,7 @@ export default function Home() {
       title: "Download and install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
-      image: "/home-screen.jpg",
+      image: "/promo-screen.jpg",
       alt: "Walt app download screen"
     },
     {
