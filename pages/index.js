@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
-  const whatIsFeatures = [
+  const uspFeatures = [
     {
       title: "Spend like you're used to",
       description:
@@ -29,11 +30,11 @@ export default function Home() {
 
   const useSteps = [
     {
-      title: "Download & install",
+      title: "Download and install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
-      image: "/intro-screen.jpg",
-      alt: "Walt app intro screen"
+      image: "/image1-new.jpg",
+      alt: "Walt app download screen"
     },
     {
       title: "Add your cards",
@@ -51,24 +52,24 @@ export default function Home() {
     },
   ];
 
-  const roadmap = [
+  const roadmapItems = [
     {
       period: "H2 2025",
       title: "Foundation and development",
-      description:
-        "Business: Create public waitlist, establish shortlist of aggregator candidates, assess geographic market viability.<br />Application: Complete Android app with mocks and fakes for aggregator SDKs.",
+      business: "Create public waitlist, establish shortlist of aggregator candidates, assess geographic market viability.",
+      application: "Complete Android app with mocks and fakes for aggregator SDKs.",
     },
     {
       period: "Q1 2026",
       title: "Team and partnerships",
-      description:
-        "Business: Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.<br />Application: Integrate with aggregator SDKs, establish e2e PCI compliance, integrate card load mechanism based on chosen bank's preferences.",
+      business: "Find a cofounder, decide on aggregator, create first contract with supporting bank in chosen geographic focus.",
+      application: "Integrate with aggregator SDKs, establish e2e PCI compliance, integrate card load mechanism based on chosen bank's preferences.",
     },
     {
       period: "Q2 2026",
       title: "First transactions",
-      description:
-        "Business: First bank onboarded, targeted geographic marketing, geographic outbound marketing, expand geographies.<br />Application: First cards loaded, first transactions made.",
+      business: "First bank onboarded, targeted geographic marketing, geographic outbound marketing, expand geographies.",
+      application: "First cards loaded, first transactions made.",
     },
   ];
 
@@ -226,138 +227,153 @@ export default function Home() {
       </Head>
 
       <div className="scroll-container" id="top">
-        <div className="section hero-section">
-          <div className="hero-inner">
-            <div className="hero-copy">
-              <h1 className="hero-title">Private tap-to-pay for Android.</h1>
-              <form onSubmit={handleSubmit} className="hero-form">
-                <div className="hero-input-group">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    className="hero-input"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="hero-button"
-                    disabled={isLoading}
-                  >
-                    <span>
-                      {isLoading ? "Joining..." : "Join the waitlist"}
-                    </span>
-                  </button>
+        {/* Hero Section */}
+        <section className="hero-section">
+          <header className="site-header">
+            <Link href="/" className="site-logo">Walt</Link>
+          </header>
+
+          <div className="hero-card">
+            <div className="hero-inner">
+              <div className="hero-copy">
+                <div className="hero-text">
+                  <h1 className="hero-title">Private tap-to-pay for Android</h1>
+                  <Link href="/motivation" className="hero-subhead">
+                    Why we created Walt →
+                  </Link>
                 </div>
-                {message && (
-                  <div className={`form-message ${messageType}`}>{message}</div>
-                )}
-              </form>
-              <div className="hero-secondary-actions">
-                <a className="hero-secondary-button" href="/motivation">
-                  Why we created Walt
-                </a>
-                <a className="hero-secondary-button" href="/pitch">
-                  View pitch deck
-                </a>
+                <form onSubmit={handleSubmit} className="hero-form">
+                  <div className="hero-input-group">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                      className="hero-input"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="hero-button"
+                      disabled={isLoading}
+                    >
+                      <span>
+                        {isLoading ? "Joining..." : "Join the waitlist"}
+                      </span>
+                    </button>
+                  </div>
+                  {message && (
+                    <div className={`form-message ${messageType}`}>{message}</div>
+                  )}
+                </form>
               </div>
-            </div>
-            <div className="hero-visual">
-              <div className="phone-mockup">
-                <Image
-                  src="/intro-screen.jpg"
-                  alt="Walt app intro screen"
-                  fill
-                  className="hero-image"
-                  priority
-                  sizes="(min-width: 960px) 360px, 320px"
-                />
+              <div className="hero-visual">
+                <div className="phone-mockup">
+                  <Image
+                    src="/intro-screen.jpg"
+                    alt="Walt app home screen"
+                    fill
+                    className="hero-image"
+                    priority
+                    sizes="(min-width: 960px) 305px, 221px"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="section section-light">
+        {/* What Is Walt Section */}
+        <section className="section">
           <div className="section-shell">
-            <div className="section-header">
-              <span className="section-eyebrow">What Is Walt</span>
+            <div className="section-card-header">
               <h2 className="section-heading">
-                The private alternative to Google Wallet.
+                The private alternative to Google Wallet
               </h2>
-              <p className="section-lead">
-                Know that your transaction data is never collected, stored, or
-                sold.
+              <p className="section-subheading">
+                Know that your transaction data is never collected, stored, or sold.
               </p>
             </div>
-            <div className="card-grid">
-              {whatIsFeatures.map((item) => (
-                <article key={item.title} className="info-card">
+            <div className="usp-grid">
+              {uspFeatures.map((item) => (
+                <article key={item.title} className="usp-card">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="section section-white">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="section-eyebrow">Using Walt</span>
-              <h2 className="section-heading">Simple and straightforward</h2>
-              <p className="section-lead">
-                A predictable, familiar wallet app.
-              </p>
+        {/* App / Steps Section */}
+        <section className="section">
+          <div className="section-card">
+            <div className="section-card-content">
+              <div className="section-card-header">
+                <h2 className="section-heading">Simple and straightforward</h2>
+                <p className="section-subheading">
+                  A predictable, familiar wallet app.
+                </p>
+              </div>
+              <div className="steps-container">
+                {useSteps.map((step) => (
+                  <article key={step.title} className="step-card">
+                    <div className="step-image-container">
+                      <div className="phone-mockup-small">
+                        <Image
+                          src={step.image}
+                          alt={step.alt}
+                          fill
+                          sizes="240px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                    </div>
+                    <div className="step-content">
+                      <h3>{step.title}</h3>
+                      <p>{step.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
-            <div className="steps-container">
-              {useSteps.map((step, index) => (
-                <article key={step.title} className="step-card">
-                  <div className="step-image-container">
-                    <div className="phone-mockup phone-mockup-small">
-                      <Image
-                        src={step.image}
-                        alt={step.alt}
-                        fill
-                        className="hero-image"
-                        sizes="240px"
-                      />
+          </div>
+        </section>
+
+        {/* Roadmap Section */}
+        <section className="section">
+          <div className="section-card">
+            <div className="roadmap">
+              <div className="roadmap-header">
+                <h2 className="roadmap-title">Roadmap</h2>
+                <p className="roadmap-subtitle">Here's what you can expect from us.</p>
+              </div>
+              <div className="roadmap-items">
+                {roadmapItems.map((item) => (
+                  <div key={item.period} className="roadmap-item">
+                    <div className="roadmap-bar"></div>
+                    <div className="roadmap-content">
+                      <span className="roadmap-period">{item.period}</span>
+                      <div className="roadmap-phase">
+                        <h3 className="roadmap-phase-title">{item.title}</h3>
+                        <div className="roadmap-details">
+                          <p className="roadmap-detail">
+                            <strong>Business</strong>
+                            {item.business}
+                          </p>
+                          <p className="roadmap-detail">
+                            <strong>Application</strong>
+                            {item.application}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="step-content">
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-                </article>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="section section-light">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="section-eyebrow">Roadmap</span>
-              <h2 className="section-heading">How we'll deliver Walt</h2>
-              <p className="section-lead">
-                Here's what you can expect from us.
-              </p>
-            </div>
-            <ol className="timeline">
-              {roadmap.map((item) => (
-                <li key={item.period} className="timeline-item">
-                  <span className="timeline-period">{item.period}</span>
-                  <div className="timeline-content">
-                    <h3>{item.title}</h3>
-                    <p
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    ></p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
+        </section>
 
         <Footer />
       </div>
