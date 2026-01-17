@@ -33,7 +33,7 @@ export default function Home() {
       title: "Download and install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
-      image: "/image1-new.jpg",
+      image: "/promo-screen.jpg",
       alt: "Walt app download screen"
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
       title: "Tap to pay",
       description:
         "Hold your phone near any NFC-enabled terminal just like you're used to.",
-      image: "/home-screen.jpg",
+      image: "/intro-screen.jpg",
       alt: "Walt app home screen with cards"
     },
   ];
@@ -240,6 +240,9 @@ export default function Home() {
                   <h1 className="hero-title">Private tap-to-pay for Android</h1>
                   <Link href="/motivation" className="hero-subhead">
                     Why we created Walt →
+                  </Link>
+                  <Link href="/pitch" className="hero-subhead">
+                    View pitch deck →
                   </Link>
                 </div>
                 <form onSubmit={handleSubmit} className="hero-form">
