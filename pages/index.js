@@ -33,7 +33,7 @@ export default function Home() {
       title: "Download and install",
       description:
         "Once Walt reaches general availability, download Walt from our website to your Android device.",
-      image: "/intro-screen.jpg",
+      image: "/home-screen.jpg",
       alt: "Walt app download screen"
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
       title: "Tap to pay",
       description:
         "Hold your phone near any NFC-enabled terminal just like you're used to.",
-      image: "/home-screen.jpg",
+      image: "/intro-screen.jpg",
       alt: "Walt app home screen with cards"
     },
   ];
