@@ -229,6 +229,16 @@ h6 {
   color: var(--text-dark);
 }
 
+.hero-subtitle {
+  font-family: "Geist", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 .hero-subhead {
   font-family: "Geist", sans-serif;
   font-size: 24px;
@@ -875,6 +885,10 @@ h6 {
 
   .hero-title {
     font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
   }
 
   .hero-subhead {

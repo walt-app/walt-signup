@@ -259,7 +259,8 @@ export default function Home() {
             <div className="hero-inner">
               <div className="hero-copy">
                 <div className="hero-text">
-                  <h1 className="hero-title">The tap-to-pay alternative to Google Wallet and Apple Pay</h1>
+                  <h1 className="hero-title">The humble, private tap-to-pay app</h1>
+                  <p className="hero-subtitle">A European alternative to Google Wallet and Apple Pay</p>
                   <Link href="/motivation" className="hero-subhead">
                     Why we created Walt →
                   </Link>
