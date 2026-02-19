@@ -1267,7 +1267,8 @@ h6 {
 /* Download Buttons */
 .pitch-downloads {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--gap-sm);
   width: fit-content;
 }
@@ -1328,12 +1329,107 @@ h6 {
   overflow: hidden;
   border: 2px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  font: inherit;
+  text-align: inherit;
+  width: 100%;
 }
 
 .slide-card:hover {
   border-color: var(--orange-primary);
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightbox-fade-in 0.2s ease;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  line-height: 1;
+  padding: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-counter {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Geist", sans-serif;
+  font-size: 0.875rem;
+  margin-top: 12px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-prev {
+  left: 12px;
+}
+
+.lightbox-next {
+  right: 12px;
 }
 
 /* Mobile Responsive - Pitch Page */
@@ -1358,5 +1454,18 @@ h6 {
 
   .pitch-download-button {
     width: 100%;
+  }
+
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 12px;
+  }
+
+  .lightbox-prev {
+    left: 4px;
+  }
+
+  .lightbox-next {
+    right: 4px;
   }
 }
