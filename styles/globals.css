@@ -345,11 +345,11 @@ h6 {
   align-items: center;
 }
 
-/* Phone mockup - Figma design: 305×715px desktop */
+/* Phone mockup - Figma design: 305×715px desktop, reduced for layout balance */
 .phone-mockup {
   position: relative;
-  width: 305px;
-  height: 715px;
+  width: 250px;
+  height: 586px;
   border-radius: var(--radius-phone);
   box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -1001,7 +1001,7 @@ h6 {
 @media (min-width: 960px) {
   .hero-inner {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 125px;
   }
