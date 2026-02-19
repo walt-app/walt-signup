@@ -1,8 +1,31 @@
+import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "../components/Footer";
 
 export default function Pitch() {
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const goNext = useCallback(() => setLightboxIndex((i) => (i + 1) % 12), []);
+  const goPrev = useCallback(() => setLightboxIndex((i) => (i - 1 + 12) % 12), []);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKey = (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKey);
+    };
+  }, [lightboxIndex, closeLightbox, goNext, goPrev]);
+
   const slides = Array.from({ length: 12 }, (_, i) => ({
     number: i + 1,
     src: `/pitch/slide-${String(i + 1).padStart(2, '0')}.jpg`,
@@ -66,16 +89,20 @@ export default function Pitch() {
       </Head>
 
       <div className="pitch-page">
-        {/* Hero Section */}
-        <section className="pitch-hero">
-          <div className="section-shell">
+        {/* Hero Section - matches primary page layout */}
+        <section className="hero-section">
+          <header className="site-header">
+            <Link href="/" className="site-logo">
+              Walt
+            </Link>
+          </header>
+
+          <div className="pitch-card">
             <h1>Pitch Deck</h1>
             <p>
               A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS.
               Review our market opportunity, technology approach, roadmap, and business model.
             </p>
-
-            {/* Download Section */}
             <div className="pitch-downloads">
               <a
                 href="/pitch/pitch-deck.pdf"
@@ -106,7 +133,12 @@ export default function Pitch() {
         <section className="pitch-slides">
           <div className="slides-container">
             {slides.map((slide, index) => (
-              <div key={slide.number} className="slide-card">
+              <button
+                key={slide.number}
+                className="slide-card"
+                onClick={() => setLightboxIndex(index)}
+                aria-label={`View slide ${slide.number} of 12`}
+              >
                 <Image
                   src={slide.src}
                   alt={slide.alt}
@@ -114,10 +146,43 @@ export default function Pitch() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={index === 0}
                 />
-              </div>
+              </button>
             ))}
           </div>
         </section>
+
+        {/* Lightbox */}
+        {lightboxIndex !== null && (
+          <div className="lightbox-overlay" onClick={closeLightbox}>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
+              &times;
+            </button>
+            <button
+              className="lightbox-nav lightbox-prev"
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              aria-label="Previous slide"
+            >
+              &#8249;
+            </button>
+            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={slides[lightboxIndex].src}
+                alt={slides[lightboxIndex].alt}
+              />
+              <div className="lightbox-counter">
+                {lightboxIndex + 1} / {slides.length}
+              </div>
+            </div>
+            <button
+              className="lightbox-nav lightbox-next"
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              aria-label="Next slide"
+            >
+              &#8250;
+            </button>
+          </div>
+        )}
 
         {/* Footer */}
         <Footer variant="pitch" />

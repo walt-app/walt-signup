@@ -1227,47 +1227,48 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg-white);
+  background: var(--page-bg);
 }
 
-/* Pitch Hero Section */
-.pitch-hero {
+/* Pitch Card - mirrors hero-card from primary page */
+.pitch-card {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   background: linear-gradient(
     180deg,
     var(--orange-gradient-start) 0%,
     var(--orange-gradient-end) 100%
   );
-  padding: 96px var(--padding-xl) 48px;
+  border-radius: var(--radius-section);
+  padding: 32px var(--padding-section);
 }
 
-.pitch-hero .section-shell {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.pitch-hero h1 {
+.pitch-card h1 {
   font-family: "Geist", sans-serif;
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
   color: var(--text-dark);
-  margin-bottom: var(--gap-md);
+  margin-bottom: 8px;
 }
 
-.pitch-hero p {
+.pitch-card p {
   font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.6;
   color: var(--text-dark);
-  margin-bottom: var(--gap-lg);
+  margin-bottom: var(--gap-sm);
 }
 
 /* Download Buttons */
 .pitch-downloads {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--gap-sm);
   width: fit-content;
 }
@@ -1308,15 +1309,14 @@ h6 {
 /* Slides Section */
 .pitch-slides {
   flex: 1;
-  padding: 96px var(--padding-xl);
-  background: var(--bg-white);
+  padding: 24px var(--padding-xl) 48px;
 }
 
 .slides-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--gap-lg);
 }
 
@@ -1328,6 +1328,12 @@ h6 {
   overflow: hidden;
   border: 2px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  font: inherit;
+  text-align: inherit;
+  width: 100%;
 }
 
 .slide-card:hover {
@@ -1336,14 +1342,102 @@ h6 {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Lightbox Overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightbox-fade-in 0.2s ease;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  line-height: 1;
+  padding: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-content {
+  width: 90vw;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-counter {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Geist", sans-serif;
+  font-size: 0.875rem;
+  margin-top: 12px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-prev {
+  left: 12px;
+}
+
+.lightbox-next {
+  right: 12px;
+}
+
 /* Mobile Responsive - Pitch Page */
 @media (max-width: 768px) {
-  .pitch-hero {
-    padding: 72px var(--padding-md) 36px;
+  .pitch-card {
+    padding: var(--padding-md);
   }
 
   .pitch-slides {
-    padding: 72px var(--padding-md);
+    padding: 36px var(--padding-md);
   }
 
   .slides-container {
@@ -1358,5 +1452,18 @@ h6 {
 
   .pitch-download-button {
     width: 100%;
+  }
+
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 12px;
+  }
+
+  .lightbox-prev {
+    left: 4px;
+  }
+
+  .lightbox-next {
+    right: 4px;
   }
 }
