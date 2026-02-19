@@ -158,8 +158,8 @@ h6 {
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
-  padding: var(--padding-xl);
+  gap: var(--gap-md);
+  padding: var(--padding-lg) var(--padding-xl);
   background: var(--page-bg);
   color: var(--text-dark);
   min-height: auto;
