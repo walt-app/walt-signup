@@ -24,7 +24,7 @@ export default function Home() {
     {
       title: "Funded by members",
       description:
-        "$3 a month sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
+        "€10 a year sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
     },
   ];
 
@@ -34,21 +34,21 @@ export default function Home() {
       description:
         "Once Walt reaches general availability, download Walt to your smartphone.",
       image: "/promo-screen.jpg",
-      alt: "Walt app download screen"
+      alt: "Walt app download screen",
     },
     {
       title: "Add your cards",
       description:
         "Scan or enter details manually. Everything stays encrypted locally. Your card details never leave your device.",
       image: "/add-card.jpg",
-      alt: "Walt app add card screen"
+      alt: "Walt app add card screen",
     },
     {
       title: "Tap to pay",
       description:
         "Hold your phone near any NFC-enabled terminal just like you're used to.",
       image: "/intro-screen.jpg",
-      alt: "Walt app home screen with cards"
+      alt: "Walt app home screen with cards",
     },
   ];
 
@@ -58,11 +58,17 @@ export default function Home() {
       title: "Foundation and development",
       business: [
         { text: "Create public waitlist", completed: true },
-        { text: "Establish shortlist of aggregator candidates", completed: true },
-        { text: "Assess geographic market viability", completed: true }
+        {
+          text: "Establish shortlist of aggregator candidates",
+          completed: true,
+        },
+        { text: "Assess geographic market viability", completed: true },
       ],
       application: [
-        { text: "Complete Android app with mocks and fakes for aggregator SDKs", completed: true }
+        {
+          text: "Complete Android app with mocks and fakes for aggregator SDKs",
+          completed: true,
+        },
       ],
     },
     {
@@ -71,12 +77,18 @@ export default function Home() {
       business: [
         { text: "Find a cofounder", completed: false },
         { text: "Decide on aggregator", completed: true },
-        { text: "Create first contract with supporting bank in chosen geographic focus", completed: false }
+        {
+          text: "Create first contract with supporting bank in chosen geographic focus",
+          completed: false,
+        },
       ],
       application: [
         { text: "Integrate with aggregator SDKs", completed: true },
         { text: "Establish e2e PCI compliance", completed: true },
-        { text: "Integrate card load mechanism based on chosen bank's preferences", completed: false }
+        {
+          text: "Integrate card load mechanism based on chosen bank's preferences",
+          completed: false,
+        },
       ],
     },
     {
@@ -86,11 +98,11 @@ export default function Home() {
         { text: "First bank onboarded", completed: false },
         { text: "Targeted geographic marketing", completed: false },
         { text: "Geographic outbound marketing", completed: false },
-        { text: "Expand geographies", completed: false }
+        { text: "Expand geographies", completed: false },
       ],
       application: [
         { text: "First cards loaded", completed: false },
-        { text: "First transactions made", completed: false }
+        { text: "First transactions made", completed: false },
       ],
     },
   ];
@@ -180,15 +192,24 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://walt.is" />
         <meta property="og:title" content="Walt - Private tap-to-pay" />
-        <meta property="og:description" content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
+        <meta
+          property="og:description"
+          content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app."
+        />
         <meta property="og:image" content="https://walt.is/intro-screen.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://walt.is" />
         <meta property="twitter:title" content="Walt - Private tap-to-pay" />
-        <meta property="twitter:description" content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
-        <meta property="twitter:image" content="https://walt.is/intro-screen.jpg" />
+        <meta
+          property="twitter:description"
+          content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app."
+        />
+        <meta
+          property="twitter:image"
+          content="https://walt.is/intro-screen.jpg"
+        />
 
         <link rel="icon" href="/favicon.ico" />
 
@@ -199,15 +220,16 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Walt",
-              "url": "https://walt.is",
-              "logo": "https://walt.is/intro-screen.jpg",
-              "description": "Walt is the wallet app that never shares your data. Private tap-to-pay.",
-              "sameAs": [
+              name: "Walt",
+              url: "https://walt.is",
+              logo: "https://walt.is/intro-screen.jpg",
+              description:
+                "Walt is the wallet app that never shares your data. Private tap-to-pay.",
+              sameAs: [
                 "https://github.com/walt-app/walt-architecture",
-                "https://www.linkedin.com/in/bittelc/"
-              ]
-            })
+                "https://www.linkedin.com/in/bittelc/",
+              ],
+            }),
           }}
         />
         <script
@@ -216,10 +238,11 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Walt",
-              "url": "https://walt.is",
-              "description": "Private tap-to-pay. No purchase tracking, no data harvesting, no AI."
-            })
+              name: "Walt",
+              url: "https://walt.is",
+              description:
+                "Private tap-to-pay. No purchase tracking, no data harvesting, no AI.",
+            }),
           }}
         />
         <script
@@ -228,22 +251,23 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Walt",
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Android, iOS",
-              "offers": {
+              name: "Walt",
+              applicationCategory: "FinanceApplication",
+              operatingSystem: "Android, iOS",
+              offers: {
                 "@type": "Offer",
-                "price": "3.00",
-                "priceCurrency": "USD",
-                "priceSpecification": {
+                price: "10.00",
+                priceCurrency: "EUR",
+                priceSpecification: {
                   "@type": "UnitPriceSpecification",
-                  "price": "3.00",
-                  "priceCurrency": "USD",
-                  "billingDuration": "P1M"
-                }
+                  price: "10.00",
+                  priceCurrency: "EUR",
+                  billingDuration: "P1Y",
+                },
               },
-              "description": "Private tap-to-pay wallet that never shares your transaction data"
-            })
+              description:
+                "Private tap-to-pay wallet that never shares your transaction data",
+            }),
           }}
         />
       </Head>
@@ -252,14 +276,18 @@ export default function Home() {
         {/* Hero Section */}
         <section className="hero-section">
           <header className="site-header">
-            <Link href="/" className="site-logo">Walt</Link>
+            <Link href="/" className="site-logo">
+              Walt
+            </Link>
           </header>
 
           <div className="hero-card">
             <div className="hero-inner">
               <div className="hero-copy">
                 <div className="hero-text">
-                  <h1 className="hero-title">Tap-to-pay that doesn't track you</h1>
+                  <h1 className="hero-title">
+                    Tap-to-pay that doesn't track you
+                  </h1>
                   <Link href="/motivation" className="hero-subhead">
                     Why we created Walt →
                   </Link>
@@ -288,7 +316,9 @@ export default function Home() {
                     </button>
                   </div>
                   {message && (
-                    <div className={`form-message ${messageType}`}>{message}</div>
+                    <div className={`form-message ${messageType}`}>
+                      {message}
+                    </div>
                   )}
                 </form>
               </div>
@@ -313,10 +343,11 @@ export default function Home() {
           <div className="section-shell">
             <div className="section-card-header">
               <h2 className="section-heading">
-                The private alternative to Google Wallet
+                The private alternative to Google and Apple Pay
               </h2>
               <p className="section-subheading">
-                Know that your transaction data is never collected, stored, or sold.
+                Know that your transaction data is never collected, stored, or
+                sold.
               </p>
             </div>
             <div className="usp-grid">
@@ -371,7 +402,9 @@ export default function Home() {
             <div className="roadmap">
               <div className="roadmap-header">
                 <h2 className="roadmap-title">Roadmap</h2>
-                <p className="roadmap-subtitle">Here's what you can expect from us.</p>
+                <p className="roadmap-subtitle">
+                  Here's what you can expect from us.
+                </p>
               </div>
               <div className="roadmap-items">
                 {roadmapItems.map((item) => (
@@ -386,13 +419,37 @@ export default function Home() {
                             <strong>Business</strong>
                             <ul className="roadmap-checklist">
                               {item.business.map((businessItem, idx) => (
-                                <li key={idx} className="roadmap-checklist-item">
+                                <li
+                                  key={idx}
+                                  className="roadmap-checklist-item"
+                                >
                                   {businessItem.completed && (
-                                    <svg className="roadmap-check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M16.6667 5L7.50002 14.1667L3.33335 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <svg
+                                      className="roadmap-check-icon"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16.6667 5L7.50002 14.1667L3.33335 10"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
                                     </svg>
                                   )}
-                                  <span className={businessItem.completed ? "" : "roadmap-item-no-check"}>{businessItem.text}</span>
+                                  <span
+                                    className={
+                                      businessItem.completed
+                                        ? ""
+                                        : "roadmap-item-no-check"
+                                    }
+                                  >
+                                    {businessItem.text}
+                                  </span>
                                 </li>
                               ))}
                             </ul>
@@ -401,13 +458,37 @@ export default function Home() {
                             <strong>Application</strong>
                             <ul className="roadmap-checklist">
                               {item.application.map((appItem, idx) => (
-                                <li key={idx} className="roadmap-checklist-item">
+                                <li
+                                  key={idx}
+                                  className="roadmap-checklist-item"
+                                >
                                   {appItem.completed && (
-                                    <svg className="roadmap-check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M16.6667 5L7.50002 14.1667L3.33335 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <svg
+                                      className="roadmap-check-icon"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 20 20"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16.6667 5L7.50002 14.1667L3.33335 10"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
                                     </svg>
                                   )}
-                                  <span className={appItem.completed ? "" : "roadmap-item-no-check"}>{appItem.text}</span>
+                                  <span
+                                    className={
+                                      appItem.completed
+                                        ? ""
+                                        : "roadmap-item-no-check"
+                                    }
+                                  >
+                                    {appItem.text}
+                                  </span>
                                 </li>
                               ))}
                             </ul>
