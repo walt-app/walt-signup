@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "../components/Footer";
 
 export default function Pitch() {
@@ -88,16 +89,20 @@ export default function Pitch() {
       </Head>
 
       <div className="pitch-page">
-        {/* Hero Section */}
-        <section className="pitch-hero">
-          <div className="section-shell">
+        {/* Hero Section - matches primary page layout */}
+        <section className="hero-section">
+          <header className="site-header">
+            <Link href="/" className="site-logo">
+              Walt
+            </Link>
+          </header>
+
+          <div className="pitch-card">
             <h1>Pitch Deck</h1>
             <p>
               A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS.
               Review our market opportunity, technology approach, roadmap, and business model.
             </p>
-
-            {/* Download Section */}
             <div className="pitch-downloads">
               <a
                 href="/pitch/pitch-deck.pdf"

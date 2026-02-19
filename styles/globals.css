@@ -1227,41 +1227,41 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg-white);
+  background: var(--page-bg);
 }
 
-/* Pitch Hero Section */
-.pitch-hero {
+/* Pitch Card - mirrors hero-card from primary page */
+.pitch-card {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   background: linear-gradient(
     180deg,
     var(--orange-gradient-start) 0%,
     var(--orange-gradient-end) 100%
   );
-  padding: 48px var(--padding-xl) 48px;
+  border-radius: var(--radius-section);
+  padding: 32px var(--padding-section);
 }
 
-.pitch-hero .section-shell {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.pitch-hero h1 {
+.pitch-card h1 {
   font-family: "Geist", sans-serif;
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
   color: var(--text-dark);
-  margin-bottom: var(--gap-sm);
+  margin-bottom: 8px;
 }
 
-.pitch-hero p {
+.pitch-card p {
   font-family: "Geist", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.6;
   color: var(--text-dark);
-  margin-bottom: var(--gap-md);
+  margin-bottom: var(--gap-sm);
 }
 
 /* Download Buttons */
@@ -1309,8 +1309,7 @@ h6 {
 /* Slides Section */
 .pitch-slides {
   flex: 1;
-  padding: 48px var(--padding-xl);
-  background: var(--bg-white);
+  padding: 24px var(--padding-xl) 48px;
 }
 
 .slides-container {
@@ -1433,8 +1432,8 @@ h6 {
 
 /* Mobile Responsive - Pitch Page */
 @media (max-width: 768px) {
-  .pitch-hero {
-    padding: 36px var(--padding-md) 24px;
+  .pitch-card {
+    padding: var(--padding-md);
   }
 
   .pitch-slides {
