@@ -32,7 +32,7 @@ export default function Home() {
     {
       title: "Download and install",
       description:
-        "Once Walt reaches general availability, download Walt from our website to your Android device.",
+        "Once Walt reaches general availability, download Walt to your smartphone.",
       image: "/promo-screen.jpg",
       alt: "Walt app download screen"
     },
@@ -166,10 +166,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Walt - Private Wallet for Android</title>
+        <title>Walt - Private tap-to-pay</title>
         <meta
           name="description"
-          content="Walt is the Android wallet app that never shares your data"
+          content="Walt is the wallet app that never shares your data"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -179,15 +179,15 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://walt.is" />
-        <meta property="og:title" content="Walt - Private Wallet for Android" />
-        <meta property="og:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
+        <meta property="og:title" content="Walt - Private tap-to-pay" />
+        <meta property="og:description" content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
         <meta property="og:image" content="https://walt.is/intro-screen.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://walt.is" />
-        <meta property="twitter:title" content="Walt - Private Wallet for Android" />
-        <meta property="twitter:description" content="Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
+        <meta property="twitter:title" content="Walt - Private tap-to-pay" />
+        <meta property="twitter:description" content="Private tap-to-pay. No purchase tracking, no data harvesting, no AI. Just a predictable, respectful wallet app." />
         <meta property="twitter:image" content="https://walt.is/intro-screen.jpg" />
 
         <link rel="icon" href="/favicon.ico" />
@@ -202,7 +202,7 @@ export default function Home() {
               "name": "Walt",
               "url": "https://walt.is",
               "logo": "https://walt.is/intro-screen.jpg",
-              "description": "Walt is the Android wallet app that never shares your data. Private tap-to-pay for Android.",
+              "description": "Walt is the wallet app that never shares your data. Private tap-to-pay.",
               "sameAs": [
                 "https://github.com/walt-app/walt-architecture",
                 "https://www.linkedin.com/in/bittelc/"
@@ -218,7 +218,7 @@ export default function Home() {
               "@type": "WebSite",
               "name": "Walt",
               "url": "https://walt.is",
-              "description": "Private tap-to-pay for Android. No purchase tracking, no data harvesting, no AI."
+              "description": "Private tap-to-pay. No purchase tracking, no data harvesting, no AI."
             })
           }}
         />
@@ -230,7 +230,7 @@ export default function Home() {
               "@type": "SoftwareApplication",
               "name": "Walt",
               "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Android",
+              "operatingSystem": "Android, iOS",
               "offers": {
                 "@type": "Offer",
                 "price": "3.00",
@@ -242,7 +242,7 @@ export default function Home() {
                   "billingDuration": "P1M"
                 }
               },
-              "description": "Private tap-to-pay wallet for Android that never shares your transaction data"
+              "description": "Private tap-to-pay wallet that never shares your transaction data"
             })
           }}
         />
