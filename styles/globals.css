@@ -1237,7 +1237,7 @@ h6 {
     var(--orange-gradient-start) 0%,
     var(--orange-gradient-end) 100%
   );
-  padding: 96px var(--padding-xl) 48px;
+  padding: 48px var(--padding-xl) 48px;
 }
 
 .pitch-hero .section-shell {
@@ -1251,7 +1251,7 @@ h6 {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text-dark);
-  margin-bottom: var(--gap-md);
+  margin-bottom: var(--gap-sm);
 }
 
 .pitch-hero p {
@@ -1261,7 +1261,7 @@ h6 {
   letter-spacing: -0.01em;
   line-height: 1.6;
   color: var(--text-dark);
-  margin-bottom: var(--gap-lg);
+  margin-bottom: var(--gap-md);
 }
 
 /* Download Buttons */
@@ -1309,7 +1309,7 @@ h6 {
 /* Slides Section */
 .pitch-slides {
   flex: 1;
-  padding: 96px var(--padding-xl);
+  padding: 48px var(--padding-xl);
   background: var(--bg-white);
 }
 
@@ -1317,7 +1317,7 @@ h6 {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--gap-lg);
 }
 
@@ -1381,18 +1381,17 @@ h6 {
 }
 
 .lightbox-content {
-  max-width: 90vw;
-  max-height: 85vh;
+  width: 90vw;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .lightbox-content img {
-  max-width: 90vw;
-  max-height: 80vh;
-  width: auto;
+  width: 100%;
   height: auto;
+  max-height: 85vh;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -1435,11 +1434,11 @@ h6 {
 /* Mobile Responsive - Pitch Page */
 @media (max-width: 768px) {
   .pitch-hero {
-    padding: 72px var(--padding-md) 36px;
+    padding: 36px var(--padding-md) 24px;
   }
 
   .pitch-slides {
-    padding: 72px var(--padding-md);
+    padding: 36px var(--padding-md);
   }
 
   .slides-container {

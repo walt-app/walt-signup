@@ -160,13 +160,10 @@ export default function Pitch() {
               &#8249;
             </button>
             <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={slides[lightboxIndex].src}
                 alt={slides[lightboxIndex].alt}
-                width={1920}
-                height={1080}
-                sizes="90vw"
-                priority
               />
               <div className="lightbox-counter">
                 {lightboxIndex + 1} / {slides.length}
