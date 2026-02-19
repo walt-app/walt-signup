@@ -115,7 +115,7 @@ export default async function handler(req, res) {
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <h1 style="color: #333; font-size: 24px; margin-bottom: 20px;">Welcome to Walt</h1>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
-              Thanks for joining our waitlist for Walt, the Android wallet that respects your data.
+              Thanks for joining our waitlist for Walt, the tap-to-pay wallet that respects your data.
             </p>
             <p style="color: #666; font-size: 16px; line-height: 1.5; margin-bottom: 20px;">
               We'll keep you updated on our progress. In the meantime, <a href="${getBaseUrl()}/motivation" style="color: #007bff; text-decoration: none;">check out the motivation</a>.

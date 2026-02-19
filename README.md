@@ -1,6 +1,6 @@
 ## Overview
 
-Walt is a privacy-focused alternative to Google Wallet and Google Pay. This repository contains the waitlist signup page with integrated email collection.
+Walt is a privacy-focused alternative to Google Wallet and Apple Pay. This repository contains the waitlist signup page with integrated email collection.
 
 ## Setup Instructions
 

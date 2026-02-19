@@ -15,7 +15,7 @@ export default function Pitch() {
         <title>Walt Pitch Deck - Investment & Business Overview</title>
         <meta
           name="description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model for Android tap-to-pay."
+          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model for Android and iOS tap-to-pay."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -71,7 +71,7 @@ export default function Pitch() {
           <div className="section-shell">
             <h1>Pitch Deck</h1>
             <p>
-              A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android.
+              A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS.
               Review our market opportunity, technology approach, roadmap, and business model.
             </p>
 

@@ -96,7 +96,7 @@ h6 {
 
 /* Sections */
 .section {
-  padding: var(--padding-xl);
+  padding: var(--padding-lg) var(--padding-xl);
   display: flex;
   justify-content: center;
   min-height: auto;
@@ -158,8 +158,8 @@ h6 {
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
-  padding: var(--padding-xl);
+  gap: var(--gap-md);
+  padding: var(--padding-lg) var(--padding-xl);
   background: var(--page-bg);
   color: var(--text-dark);
   min-height: auto;
@@ -345,11 +345,11 @@ h6 {
   align-items: center;
 }
 
-/* Phone mockup - Figma design: 305×715px desktop */
+/* Phone mockup - Figma design: 305×715px desktop, reduced for layout balance */
 .phone-mockup {
   position: relative;
-  width: 305px;
-  height: 715px;
+  width: 250px;
+  height: 586px;
   border-radius: var(--radius-phone);
   box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -758,7 +758,7 @@ h6 {
 /* Footer - Figma: peach background, no border */
 .site-footer {
   background: var(--page-bg);
-  padding: var(--padding-xl);
+  padding: var(--padding-lg) var(--padding-xl);
   margin-top: auto;
 }
 
@@ -771,13 +771,13 @@ h6 {
   justify-content: space-between;
   gap: var(--gap-lg);
   flex-wrap: wrap;
-  padding: var(--padding-xl) 0;
+  padding: var(--padding-lg) 0;
 }
 
 .footer-meta {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--gap-xs);
 }
 
 .footer-mark {
@@ -1001,7 +1001,7 @@ h6 {
 @media (min-width: 960px) {
   .hero-inner {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 125px;
   }
