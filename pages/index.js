@@ -227,7 +227,7 @@ export default function Home() {
                 "Walt is the wallet app that never shares your data. Private tap-to-pay.",
               sameAs: [
                 "https://github.com/walt-app/walt-architecture",
-                "https://www.linkedin.com/in/bittelc/",
+                "https://www.linkedin.com/company/walt-app/",
               ],
             }),
           }}
