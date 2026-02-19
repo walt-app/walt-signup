@@ -96,7 +96,7 @@ h6 {
 
 /* Sections */
 .section {
-  padding: var(--padding-xl);
+  padding: var(--padding-lg) var(--padding-xl);
   display: flex;
   justify-content: center;
   min-height: auto;
@@ -758,7 +758,7 @@ h6 {
 /* Footer - Figma: peach background, no border */
 .site-footer {
   background: var(--page-bg);
-  padding: var(--padding-xl);
+  padding: var(--padding-lg) var(--padding-xl);
   margin-top: auto;
 }
 
@@ -771,13 +771,13 @@ h6 {
   justify-content: space-between;
   gap: var(--gap-lg);
   flex-wrap: wrap;
-  padding: var(--padding-xl) 0;
+  padding: var(--padding-lg) 0;
 }
 
 .footer-meta {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--gap-xs);
 }
 
 .footer-mark {

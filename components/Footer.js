@@ -31,6 +31,9 @@ export default function Footer({ variant = "default" }) {
           <span className="footer-credit">
             Developed by Embedded Engineering ApS
           </span>
+          <span className="footer-credit">
+            Built with ♥ in Copenhagen
+          </span>
         </div>
         <nav className="footer-links" aria-label="Footer navigation">
           {footerLinks.map((link) => (
