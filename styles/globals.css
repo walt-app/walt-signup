@@ -1235,12 +1235,8 @@ h6 {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  background: linear-gradient(
-    180deg,
-    var(--orange-gradient-start) 0%,
-    var(--orange-gradient-end) 100%
-  );
-  border-radius: var(--radius-section);
+  background: none;
+  border-radius: 0;
   padding: 32px var(--padding-section);
 }
 
