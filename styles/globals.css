@@ -1096,6 +1096,25 @@ h6 {
   .hero-visual {
     flex: 0 0 auto;
   }
+
+  /* Roadmap — side-by-side Business / Application columns */
+  .roadmap {
+    gap: 40px;
+  }
+
+  .roadmap-items {
+    gap: 40px;
+  }
+
+  .roadmap-details {
+    flex-direction: row;
+    max-width: none;
+    gap: var(--gap-xl);
+  }
+
+  .roadmap-detail-section {
+    flex: 1;
+  }
 }
 
 /* Motivation Page Styles */
