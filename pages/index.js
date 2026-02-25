@@ -367,6 +367,9 @@ export default function Home() {
                     <Link href="/updates" className="hero-subhead">
                       Updates →
                     </Link>
+                    <Link href="/privacy" className="hero-subhead">
+                      Our privacy commitment →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -567,44 +570,6 @@ export default function Home() {
                 })}
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Bottom CTA Section */}
-        <section className="section">
-          <div className="bottom-cta-card reveal">
-            <h2 className="bottom-cta-title">
-              Ready to take back your privacy?
-            </h2>
-            <p className="bottom-cta-subtitle">
-              Join the waitlist and be first to know when Walt launches.
-            </p>
-            <form onSubmit={handleSubmit} className="bottom-cta-form">
-              <div className="bottom-cta-input-group">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  className="hero-input"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="hero-button"
-                  disabled={isLoading}
-                >
-                  <span>
-                    {isLoading ? "Joining..." : "Join the waitlist"}
-                  </span>
-                </button>
-              </div>
-              {message && (
-                <div className={`form-message ${messageType}`}>
-                  {message}
-                </div>
-              )}
-            </form>
           </div>
         </section>
 

@@ -230,8 +230,8 @@ h6 {
 }
 
 .hero-links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   gap: var(--gap-sm) var(--gap-md);
 }
 
@@ -1039,8 +1039,8 @@ h6 {
   }
 
   .hero-links {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
     gap: var(--gap-sm);
   }
 

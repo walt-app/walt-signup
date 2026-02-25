@@ -5,6 +5,7 @@ export default function Footer({ variant = "default" }) {
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Updates", href: "/updates" },
+        { label: "Privacy", href: "/privacy" },
       ]
     : variant === "pitch"
     ? [
@@ -13,6 +14,7 @@ export default function Footer({ variant = "default" }) {
         { label: "Home", href: "/" },
         { label: "Motivation", href: "/motivation" },
         { label: "Updates", href: "/updates" },
+        { label: "Privacy", href: "/privacy" },
       ]
     : variant === "updates"
     ? [
@@ -20,6 +22,15 @@ export default function Footer({ variant = "default" }) {
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Motivation", href: "/motivation" },
+        { label: "Privacy", href: "/privacy" },
+      ]
+    : variant === "privacy"
+    ? [
+        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
+        { label: "Home", href: "/" },
+        { label: "Motivation", href: "/motivation" },
+        { label: "Updates", href: "/updates" },
       ]
     : [
         { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
@@ -27,9 +38,10 @@ export default function Footer({ variant = "default" }) {
         { label: "Motivation", href: "/motivation" },
         { label: "Pitch Deck", href: "/pitch" },
         { label: "Updates", href: "/updates" },
+        { label: "Privacy", href: "/privacy" },
       ];
 
-  const footerClass = variant === "motivation" || variant === "pitch" || variant === "updates"
+  const footerClass = variant === "motivation" || variant === "pitch" || variant === "updates" || variant === "privacy"
     ? `site-footer ${variant}-footer-override`
     : "site-footer";
 
