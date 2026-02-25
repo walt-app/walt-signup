@@ -15,16 +15,39 @@ export default function Home() {
       title: "Spend like you're used to",
       description:
         "Load your card and start tapping your phone at your coffeeshop like you're used to.",
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 28C24.4183 28 28 24.4183 28 20C28 15.5817 24.4183 12 20 12C15.5817 12 12 15.5817 12 20C12 24.4183 15.5817 28 20 28Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M29.5 10.5C31.6 12.6 33 15.1 33.7 17.9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6.3 17.9C7 15.1 8.4 12.6 10.5 10.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M10.5 29.5C8.4 27.4 7 24.9 6.3 22.1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M33.7 22.1C33 24.9 31.6 27.4 29.5 29.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
     {
       title: "Your data, your privacy",
       description:
         "Your transaction data stays on your phone. Never shared or sold or tracked.",
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 36.6667C20 36.6667 33.3333 30 33.3333 20V8.33333L20 3.33333L6.66667 8.33333V20C6.66667 30 20 36.6667 20 36.6667Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M14.1667 20L18.3333 24.1667L26.6667 15.8333" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
     {
       title: "Funded by members",
       description:
         "€10 a year sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28.3333 35V31.6667C28.3333 29.8986 27.631 28.2029 26.3807 26.9526C25.1305 25.7024 23.4348 25 21.6667 25H8.33333C6.56522 25 4.86953 25.7024 3.61929 26.9526C2.36905 28.2029 1.66667 29.8986 1.66667 31.6667V35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M15 18.3333C18.6819 18.3333 21.6667 15.3486 21.6667 11.6667C21.6667 7.98477 18.6819 5 15 5C11.3181 5 8.33333 7.98477 8.33333 11.6667C8.33333 15.3486 11.3181 18.3333 15 18.3333Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M38.3333 35V31.6667C38.3322 30.1888 37.8404 28.7534 36.9369 27.5862C36.0334 26.419 34.7694 25.5843 33.3333 25.2167" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M26.6667 5.21667C28.1067 5.58222 29.3747 6.41722 30.2807 7.58611C31.1867 8.755 31.6793 10.1933 31.6793 11.6742C31.6793 13.155 31.1867 14.5933 30.2807 15.7622C29.3747 16.9311 28.1067 17.7661 26.6667 18.1317" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
   ];
 
@@ -353,6 +376,7 @@ export default function Home() {
             <div className="usp-grid">
               {uspFeatures.map((item) => (
                 <article key={item.title} className="usp-card">
+                  <div className="usp-icon">{item.icon}</div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
@@ -500,6 +524,44 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Bottom CTA Section */}
+        <section className="section">
+          <div className="bottom-cta-card">
+            <h2 className="bottom-cta-title">
+              Ready to take back your privacy?
+            </h2>
+            <p className="bottom-cta-subtitle">
+              Join the waitlist and be first to know when Walt launches.
+            </p>
+            <form onSubmit={handleSubmit} className="bottom-cta-form">
+              <div className="bottom-cta-input-group">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                  className="hero-input"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="hero-button"
+                  disabled={isLoading}
+                >
+                  <span>
+                    {isLoading ? "Joining..." : "Join the waitlist"}
+                  </span>
+                </button>
+              </div>
+              {message && (
+                <div className={`form-message ${messageType}`}>
+                  {message}
+                </div>
+              )}
+            </form>
           </div>
         </section>
 
