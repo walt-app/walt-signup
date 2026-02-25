@@ -55,7 +55,7 @@ export default function Home() {
     {
       title: "Download Walt",
       description:
-        "Once Walt reaches general availability, download Walt to your smartphone.",
+        "Download Walt to your smartphone.",
       image: "/promo-screen.jpg",
       alt: "Walt app download screen",
     },
