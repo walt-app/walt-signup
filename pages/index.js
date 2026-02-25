@@ -311,39 +311,42 @@ export default function Home() {
                   <h1 className="hero-title">
                     Tap-to-pay that doesn't track you
                   </h1>
+                  <form onSubmit={handleSubmit} className="hero-form">
+                    <div className="hero-input-group">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        className="hero-input"
+                        required
+                      />
+                      <button
+                        type="submit"
+                        className="hero-button"
+                        disabled={isLoading}
+                      >
+                        <span>
+                          {isLoading ? "Joining..." : "Join the waitlist"}
+                        </span>
+                      </button>
+                    </div>
+                    {message && (
+                      <div className={`form-message ${messageType}`}>
+                        {message}
+                      </div>
+                    )}
+                  </form>
                   <Link href="/motivation" className="hero-subhead">
                     Why we created Walt →
                   </Link>
                   <Link href="/pitch" className="hero-subhead">
                     View pitch deck →
                   </Link>
+                  <Link href="/updates" className="hero-subhead">
+                    Updates →
+                  </Link>
                 </div>
-                <form onSubmit={handleSubmit} className="hero-form">
-                  <div className="hero-input-group">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Email"
-                      className="hero-input"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="hero-button"
-                      disabled={isLoading}
-                    >
-                      <span>
-                        {isLoading ? "Joining..." : "Join the waitlist"}
-                      </span>
-                    </button>
-                  </div>
-                  {message && (
-                    <div className={`form-message ${messageType}`}>
-                      {message}
-                    </div>
-                  )}
-                </form>
               </div>
               <div className="hero-visual">
                 <div className="phone-mockup">
