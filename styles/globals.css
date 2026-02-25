@@ -260,7 +260,7 @@ h6 {
 
 .hero-input {
   width: 100%;
-  background: var(--bg-white);
+  background: rgba(255, 255, 255, 0.7);
   border: none;
   color: var(--text-dark);
   font-family: "Geist", sans-serif;
@@ -293,7 +293,7 @@ h6 {
   font-size: 20px;
   font-weight: 500;
   color: var(--text-white);
-  background: var(--bg-black);
+  background: rgba(21, 21, 21, 0.8);
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -1082,7 +1082,7 @@ h6 {
 @media (min-width: 960px) {
   .hero-inner {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 125px;
   }
