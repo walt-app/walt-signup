@@ -1280,6 +1280,25 @@ h6 {
 }
 
 /* =============================================================================
+   Updates Page Styles
+   ============================================================================= */
+
+.update-entry {
+  margin-bottom: 2rem;
+}
+
+.update-date {
+  display: block;
+  font-family: "Geist", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* =============================================================================
    Pitch Deck Page Styles
    ============================================================================= */
 
