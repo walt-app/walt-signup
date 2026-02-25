@@ -850,7 +850,7 @@ h6 {
 /* Footer */
 .site-footer {
   background: var(--text-dark);
-  padding: var(--padding-lg) var(--padding-xl);
+  padding: var(--padding-md) var(--padding-xl);
   margin-top: auto;
 }
 
@@ -863,7 +863,7 @@ h6 {
   justify-content: space-between;
   gap: var(--gap-lg);
   flex-wrap: wrap;
-  padding: var(--padding-md) 0;
+  padding: var(--gap-xs) 0;
 }
 
 .footer-meta {
