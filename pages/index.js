@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export default function Home() {
 
   const useSteps = [
     {
-      title: "Download and install",
+      title: "Download Walt",
       description:
         "Once Walt reaches general availability, download Walt to your smartphone.",
       image: "/promo-screen.jpg",
@@ -75,9 +75,12 @@ export default function Home() {
     },
   ];
 
+  const currentPhase = "Q1 2026";
+
   const roadmapItems = [
     {
       period: "H2 2025",
+      phase: "past",
       title: "Foundation and development",
       business: [
         { text: "Create public waitlist", completed: true },
@@ -96,6 +99,7 @@ export default function Home() {
     },
     {
       period: "Q1 2026",
+      phase: "current",
       title: "Team and partnerships",
       business: [
         { text: "Find a cofounder", completed: false },
@@ -116,6 +120,7 @@ export default function Home() {
     },
     {
       period: "Q2 2026",
+      phase: "future",
       title: "First transactions",
       business: [
         { text: "First bank onboarded", completed: false },
@@ -197,6 +202,21 @@ export default function Home() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -337,15 +357,17 @@ export default function Home() {
                       </div>
                     )}
                   </form>
-                  <Link href="/motivation" className="hero-subhead">
-                    Why we created Walt →
-                  </Link>
-                  <Link href="/pitch" className="hero-subhead">
-                    View pitch deck →
-                  </Link>
-                  <Link href="/updates" className="hero-subhead">
-                    Updates →
-                  </Link>
+                  <div className="hero-links">
+                    <Link href="/motivation" className="hero-subhead">
+                      Why we created Walt →
+                    </Link>
+                    <Link href="/pitch" className="hero-subhead">
+                      Pitch deck →
+                    </Link>
+                    <Link href="/updates" className="hero-subhead">
+                      Updates →
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="hero-visual">
@@ -367,7 +389,7 @@ export default function Home() {
         {/* What Is Walt Section */}
         <section className="section">
           <div className="section-shell">
-            <div className="section-card-header">
+            <div className="section-card-header reveal">
               <h2 className="section-heading">
                 The private alternative to Google and Apple Pay
               </h2>
@@ -377,8 +399,8 @@ export default function Home() {
               </p>
             </div>
             <div className="usp-grid">
-              {uspFeatures.map((item) => (
-                <article key={item.title} className="usp-card">
+              {uspFeatures.map((item, idx) => (
+                <article key={item.title} className={`usp-card reveal reveal-delay-${idx + 1}`}>
                   <div className="usp-icon">{item.icon}</div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -392,15 +414,15 @@ export default function Home() {
         <section className="section">
           <div className="section-card">
             <div className="section-card-content">
-              <div className="section-card-header">
+              <div className="section-card-header reveal">
                 <h2 className="section-heading">Simple and straightforward</h2>
                 <p className="section-subheading">
                   A predictable, familiar wallet app.
                 </p>
               </div>
               <div className="steps-container">
-                {useSteps.map((step) => (
-                  <article key={step.title} className="step-card">
+                {useSteps.map((step, idx) => (
+                  <article key={step.title} className={`step-card reveal reveal-delay-${idx + 1}`}>
                     <div className="step-image-container">
                       <div className="phone-mockup-small">
                         <Image
@@ -413,7 +435,10 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="step-content">
-                      <h3>{step.title}</h3>
+                      <div className="step-heading">
+                        <span className="step-number">{idx + 1}</span>
+                        <h3>{step.title}</h3>
+                      </div>
                       <p>{step.description}</p>
                     </div>
                   </article>
@@ -426,7 +451,7 @@ export default function Home() {
         {/* Roadmap Section */}
         <section className="section">
           <div className="section-card">
-            <div className="roadmap">
+            <div className="roadmap reveal">
               <div className="roadmap-header">
                 <h2 className="roadmap-title">Roadmap</h2>
                 <p className="roadmap-subtitle">
@@ -434,97 +459,112 @@ export default function Home() {
                 </p>
               </div>
               <div className="roadmap-items">
-                {roadmapItems.map((item) => (
-                  <div key={item.period} className="roadmap-item">
-                    <div className="roadmap-bar"></div>
-                    <div className="roadmap-content">
-                      <span className="roadmap-period">{item.period}</span>
-                      <div className="roadmap-phase">
-                        <h3 className="roadmap-phase-title">{item.title}</h3>
-                        <div className="roadmap-details">
-                          <div className="roadmap-detail-section">
-                            <strong>Business</strong>
-                            <ul className="roadmap-checklist">
-                              {item.business.map((businessItem, idx) => (
-                                <li
-                                  key={idx}
-                                  className="roadmap-checklist-item"
-                                >
-                                  {businessItem.completed && (
-                                    <svg
-                                      className="roadmap-check-icon"
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M16.6667 5L7.50002 14.1667L3.33335 10"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                      />
-                                    </svg>
-                                  )}
-                                  <span
-                                    className={
-                                      businessItem.completed
-                                        ? ""
-                                        : "roadmap-item-no-check"
-                                    }
+                {roadmapItems.map((item) => {
+                  const phaseClass = item.phase === "current"
+                    ? "roadmap-item--current"
+                    : item.phase === "past"
+                    ? "roadmap-item--past"
+                    : "";
+                  return (
+                    <div key={item.period} className={`roadmap-item ${phaseClass}`}>
+                      <div className="roadmap-bar"></div>
+                      <div className="roadmap-content">
+                        <span className="roadmap-period">
+                          {item.period}
+                          {item.phase === "current" && (
+                            <span className="roadmap-current-badge">
+                              <span className="roadmap-current-dot"></span>
+                              Now
+                            </span>
+                          )}
+                        </span>
+                        <div className="roadmap-phase">
+                          <h3 className="roadmap-phase-title">{item.title}</h3>
+                          <div className="roadmap-details">
+                            <div className="roadmap-detail-section">
+                              <strong>Business</strong>
+                              <ul className="roadmap-checklist">
+                                {item.business.map((businessItem, idx) => (
+                                  <li
+                                    key={idx}
+                                    className={`roadmap-checklist-item${!businessItem.completed ? " roadmap-checklist-item--pending" : ""}`}
                                   >
-                                    {businessItem.text}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className="roadmap-detail-section">
-                            <strong>Application</strong>
-                            <ul className="roadmap-checklist">
-                              {item.application.map((appItem, idx) => (
-                                <li
-                                  key={idx}
-                                  className="roadmap-checklist-item"
-                                >
-                                  {appItem.completed && (
-                                    <svg
-                                      className="roadmap-check-icon"
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    {businessItem.completed && (
+                                      <svg
+                                        className="roadmap-check-icon"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M16.6667 5L7.50002 14.1667L3.33335 10"
+                                          stroke="currentColor"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
+                                      </svg>
+                                    )}
+                                    <span
+                                      className={
+                                        businessItem.completed
+                                          ? ""
+                                          : "roadmap-item-no-check"
+                                      }
                                     >
-                                      <path
-                                        d="M16.6667 5L7.50002 14.1667L3.33335 10"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                      />
-                                    </svg>
-                                  )}
-                                  <span
-                                    className={
-                                      appItem.completed
-                                        ? ""
-                                        : "roadmap-item-no-check"
-                                    }
+                                      {businessItem.text}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div className="roadmap-detail-section">
+                              <strong>Application</strong>
+                              <ul className="roadmap-checklist">
+                                {item.application.map((appItem, idx) => (
+                                  <li
+                                    key={idx}
+                                    className={`roadmap-checklist-item${!appItem.completed ? " roadmap-checklist-item--pending" : ""}`}
                                   >
-                                    {appItem.text}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
+                                    {appItem.completed && (
+                                      <svg
+                                        className="roadmap-check-icon"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M16.6667 5L7.50002 14.1667L3.33335 10"
+                                          stroke="currentColor"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
+                                      </svg>
+                                    )}
+                                    <span
+                                      className={
+                                        appItem.completed
+                                          ? ""
+                                          : "roadmap-item-no-check"
+                                      }
+                                    >
+                                      {appItem.text}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -532,7 +572,7 @@ export default function Home() {
 
         {/* Bottom CTA Section */}
         <section className="section">
-          <div className="bottom-cta-card">
+          <div className="bottom-cta-card reveal">
             <h2 className="bottom-cta-title">
               Ready to take back your privacy?
             </h2>

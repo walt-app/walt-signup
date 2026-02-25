@@ -37,13 +37,11 @@ export default function Footer({ variant = "default" }) {
     <footer className={footerClass}>
       <div className="footer-shell">
         <div className="footer-meta">
-          <span className="footer-mark">© 2026 Walt</span>
+          <span className="footer-logo">Walt</span>
           <span className="footer-credit">
-            Developed by Embedded Engineering ApS
+            Private tap-to-pay
           </span>
-          <span className="footer-credit">
-            Built with ♥ in Copenhagen
-          </span>
+          <span className="footer-mark">© 2026 Walt · Embedded Engineering ApS · Copenhagen</span>
         </div>
         <nav className="footer-links" aria-label="Footer navigation">
           {footerLinks.map((link) => (
