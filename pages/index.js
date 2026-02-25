@@ -435,8 +435,10 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="step-content">
-                      <span className="step-number">{idx + 1}</span>
-                      <h3>{step.title}</h3>
+                      <div className="step-heading">
+                        <span className="step-number">{idx + 1}</span>
+                        <h3>{step.title}</h3>
+                      </div>
                       <p>{step.description}</p>
                     </div>
                   </article>

@@ -422,13 +422,20 @@ h6 {
   max-width: 270px;
 }
 
+.step-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  margin-bottom: var(--gap-xs);
+}
+
 .step-content h3 {
   font-family: "Geist", sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: var(--text-dark);
   letter-spacing: -0.04em;
-  line-height: 48px;
+  line-height: 1.2;
 }
 
 .step-content p {
@@ -452,7 +459,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--gap-xs);
+  flex-shrink: 0;
 }
 
 /* Section Card - gradient background with rounded corners */
