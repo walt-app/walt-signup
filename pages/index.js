@@ -39,7 +39,7 @@ export default function Home() {
     {
       title: "Funded by members",
       description:
-        "€10 a year sustains infrastructure and annual audits. Simple pricing that replaces the hidden cost of ad-based wallets.",
+        "€10 a year sustains infrastructure and annual audits.",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28.3333 35V31.6667C28.3333 29.8986 27.631 28.2029 26.3807 26.9526C25.1305 25.7024 23.4348 25 21.6667 25H8.33333C6.56522 25 4.86953 25.7024 3.61929 26.9526C2.36905 28.2029 1.66667 29.8986 1.66667 31.6667V35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -55,7 +55,7 @@ export default function Home() {
     {
       title: "Download Walt",
       description:
-        "Once Walt reaches general availability, download Walt to your smartphone.",
+        "Download Walt to your smartphone.",
       image: "/promo-screen.jpg",
       alt: "Walt app download screen",
     },
