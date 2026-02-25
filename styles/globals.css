@@ -12,7 +12,7 @@
   --orange-primary: #ff4800;
   --orange-gradient-start: #ff4800;
   --orange-gradient-end: #d36b42;
-  --page-bg: #ffd3c1;
+  --page-bg: #f7f7f7;
   --bg-white: #ffffff;
   --bg-black: #000000;
   --text-dark: #151515;
@@ -20,8 +20,8 @@
   --text-muted: #7f7f7f;
 
   /* Section gradients */
-  --section-gradient-start: rgba(211, 107, 66, 0.15);
-  --section-gradient-end: rgba(255, 72, 0, 0.15);
+  --section-gradient-start: rgba(255, 72, 0, 0.06);
+  --section-gradient-end: rgba(255, 72, 0, 0.12);
 
   /* Spacing */
   --gap-xxl: 72px;
@@ -229,18 +229,26 @@ h6 {
   color: var(--text-dark);
 }
 
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm) var(--gap-md);
+}
+
 .hero-subhead {
   font-family: "Geist", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -0.04em;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   line-height: 1.25;
   color: var(--text-dark);
   text-decoration: none;
+  opacity: 0.85;
 }
 
 .hero-subhead:hover {
   text-decoration: underline;
+  opacity: 1;
 }
 
 .hero-form {
@@ -430,6 +438,21 @@ h6 {
   line-height: 1.5;
   letter-spacing: -0.04em;
   color: var(--text-dark);
+}
+
+.step-number {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange-primary);
+  background: rgba(255, 72, 0, 0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--gap-xs);
 }
 
 /* Section Card - gradient background with rounded corners */
@@ -685,11 +708,58 @@ h6 {
 .roadmap-check-icon {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--orange-primary);
+  color: #16a34a;
+}
+
+.roadmap-checklist-item--pending {
+  opacity: 0.55;
 }
 
 .roadmap-item-no-check {
   margin-left: 32px;
+}
+
+/* Current phase highlight */
+.roadmap-item--current {
+  position: relative;
+}
+
+.roadmap-item--current .roadmap-period {
+  color: var(--orange-primary);
+  font-weight: 600;
+}
+
+.roadmap-item--past {
+  opacity: 0.6;
+}
+
+.roadmap-current-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  background: rgba(255, 72, 0, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-left: var(--gap-sm);
+}
+
+.roadmap-current-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange-primary);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 /* Legacy Timeline (keep for backwards compatibility) */
@@ -766,10 +836,10 @@ h6 {
   color: var(--text-muted);
 }
 
-/* Footer - Figma: peach background, no border */
+/* Footer */
 .site-footer {
-  background: var(--page-bg);
-  padding: var(--padding-lg) var(--padding-xl);
+  background: var(--text-dark);
+  padding: var(--padding-xl) var(--padding-xl) var(--padding-lg);
   margin-top: auto;
 }
 
@@ -791,20 +861,29 @@ h6 {
   gap: var(--gap-xs);
 }
 
+.footer-logo {
+  font-family: "Geist", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--orange-primary);
+  margin-bottom: var(--gap-xs);
+}
+
 .footer-mark {
   font-family: "Geist", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-credit {
   font-family: "Geist", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.04em;
-  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-links {
@@ -815,10 +894,10 @@ h6 {
 
 .footer-link {
   font-family: "Geist", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -923,8 +1002,16 @@ h6 {
   }
 
   .hero-inner {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: var(--gap-lg);
+  }
+
+  .hero-visual {
+    order: 2;
+  }
+
+  .hero-copy {
+    order: 1;
   }
 
   .hero-copy {
@@ -940,8 +1027,14 @@ h6 {
     font-size: 32px;
   }
 
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-sm);
+  }
+
   .hero-subhead {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .hero-form {
@@ -1064,7 +1157,7 @@ h6 {
 
   .footer-mark,
   .footer-credit {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .footer-links {
@@ -1074,7 +1167,7 @@ h6 {
   }
 
   .footer-link {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
@@ -1114,14 +1207,34 @@ h6 {
 
   .roadmap-bar {
     width: 100%;
-    height: 2px;
-    background: rgba(255, 72, 0, 0.35);
+    height: 3px;
+    background: rgba(255, 72, 0, 0.2);
+  }
+
+  .roadmap-item--current .roadmap-bar {
+    background: var(--orange-primary);
   }
 
   .roadmap-details {
     max-width: none;
   }
 }
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 /* Motivation Page Styles */
 .motivation-page {
