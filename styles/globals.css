@@ -1097,23 +1097,28 @@ h6 {
     flex: 0 0 auto;
   }
 
-  /* Roadmap — side-by-side Business / Application columns */
+  /* Roadmap — three-column horizontal layout */
   .roadmap {
     gap: 40px;
   }
 
   .roadmap-items {
-    gap: 40px;
+    flex-direction: row;
+    gap: var(--gap-lg);
+  }
+
+  .roadmap-item {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .roadmap-bar {
+    width: 100%;
+    height: 4px;
   }
 
   .roadmap-details {
-    flex-direction: row;
     max-width: none;
-    gap: var(--gap-xl);
-  }
-
-  .roadmap-detail-section {
-    flex: 1;
   }
 }
 
