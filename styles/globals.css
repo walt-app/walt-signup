@@ -424,9 +424,13 @@ h6 {
 
 .step-heading {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--gap-sm);
   margin-bottom: var(--gap-xs);
+}
+
+.step-heading .step-number {
+  margin-top: 4px;
 }
 
 .step-content h3 {
