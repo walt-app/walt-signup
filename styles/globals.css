@@ -32,7 +32,7 @@
   --gap-xs: 8px;
 
   /* Padding */
-  --padding-section: 96px;
+  --padding-section: 64px;
   --padding-xl: 48px;
   --padding-lg: 24px;
   --padding-md: 16px;
@@ -450,14 +450,14 @@ h6 {
 .section-card-content {
   display: flex;
   flex-direction: column;
-  gap: 92px;
+  gap: 56px;
   align-items: flex-start;
 }
 
 .section-card-header {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
   align-items: center;
   text-align: center;
   width: 100%;
@@ -554,7 +554,7 @@ h6 {
 .roadmap {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 40px;
   width: 100%;
 }
 
@@ -583,7 +583,7 @@ h6 {
 .roadmap-items {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 40px;
 }
 
 .roadmap-item {
@@ -919,7 +919,7 @@ h6 {
   }
 
   .hero-card {
-    padding: 64px 32px;
+    padding: 48px 24px;
   }
 
   .hero-inner {
@@ -978,7 +978,7 @@ h6 {
 
   /* Section card */
   .section-card {
-    padding: 64px 32px;
+    padding: 48px 24px;
   }
 
   .section-card-content {
@@ -1034,7 +1034,7 @@ h6 {
 
   /* Bottom CTA - mobile */
   .bottom-cta-card {
-    padding: 64px 32px;
+    padding: 48px 24px;
   }
 
   .bottom-cta-title {
