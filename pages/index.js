@@ -53,7 +53,7 @@ export default function Home() {
 
   const useSteps = [
     {
-      title: "Download and install",
+      title: "Download Walt",
       description:
         "Once Walt reaches general availability, download Walt to your smartphone.",
       image: "/promo-screen.jpg",
