@@ -4,6 +4,65 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 
+/* ─── Inline SVG Icons ─────────────────────────────────────────────────────── */
+
+const IconEye = (
+  <svg className="deck-slide-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.5 20C2.5 20 8.33 8.33 20 8.33C31.67 8.33 37.5 20 37.5 20C37.5 20 31.67 31.67 20 31.67C8.33 31.67 2.5 20 2.5 20Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20 25C22.7614 25 25 22.7614 25 20C25 17.2386 22.7614 15 20 15C17.2386 15 15 17.2386 15 20C15 22.7614 17.2386 25 20 25Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconLock = (
+  <svg className="deck-step-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="18.33" width="20" height="15" rx="3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M13.33 18.33V13.33C13.33 9.65 16.32 6.67 20 6.67C23.68 6.67 26.67 9.65 26.67 13.33V18.33" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconServerOff = (
+  <svg className="deck-step-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6.67" y="6.67" width="26.67" height="10" rx="2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="6.67" y="23.33" width="26.67" height="10" rx="2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M11.67 11.67H11.68" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M11.67 28.33H11.68" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 5L35 35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconUsers = (
+  <svg className="deck-step-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M28.33 35V31.67C28.33 29.9 27.63 28.2 26.38 26.95C25.13 25.7 23.43 25 21.67 25H8.33C6.57 25 4.87 25.7 3.62 26.95C2.37 28.2 1.67 29.9 1.67 31.67V35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M15 18.33C18.68 18.33 21.67 15.35 21.67 11.67C21.67 7.98 18.68 5 15 5C11.32 5 8.33 7.98 8.33 11.67C8.33 15.35 11.32 18.33 15 18.33Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M38.33 35V31.67C38.33 30.19 37.84 28.75 36.94 27.59C36.03 26.42 34.77 25.58 33.33 25.22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26.67 5.22C28.11 5.58 29.37 6.42 30.28 7.59C31.19 8.76 31.68 10.19 31.68 11.67C31.68 13.16 31.19 14.59 30.28 15.76C29.37 16.93 28.11 17.77 26.67 18.13" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconCheckCircle = (
+  <svg className="deck-traction-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="17" fill="var(--orange-primary)"/>
+    <path d="M13 20L18 25L27 15" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconBriefcase = (
+  <svg className="deck-hire-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3.33" y="13.33" width="33.33" height="21.67" rx="3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26.67 35V8.33C26.67 7.45 26.31 6.6 25.69 5.98C25.07 5.35 24.22 5 23.33 5H16.67C15.78 5 14.93 5.35 14.31 5.98C13.69 6.6 13.33 7.45 13.33 8.33V35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const IconMegaphone = (
+  <svg className="deck-hire-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M35 6.67V26.67C30 26.67 25.83 24.17 22.5 21.67" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 13.33H10C10 13.33 22.5 13.33 22.5 6.67V26.67C22.5 20 10 20 10 20H5V13.33Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 20V30C10 31.38 10.53 32.71 11.46 33.68C12.4 34.64 13.67 35 15 35C16.33 35 17.6 34.64 18.54 33.68C19.47 32.71 20 31.38 20 30V22.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+/* ─── Slide Components ─────────────────────────────────────────────────────── */
+
 function SlideTitle() {
   return (
     <div className="deck-slide deck-slide--accent">
@@ -22,6 +81,7 @@ function SlideProblem() {
   return (
     <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner">
+        {IconEye}
         <h2 className="deck-slide-heading">The Problem</h2>
         <p className="deck-slide-lead">
           Your daily spending reveals who you are.
@@ -48,6 +108,30 @@ function SlideProblem() {
   );
 }
 
+function SlideWhyNow() {
+  return (
+    <div className="deck-slide deck-slide--warm">
+      <div className="deck-slide-inner">
+        <h2 className="deck-slide-heading">Why Now</h2>
+        <p className="deck-slide-lead">
+          The EU Digital Markets Act
+        </p>
+        <p className="deck-slide-body">
+          Since mid-2024, third-party wallets are legally entitled to NFC access on Android and iOS in the EU.
+          The regulatory window is open &mdash; and no privacy-first wallet has moved to fill it.
+        </p>
+        <div className="deck-highlight-stat">
+          <span className="deck-stat-num">91%</span>
+          <span className="deck-stat-desc">
+            of 25&ndash;34 year olds in key EU markets<br />
+            already use tap-to-pay daily
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SlideSolution() {
   return (
     <div className="deck-slide deck-slide--light">
@@ -63,15 +147,15 @@ function SlideSolution() {
           </p>
           <div className="deck-steps">
             <div className="deck-step">
-              <span className="deck-step-num">1</span>
+              {IconLock}
               <span>On-device encryption</span>
             </div>
             <div className="deck-step">
-              <span className="deck-step-num">2</span>
+              {IconServerOff}
               <span>No server-side storage</span>
             </div>
             <div className="deck-step">
-              <span className="deck-step-num">3</span>
+              {IconUsers}
               <span>Funded by users, not data</span>
             </div>
           </div>
@@ -112,15 +196,15 @@ function SlideSolution() {
 
 function SlideMarket() {
   return (
-    <div className="deck-slide deck-slide--light">
+    <div className="deck-slide deck-slide--warm">
       <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Why Now + Market</h2>
+        <h2 className="deck-slide-heading">Market Opportunity</h2>
         <p className="deck-slide-lead">
-          The EU Digital Markets Act
+          Privacy-conscious consumers in the EU
         </p>
         <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
-          Since mid-2024, third-party wallets are legally entitled to NFC access on Android and iOS in the EU.
-          Tap-to-pay adoption is at 91% among 25-34 year olds in key markets.
+          EU mobile wallet revenue, assuming &euro;10/year membership model
+          across privacy-aware segments.
         </p>
         <div className="deck-tam-bars">
           <div className="deck-tam-bar">
@@ -147,27 +231,44 @@ function SlideMarket() {
 function SlideBusiness() {
   return (
     <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Business Model + Traction</h2>
-        <div className="deck-price-row">
-          <span className="deck-slide-stat">&euro;10</span>
-          <span className="deck-price-period">/year</span>
+      <div className="deck-slide-inner deck-slide-center">
+        <h2 className="deck-slide-heading">Business Model</h2>
+        <div className="deck-price-hero">
+          <div className="deck-price-row">
+            <span className="deck-slide-stat">&euro;10</span>
+            <span className="deck-price-period">/year</span>
+          </div>
+          <p className="deck-slide-body">
+            Membership funds infrastructure and annual third-party security audits.
+          </p>
         </div>
-        <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
-          Membership funds infrastructure and annual third-party security audits.
+        <p className="deck-slide-body">
           No ads. No data monetization. Ever.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function SlideTraction() {
+  return (
+    <div className="deck-slide deck-slide--warm">
+      <div className="deck-slide-inner">
+        <h2 className="deck-slide-heading">Traction</h2>
+        <p className="deck-slide-lead" style={{ marginBottom: "clamp(8px, 1.5vw, 24px)" }}>
+          Early milestones achieved
         </p>
         <div className="deck-traction-list">
           <div className="deck-traction-item">
-            <span className="deck-traction-check">&#x2713;</span>
+            {IconCheckCircle}
             <span>Paymentology partnership secured</span>
           </div>
           <div className="deck-traction-item">
-            <span className="deck-traction-check">&#x2713;</span>
+            {IconCheckCircle}
             <span>App in beta</span>
           </div>
           <div className="deck-traction-item">
-            <span className="deck-traction-check">&#x2713;</span>
+            {IconCheckCircle}
             <span>Public waitlist live</span>
           </div>
         </div>
@@ -194,10 +295,12 @@ function SlideTeam() {
         </p>
         <div className="deck-hires">
           <div className="deck-hire">
+            {IconBriefcase}
             <span className="deck-hire-role">Key Hire #1</span>
             <span className="deck-hire-title">BDR / Partnerships</span>
           </div>
           <div className="deck-hire">
+            {IconMegaphone}
             <span className="deck-hire-role">Key Hire #2</span>
             <span className="deck-hire-title">Marketing</span>
           </div>
@@ -209,7 +312,7 @@ function SlideTeam() {
 
 function SlideAsk() {
   return (
-    <div className="deck-slide deck-slide--light">
+    <div className="deck-slide deck-slide--accent">
       <div className="deck-slide-inner deck-slide-center">
         <h2 className="deck-slide-heading">The Ask</h2>
         <p className="deck-slide-body" style={{ marginBottom: "clamp(24px, 4vw, 64px)" }}>
@@ -223,15 +326,21 @@ function SlideAsk() {
   );
 }
 
+/* ─── Slide Array ──────────────────────────────────────────────────────────── */
+
 const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
-  { title: "Solution + Product", render: SlideSolution },
-  { title: "Why Now + Market", render: SlideMarket },
-  { title: "Business + Traction", render: SlideBusiness },
+  { title: "Why Now", render: SlideWhyNow },
+  { title: "The Solution", render: SlideSolution },
+  { title: "Market Opportunity", render: SlideMarket },
+  { title: "Business Model", render: SlideBusiness },
+  { title: "Traction", render: SlideTraction },
   { title: "Team", render: SlideTeam },
   { title: "The Ask", render: SlideAsk },
 ];
+
+/* ─── Page Component ───────────────────────────────────────────────────────── */
 
 export default function PitchDeck() {
   const [mode, setMode] = useState("grid");
@@ -287,7 +396,7 @@ export default function PitchDeck() {
         <meta property="og:title" content="Walt - 5-Minute Pitch Deck" />
         <meta
           property="og:description"
-          content="Privacy-first tap-to-pay. 7-slide condensed pitch."
+          content="Privacy-first tap-to-pay. 9-slide condensed pitch."
         />
         <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
@@ -295,7 +404,7 @@ export default function PitchDeck() {
         <meta property="twitter:title" content="Walt - 5-Minute Pitch Deck" />
         <meta
           property="twitter:description"
-          content="Privacy-first tap-to-pay. 7-slide condensed pitch."
+          content="Privacy-first tap-to-pay. 9-slide condensed pitch."
         />
         <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
         <link rel="icon" href="/favicon.ico" />
@@ -330,7 +439,7 @@ export default function PitchDeck() {
           <div className="deck-hero-card">
             <h1>Pitch Deck</h1>
             <p>
-              A condensed 7-slide overview of Walt &mdash; designed for a 5-minute presentation.
+              A condensed 9-slide overview of Walt &mdash; designed for a 5-minute presentation.
             </p>
             <div className="pitch-downloads">
               <button
@@ -342,6 +451,15 @@ export default function PitchDeck() {
               <Link href="/pitch" className="pitch-download-button outline">
                 View Full Pitch Deck
               </Link>
+              <a href="/pitch/pitch-deck.pdf" className="pitch-download-button outline" download>
+                Full Deck PDF
+              </a>
+              <a href="/pitch/walt-pitch.pptx" className="pitch-download-button outline" download>
+                Full Deck PowerPoint
+              </a>
+              <a href="/pitch/walt-pitch.key" className="pitch-download-button outline" download>
+                Full Deck Keynote
+              </a>
             </div>
           </div>
         </section>

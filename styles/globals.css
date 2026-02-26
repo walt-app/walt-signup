@@ -1868,6 +1868,11 @@ h6 {
   color: var(--text-dark);
 }
 
+.deck-slide--warm {
+  background: #fdf8f5;
+  color: var(--text-dark);
+}
+
 .deck-slide-inner {
   padding: 6% 8%;
   display: flex;
@@ -1948,10 +1953,12 @@ h6 {
 /* Slide: Problem - Stat Card */
 
 .deck-stat-card {
-  background: #f0f0f0;
+  background: #ffffff;
+  border-left: clamp(3px, 0.4vw, 5px) solid var(--orange-primary);
   border-radius: clamp(6px, 0.8vw, 16px);
   padding: clamp(8px, 1.5vw, 24px) clamp(12px, 2vw, 32px);
   margin-top: clamp(8px, 1.5vw, 24px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .deck-stat-row {
@@ -2068,17 +2075,17 @@ h6 {
 
 .deck-tam-bar-fill.deck-tam-bar--tam {
   height: 100%;
-  background: var(--orange-primary);
+  background: linear-gradient(to top, #c44200, var(--orange-primary));
 }
 
 .deck-tam-bar-fill.deck-tam-bar--sam {
-  height: 55%;
-  background: var(--orange-gradient-end);
+  height: 40%;
+  background: linear-gradient(to top, #b8734d, var(--orange-gradient-end));
 }
 
 .deck-tam-bar-fill.deck-tam-bar--som {
-  height: 25%;
-  background: rgba(255, 72, 0, 0.4);
+  height: 15%;
+  background: linear-gradient(to top, rgba(255, 72, 0, 0.25), rgba(255, 72, 0, 0.5));
 }
 
 .deck-tam-bar-label {
@@ -2144,9 +2151,10 @@ h6 {
   flex-direction: column;
   align-items: center;
   gap: clamp(2px, 0.3vw, 4px);
-  background: #f0f0f0;
+  background: #ffffff;
   padding: clamp(8px, 1vw, 16px) clamp(12px, 1.5vw, 24px);
   border-radius: clamp(4px, 0.5vw, 8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .deck-hire-role {
@@ -2162,6 +2170,80 @@ h6 {
   color: var(--text-muted);
 }
 
+/* Slide: Icon sizing */
+
+.deck-slide-icon {
+  width: clamp(20px, 3vw, 40px);
+  height: clamp(20px, 3vw, 40px);
+  color: var(--orange-primary);
+  margin-bottom: clamp(4px, 0.5vw, 8px);
+  flex-shrink: 0;
+}
+
+.deck-step-icon {
+  width: clamp(14px, 1.5vw, 24px);
+  height: clamp(14px, 1.5vw, 24px);
+  color: var(--orange-primary);
+  flex-shrink: 0;
+}
+
+.deck-traction-icon {
+  width: clamp(14px, 1.5vw, 24px);
+  height: clamp(14px, 1.5vw, 24px);
+  flex-shrink: 0;
+}
+
+.deck-hire-icon {
+  width: clamp(16px, 1.8vw, 28px);
+  height: clamp(16px, 1.8vw, 28px);
+  color: var(--orange-primary);
+  margin-bottom: clamp(2px, 0.2vw, 4px);
+}
+
+/* Slide: Why Now - Highlight Stat */
+
+.deck-highlight-stat {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(6px, 1vw, 16px);
+  margin-top: clamp(8px, 1.5vw, 24px);
+}
+
+.deck-highlight-stat .deck-stat-num {
+  font-size: clamp(24px, 4vw, 72px);
+  color: var(--orange-primary);
+}
+
+.deck-highlight-stat .deck-stat-desc {
+  font-size: clamp(8px, 0.9vw, 15px);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Slide: Business Model - Price Hero */
+
+.deck-price-hero {
+  background: #ffffff;
+  border-left: clamp(3px, 0.4vw, 5px) solid var(--orange-primary);
+  border-radius: clamp(6px, 0.8vw, 16px);
+  padding: clamp(12px, 2vw, 32px) clamp(16px, 2.5vw, 40px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(8px, 1.5vw, 24px);
+}
+
+.deck-price-hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 72, 0, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 /* Slide: Ask - Closing Quote */
 
 .deck-closing-quote {
@@ -2174,6 +2256,12 @@ h6 {
   padding: 0;
   border: none;
   line-height: 1.2;
+}
+
+.deck-slide--accent .deck-slide-heading,
+.deck-slide--accent .deck-slide-body,
+.deck-slide--accent .deck-closing-quote {
+  color: var(--text-dark);
 }
 
 /* Presentation Mode */
