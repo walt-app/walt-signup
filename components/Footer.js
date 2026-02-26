@@ -16,6 +16,16 @@ export default function Footer({ variant = "default" }) {
         { label: "Updates", href: "/updates" },
         { label: "Privacy", href: "/privacy" },
       ]
+    : variant === "pitch-deck"
+    ? [
+        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
+        { label: "Home", href: "/" },
+        { label: "Pitch Deck (Full)", href: "/pitch" },
+        { label: "Motivation", href: "/motivation" },
+        { label: "Updates", href: "/updates" },
+        { label: "Privacy", href: "/privacy" },
+      ]
     : variant === "updates"
     ? [
         { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
@@ -41,7 +51,7 @@ export default function Footer({ variant = "default" }) {
         { label: "Privacy", href: "/privacy" },
       ];
 
-  const footerClass = variant === "motivation" || variant === "pitch" || variant === "updates" || variant === "privacy"
+  const footerClass = variant === "motivation" || variant === "pitch" || variant === "pitch-deck" || variant === "updates" || variant === "privacy"
     ? `site-footer ${variant}-footer-override`
     : "site-footer";
 

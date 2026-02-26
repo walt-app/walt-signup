@@ -103,6 +103,11 @@ export default function Pitch() {
               A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS.
               Review our market opportunity, technology approach, roadmap, and business model.
             </p>
+            <p style={{ marginBottom: "24px" }}>
+              <Link href="/pitch-deck" style={{ color: "var(--orange-primary)", fontWeight: 500 }}>
+                View condensed 5-minute version &rarr;
+              </Link>
+            </p>
             <div className="pitch-downloads">
               <a
                 href="/pitch/pitch-deck.pdf"

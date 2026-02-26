@@ -1721,3 +1721,587 @@ h6 {
     right: 4px;
   }
 }
+
+/* =============================================================================
+   Condensed Pitch Deck Page (pitch-deck.js)
+   ============================================================================= */
+
+.deck-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+
+.deck-hero-card {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--gap-xl) var(--gap-lg);
+  text-align: center;
+}
+
+.deck-hero-card h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+  margin-bottom: var(--gap-sm);
+}
+
+.deck-hero-card p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--gap-lg);
+}
+
+.deck-present-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: var(--bg-black);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.deck-present-button:hover {
+  opacity: 0.85;
+}
+
+/* Grid View */
+
+.deck-slides-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap-lg) var(--gap-xxl);
+  width: 100%;
+}
+
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-lg);
+}
+
+.deck-grid-item {
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.deck-grid-item:hover {
+  border-color: var(--orange-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 72, 0, 0.1);
+}
+
+.deck-grid-item .deck-slide {
+  pointer-events: none;
+}
+
+.deck-slide-number {
+  position: absolute;
+  top: clamp(6px, 1vw, 12px);
+  left: clamp(6px, 1vw, 12px);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: clamp(9px, 0.7vw, 12px);
+  padding: 2px 8px;
+  border-radius: 4px;
+  z-index: 2;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+/* Slide Base */
+
+.deck-slide {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.deck-slide--dark {
+  background: var(--bg-black);
+  color: var(--text-white);
+}
+
+.deck-slide-inner {
+  padding: 6% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.deck-slide-center {
+  align-items: center;
+  text-align: center;
+}
+
+/* Slide Typography */
+
+.deck-slide-logo {
+  font-size: clamp(48px, 8vw, 128px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--orange-primary);
+  line-height: 1;
+  margin: 0 0 clamp(4px, 1vw, 16px);
+}
+
+.deck-slide-label {
+  font-size: clamp(8px, 0.7vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  margin-bottom: clamp(6px, 1vw, 16px);
+}
+
+.deck-slide-title {
+  font-size: clamp(16px, 2.5vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--text-white);
+}
+
+.deck-slide-subtitle {
+  font-size: clamp(11px, 1.3vw, 22px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.deck-slide-body {
+  font-size: clamp(9px, 1vw, 17px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text-white);
+}
+
+.deck-slide-stat {
+  font-size: clamp(32px, 5.5vw, 88px);
+  font-weight: 500;
+  color: var(--orange-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: clamp(4px, 0.5vw, 12px);
+}
+
+/* Slide: Problem - Dead Ends */
+
+.deck-dead-ends {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 24px);
+}
+
+.deck-dead-end {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.5vw, 8px);
+  background: rgba(255, 255, 255, 0.06);
+  padding: clamp(4px, 0.6vw, 10px) clamp(8px, 1vw, 16px);
+  border-radius: clamp(4px, 0.5vw, 8px);
+  font-size: clamp(8px, 0.9vw, 15px);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.deck-dead-end-x {
+  color: #ff4444;
+  font-weight: 700;
+  font-size: clamp(10px, 1.1vw, 18px);
+}
+
+/* Slide: Solution - Split Layout */
+
+.deck-slide-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  align-items: center;
+}
+
+.deck-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(8px, 1.5vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.4vw, 6px);
+}
+
+.deck-feature-list li {
+  font-size: clamp(8px, 0.9vw, 15px);
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: clamp(10px, 1.2vw, 20px);
+  position: relative;
+}
+
+.deck-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: clamp(4px, 0.4vw, 7px);
+  width: clamp(4px, 0.4vw, 6px);
+  height: clamp(4px, 0.4vw, 6px);
+  background: var(--orange-primary);
+  border-radius: 50%;
+}
+
+.deck-steps {
+  display: flex;
+  gap: clamp(6px, 1vw, 16px);
+}
+
+.deck-step {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 0.4vw, 6px);
+  font-size: clamp(7px, 0.8vw, 13px);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.deck-step-num {
+  width: clamp(14px, 1.5vw, 24px);
+  height: clamp(14px, 1.5vw, 24px);
+  background: var(--orange-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(7px, 0.7vw, 12px);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.deck-phone-row {
+  display: flex;
+  gap: clamp(4px, 0.8vw, 12px);
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-phone-mini {
+  width: clamp(55px, 9vw, 140px);
+  border-radius: clamp(6px, 0.8vw, 14px);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.deck-phone-mini img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Slide: Market - TAM Bars */
+
+.deck-tam-bars {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 24px);
+  align-items: flex-end;
+  height: clamp(60px, 10vw, 160px);
+}
+
+.deck-tam-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.deck-tam-bar-fill {
+  width: 100%;
+  border-radius: clamp(3px, 0.4vw, 6px) clamp(3px, 0.4vw, 6px) 0 0;
+  transition: height 0.4s ease;
+}
+
+.deck-tam-bar-fill.deck-tam-bar--tam {
+  height: 100%;
+  background: var(--orange-primary);
+}
+
+.deck-tam-bar-fill.deck-tam-bar--sam {
+  height: 55%;
+  background: var(--orange-gradient-end);
+}
+
+.deck-tam-bar-fill.deck-tam-bar--som {
+  height: 25%;
+  background: rgba(255, 72, 0, 0.4);
+}
+
+.deck-tam-bar-label {
+  font-size: clamp(7px, 0.65vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: clamp(4px, 0.5vw, 8px);
+}
+
+.deck-tam-bar-value {
+  font-size: clamp(10px, 1.1vw, 18px);
+  font-weight: 500;
+  color: var(--text-white);
+}
+
+/* Slide: Business - Price + Traction */
+
+.deck-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(2px, 0.3vw, 6px);
+  margin-bottom: clamp(4px, 0.5vw, 8px);
+}
+
+.deck-price-period {
+  font-size: clamp(14px, 2vw, 32px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.deck-traction-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 10px);
+}
+
+.deck-traction-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 0.8vw, 12px);
+  font-size: clamp(9px, 1vw, 17px);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.deck-traction-check {
+  color: var(--orange-primary);
+  font-size: clamp(11px, 1.2vw, 20px);
+  font-weight: 700;
+}
+
+/* Slide: Team - Hires */
+
+.deck-hires {
+  display: flex;
+  gap: clamp(12px, 2vw, 32px);
+}
+
+.deck-hire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2px, 0.3vw, 4px);
+  background: rgba(255, 255, 255, 0.06);
+  padding: clamp(8px, 1vw, 16px) clamp(12px, 1.5vw, 24px);
+  border-radius: clamp(4px, 0.5vw, 8px);
+}
+
+.deck-hire-role {
+  font-size: clamp(7px, 0.65vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+}
+
+.deck-hire-title {
+  font-size: clamp(9px, 1vw, 16px);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Slide: Ask - Closing Quote */
+
+.deck-closing-quote {
+  font-size: clamp(16px, 2.5vw, 44px);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: var(--orange-primary);
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 1.2;
+}
+
+/* Presentation Mode */
+
+.deck-presentation {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-pres-content {
+  width: 100vw;
+  max-width: calc(100vh * 16 / 9);
+  max-height: 100vh;
+  position: relative;
+}
+
+.deck-pres-content .deck-slide {
+  width: 100%;
+  height: auto;
+}
+
+.deck-pres-close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.deck-pres-close:hover {
+  color: white;
+}
+
+.deck-pres-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: clamp(32px, 4vw, 56px);
+  cursor: pointer;
+  padding: 16px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.deck-pres-arrow:hover {
+  color: white;
+}
+
+.deck-pres-prev {
+  left: 8px;
+}
+
+.deck-pres-next {
+  right: 8px;
+}
+
+.deck-pres-counter {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  padding: 12px 0 0;
+  font-family: inherit;
+}
+
+.deck-pres-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1001;
+}
+
+.deck-pres-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.deck-pres-dot.active {
+  background: var(--orange-primary);
+}
+
+.deck-pres-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile Responsive - Pitch Deck */
+@media (max-width: 768px) {
+  .deck-hero-card {
+    padding: var(--gap-lg) var(--gap-md);
+  }
+
+  .deck-slides-section {
+    padding: 0 var(--gap-md) var(--gap-xl);
+  }
+
+  .deck-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+
+  .deck-slide-split {
+    grid-template-columns: 1fr;
+    gap: clamp(8px, 2vw, 16px);
+  }
+
+  .deck-phone-row {
+    justify-content: center;
+  }
+
+  .deck-dead-ends {
+    flex-direction: column;
+    gap: clamp(4px, 1vw, 8px);
+  }
+
+  .deck-hires {
+    flex-direction: column;
+    gap: clamp(8px, 2vw, 16px);
+  }
+
+  .deck-pres-arrow {
+    font-size: 28px;
+    padding: 8px;
+  }
+
+  .deck-pres-prev {
+    left: 2px;
+  }
+
+  .deck-pres-next {
+    right: 2px;
+  }
+}
