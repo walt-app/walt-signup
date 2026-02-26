@@ -6,12 +6,12 @@ import Footer from "../components/Footer";
 
 function SlideTitle() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--accent">
       <div className="deck-slide-inner deck-slide-center">
-        <span className="deck-slide-label">Private tap-to-pay for Android</span>
-        <h1 className="deck-slide-logo">Walt</h1>
+        <h1 className="deck-slide-logo">WALT</h1>
+        <div className="deck-slide-divider" />
         <p className="deck-slide-subtitle">
-          Tap-to-pay that doesn&apos;t track you.
+          Private tap-to-pay
         </p>
       </div>
     </div>
@@ -20,29 +20,28 @@ function SlideTitle() {
 
 function SlideProblem() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner">
-        <span className="deck-slide-label">The Problem</span>
-        <div className="deck-slide-stat">520M</div>
-        <p className="deck-slide-subtitle" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
-          Google Wallet users whose every transaction is tracked, profiled, and monetized.
+        <h2 className="deck-slide-heading">The Problem</h2>
+        <p className="deck-slide-lead">
+          Your daily spending reveals who you are.
         </p>
-        <p className="deck-slide-body" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "clamp(12px, 2vw, 24px)" }}>
-          Android is 71% of the global smartphone market. For these users, there are three options:
+        <p className="deck-slide-body">
+          Every tap-to-pay transaction on Android and iPhone routes through Google Wallet or Apple Pay.
+          Both harvest this data to build profiles of your life, values, and behavior.
         </p>
-        <div className="deck-dead-ends">
-          <div className="deck-dead-end">
-            <span className="deck-dead-end-x">&times;</span>
-            <span>Switch to iPhone</span>
+        <div className="deck-stat-card">
+          <div className="deck-stat-row">
+            <div className="deck-stat-item">
+              <span className="deck-stat-num">520M</span>
+              <span className="deck-stat-desc">Google Wallet users</span>
+            </div>
+            <div className="deck-stat-item">
+              <span className="deck-stat-num">$5.2T</span>
+              <span className="deck-stat-desc">processed annually</span>
+            </div>
           </div>
-          <div className="deck-dead-end">
-            <span className="deck-dead-end-x">&times;</span>
-            <span>Go back to cash</span>
-          </div>
-          <div className="deck-dead-end">
-            <span className="deck-dead-end-x">&times;</span>
-            <span>Accept surveillance</span>
-          </div>
+          <p className="deck-stat-footer">Zero private alternatives exist.</p>
         </div>
       </div>
     </div>
@@ -51,30 +50,29 @@ function SlideProblem() {
 
 function SlideSolution() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner deck-slide-split">
         <div>
-          <span className="deck-slide-label">The Solution</span>
-          <h2 className="deck-slide-title" style={{ marginBottom: "clamp(8px, 1.5vw, 24px)" }}>
-            The private alternative to Google Wallet.
-          </h2>
-          <ul className="deck-feature-list">
-            <li>On-device encryption</li>
-            <li>No server-side data storage</li>
-            <li>Funded by members, not data</li>
-          </ul>
+          <h2 className="deck-slide-heading">The Solution</h2>
+          <p className="deck-slide-lead">
+            Walt is the private alternative to Google Wallet and Apple Pay.
+          </p>
+          <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 24px)" }}>
+            A tap-to-pay wallet that treats transaction data as sacred.
+            No collection. No storage. No selling.
+          </p>
           <div className="deck-steps">
             <div className="deck-step">
               <span className="deck-step-num">1</span>
-              <span>Download</span>
+              <span>On-device encryption</span>
             </div>
             <div className="deck-step">
               <span className="deck-step-num">2</span>
-              <span>Add card</span>
+              <span>No server-side storage</span>
             </div>
             <div className="deck-step">
               <span className="deck-step-num">3</span>
-              <span>Tap to pay</span>
+              <span>Funded by users, not data</span>
             </div>
           </div>
         </div>
@@ -114,13 +112,13 @@ function SlideSolution() {
 
 function SlideMarket() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner">
-        <span className="deck-slide-label">Why Now + Market</span>
-        <h2 className="deck-slide-title" style={{ marginBottom: "clamp(4px, 1vw, 12px)" }}>
+        <h2 className="deck-slide-heading">Why Now + Market</h2>
+        <p className="deck-slide-lead">
           The EU Digital Markets Act
-        </h2>
-        <p className="deck-slide-body" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "clamp(12px, 2vw, 32px)" }}>
+        </p>
+        <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
           Since mid-2024, third-party wallets are legally entitled to NFC access on Android and iOS in the EU.
           Tap-to-pay adoption is at 91% among 25-34 year olds in key markets.
         </p>
@@ -148,14 +146,14 @@ function SlideMarket() {
 
 function SlideBusiness() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner">
-        <span className="deck-slide-label">Business Model + Traction</span>
+        <h2 className="deck-slide-heading">Business Model + Traction</h2>
         <div className="deck-price-row">
           <span className="deck-slide-stat">&euro;10</span>
           <span className="deck-price-period">/year</span>
         </div>
-        <p className="deck-slide-body" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "clamp(12px, 2vw, 32px)" }}>
+        <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
           Membership funds infrastructure and annual third-party security audits.
           No ads. No data monetization. Ever.
         </p>
@@ -180,16 +178,16 @@ function SlideBusiness() {
 
 function SlideTeam() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner deck-slide-center">
-        <span className="deck-slide-label">Team</span>
-        <h2 className="deck-slide-title" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
+        <h2 className="deck-slide-heading">Team</h2>
+        <h3 className="deck-slide-lead" style={{ marginBottom: "clamp(2px, 0.3vw, 6px)" }}>
           Cole Bittel
-        </h2>
+        </h3>
         <p className="deck-slide-body" style={{ color: "var(--orange-primary)", marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
           Founder
         </p>
-        <p className="deck-slide-body" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "clamp(12px, 2vw, 32px)" }}>
+        <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
           Previously at Pleo and Funding Circle.
           <br />
           Fintech product and engineering background.
@@ -211,10 +209,10 @@ function SlideTeam() {
 
 function SlideAsk() {
   return (
-    <div className="deck-slide deck-slide--dark">
+    <div className="deck-slide deck-slide--light">
       <div className="deck-slide-inner deck-slide-center">
-        <span className="deck-slide-label">The Ask</span>
-        <p className="deck-slide-subtitle" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "clamp(24px, 4vw, 64px)" }}>
+        <h2 className="deck-slide-heading">The Ask</h2>
+        <p className="deck-slide-body" style={{ marginBottom: "clamp(24px, 4vw, 64px)" }}>
           Work in progress &mdash; still formulating the ask.
         </p>
         <blockquote className="deck-closing-quote">
@@ -280,7 +278,7 @@ export default function PitchDeck() {
         <title>Walt - 5-Minute Pitch Deck</title>
         <meta
           name="description"
-          content="Walt's condensed pitch deck: privacy-first tap-to-pay for Android. Market opportunity, product, business model, and team."
+          content="Walt's condensed pitch deck: privacy-first tap-to-pay. Market opportunity, product, business model, and team."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://walt.is/pitch-deck" />
@@ -289,7 +287,7 @@ export default function PitchDeck() {
         <meta property="og:title" content="Walt - 5-Minute Pitch Deck" />
         <meta
           property="og:description"
-          content="Privacy-first tap-to-pay for Android. 7-slide condensed pitch."
+          content="Privacy-first tap-to-pay. 7-slide condensed pitch."
         />
         <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
@@ -297,7 +295,7 @@ export default function PitchDeck() {
         <meta property="twitter:title" content="Walt - 5-Minute Pitch Deck" />
         <meta
           property="twitter:description"
-          content="Privacy-first tap-to-pay for Android. 7-slide condensed pitch."
+          content="Privacy-first tap-to-pay. 7-slide condensed pitch."
         />
         <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
         <link rel="icon" href="/favicon.ico" />
@@ -334,12 +332,17 @@ export default function PitchDeck() {
             <p>
               A condensed 7-slide overview of Walt &mdash; designed for a 5-minute presentation.
             </p>
-            <button
-              className="deck-present-button"
-              onClick={() => enterPresentation(0)}
-            >
-              Start Presentation
-            </button>
+            <div className="pitch-downloads">
+              <button
+                className="deck-present-button"
+                onClick={() => enterPresentation(0)}
+              >
+                Start Presentation
+              </button>
+              <Link href="/pitch" className="pitch-download-button outline">
+                View Full Pitch Deck
+              </Link>
+            </div>
           </div>
         </section>
 

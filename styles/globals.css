@@ -1723,6 +1723,21 @@ h6 {
 }
 
 /* =============================================================================
+   Orange button variant for pitch download buttons
+   ============================================================================= */
+
+.pitch-download-button.orange {
+  background: var(--orange-primary);
+  color: var(--text-white);
+  border: 2px solid var(--orange-primary);
+}
+
+.pitch-download-button.orange:hover {
+  background: var(--orange-gradient-end);
+  border-color: var(--orange-gradient-end);
+}
+
+/* =============================================================================
    Condensed Pitch Deck Page (pitch-deck.js)
    ============================================================================= */
 
@@ -1755,24 +1770,32 @@ h6 {
   margin-bottom: var(--gap-lg);
 }
 
+.deck-hero-card .pitch-downloads {
+  justify-content: center;
+}
+
 .deck-present-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  background: var(--bg-black);
+  gap: var(--gap-xs);
+  padding: var(--padding-sm) var(--padding-lg);
+  background: var(--orange-primary);
   color: var(--text-white);
-  border: none;
+  border: 2px solid var(--orange-primary);
   border-radius: var(--radius-pill);
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
+  font-family: "Geist", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .deck-present-button:hover {
-  opacity: 0.85;
+  background: var(--orange-gradient-end);
+  border-color: var(--orange-gradient-end);
+  transform: translateY(-2px);
 }
 
 /* Grid View */
@@ -1835,9 +1858,14 @@ h6 {
   overflow: hidden;
 }
 
-.deck-slide--dark {
-  background: var(--bg-black);
-  color: var(--text-white);
+.deck-slide--light {
+  background: #ffffff;
+  color: var(--text-dark);
+}
+
+.deck-slide--accent {
+  background: var(--orange-primary);
+  color: var(--text-dark);
 }
 
 .deck-slide-inner {
@@ -1859,29 +1887,36 @@ h6 {
 
 .deck-slide-logo {
   font-size: clamp(48px, 8vw, 128px);
-  font-weight: 500;
+  font-weight: 900;
   letter-spacing: -0.04em;
-  color: var(--orange-primary);
+  color: var(--text-dark);
   line-height: 1;
   margin: 0 0 clamp(4px, 1vw, 16px);
 }
 
-.deck-slide-label {
-  font-size: clamp(8px, 0.7vw, 13px);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--orange-primary);
-  margin-bottom: clamp(6px, 1vw, 16px);
+.deck-slide-divider {
+  width: clamp(32px, 4vw, 80px);
+  height: clamp(2px, 0.2vw, 3px);
+  background: var(--text-dark);
+  margin-bottom: clamp(8px, 1.5vw, 24px);
 }
 
-.deck-slide-title {
-  font-size: clamp(16px, 2.5vw, 44px);
-  font-weight: 500;
+.deck-slide-heading {
+  font-size: clamp(18px, 2.8vw, 48px);
+  font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  margin: 0;
-  color: var(--text-white);
+  margin: 0 0 clamp(8px, 1.5vw, 24px);
+  color: var(--text-dark);
+}
+
+.deck-slide-lead {
+  font-size: clamp(11px, 1.4vw, 24px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--orange-primary);
+  margin: 0 0 clamp(6px, 1vw, 16px);
 }
 
 .deck-slide-subtitle {
@@ -1889,49 +1924,65 @@ h6 {
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: var(--text-white);
+  color: var(--text-dark);
   margin: 0;
 }
 
 .deck-slide-body {
   font-size: clamp(9px, 1vw, 17px);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
-  color: var(--text-white);
+  color: var(--text-muted);
 }
 
 .deck-slide-stat {
   font-size: clamp(32px, 5.5vw, 88px);
-  font-weight: 500;
-  color: var(--orange-primary);
+  font-weight: 900;
+  color: var(--text-dark);
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: clamp(4px, 0.5vw, 12px);
 }
 
-/* Slide: Problem - Dead Ends */
+/* Slide: Problem - Stat Card */
 
-.deck-dead-ends {
-  display: flex;
-  gap: clamp(8px, 1.5vw, 24px);
+.deck-stat-card {
+  background: #f0f0f0;
+  border-radius: clamp(6px, 0.8vw, 16px);
+  padding: clamp(8px, 1.5vw, 24px) clamp(12px, 2vw, 32px);
+  margin-top: clamp(8px, 1.5vw, 24px);
 }
 
-.deck-dead-end {
+.deck-stat-row {
   display: flex;
-  align-items: center;
+  gap: clamp(12px, 3vw, 48px);
+  margin-bottom: clamp(6px, 1vw, 16px);
+}
+
+.deck-stat-item {
+  display: flex;
+  align-items: baseline;
   gap: clamp(4px, 0.5vw, 8px);
-  background: rgba(255, 255, 255, 0.06);
-  padding: clamp(4px, 0.6vw, 10px) clamp(8px, 1vw, 16px);
-  border-radius: clamp(4px, 0.5vw, 8px);
-  font-size: clamp(8px, 0.9vw, 15px);
-  color: rgba(255, 255, 255, 0.6);
 }
 
-.deck-dead-end-x {
-  color: #ff4444;
-  font-weight: 700;
-  font-size: clamp(10px, 1.1vw, 18px);
+.deck-stat-num {
+  font-size: clamp(16px, 2.5vw, 44px);
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.04em;
+}
+
+.deck-stat-desc {
+  font-size: clamp(7px, 0.75vw, 13px);
+  color: var(--text-muted);
+}
+
+.deck-stat-footer {
+  font-size: clamp(8px, 0.85vw, 14px);
+  font-weight: 600;
+  color: var(--orange-primary);
+  margin: 0;
 }
 
 /* Slide: Solution - Split Layout */
@@ -1943,44 +1994,18 @@ h6 {
   align-items: center;
 }
 
-.deck-feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 clamp(8px, 1.5vw, 24px);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2px, 0.4vw, 6px);
-}
-
-.deck-feature-list li {
-  font-size: clamp(8px, 0.9vw, 15px);
-  color: rgba(255, 255, 255, 0.7);
-  padding-left: clamp(10px, 1.2vw, 20px);
-  position: relative;
-}
-
-.deck-feature-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: clamp(4px, 0.4vw, 7px);
-  width: clamp(4px, 0.4vw, 6px);
-  height: clamp(4px, 0.4vw, 6px);
-  background: var(--orange-primary);
-  border-radius: 50%;
-}
-
 .deck-steps {
   display: flex;
-  gap: clamp(6px, 1vw, 16px);
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 10px);
 }
 
 .deck-step {
   display: flex;
   align-items: center;
-  gap: clamp(3px, 0.4vw, 6px);
-  font-size: clamp(7px, 0.8vw, 13px);
-  color: rgba(255, 255, 255, 0.6);
+  gap: clamp(4px, 0.5vw, 8px);
+  font-size: clamp(7px, 0.8vw, 14px);
+  color: var(--text-dark);
 }
 
 .deck-step-num {
@@ -2061,14 +2086,14 @@ h6 {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   margin-top: clamp(4px, 0.5vw, 8px);
 }
 
 .deck-tam-bar-value {
   font-size: clamp(10px, 1.1vw, 18px);
-  font-weight: 500;
-  color: var(--text-white);
+  font-weight: 900;
+  color: var(--text-dark);
 }
 
 /* Slide: Business - Price + Traction */
@@ -2084,7 +2109,7 @@ h6 {
 .deck-price-period {
   font-size: clamp(14px, 2vw, 32px);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 .deck-traction-list {
@@ -2098,7 +2123,7 @@ h6 {
   align-items: center;
   gap: clamp(6px, 0.8vw, 12px);
   font-size: clamp(9px, 1vw, 17px);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark);
 }
 
 .deck-traction-check {
@@ -2119,7 +2144,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   gap: clamp(2px, 0.3vw, 4px);
-  background: rgba(255, 255, 255, 0.06);
+  background: #f0f0f0;
   padding: clamp(8px, 1vw, 16px) clamp(12px, 1.5vw, 24px);
   border-radius: clamp(4px, 0.5vw, 8px);
 }
@@ -2134,7 +2159,7 @@ h6 {
 
 .deck-hire-title {
   font-size: clamp(9px, 1vw, 16px);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
 }
 
 /* Slide: Ask - Closing Quote */
@@ -2157,22 +2182,24 @@ h6 {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: #000;
+  background: rgba(0, 0, 0, 0.92);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .deck-pres-content {
-  width: 100vw;
-  max-width: calc(100vh * 16 / 9);
-  max-height: 100vh;
+  width: 90vw;
+  max-width: 1400px;
   position: relative;
 }
 
 .deck-pres-content .deck-slide {
   width: 100%;
   height: auto;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5);
 }
 
 .deck-pres-close {
@@ -2280,11 +2307,6 @@ h6 {
 
   .deck-phone-row {
     justify-content: center;
-  }
-
-  .deck-dead-ends {
-    flex-direction: column;
-    gap: clamp(4px, 1vw, 8px);
   }
 
   .deck-hires {
