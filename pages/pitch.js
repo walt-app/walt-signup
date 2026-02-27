@@ -22,7 +22,7 @@ function SlideTitle() {
   );
 }
 
-/* ─── Slide 2: The Problem ─────────────────────────────────────────────────── */
+/* ─── Slide 2: The Problem (combined with No Alternatives) ─────────────────── */
 
 function SlideProblem() {
   return (
@@ -30,34 +30,47 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <div className="ps-content">
-          <div className="ps-split ps-split--center">
+          <div className="ps-split" style={{ alignItems: "start" }}>
             <div>
               <p className="ps-lead">Your daily spending reveals who you are.</p>
-              <p className="ps-body" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+              <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
                 Every tap-to-pay transaction routes through Apple Pay or Google Wallet.
-                Apple charges banks 0.15% on every credit card tap and controls which wallets
-                can access NFC on iPhone. Google harvests this data along with Google Search,
-                Gmail, Calendar, Google Maps data to build intimate profiles of your life,
-                values, and future behavior.
+                Apple charges banks 0.15% on every credit card tap. Google harvests
+                transaction data to build intimate profiles of your life. Neither treats
+                your spending data as private.
               </p>
-              <p className="ps-body ps-italic">
-                &ldquo;To know what you spend your money on each day is also to know what you
-                will spend your money on each day.&rdquo;
-              </p>
+              <div className="ps-cols-3" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+                <div className="ps-card ps-card--left" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
+                  <p className="ps-card-title">Switch to Cash</p>
+                  <p className="ps-body ps-muted">Lose convenience, risk loss/theft.</p>
+                </div>
+                <div className="ps-card ps-card--left" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
+                  <p className="ps-card-title">Use Big Tech</p>
+                  <p className="ps-body ps-muted">Apple charges banks. Google harvests data.</p>
+                </div>
+                <div className="ps-card ps-card--left" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
+                  <p className="ps-card-title">Accept It</p>
+                  <p className="ps-body ps-muted">73% of consumers feel no control over their data.</p>
+                </div>
+              </div>
+              <div className="ps-banner" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(12px, 2vw, 32px)" }}>
+                <p className="ps-banner-h">Android + iOS = 99.6% of the global smartphone market.</p>
+                <p className="ps-banner-body">No privacy-preserving tap-to-pay on either platform.</p>
+              </div>
             </div>
             <div className="ps-card">
               <p className="ps-card-h">Mobile wallets by the numbers:</p>
               <div className="ps-stat-inline">
                 <span className="ps-stat">~650M</span>
-                <span className="ps-stat-desc">Apple Pay users (est.)</span>
+                <span className="ps-stat-desc">Apple Pay users</span>
               </div>
               <div className="ps-stat-inline">
                 <span className="ps-stat">~520M</span>
-                <span className="ps-stat-desc">Google Pay users (est.)</span>
+                <span className="ps-stat-desc">Google Pay users</span>
               </div>
               <div className="ps-stat-inline">
                 <span className="ps-stat">~$14T</span>
-                <span className="ps-stat-desc">combined processed annually (est.)</span>
+                <span className="ps-stat-desc">combined processed annually</span>
               </div>
               <div className="ps-stat-inline">
                 <span className="ps-stat">23.2B</span>
@@ -67,65 +80,14 @@ function SlideProblem() {
           </div>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">CoinLaw (est.)</a>, <a href="#">European Central Bank</a>
+          Sources: <a href="#">CoinLaw</a>, <a href="#">European Central Bank</a>, <a href="#">Pew Research</a>, <a href="#">StatCounter</a>
         </div>
       </div>
     </div>
   );
 }
 
-/* ─── Slide 3: No Alternatives Exist ───────────────────────────────────────── */
-
-function SlideNoAlternatives() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">No Alternatives Exist</h2>
-        <div className="ps-content">
-          <p className="ps-body ps-muted" style={{ margin: "clamp(6px, 1vw, 16px) 0 clamp(10px, 1.5vw, 24px)" }}>
-            For anyone who wants tap-to-pay without surveillance, current options are:
-          </p>
-          <div className="ps-cols-3" style={{ marginBottom: "clamp(10px, 1.5vw, 24px)" }}>
-            <div className="ps-card ps-card--left">
-              <p className="ps-card-title">Switch to Cash</p>
-              <p className="ps-body ps-muted">
-                Go backwards. Use physical cards or cash. Lose convenience,
-                risk loss/theft, carry more items.
-              </p>
-            </div>
-            <div className="ps-card ps-card--left">
-              <p className="ps-card-title">Use a Big Tech Wallet</p>
-              <p className="ps-body ps-muted">
-                Apple charges banks per tap. Google harvests your data.
-                Neither offers privacy by default.
-              </p>
-            </div>
-            <div className="ps-card ps-card--left">
-              <p className="ps-card-title">Accept It</p>
-              <p className="ps-body ps-muted">
-                73% of US consumers feel they have no control over how companies
-                use their data.
-              </p>
-            </div>
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-h">
-              Android + iOS = 99.6% of the global smartphone market.
-            </p>
-            <p className="ps-banner-body">
-              There is no privacy-preserving tap-to-pay option on either platform.
-            </p>
-          </div>
-        </div>
-        <div className="ps-src">
-          Sources: <a href="#">Pew Research</a>, <a href="#">StatCounter</a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 4: The Solution ────────────────────────────────────────────────── */
+/* ─── Slide 3: The Solution (combined with Product) ────────────────────────── */
 
 function SlideSolution() {
   return (
@@ -138,7 +100,7 @@ function SlideSolution() {
               <p className="ps-lead">
                 Walt is the private alternative to Apple Pay and Google Wallet.
               </p>
-              <p className="ps-body" style={{ marginBottom: "clamp(10px, 1.5vw, 24px)" }}>
+              <p className="ps-body" style={{ marginBottom: "clamp(8px, 1.2vw, 18px)" }}>
                 A tap-to-pay wallet for Android and iOS that treats transaction data as sacred.
                 No collection. No storage. No selling.
               </p>
@@ -155,101 +117,45 @@ function SlideSolution() {
                 <span className="ps-body">Funded by users, not data monetization</span>
               </div>
             </div>
-            <div className="ps-card">
-              <p className="ps-label">PHILOSOPHY</p>
-              <p className="ps-body ps-italic" style={{
-                fontSize: "clamp(11px, 1.4vw, 22px)",
-                lineHeight: 1.4,
-                color: "#333",
-                margin: "clamp(6px, 0.8vw, 14px) 0"
-              }}>
-                No AI. No premium features. There&rsquo;s only one user flow that matters.
-                Load a card, set Walt as default wallet, start tapping to pay.
-              </p>
-              <p style={{
-                fontSize: "clamp(9px, 1vw, 16px)",
-                fontWeight: 500,
-                color: "var(--orange-primary)",
-                margin: 0
-              }}>
-                Deliberately simple. Intentionally focused.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 5: Product ─────────────────────────────────────────────────────── */
-
-function SlideProduct() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Product</h2>
-        <p className="ps-body ps-muted" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-          Simple and straightforward. A predictable, familiar wallet app.
-        </p>
-        <div className="ps-content">
-          <div className="ps-cols-3" style={{ alignItems: "start" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "clamp(6px, 0.8vw, 14px)" }}>
-              <p className="ps-card-title" style={{ textAlign: "center" }}>Download</p>
-              <p className="ps-body ps-muted" style={{ textAlign: "center" }}>Available on Android and iOS.</p>
-              <div style={{
-                width: "clamp(60px, 9vw, 140px)",
-                borderRadius: "clamp(6px, 0.8vw, 14px)",
-                overflow: "hidden"
-              }}>
-                <Image
-                  src="/promo-screen.jpg"
-                  alt="Walt app home screen"
-                  width={140}
-                  height={304}
-                  sizes="(max-width: 768px) 80px, 140px"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(6px, 0.8vw, 14px)" }}>
+              <div style={{ display: "flex", gap: "clamp(4px, 0.6vw, 10px)", justifyContent: "center" }}>
+                {[
+                  { src: "/promo-screen.jpg", alt: "Walt home screen" },
+                  { src: "/add-card.jpg", alt: "Add card screen" },
+                  { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
+                ].map((img) => (
+                  <div key={img.src} style={{
+                    width: "clamp(50px, 7vw, 110px)",
+                    borderRadius: "clamp(4px, 0.6vw, 10px)",
+                    overflow: "hidden"
+                  }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={110}
+                      height={238}
+                      sizes="(max-width: 768px) 60px, 110px"
+                      style={{ width: "100%", height: "auto", display: "block" }}
+                    />
+                  </div>
+                ))}
               </div>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "clamp(6px, 0.8vw, 14px)" }}>
-              <p className="ps-card-title" style={{ textAlign: "center" }}>Add Cards</p>
-              <p className="ps-body ps-muted" style={{ textAlign: "center" }}>
-                Enter card details. Everything stays encrypted locally.
-              </p>
-              <div style={{
-                width: "clamp(60px, 9vw, 140px)",
-                borderRadius: "clamp(6px, 0.8vw, 14px)",
-                overflow: "hidden"
-              }}>
-                <Image
-                  src="/add-card.jpg"
-                  alt="Add card screen"
-                  width={140}
-                  height={304}
-                  sizes="(max-width: 768px) 80px, 140px"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
-              </div>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "clamp(6px, 0.8vw, 14px)" }}>
-              <p className="ps-card-title" style={{ textAlign: "center" }}>Tap to Pay</p>
-              <p className="ps-body ps-muted" style={{ textAlign: "center" }}>
-                Same experience you&rsquo;re used to with Google Wallet or Apple Pay.
-              </p>
-              <div style={{
-                width: "clamp(60px, 9vw, 140px)",
-                borderRadius: "clamp(6px, 0.8vw, 14px)",
-                overflow: "hidden"
-              }}>
-                <Image
-                  src="/intro-screen.jpg"
-                  alt="Tap to pay screen"
-                  width={140}
-                  height={304}
-                  sizes="(max-width: 768px) 80px, 140px"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+              <div className="ps-card" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
+                <p className="ps-body ps-italic" style={{
+                  fontSize: "clamp(8px, 0.9vw, 15px)",
+                  lineHeight: 1.4,
+                  color: "#333"
+                }}>
+                  No AI. No premium features. Load a card, set Walt as default wallet, start tapping to pay.
+                </p>
+                <p style={{
+                  fontSize: "clamp(7px, 0.8vw, 13px)",
+                  fontWeight: 500,
+                  color: "var(--orange-primary)",
+                  margin: "clamp(2px, 0.3vw, 4px) 0 0"
+                }}>
+                  Deliberately simple. Intentionally focused.
+                </p>
               </div>
             </div>
           </div>
@@ -259,7 +165,7 @@ function SlideProduct() {
   );
 }
 
-/* ─── Slide 6: Why Now? ────────────────────────────────────────────────────── */
+/* ─── Slide 4: Why Now? ────────────────────────────────────────────────────── */
 
 function SlideWhyNow() {
   return (
@@ -270,7 +176,7 @@ function SlideWhyNow() {
           <div className="ps-cols-3" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
             <div className="ps-card">
               <p className="ps-card-h">PRIVACY AWARENESS SURGING</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>300K+</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>500K+</p>
               <p className="ps-body ps-muted">
                 r/degoogle members. Apple fined &euro;1.8B + &euro;500M by EU
                 for anti-competitive practices (2024&ndash;2025).
@@ -280,35 +186,36 @@ function SlideWhyNow() {
               <p className="ps-card-h">TAP-TO-PAY EXPLODING</p>
               <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>23.2B</p>
               <p className="ps-body ps-muted">
-                contactless payments in euro area, H2 2023 (+16% YoY).
-                &gt;97% of new smartphones ship with NFC.
+                contactless payments in euro area, H2 2023.
+                US proximity mobile payments projected to exceed $1T by 2027.
               </p>
             </div>
             <div className="ps-card">
               <p className="ps-card-h">LEGISLATION</p>
               <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0", fontSize: "clamp(14px, 2vw, 32px)" }}>
-                EU NFC Opening
+                July 2025
               </p>
               <p className="ps-body ps-muted">
-                EU opened iPhone NFC to rivals (July 2024). US DOJ antitrust suit
-                vs Apple Pay (filed March 2024). eIDAS 2.0 mandates digital wallets by Dec 2026.
+                EU mandated NFC access (decided 2024). Apple and Google published wallet APIs
+                and allowed default-wallet switching in July 2025. DOJ antitrust suit
+                vs Apple Pay proceeding. eIDAS 2.0 mandates digital wallets by Dec 2026.
               </p>
             </div>
           </div>
           <div className="ps-cols-2">
             <div className="ps-card">
               <p className="ps-card-h">Privacy Alternatives Winning</p>
-              <p className="ps-body">Google Search competes with DuckDuckGo, ChatGPT</p>
-              <p className="ps-body">Gmail competes with ProtonMail, Hey.com</p>
-              <p className="ps-body">Chrome competes with Firefox, Brave</p>
-              <p className="ps-body">iMessage competes with Signal</p>
+              <p className="ps-body">Google Search &rarr; DuckDuckGo, ChatGPT</p>
+              <p className="ps-body">Gmail &rarr; ProtonMail, Hey.com</p>
+              <p className="ps-body">Chrome &rarr; Firefox, Brave</p>
+              <p className="ps-body">iMessage &rarr; Signal</p>
             </div>
             <div className="ps-banner">
               <p className="ps-banner-h">The Gap</p>
               <p className="ps-banner-body">
                 Every major Big Tech product has a privacy-focused competitor.
                 However, competition for both Google Wallet and Apple Pay was
-                only unlocked in 2024.
+                only unlocked in July 2025.
               </p>
             </div>
           </div>
@@ -321,7 +228,7 @@ function SlideWhyNow() {
   );
 }
 
-/* ─── Slide 7: Market Size ─────────────────────────────────────────────────── */
+/* ─── Slide 5: Market Size ─────────────────────────────────────────────────── */
 
 function SlideMarketSize() {
   return (
@@ -353,11 +260,11 @@ function SlideMarketSize() {
                 <ul className="ps-bullets">
                   <li className="ps-bullet">Android + iOS = 99.6% of smartphones globally</li>
                   <li className="ps-bullet">EU digital payments growing 15% annually</li>
-                  <li className="ps-bullet">Pro-privacy sentiment accelerating across EU and US</li>
+                  <li className="ps-bullet">Pro-European, anti-American sentiment accelerating and likely for at least the next 3 years</li>
                 </ul>
               </div>
               <div className="ps-banner">
-                <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users (est.)</p>
+                <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users</p>
                 <p className="ps-banner-body">All potential Walt converts</p>
               </div>
             </div>
@@ -368,7 +275,7 @@ function SlideMarketSize() {
   );
 }
 
-/* ─── Slide 8: Team ────────────────────────────────────────────────────────── */
+/* ─── Slide 6: Team ────────────────────────────────────────────────────────── */
 
 function SlideTeam() {
   return (
@@ -395,8 +302,9 @@ function SlideTeam() {
                 <p className="ps-card-title">Cole Bittel</p>
                 <p className="ps-body" style={{ fontWeight: 500 }}>Founder</p>
                 <p className="ps-body ps-muted" style={{ marginTop: "clamp(2px, 0.2vw, 4px)" }}>
-                  DevOps and Infrastructure Engineer.
-                  Former: Pleo, Funding Circle. Current: Legora.
+                  Early engineer at Legora, Pleo, and Funding Circle.
+                  American citizen, Danish permanent resident (citizen in ~2 years).
+                  Resident of Copenhagen for 7 years.
                 </p>
                 <p className="ps-body ps-muted">Embedded Engineering ApS | Copenhagen, Denmark</p>
               </div>
@@ -425,7 +333,7 @@ function SlideTeam() {
   );
 }
 
-/* ─── Slide 9: Business Model ──────────────────────────────────────────────── */
+/* ─── Slide 7: Business Model ─────────────────────────────────────────────── */
 
 function SlideBusinessModel() {
   return (
@@ -543,16 +451,9 @@ function SlideTraction() {
   );
 }
 
-/* ─── Slide 11: The Ask ────────────────────────────────────────────────────── */
+/* ─── Slide 9: The Ask ─────────────────────────────────────────────────────── */
 
 function SlideTheAsk() {
-  const funds = [
-    { label: "Business Development Hire", pct: 50 },
-    { label: "Aggregator Fees", pct: 25 },
-    { label: "Founder Salary", pct: 15 },
-    { label: "Marketing", pct: 10 },
-  ];
-
   return (
     <div className="ps">
       <div className="ps-pad">
@@ -560,24 +461,27 @@ function SlideTheAsk() {
         <div className="ps-content">
           <div className="ps-split ps-split--center">
             <div className="ps-price-card">
-              <p className="ps-label" style={{ color: "#151515", letterSpacing: "0.12em" }}>PRE-SEED ROUND</p>
-              <p className="ps-stat" style={{ fontSize: "clamp(36px, 5.5vw, 88px)", margin: "clamp(4px, 0.5vw, 10px) 0" }}>$500K</p>
+              <p className="ps-label" style={{ color: "#151515", letterSpacing: "0.12em" }}>STATUS</p>
+              <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)", margin: "clamp(4px, 0.5vw, 10px) 0" }}>
+                Work in Progress
+              </p>
               <div className="ps-divider" />
-              <p className="ps-banner-body">18 months runway</p>
+              <p className="ps-banner-body">
+                Still formulating the ask.
+              </p>
             </div>
             <div className="ps-card" style={{ padding: "clamp(14px, 2.2vw, 38px) clamp(16px, 2.5vw, 42px)" }}>
-              <p className="ps-card-h">Use of Funds</p>
-              {funds.map((item) => (
-                <div key={item.label}>
-                  <div className="ps-bar-row">
-                    <span className="ps-bar-label">{item.label}</span>
-                    <span className="ps-bar-pct">{item.pct}%</span>
-                  </div>
-                  <div className="ps-bar">
-                    <div className="ps-bar-fill" style={{ width: `${item.pct}%` }} />
-                  </div>
-                </div>
-              ))}
+              <p className="ps-card-h">Immediate Needs</p>
+              <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+                Networking and partnerships with bank representatives to unblock
+                card loading and processing in Europe.
+              </p>
+              <p className="ps-card-h">What We&rsquo;re Looking For</p>
+              <ul className="ps-bullets">
+                <li className="ps-bullet">Introductions to European bank partnership teams</li>
+                <li className="ps-bullet">Guidance on EMI licensing and Visa/Mastercard signoff</li>
+                <li className="ps-bullet">Strategic advisors with fintech and payments experience</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -613,9 +517,7 @@ function SlideClosing() {
 const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
-  { title: "No Alternatives Exist", render: SlideNoAlternatives },
   { title: "The Solution", render: SlideSolution },
-  { title: "Product", render: SlideProduct },
   { title: "Why Now?", render: SlideWhyNow },
   { title: "Market Size", render: SlideMarketSize },
   { title: "Team", render: SlideTeam },
