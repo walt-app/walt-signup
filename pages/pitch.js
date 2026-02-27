@@ -687,9 +687,6 @@ export default function Pitch() {
               >
                 Download Keynote
               </a>
-              <Link href="/pitch-deck" className="pitch-download-button orange">
-                5-Minute Version
-              </Link>
             </div>
           </div>
         </section>
