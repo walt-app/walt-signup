@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -497,6 +497,48 @@ function SlideClosing() {
   );
 }
 
+/* ─── Scaled thumbnail wrapper ─────────────────────────────────────────────── */
+
+const SLIDE_REF_WIDTH = 1200;
+
+function SlideThumb({ render: Render }) {
+  const ref = useRef(null);
+  const [scale, setScale] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0].contentRect.width;
+      setScale(w / SLIDE_REF_WIDTH);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        position: "relative",
+        width: "100%",
+        aspectRatio: "16 / 9",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: SLIDE_REF_WIDTH,
+          transformOrigin: "top left",
+          transform: `scale(${scale})`,
+        }}
+      >
+        <Render />
+      </div>
+    </div>
+  );
+}
+
 /* ─── Slide Array ──────────────────────────────────────────────────────────── */
 
 const SLIDES = [
@@ -662,7 +704,7 @@ export default function Pitch() {
                 aria-label={`View slide ${index + 1}: ${slide.title}`}
               >
                 <div className="deck-slide-number">{index + 1}</div>
-                <slide.render />
+                <SlideThumb render={slide.render} />
               </button>
             ))}
           </div>
