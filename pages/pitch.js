@@ -680,13 +680,6 @@ export default function Pitch() {
               >
                 Download PowerPoint
               </a>
-              <a
-                href="/pitch/walt-pitch.key"
-                className="pitch-download-button outline"
-                download="Walt-Pitch.key"
-              >
-                Download Keynote
-              </a>
             </div>
           </div>
         </section>
