@@ -31,49 +31,40 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <div className="ps-content">
-          <div className="ps-split" style={{ alignItems: "start" }}>
-            <div>
-              <p className="ps-body" style={{ marginBottom: "clamp(10px, 1.5vw, 24px)" }}>
-                Every tap-to-pay transaction routes through Apple Pay or Google Wallet.
-                Apple charges banks 0.15% on every credit card tap. Google harvests
-                transaction data to build intimate profiles of your life. Neither treats
-                your spending data as private.
+          <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+            <div className="ps-card ps-card--left">
+              <p className="ps-label">APPLE PAY</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~650M</p>
+              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
+              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
+                Charges banks 0.15% on tap-to-pay transaction
               </p>
-              <p className="ps-card-h" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>Current Solutions</p>
-              <div className="ps-cols-2">
-                <div className="ps-card ps-card--left" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
-                  <p className="ps-card-title">Switch to Cash</p>
-                  <p className="ps-body ps-muted">Lose convenience, risk loss and theft.</p>
-                </div>
-                <div className="ps-card ps-card--left" style={{ padding: "clamp(6px, 1vw, 16px) clamp(8px, 1.2vw, 20px)" }}>
-                  <p className="ps-card-title">Bring Your Physical Card</p>
-                  <p className="ps-body ps-muted">No tap-to-pay convenience. Still tracked by your bank.</p>
-                </div>
-              </div>
+              <p className="ps-body ps-muted">
+                ~$2.7B/year extracted from banks. Costs passed to consumers through higher fees.
+              </p>
             </div>
-            <div className="ps-card">
-              <p className="ps-card-h">Mobile wallets by the numbers:</p>
-              <div className="ps-stat-inline">
-                <span className="ps-stat">~650M</span>
-                <span className="ps-stat-desc">Apple Pay users</span>
-              </div>
-              <div className="ps-stat-inline">
-                <span className="ps-stat">~520M</span>
-                <span className="ps-stat-desc">Google Pay users</span>
-              </div>
-              <div className="ps-stat-inline">
-                <span className="ps-stat">~$14T</span>
-                <span className="ps-stat-desc">combined processed annually</span>
-              </div>
-              <div className="ps-stat-inline">
-                <span className="ps-stat">23.2B</span>
-                <span className="ps-stat-desc">contactless payments, euro area H2 2023</span>
-              </div>
+            <div className="ps-card ps-card--left">
+              <p className="ps-label">GOOGLE WALLET</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~520M</p>
+              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
+              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
+                Harvests transaction data to deepen user profiles and train models
+              </p>
+              <p className="ps-body ps-muted">
+                $0 fees. You&rsquo;re the product. Every purchase is used to learn about you.
+              </p>
             </div>
+          </div>
+          <div className="ps-banner">
+            <p className="ps-banner-h">Every tap routes through American Big Tech</p>
+            <p className="ps-banner-body">
+              Apple extracts fees from your bank. Google extracts data from your life.
+              1.2B users. $14T processed annually. 99.6% of smartphones. No alternative.
+            </p>
           </div>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">CoinLaw</a>, <a href="#">European Central Bank</a>, <a href="#">Pew Research</a>, <a href="#">StatCounter</a>
+          Sources: <a href="#">CoinLaw</a>, <a href="#">WSJ / DOJ</a>, <a href="#">StatCounter</a>
         </div>
       </div>
     </div>
@@ -99,7 +90,7 @@ function SlideSolution() {
               </p>
               <div className="ps-num-row">
                 <span className="ps-num">1</span>
-                <span className="ps-body">Transaction data stays encrypted on your device &mdash; no server-side storage</span>
+                <span className="ps-body">Transaction data stays encrypted on your device. No server-side storage</span>
               </div>
               <div className="ps-num-row">
                 <span className="ps-num">2</span>
@@ -152,16 +143,16 @@ function SlideWhyNow() {
               <p className="ps-card-h">PRIVACY AWARENESS SURGING</p>
               <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>500K+</p>
               <p className="ps-body ps-muted">
-                r/degoogle members. Apple fined &euro;1.8B + &euro;500M by EU
-                for anti-competitive practices (2024&ndash;2025).
+                r/degoogle members. Wero reached 48.5M users in 18 months as
+                Europe builds its own payment rails. Digital euro incoming.
               </p>
             </div>
             <div className="ps-card">
               <p className="ps-card-h">TAP-TO-PAY EXPLODING</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>23.2B</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>91%</p>
               <p className="ps-body ps-muted">
-                contactless payments in euro area, H2 2023.
-                US proximity mobile payments projected to exceed $1T by 2027.
+                of UK 25-34 year olds use contactless payments.
+                23.2B contactless payments in euro area, H2 2023.
               </p>
             </div>
             <div className="ps-card">
@@ -208,41 +199,44 @@ function SlideMarketSize() {
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Market Size</h2>
-        <div className="ps-content">
-          <div className="ps-split" style={{ alignItems: "stretch" }}>
-            <div className="ps-stack">
-              <div className="ps-card ps-card--left">
-                <p className="ps-label">TAM - TOTAL ADDRESSABLE MARKET</p>
-                <p className="ps-stat">$18.7B</p>
-                <p className="ps-body ps-muted">Global mobile wallet market (2024)</p>
+        <div className="ps-content" style={{ gap: "clamp(8px, 1.2vw, 20px)" }}>
+          <div className="ps-split" style={{ alignItems: "start" }}>
+            <div className="ps-stack" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
+              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
+                <p className="ps-label">TAM</p>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
+                  <p className="ps-stat">$18.7B</p>
+                  <p className="ps-body ps-muted">Global mobile wallet market (2024)</p>
+                </div>
               </div>
-              <div className="ps-card ps-card--left">
-                <p className="ps-label">SAM - SERVICEABLE ADDRESSABLE MARKET</p>
-                <p className="ps-stat">$6.9B</p>
-                <p className="ps-body ps-muted">European Android + iOS tap-to-pay users</p>
+              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
+                <p className="ps-label">SAM</p>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
+                  <p className="ps-stat">$6.9B</p>
+                  <p className="ps-body ps-muted">European Android + iOS tap-to-pay users</p>
+                </div>
               </div>
-              <div className="ps-card ps-card--left">
-                <p className="ps-label">SOM - SERVICEABLE OBTAINABLE MARKET</p>
-                <p className="ps-stat">$34.5M</p>
-                <p className="ps-body ps-muted">0.5% of European mobile wallet users willing to pay for privacy</p>
-              </div>
-            </div>
-            <div className="ps-stack" style={{ justifyContent: "center" }}>
-              <div className="ps-card">
-                <p className="ps-card-h">Market Tailwinds</p>
-                <ul className="ps-bullets">
-                  <li className="ps-bullet">Android + iOS = 99.6% of smartphones globally</li>
-                  <li className="ps-bullet">EU digital payments growing 15% annually</li>
-                  <li className="ps-bullet">Pro-European, anti-American sentiment accelerating and likely for at least the next 3 years</li>
-                  <li className="ps-bullet">European introduction of digital euro (potential product fit)</li>
-                  <li className="ps-bullet">Wero as penetration model for European-based payment solutions</li>
-                </ul>
-              </div>
-              <div className="ps-banner">
-                <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users</p>
-                <p className="ps-banner-body">All potential Walt converts</p>
+              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
+                <p className="ps-label">SOM</p>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
+                  <p className="ps-stat">$34.5M</p>
+                  <p className="ps-body ps-muted">0.5% of European mobile wallet users willing to pay for privacy</p>
+                </div>
               </div>
             </div>
+            <div className="ps-card">
+              <p className="ps-card-h">Market Tailwinds</p>
+              <ul className="ps-bullets" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
+                <li className="ps-bullet">Euro area contactless payments growing 15.5% YoY to 29.5B transactions (ECB, H2 2024)</li>
+                <li className="ps-bullet">Pro-European, anti-American sentiment accelerating and likely for at least the next 3 years</li>
+                <li className="ps-bullet">European introduction of digital euro (potential product fit)</li>
+                <li className="ps-bullet">Wero as penetration model for European-based payment solutions</li>
+              </ul>
+            </div>
+          </div>
+          <div className="ps-banner">
+            <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users</p>
+            <p className="ps-banner-body">All potential Walt converts</p>
           </div>
         </div>
       </div>
@@ -286,7 +280,7 @@ function SlideTeam() {
                 </div>
                 <div>
                   <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>LOCATION</p>
-                  <p className="ps-body ps-muted">Copenhagen, Denmark &mdash; 7 years</p>
+                  <p className="ps-body ps-muted">Copenhagen, Denmark. 7 years</p>
                 </div>
                 <div>
                   <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>RESIDENCY</p>
@@ -351,10 +345,10 @@ function SlideBusinessModel() {
               <div className="ps-card">
                 <p className="ps-card-h">How Incumbents Make Money</p>
                 <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Apple Pay:</strong> charges banks 0.15% per credit tap (~$2.7B/yr)
+                  <strong>Apple Pay:</strong> charges banks 0.15% per tap-to-pay transaction (~$2.7B/yr)
                 </p>
                 <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Google Wallet:</strong> $0 fees &mdash; monetizes your data through ads
+                  <strong>Google Wallet:</strong> $0 fees. Monetizes your data through ads
                 </p>
                 <p className="ps-body">
                   <strong>Walt:</strong> &euro;10/year from you. No bank fees. No data. Ever.
