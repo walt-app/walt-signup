@@ -1741,6 +1741,8 @@ h6 {
    Condensed Pitch Deck Page (pitch-deck.js)
    ============================================================================= */
 
+/* Page Layout */
+
 .deck-page {
   min-height: 100vh;
   display: flex;
@@ -1911,7 +1913,7 @@ h6 {
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1.1;
-  margin: 0 0 clamp(8px, 1.5vw, 24px);
+  margin: 0 0 clamp(6px, 1vw, 16px);
   color: var(--text-dark);
 }
 
@@ -1921,7 +1923,7 @@ h6 {
   line-height: 1.3;
   letter-spacing: -0.02em;
   color: var(--orange-primary);
-  margin: 0 0 clamp(6px, 1vw, 16px);
+  margin: 0 0 clamp(4px, 0.6vw, 12px);
 }
 
 .deck-slide-subtitle {
@@ -1931,6 +1933,16 @@ h6 {
   letter-spacing: -0.02em;
   color: var(--text-dark);
   margin: 0;
+}
+
+.deck-slide-sub2 {
+  font-size: clamp(8px, 0.9vw, 16px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  opacity: 0.6;
+  margin-top: clamp(4px, 0.8vw, 12px);
 }
 
 .deck-slide-body {
@@ -1950,56 +1962,175 @@ h6 {
   margin-bottom: clamp(4px, 0.5vw, 12px);
 }
 
-/* Slide: Problem - Stat Card */
-
-.deck-stat-card {
-  background: #ffffff;
-  border-left: clamp(3px, 0.4vw, 5px) solid var(--orange-primary);
-  border-radius: clamp(6px, 0.8vw, 16px);
-  padding: clamp(8px, 1.5vw, 24px) clamp(12px, 2vw, 32px);
-  margin-top: clamp(8px, 1.5vw, 24px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.deck-stat-row {
-  display: flex;
-  gap: clamp(12px, 3vw, 48px);
-  margin-bottom: clamp(6px, 1vw, 16px);
-}
-
-.deck-stat-item {
-  display: flex;
-  align-items: baseline;
-  gap: clamp(4px, 0.5vw, 8px);
-}
-
-.deck-stat-num {
-  font-size: clamp(16px, 2.5vw, 44px);
-  font-weight: 900;
+.deck-slide-watermark {
+  position: absolute;
+  bottom: clamp(4px, 0.8vw, 16px);
+  left: clamp(8px, 1.2vw, 24px);
+  font-size: clamp(7px, 0.7vw, 13px);
+  font-weight: 500;
   color: var(--text-dark);
-  letter-spacing: -0.04em;
+  opacity: 0.4;
 }
 
-.deck-stat-desc {
-  font-size: clamp(7px, 0.75vw, 13px);
+/* Card System */
+
+.deck-card {
+  background: #f0f0f0;
+  border-radius: clamp(6px, 0.8vw, 16px);
+  padding: clamp(8px, 1.2vw, 24px) clamp(10px, 1.5vw, 28px);
+}
+
+.deck-card--bordered {
+  border-left: clamp(2px, 0.3vw, 4px) solid var(--orange-primary);
+}
+
+.deck-card--orange {
+  background: var(--orange-primary);
+}
+
+/* Eyebrow Label */
+
+.deck-eyebrow {
+  display: block;
+  font-size: clamp(5px, 0.55vw, 10px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  margin-bottom: clamp(2px, 0.3vw, 6px);
+}
+
+/* Card Content */
+
+.deck-card-stat {
+  display: block;
+  font-size: clamp(16px, 2.2vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: clamp(1px, 0.2vw, 4px);
+}
+
+.deck-card-desc {
+  display: block;
+  font-size: clamp(6px, 0.65vw, 12px);
+  font-weight: 400;
+  line-height: 1.4;
   color: var(--text-muted);
 }
 
-.deck-stat-footer {
-  font-size: clamp(8px, 0.85vw, 14px);
-  font-weight: 600;
-  color: var(--orange-primary);
-  margin: 0;
+/* Stat Rows (Problem slide) */
+
+.deck-stat-rows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 12px);
 }
 
-/* Slide: Solution - Split Layout */
+.deck-stat-row-item {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(4px, 0.5vw, 10px);
+}
 
-.deck-slide-split {
+.deck-stat-big {
+  font-size: clamp(14px, 2vw, 36px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.deck-stat-label {
+  font-size: clamp(6px, 0.6vw, 11px);
+  color: var(--text-muted);
+}
+
+/* Quote */
+
+.deck-quote {
+  font-size: clamp(7px, 0.8vw, 14px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: clamp(4px, 0.6vw, 12px) 0;
+  padding: 0;
+  border: none;
+}
+
+.deck-quote--dark {
+  font-size: clamp(14px, 2vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+/* Layout: Two Column */
+
+.deck-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6%;
-  align-items: center;
+  gap: clamp(8px, 1.5vw, 32px);
+  align-items: start;
+  flex: 1 1 0;
+  min-height: 0;
 }
+
+/* Layout: Card Grids */
+
+.deck-card-grid {
+  display: grid;
+  gap: clamp(4px, 0.5vw, 12px);
+}
+
+.deck-card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.deck-card-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Bullet Lists */
+
+.deck-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.3vw, 6px);
+}
+
+.deck-bullets li {
+  font-size: clamp(6px, 0.65vw, 12px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-dark);
+  padding-left: clamp(8px, 0.8vw, 16px);
+  position: relative;
+}
+
+.deck-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--orange-primary);
+  font-weight: 700;
+}
+
+.deck-bullets--light li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.deck-bullets--light li::before {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Steps (Solution slide) */
 
 .deck-steps {
   display: flex;
@@ -2029,239 +2160,136 @@ h6 {
   flex-shrink: 0;
 }
 
-.deck-phone-row {
-  display: flex;
-  gap: clamp(4px, 0.8vw, 12px);
-  justify-content: center;
-  align-items: center;
-}
+/* Market Cards Stack */
 
-.deck-phone-mini {
-  width: clamp(55px, 9vw, 140px);
-  border-radius: clamp(6px, 0.8vw, 14px);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.deck-phone-mini img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Slide: Market - TAM Bars */
-
-.deck-tam-bars {
-  display: flex;
-  gap: clamp(8px, 1.5vw, 24px);
-  align-items: flex-end;
-  height: clamp(60px, 10vw, 160px);
-}
-
-.deck-tam-bar {
-  flex: 1;
+.deck-market-cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
+  gap: clamp(4px, 0.5vw, 10px);
 }
 
-.deck-tam-bar-fill {
-  width: 100%;
-  border-radius: clamp(3px, 0.4vw, 6px) clamp(3px, 0.4vw, 6px) 0 0;
-  transition: height 0.4s ease;
-}
+/* Price Card */
 
-.deck-tam-bar-fill.deck-tam-bar--tam {
-  height: 100%;
-  background: linear-gradient(to top, #c44200, var(--orange-primary));
-}
-
-.deck-tam-bar-fill.deck-tam-bar--sam {
-  height: 40%;
-  background: linear-gradient(to top, #b8734d, var(--orange-gradient-end));
-}
-
-.deck-tam-bar-fill.deck-tam-bar--som {
-  height: 15%;
-  background: linear-gradient(to top, rgba(255, 72, 0, 0.25), rgba(255, 72, 0, 0.5));
-}
-
-.deck-tam-bar-label {
-  font-size: clamp(7px, 0.65vw, 11px);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: clamp(4px, 0.5vw, 8px);
-}
-
-.deck-tam-bar-value {
-  font-size: clamp(10px, 1.1vw, 18px);
-  font-weight: 900;
-  color: var(--text-dark);
-}
-
-/* Slide: Business - Price + Traction */
-
-.deck-price-row {
+.deck-price-card {
   display: flex;
   align-items: baseline;
   justify-content: center;
   gap: clamp(2px, 0.3vw, 6px);
-  margin-bottom: clamp(4px, 0.5vw, 8px);
+  padding: clamp(10px, 1.5vw, 28px) clamp(14px, 2vw, 36px);
+  margin-bottom: clamp(4px, 0.6vw, 12px);
 }
 
-.deck-price-period {
-  font-size: clamp(14px, 2vw, 32px);
+.deck-price-amount {
+  font-size: clamp(28px, 4.5vw, 80px);
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.deck-price-label {
+  font-size: clamp(12px, 1.5vw, 28px);
   font-weight: 400;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.deck-traction-list {
+/* Hire Stack */
+
+.deck-hire-stack {
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, 0.6vw, 10px);
-}
-
-.deck-traction-item {
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 0.8vw, 12px);
-  font-size: clamp(9px, 1vw, 17px);
-  color: var(--text-dark);
-}
-
-.deck-traction-check {
-  color: var(--orange-primary);
-  font-size: clamp(11px, 1.2vw, 20px);
-  font-weight: 700;
-}
-
-/* Slide: Team - Hires */
-
-.deck-hires {
-  display: flex;
-  gap: clamp(12px, 2vw, 32px);
-}
-
-.deck-hire {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(2px, 0.3vw, 4px);
-  background: #ffffff;
-  padding: clamp(8px, 1vw, 16px) clamp(12px, 1.5vw, 24px);
-  border-radius: clamp(4px, 0.5vw, 8px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  gap: clamp(4px, 0.5vw, 10px);
 }
 
 .deck-hire-role {
-  font-size: clamp(7px, 0.65vw, 11px);
-  font-weight: 600;
+  display: block;
+  font-size: clamp(5px, 0.55vw, 10px);
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--orange-primary);
+  margin-bottom: clamp(1px, 0.15vw, 3px);
 }
 
 .deck-hire-title {
-  font-size: clamp(9px, 1vw, 16px);
-  color: var(--text-muted);
+  display: block;
+  font-size: clamp(8px, 0.9vw, 16px);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: clamp(1px, 0.15vw, 3px);
 }
 
-/* Slide: Icon sizing */
+/* Avatar */
 
-.deck-slide-icon {
-  width: clamp(20px, 3vw, 40px);
-  height: clamp(20px, 3vw, 40px);
-  color: var(--orange-primary);
-  margin-bottom: clamp(4px, 0.5vw, 8px);
-  flex-shrink: 0;
-}
-
-.deck-step-icon {
-  width: clamp(14px, 1.5vw, 24px);
-  height: clamp(14px, 1.5vw, 24px);
-  color: var(--orange-primary);
-  flex-shrink: 0;
-}
-
-.deck-traction-icon {
-  width: clamp(14px, 1.5vw, 24px);
-  height: clamp(14px, 1.5vw, 24px);
-  flex-shrink: 0;
-}
-
-.deck-hire-icon {
-  width: clamp(16px, 1.8vw, 28px);
-  height: clamp(16px, 1.8vw, 28px);
-  color: var(--orange-primary);
-  margin-bottom: clamp(2px, 0.2vw, 4px);
-}
-
-/* Slide: Why Now - Highlight Stat */
-
-.deck-highlight-stat {
+.deck-avatar {
+  width: clamp(24px, 3vw, 56px);
+  height: clamp(24px, 3vw, 56px);
+  background: var(--orange-primary);
+  border-radius: 50%;
   display: flex;
-  align-items: baseline;
-  gap: clamp(6px, 1vw, 16px);
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: clamp(10px, 1.2vw, 22px);
+  margin-bottom: clamp(4px, 0.5vw, 10px);
+}
+
+/* Team */
+
+.deck-team-name {
+  font-size: clamp(11px, 1.4vw, 24px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 clamp(1px, 0.15vw, 3px);
+}
+
+.deck-team-title {
+  font-size: clamp(8px, 0.9vw, 15px);
+  font-weight: 600;
+  color: var(--orange-primary);
+  margin: 0 0 clamp(4px, 0.5vw, 10px);
+}
+
+.deck-team-org {
+  font-size: clamp(6px, 0.6vw, 11px);
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: clamp(4px, 0.5vw, 10px) 0 0;
+}
+
+.deck-team-loc {
+  font-size: clamp(6px, 0.55vw, 10px);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Contact (closing slide) */
+
+.deck-contact {
   margin-top: clamp(8px, 1.5vw, 24px);
 }
 
-.deck-highlight-stat .deck-stat-num {
-  font-size: clamp(24px, 4vw, 72px);
-  color: var(--orange-primary);
-}
-
-.deck-highlight-stat .deck-stat-desc {
-  font-size: clamp(8px, 0.9vw, 15px);
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-/* Slide: Business Model - Price Hero */
-
-.deck-price-hero {
-  background: #ffffff;
-  border-left: clamp(3px, 0.4vw, 5px) solid var(--orange-primary);
-  border-radius: clamp(6px, 0.8vw, 16px);
-  padding: clamp(12px, 2vw, 32px) clamp(16px, 2.5vw, 40px);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: clamp(8px, 1.5vw, 24px);
-}
-
-.deck-price-hero::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 60%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 72, 0, 0.04) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* Slide: Ask - Closing Quote */
-
-.deck-closing-quote {
-  font-size: clamp(16px, 2.5vw, 44px);
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -0.03em;
-  color: var(--orange-primary);
+.deck-contact p {
+  font-size: clamp(8px, 0.8vw, 14px);
+  font-weight: 400;
+  color: var(--text-dark);
+  opacity: 0.7;
   margin: 0;
-  padding: 0;
-  border: none;
-  line-height: 1.2;
+  line-height: 1.5;
 }
+
+/* Accent slide overrides */
 
 .deck-slide--accent .deck-slide-heading,
 .deck-slide--accent .deck-slide-body,
-.deck-slide--accent .deck-closing-quote {
+.deck-slide--accent .deck-quote--dark {
   color: var(--text-dark);
+}
+
+.deck-slide--accent .deck-eyebrow {
+  color: var(--text-dark);
+  opacity: 0.6;
 }
 
 /* Presentation Mode */
@@ -2388,18 +2416,17 @@ h6 {
     gap: var(--gap-md);
   }
 
-  .deck-slide-split {
+  .deck-two-col {
     grid-template-columns: 1fr;
     gap: clamp(8px, 2vw, 16px);
   }
 
-  .deck-phone-row {
-    justify-content: center;
+  .deck-card-grid--3 {
+    grid-template-columns: 1fr;
   }
 
-  .deck-hires {
-    flex-direction: column;
-    gap: clamp(8px, 2vw, 16px);
+  .deck-card-grid--2 {
+    grid-template-columns: 1fr;
   }
 
   .deck-pres-arrow {
