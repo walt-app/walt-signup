@@ -7,52 +7,50 @@ import Footer from "../components/Footer";
 
 function SlideTitle() {
   return (
-    <div className="deck-slide deck-slide--accent">
-      <div className="deck-slide-inner deck-slide-center">
-        <h1 className="deck-slide-logo">WALT</h1>
-        <div className="deck-slide-divider" />
-        <p className="deck-slide-subtitle">
-          Private tap-to-pay
-        </p>
-        <p className="deck-slide-sub2">Pre-Seed Investment Opportunity</p>
+    <div className="dk dk--title">
+      <div className="dk-inner dk-center">
+        <h1 className="dk-logo">WALT</h1>
+        <div className="dk-divider" />
+        <p className="dk-tagline">Private tap-to-pay</p>
+        <p className="dk-sub">Pre-Seed Investment Opportunity</p>
       </div>
-      <span className="deck-slide-watermark">walt.is</span>
+      <span className="dk-watermark">walt.is</span>
     </div>
   );
 }
 
 function SlideProblem() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">The Problem</h2>
-        <div className="deck-two-col">
-          <div>
-            <p className="deck-slide-lead">
-              Your daily spending reveals who you are.
-            </p>
-            <p className="deck-slide-body">
+    <div className="dk dk--dark">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">The Problem</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left">
+            <h2 className="dk-headline">Your daily spending reveals who you are.</h2>
+            <p className="dk-text">
               Every tap-to-pay transaction on Android and iPhone routes through Google Wallet or Apple Pay.
               Both harvest this data to build profiles of your life, values, and behavior.
             </p>
-            <blockquote className="deck-quote">
-              &ldquo;Zero private alternatives exist for the billions of daily tap-to-pay users worldwide.&rdquo;
-            </blockquote>
+            <p className="dk-callout">
+              Zero private alternatives exist for the billions of daily tap-to-pay users worldwide.
+            </p>
           </div>
-          <div className="deck-card">
-            <span className="deck-eyebrow">Google Wallet by the numbers</span>
-            <div className="deck-stat-rows">
-              <div className="deck-stat-row-item">
-                <span className="deck-stat-big">520M</span>
-                <span className="deck-stat-label">users worldwide</span>
+          <div className="dk-split-right">
+            <span className="dk-label dk-label--muted">Google Wallet by the numbers</span>
+            <div className="dk-stat-stack">
+              <div className="dk-stat-item">
+                <span className="dk-stat-num">520M</span>
+                <span className="dk-stat-desc">users worldwide</span>
               </div>
-              <div className="deck-stat-row-item">
-                <span className="deck-stat-big">$5.2T</span>
-                <span className="deck-stat-label">processed annually</span>
+              <div className="dk-stat-item">
+                <span className="dk-stat-num">$5.2T</span>
+                <span className="dk-stat-desc">processed annually</span>
               </div>
-              <div className="deck-stat-row-item">
-                <span className="deck-stat-big">55B</span>
-                <span className="deck-stat-label">contactless payments in EU</span>
+              <div className="dk-stat-item">
+                <span className="dk-stat-num">55B</span>
+                <span className="dk-stat-desc">contactless payments in EU</span>
               </div>
             </div>
           </div>
@@ -64,34 +62,34 @@ function SlideProblem() {
 
 function SlideWhyNow() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Why Now</h2>
-        <div className="deck-card-grid deck-card-grid--3">
-          <div className="deck-card">
-            <span className="deck-eyebrow">Privacy Awareness Surging</span>
-            <span className="deck-card-stat">300K+</span>
-            <span className="deck-card-desc">users deleted Google Pay accounts in 2024</span>
-          </div>
-          <div className="deck-card">
-            <span className="deck-eyebrow">Tap-to-Pay Exploding</span>
-            <span className="deck-card-stat">91%</span>
-            <span className="deck-card-desc">of 25&ndash;34 year olds in key EU markets use tap-to-pay daily</span>
-          </div>
-          <div className="deck-card">
-            <span className="deck-eyebrow">Legislation</span>
-            <span className="deck-card-stat" style={{ fontSize: "clamp(12px, 1.4vw, 24px)" }}>DMA</span>
-            <span className="deck-card-desc">Digital Markets Act mandates NFC access for third-party wallets</span>
-          </div>
+    <div className="dk dk--light">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">Why Now</span>
         </div>
-        <div className="deck-card-grid deck-card-grid--2" style={{ marginTop: "clamp(4px, 0.6vw, 12px)" }}>
-          <div className="deck-card">
-            <span className="deck-eyebrow">Privacy Alternatives Winning</span>
-            <span className="deck-card-desc">Signal, ProtonMail, and DuckDuckGo prove users will switch for privacy</span>
+        <div className="dk-whynow-grid">
+          <div className="dk-tile">
+            <span className="dk-tile-label">Privacy Awareness</span>
+            <span className="dk-tile-stat">300K+</span>
+            <span className="dk-tile-desc">users deleted Google Pay accounts in 2024</span>
           </div>
-          <div className="deck-card deck-card--orange">
-            <span className="deck-card-stat" style={{ color: "white" }}>The Gap</span>
-            <span className="deck-card-desc" style={{ color: "rgba(255,255,255,0.9)" }}>No privacy-first wallet has moved to fill the opportunity</span>
+          <div className="dk-tile">
+            <span className="dk-tile-label">Tap-to-Pay Growth</span>
+            <span className="dk-tile-stat">91%</span>
+            <span className="dk-tile-desc">of 25&ndash;34 year olds in key EU markets use tap-to-pay daily</span>
+          </div>
+          <div className="dk-tile">
+            <span className="dk-tile-label">EU Legislation</span>
+            <span className="dk-tile-stat">DMA</span>
+            <span className="dk-tile-desc">Digital Markets Act mandates NFC access for third-party wallets</span>
+          </div>
+          <div className="dk-tile">
+            <span className="dk-tile-label">Proven Demand</span>
+            <span className="dk-tile-desc">Signal, ProtonMail, DuckDuckGo prove users will switch for privacy</span>
+          </div>
+          <div className="dk-tile dk-tile--accent" style={{ gridColumn: "2 / 4" }}>
+            <span className="dk-tile-stat dk-tile-stat--white">The Gap</span>
+            <span className="dk-tile-desc dk-tile-desc--white">No privacy-first wallet has moved to fill the opportunity</span>
           </div>
         </div>
       </div>
@@ -101,39 +99,32 @@ function SlideWhyNow() {
 
 function SlideSolution() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">The Solution</h2>
-        <div className="deck-two-col">
-          <div>
-            <p className="deck-slide-lead">
+    <div className="dk dk--dark">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">The Solution</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left">
+            <h2 className="dk-headline dk-headline--accent">
               Walt is the private alternative to Google Wallet and Apple Pay.
-            </p>
-            <p className="deck-slide-body" style={{ marginBottom: "clamp(6px, 1vw, 16px)" }}>
+            </h2>
+            <p className="dk-text">
               A tap-to-pay wallet that treats transaction data as sacred.
               No collection. No storage. No selling.
             </p>
-            <div className="deck-steps">
-              <div className="deck-step">
-                <span className="deck-step-num">1</span>
-                <span>On-device encryption</span>
-              </div>
-              <div className="deck-step">
-                <span className="deck-step-num">2</span>
-                <span>No server-side storage</span>
-              </div>
-              <div className="deck-step">
-                <span className="deck-step-num">3</span>
-                <span>Funded by users, not data</span>
-              </div>
+            <div className="dk-steps">
+              <div className="dk-step"><span className="dk-step-n">1</span><span>On-device encryption</span></div>
+              <div className="dk-step"><span className="dk-step-n">2</span><span>No server-side storage</span></div>
+              <div className="dk-step"><span className="dk-step-n">3</span><span>Funded by users, not data</span></div>
             </div>
           </div>
-          <div className="deck-card">
-            <span className="deck-eyebrow">Philosophy</span>
-            <blockquote className="deck-quote">
+          <div className="dk-split-right dk-split-right--card">
+            <span className="dk-label dk-label--muted">Philosophy</span>
+            <blockquote className="dk-quote">
               &ldquo;Add your card, tap to pay. That&rsquo;s it. Your transaction data never leaves your device.&rdquo;
             </blockquote>
-            <p className="deck-card-desc">
+            <p className="dk-text" style={{ opacity: 0.6 }}>
               Simple by design. Private by default.
             </p>
           </div>
@@ -145,38 +136,40 @@ function SlideSolution() {
 
 function SlideMarket() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Market Opportunity</h2>
-        <div className="deck-two-col">
-          <div className="deck-market-cards">
-            <div className="deck-card deck-card--bordered">
-              <span className="deck-eyebrow">Total Addressable Market</span>
-              <span className="deck-card-stat">&euro;4.4B</span>
-              <span className="deck-card-desc">All EU mobile wallet users at &euro;10/year</span>
+    <div className="dk dk--light">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">Market Opportunity</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left dk-market-stack">
+            <div className="dk-market-item">
+              <span className="dk-tile-label">TAM</span>
+              <span className="dk-market-num">&euro;4.4B</span>
+              <span className="dk-market-desc">All EU mobile wallet users at &euro;10/year</span>
             </div>
-            <div className="deck-card deck-card--bordered">
-              <span className="deck-eyebrow">Serviceable Addressable Market</span>
-              <span className="deck-card-stat">&euro;440M</span>
-              <span className="deck-card-desc">Privacy-conscious segment (10%)</span>
+            <div className="dk-market-item">
+              <span className="dk-tile-label">SAM</span>
+              <span className="dk-market-num">&euro;440M</span>
+              <span className="dk-market-desc">Privacy-conscious segment (10%)</span>
             </div>
-            <div className="deck-card deck-card--bordered">
-              <span className="deck-eyebrow">Serviceable Obtainable Market</span>
-              <span className="deck-card-stat">&euro;44M</span>
-              <span className="deck-card-desc">Realistic 5-year capture (1%)</span>
+            <div className="dk-market-item">
+              <span className="dk-tile-label">SOM</span>
+              <span className="dk-market-num">&euro;44M</span>
+              <span className="dk-market-desc">Realistic 5-year capture (1%)</span>
             </div>
           </div>
-          <div>
-            <div className="deck-card" style={{ marginBottom: "clamp(4px, 0.6vw, 12px)" }}>
-              <span className="deck-eyebrow">Market Tailwinds</span>
-              <ul className="deck-bullets">
+          <div className="dk-split-right">
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Market Tailwinds</span>
+              <ul className="dk-list">
                 <li>DMA opens NFC to third-party wallets</li>
                 <li>EU privacy regulation trending stronger</li>
                 <li>Privacy-tech adoption accelerating</li>
               </ul>
             </div>
-            <div className="deck-card deck-card--orange">
-              <span className="deck-card-desc" style={{ color: "rgba(255,255,255,0.9)" }}>First mover advantage in privacy-first payments</span>
+            <div className="dk-tile dk-tile--accent">
+              <span className="dk-tile-desc dk-tile-desc--white">First mover advantage in privacy-first payments</span>
             </div>
           </div>
         </div>
@@ -187,31 +180,33 @@ function SlideMarket() {
 
 function SlideBusiness() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Business Model</h2>
-        <div className="deck-two-col">
-          <div>
-            <div className="deck-card deck-card--orange deck-price-card">
-              <span className="deck-price-amount">&euro;10</span>
-              <span className="deck-price-label">/year</span>
+    <div className="dk dk--dark">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">Business Model</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left dk-center-v">
+            <div className="dk-price-hero">
+              <span className="dk-price-amt">&euro;10</span>
+              <span className="dk-price-per">/year</span>
             </div>
-            <p className="deck-slide-body">
+            <p className="dk-text" style={{ textAlign: "center" }}>
               No ads. No data monetization. Ever.
             </p>
           </div>
-          <div>
-            <div className="deck-card" style={{ marginBottom: "clamp(4px, 0.6vw, 12px)" }}>
-              <span className="deck-eyebrow">Why Subscription?</span>
-              <ul className="deck-bullets">
+          <div className="dk-split-right">
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Why Subscription?</span>
+              <ul className="dk-list">
                 <li>Aligns incentives with users, not advertisers</li>
                 <li>Predictable recurring revenue</li>
                 <li>Funds annual third-party security audits</li>
               </ul>
             </div>
-            <div className="deck-card">
-              <span className="deck-eyebrow">Where It Goes</span>
-              <ul className="deck-bullets">
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Where It Goes</span>
+              <ul className="dk-list">
                 <li>Card network &amp; processing fees</li>
                 <li>Infrastructure &amp; security</li>
                 <li>Annual independent audits</li>
@@ -226,27 +221,33 @@ function SlideBusiness() {
 
 function SlideTraction() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Traction</h2>
-        <div className="deck-two-col">
-          <div className="deck-card">
-            <span className="deck-eyebrow">Current Progress</span>
-            <ul className="deck-bullets">
-              <li>Paymentology partnership secured</li>
-              <li>App in beta (Android)</li>
-              <li>Public waitlist live at walt.is</li>
-              <li>Embedded Engineering ApS registered in Copenhagen</li>
-            </ul>
+    <div className="dk dk--light">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">Traction</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left">
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Current Progress</span>
+              <ul className="dk-list">
+                <li>Paymentology partnership secured</li>
+                <li>App in beta (Android)</li>
+                <li>Public waitlist live at walt.is</li>
+                <li>Embedded Engineering ApS registered in Copenhagen</li>
+              </ul>
+            </div>
           </div>
-          <div className="deck-card deck-card--orange">
-            <span className="deck-eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>Key Challenges Ahead</span>
-            <ul className="deck-bullets deck-bullets--light">
-              <li>EMI license application (EU)</li>
-              <li>iOS NFC integration post-DMA</li>
-              <li>Building initial user base</li>
-              <li>Security certification process</li>
-            </ul>
+          <div className="dk-split-right">
+            <div className="dk-tile dk-tile--accent" style={{ flex: 1 }}>
+              <span className="dk-tile-label dk-tile-label--white">Challenges Ahead</span>
+              <ul className="dk-list dk-list--white">
+                <li>EMI license application (EU)</li>
+                <li>iOS NFC integration post-DMA</li>
+                <li>Building initial user base</li>
+                <li>Security certification process</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -256,38 +257,33 @@ function SlideTraction() {
 
 function SlideTeam() {
   return (
-    <div className="deck-slide deck-slide--light">
-      <div className="deck-slide-inner">
-        <h2 className="deck-slide-heading">Team</h2>
-        <div className="deck-two-col">
-          <div className="deck-card">
-            <div className="deck-avatar">CB</div>
-            <h3 className="deck-team-name">Cole Bittel</h3>
-            <p className="deck-team-title">Founder</p>
-            <p className="deck-card-desc">
-              Previously at Pleo and Funding Circle.
-              Fintech product and engineering background.
-            </p>
-            <p className="deck-team-org">Embedded Engineering ApS</p>
-            <p className="deck-team-loc">Copenhagen, Denmark</p>
+    <div className="dk dk--dark">
+      <div className="dk-inner">
+        <div className="dk-topbar">
+          <span className="dk-label">Team</span>
+        </div>
+        <div className="dk-split">
+          <div className="dk-split-left">
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <div className="dk-avatar">CB</div>
+              <h3 className="dk-name">Cole Bittel</h3>
+              <p className="dk-role">Founder</p>
+              <p className="dk-text">
+                Previously at Pleo and Funding Circle.
+                Fintech product and engineering background.
+              </p>
+              <p className="dk-meta">Embedded Engineering ApS &middot; Copenhagen</p>
+            </div>
           </div>
-          <div>
-            <span className="deck-eyebrow" style={{ marginBottom: "clamp(4px, 0.6vw, 12px)", display: "block" }}>Key Hires</span>
-            <div className="deck-hire-stack">
-              <div className="deck-card">
-                <span className="deck-hire-role">Key Hire #1</span>
-                <span className="deck-hire-title">BDR / Partnerships</span>
-                <span className="deck-card-desc">
-                  Drive bank and processor partnerships across EU markets
-                </span>
-              </div>
-              <div className="deck-card">
-                <span className="deck-hire-role">Key Hire #2</span>
-                <span className="deck-hire-title">Marketing</span>
-                <span className="deck-card-desc">
-                  Build brand awareness in privacy-conscious communities
-                </span>
-              </div>
+          <div className="dk-split-right">
+            <span className="dk-label dk-label--muted">Key Hires</span>
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Hire #1 &mdash; BDR / Partnerships</span>
+              <span className="dk-tile-desc">Drive bank and processor partnerships across EU markets</span>
+            </div>
+            <div className="dk-tile" style={{ flex: 1 }}>
+              <span className="dk-tile-label">Hire #2 &mdash; Marketing</span>
+              <span className="dk-tile-desc">Build brand awareness in privacy-conscious communities</span>
             </div>
           </div>
         </div>
@@ -298,20 +294,21 @@ function SlideTeam() {
 
 function SlideAsk() {
   return (
-    <div className="deck-slide deck-slide--accent">
-      <div className="deck-slide-inner deck-slide-center">
-        <h2 className="deck-slide-heading">The Ask</h2>
-        <p className="deck-slide-body" style={{ marginBottom: "clamp(12px, 2vw, 32px)" }}>
+    <div className="dk dk--title">
+      <div className="dk-inner dk-center">
+        <p className="dk-sub" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>The Ask</p>
+        <h2 className="dk-headline" style={{ color: "#151515", textAlign: "center" }}>
           Work in progress &mdash; still formulating the ask.
-        </p>
-        <blockquote className="deck-quote deck-quote--dark">
+        </h2>
+        <blockquote className="dk-pullquote">
           &ldquo;Transaction data is sacred.&rdquo;
         </blockquote>
-        <div className="deck-contact">
+        <div className="dk-contact">
           <p>Cole Bittel, Founder</p>
           <p>cole@walt.is &middot; walt.is</p>
         </div>
       </div>
+      <span className="dk-watermark">walt.is</span>
     </div>
   );
 }
