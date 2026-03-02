@@ -53,6 +53,74 @@ export default function Updates() {
         <div className="motivation-main">
           <div className="section-shell">
             <div className="motivation-content">
+              {/* Update #5 — March 2026 */}
+              <article className="update-entry">
+                <time className="update-date">March 2026</time>
+                <h2>Turning the Page</h2>
+
+                <p>Hi everyone!</p>
+
+                <p>What an exciting update!</p>
+
+                <p>
+                  Today turns the page for Walt. For the last year, the founding
+                  team has been using their evenings and weekends working on
+                  Walt, building architecture and ensuring the core values of
+                  Walt's privacy-first ethics are baked into the product. That
+                  was enormously successful, and the proof-of-concept that the
+                  team initially created is now alive in a beta offering in the
+                  Google Play store.
+                </p>
+
+                <p>
+                  But today, something new begins&mdash; The team begins a 2
+                  month, full-time intensive program at the Copenhagen Fintech
+                  incubator program!
+                </p>
+
+                <p>
+                  The program goes through a thorough deep dive into all facets
+                  of the Walt offering. Branding, legal, engineering, marketing.
+                  All aspects of the company and the product will be analyzed
+                  and polished. This is TREMENDOUS news because, up until now,
+                  Walt has been entirely focused on the engineering side and
+                  making sure that the privacy goals were legitimately possible.
+                  Having some critical analysis on the branding, for instance,
+                  will likely yield some huge (and embarrassing) improvements.
+                  (For those of you who have noticed how amateur our design
+                  skills are, thank you for sticking around despite this). The
+                  team will be pitching Walt to some of the largest investors in
+                  Denmark and more importantly, to the largest banks in the
+                  Nordics. And while Walt's aspirations are very much beyond
+                  just a product for the Nordics, starting locally and using
+                  Denmark as a testing ground is perfect, as 85% of in-store
+                  transactions in the Nordic region are with tap-to-pay. You can
+                  check out how we frame Walt to banks (and why banks also
+                  benefit from Walt's success) in our pitch deck.
+                </p>
+
+                <p>
+                  And more importantly, this is a mindset shift. Walt is no
+                  longer a hobby project that we've been building in our
+                  basement. While it's true that's how it started, it's very
+                  clear from customer conversations, inbound investor messages,
+                  and the subscription waitlist that Walt has touched on a
+                  problem that has very solid grounding with people right now.
+                  For me, this means that I can no longer act like I have one
+                  foot in, one foot out. The commitment to working full time,
+                  without pay, on Walt means that I must take the problem and
+                  the potential customers of Walt seriously.
+                </p>
+
+                <p>
+                  Thank you for continuing to support us on our journey!
+                  <br />
+                  Cole and the Walt team!
+                </p>
+              </article>
+
+              <hr className="section-divider" />
+
               {/* Update #4 — February 2026 */}
               <article className="update-entry">
                 <time className="update-date">February 2026</time>
