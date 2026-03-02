@@ -23,7 +23,10 @@ export default function Updates() {
           property="og:description"
           content="Status updates from the Walt team on building private tap-to-pay for Android."
         />
-        <meta property="og:image" content="https://walt.is/intro-screen.jpg" />
+        <meta property="og:image" content="https://walt.is/og.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -33,10 +36,7 @@ export default function Updates() {
           property="twitter:description"
           content="Status updates from the Walt team on building private tap-to-pay for Android."
         />
-        <meta
-          property="twitter:image"
-          content="https://walt.is/intro-screen.jpg"
-        />
+        <meta property="twitter:image" content="https://walt.is/og.png" />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
