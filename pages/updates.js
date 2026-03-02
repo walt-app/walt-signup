@@ -53,6 +53,74 @@ export default function Updates() {
         <div className="motivation-main">
           <div className="section-shell">
             <div className="motivation-content">
+              {/* Update #5 — March 2026 */}
+              <article className="update-entry">
+                <time className="update-date">March 2026</time>
+                <h2>Shifting to Full Time</h2>
+
+                <p>Hi everyone!</p>
+
+                <p>What an exciting update!</p>
+
+                <p>
+                  Today turns the page for Walt. For the last year, the founding
+                  team has been using their evenings and weekends working on
+                  Walt, building architecture and ensuring the core values of
+                  Walt's privacy-first ethics are baked into the product. That
+                  was enormously successful, and the proof-of-concept that the
+                  team initially created is now alive in a beta offering in the
+                  Google Play store.
+                </p>
+
+                <p>
+                  But today, something new begins - The team begins a 2
+                  month, full-time intensive program at the Copenhagen Fintech
+                  incubator program!
+                </p>
+
+                <p>
+                  The program goes through a thorough deep dive into all facets
+                  of the Walt offering. Branding, legal, engineering, marketing.
+                  All aspects of the company and the product will be analyzed
+                  and polished. This is TREMENDOUS news because, up until now,
+                  Walt has been entirely focused on the engineering side and
+                  making sure that the privacy goals were legitimately possible.
+                  Having some critical analysis on the branding, for instance,
+                  will likely yield some huge (and embarrassing) improvements.
+                  (For those of you who have noticed how amateur our design
+                  skills are, thank you for sticking around despite this). The
+                  team will be pitching Walt to some of the largest investors in
+                  Denmark and more importantly, to the largest banks in the
+                  Nordics. And while Walt's aspirations are very much beyond
+                  just a product for the Nordics, starting locally and using
+                  Denmark as a testing ground is perfect, as 85% of in-store
+                  transactions in the Nordic region are with tap-to-pay. You can
+                  check out how we frame Walt to banks (and why banks also
+                  benefit from Walt's success) in our pitch deck.
+                </p>
+
+                <p>
+                  And more importantly, this is a mindset shift. Walt is no
+                  longer a hobby project that we've been building in our
+                  basement. While it's true that's how it started, it's very
+                  clear from customer conversations, inbound investor messages,
+                  and the subscription waitlist that Walt has touched on a
+                  problem that has very solid grounding with people right now.
+                  For me, this means that I can no longer act like I have one
+                  foot in, one foot out. The commitment to working full time,
+                  without pay, on Walt means that I must take the problem and
+                  the potential customers of Walt seriously.
+                </p>
+
+                <p>
+                  Thank you for continuing to support us on our journey!
+                  <br />
+                  Cole and the Walt team!
+                </p>
+              </article>
+
+              <hr className="section-divider" />
+
               {/* Update #4 — February 2026 */}
               <article className="update-entry">
                 <time className="update-date">February 2026</time>
@@ -64,8 +132,9 @@ export default function Updates() {
                   January and February were HUGE months for Walt on an
                   engineering side. Some of the biggest hurdles that Walt's
                   vision aimed for were within the engineering, and these
-                  challenges were successfully overcome. Now, Walt is moving into
-                  a different phase. Here are a couple updates on where we're at!
+                  challenges were successfully overcome. Now, Walt is moving
+                  into a different phase. Here are a couple updates on where
+                  we're at!
                 </p>
 
                 <h3>Copenhagen Fintech</h3>
@@ -112,11 +181,11 @@ export default function Updates() {
                 <p>
                   Working on Walt has been incredibly exciting and fun so far.
                   Most of the focus has been on something I was already
-                  well-versed in&mdash;the engineering build. But now that the
+                  well-versed in - the engineering build. But now that the
                   proof-of-concept for building a completely private, compliant,
                   tap-to-pay alternative to Google Wallet is complete, the
-                  challenges require me to develop new skills. The full-time move
-                  is a welcome change.
+                  challenges require me to develop new skills. The full-time
+                  move is a welcome change.
                 </p>
 
                 <p>
@@ -143,17 +212,18 @@ export default function Updates() {
                   Android wallet application.
                 </p>
                 <p>
-                  And it's gone SO GREAT!!! Besides the tremendous success of the
-                  engineering build, it's also been the joy of a lifetime to
+                  And it's gone SO GREAT!!! Besides the tremendous success of
+                  the engineering build, it's also been the joy of a lifetime to
                   build something that we really believe in, and that we truly
                   believe benefits real humans. And that joy and passion has
-                  really come through in the way the application looks and feels.
+                  really come through in the way the application looks and
+                  feels.
                 </p>
 
                 <h3>Request for Intros!</h3>
                 <p>
                   But now that the engineering is largely completed, now begins
-                  the hard part&mdash;the partnerships phase.
+                  the hard part - the partnerships phase.
                 </p>
                 <p>
                   Before Walt can be used by actual humans, "issuers" like banks
@@ -165,22 +235,21 @@ export default function Updates() {
                   But it was well known before starting that this is the most
                   difficult task for Walt and the team. Right now, most issuers
                   across the globe have a list of just 2 accepted apps for their
-                  cards to be loaded into&mdash;Apple Pay and Google Wallet (and
+                  cards to be loaded into - Apple Pay and Google Wallet (and
                   sometimes Samsung Pay, and very rarely Garmin Pay).
                 </p>
                 <p>
                   We're making tremendous progress. We have very strong starts
                   with two small issuers with relationships to the team. But
-                  we'll need many, many more issuers to accept Walt if we're ever
-                  going to allow the general population to begin using Walt.
+                  we'll need many, many more issuers to accept Walt if we're
+                  ever going to allow the general population to begin using
+                  Walt.
                 </p>
                 <p>
-                  So this is where we need your help, friendly supporters. If you
-                  have any personal connections with any issuers (e.g. a bank or
-                  fintech neo-bank),{" "}
-                  <strong>
-                    the team at Walt would love any warm intros.
-                  </strong>
+                  So this is where we need your help, friendly supporters. If
+                  you have any personal connections with any issuers (e.g. a
+                  bank or fintech neo-bank),{" "}
+                  <strong>the team at Walt would love any warm intros.</strong>
                 </p>
 
                 <h3>Coming Up Next</h3>
