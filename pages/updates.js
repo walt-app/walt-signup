@@ -56,7 +56,7 @@ export default function Updates() {
               {/* Update #5 — March 2026 */}
               <article className="update-entry">
                 <time className="update-date">March 2026</time>
-                <h2>Turning the Page</h2>
+                <h2>Shifting to Full Time</h2>
 
                 <p>Hi everyone!</p>
 
@@ -73,7 +73,7 @@ export default function Updates() {
                 </p>
 
                 <p>
-                  But today, something new begins&mdash; The team begins a 2
+                  But today, something new begins - The team begins a 2
                   month, full-time intensive program at the Copenhagen Fintech
                   incubator program!
                 </p>
@@ -132,8 +132,9 @@ export default function Updates() {
                   January and February were HUGE months for Walt on an
                   engineering side. Some of the biggest hurdles that Walt's
                   vision aimed for were within the engineering, and these
-                  challenges were successfully overcome. Now, Walt is moving into
-                  a different phase. Here are a couple updates on where we're at!
+                  challenges were successfully overcome. Now, Walt is moving
+                  into a different phase. Here are a couple updates on where
+                  we're at!
                 </p>
 
                 <h3>Copenhagen Fintech</h3>
@@ -180,11 +181,11 @@ export default function Updates() {
                 <p>
                   Working on Walt has been incredibly exciting and fun so far.
                   Most of the focus has been on something I was already
-                  well-versed in&mdash;the engineering build. But now that the
+                  well-versed in - the engineering build. But now that the
                   proof-of-concept for building a completely private, compliant,
                   tap-to-pay alternative to Google Wallet is complete, the
-                  challenges require me to develop new skills. The full-time move
-                  is a welcome change.
+                  challenges require me to develop new skills. The full-time
+                  move is a welcome change.
                 </p>
 
                 <p>
@@ -211,17 +212,18 @@ export default function Updates() {
                   Android wallet application.
                 </p>
                 <p>
-                  And it's gone SO GREAT!!! Besides the tremendous success of the
-                  engineering build, it's also been the joy of a lifetime to
+                  And it's gone SO GREAT!!! Besides the tremendous success of
+                  the engineering build, it's also been the joy of a lifetime to
                   build something that we really believe in, and that we truly
                   believe benefits real humans. And that joy and passion has
-                  really come through in the way the application looks and feels.
+                  really come through in the way the application looks and
+                  feels.
                 </p>
 
                 <h3>Request for Intros!</h3>
                 <p>
                   But now that the engineering is largely completed, now begins
-                  the hard part&mdash;the partnerships phase.
+                  the hard part - the partnerships phase.
                 </p>
                 <p>
                   Before Walt can be used by actual humans, "issuers" like banks
@@ -233,22 +235,21 @@ export default function Updates() {
                   But it was well known before starting that this is the most
                   difficult task for Walt and the team. Right now, most issuers
                   across the globe have a list of just 2 accepted apps for their
-                  cards to be loaded into&mdash;Apple Pay and Google Wallet (and
+                  cards to be loaded into - Apple Pay and Google Wallet (and
                   sometimes Samsung Pay, and very rarely Garmin Pay).
                 </p>
                 <p>
                   We're making tremendous progress. We have very strong starts
                   with two small issuers with relationships to the team. But
-                  we'll need many, many more issuers to accept Walt if we're ever
-                  going to allow the general population to begin using Walt.
+                  we'll need many, many more issuers to accept Walt if we're
+                  ever going to allow the general population to begin using
+                  Walt.
                 </p>
                 <p>
-                  So this is where we need your help, friendly supporters. If you
-                  have any personal connections with any issuers (e.g. a bank or
-                  fintech neo-bank),{" "}
-                  <strong>
-                    the team at Walt would love any warm intros.
-                  </strong>
+                  So this is where we need your help, friendly supporters. If
+                  you have any personal connections with any issuers (e.g. a
+                  bank or fintech neo-bank),{" "}
+                  <strong>the team at Walt would love any warm intros.</strong>
                 </p>
 
                 <h3>Coming Up Next</h3>
