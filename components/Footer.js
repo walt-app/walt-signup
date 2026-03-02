@@ -1,7 +1,7 @@
 export default function Footer({ variant = "default" }) {
   const footerLinks = variant === "motivation"
     ? [
-        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Updates", href: "/updates" },
@@ -9,7 +9,7 @@ export default function Footer({ variant = "default" }) {
       ]
     : variant === "pitch"
     ? [
-        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Motivation", href: "/motivation" },
@@ -18,7 +18,7 @@ export default function Footer({ variant = "default" }) {
       ]
     : variant === "updates"
     ? [
-        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Motivation", href: "/motivation" },
@@ -26,14 +26,14 @@ export default function Footer({ variant = "default" }) {
       ]
     : variant === "privacy"
     ? [
-        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Home", href: "/" },
         { label: "Motivation", href: "/motivation" },
         { label: "Updates", href: "/updates" },
       ]
     : [
-        { label: "GitHub", href: "https://github.com/walt-app/walt-architecture" },
+
         { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
         { label: "Motivation", href: "/motivation" },
         { label: "Pitch Deck", href: "/pitch" },
