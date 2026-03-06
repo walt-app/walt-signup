@@ -309,18 +309,33 @@ function SlideTheAsk() {
             </div>
             <div className="ps-card" style={{ padding: "clamp(14px, 2.2vw, 38px) clamp(16px, 2.5vw, 42px)" }}>
               <p className="ps-card-h">Networking Needs</p>
-              <ul className="ps-bullets">
+              <ul className="ps-bullets" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
                 <li className="ps-bullet ps-bullet--bold">
-                  Nordic payment infrastructure
-                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Fidesmo, Nets/Nexi, Tietoevry</span>
+                  <span>
+                    Nordic payment infrastructure
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Fidesmo, Nets/Nexi, Tietoevry
+                    </span>
+                  </span>
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
-                  Visa &amp; Mastercard Nordic fintech leads
-                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;wallet certification contacts</span>
+                  <span>
+                    Visa &amp; Mastercard Nordic fintech leads
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Wallet certification contacts
+                    </span>
+                  </span>
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
-                  Nordic bank cards &amp; payments leads
-                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Nordea, Swedbank, DNB, Lunar, SpareBank 1</span>
+                  <span>
+                    Nordic bank cards &amp; payments leads
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Nordea, Swedbank, DNB, Lunar, SpareBank 1
+                    </span>
+                  </span>
                 </li>
               </ul>
             </div>
