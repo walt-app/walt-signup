@@ -189,7 +189,7 @@ function SlideCompetitors() {
                 <p style={{
                   margin: 0,
                   fontSize: "clamp(9px, 1.05vw, 17px)",
-                  fontWeight: 700,
+                  fontWeight: 400,
                   color: "#151515",
                 }}>
                   Risk: NFC competes with core A2A business for funding
@@ -214,7 +214,7 @@ function SlideCompetitors() {
                 <p style={{
                   margin: 0,
                   fontSize: "clamp(9px, 1.05vw, 17px)",
-                  fontWeight: 700,
+                  fontWeight: 400,
                   color: "#151515",
                 }}>
                   Risk: NFC expansion depends on bank consortium priorities
