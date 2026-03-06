@@ -478,10 +478,10 @@ function SlideBuiltButLocked() {
               <text x={userX} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
 
               {/* ── Precedent ── */}
-              <text x="530" y="370" textAnchor="middle" fontSize="11" fill="#7f7f7f">
-                Klarna, Vipps MobilePay, and BBVA launched through this same pathway in 2025.
+              <text x="530" y="374" textAnchor="middle" fontSize="11" fill="#7f7f7f">
+                Nets/Nexi alone serves 250+ Nordic banks.
               </text>
-              <text x="530" y="388" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">The door is open.</text>
+              <text x="530" y="392" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">One processor deal unlocks the majority of the market.</text>
             </g>
           </svg>
         </div>
