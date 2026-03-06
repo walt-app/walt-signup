@@ -170,7 +170,7 @@ function SlideCompetitors() {
           Competitors offering tap-to-pay as a secondary feature
         </p>
         <div className="ps-content">
-          <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+          <div className="ps-cols-2">
 
             {/* Wero */}
             <div className="ps-card ps-card--top">
@@ -180,9 +180,21 @@ function SlideCompetitors() {
                 <li className="ps-bullet">E-commerce and P2P are the primary business</li>
                 <li className="ps-bullet">No NFC tap-to-pay yet but planned 2026&#x2013;27</li>
               </ul>
-              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
-                Risk: NFC competes with core A2A business for funding
-              </p>
+              <div style={{
+                marginTop: "clamp(8px, 1vw, 16px)",
+                background: "var(--orange-primary)",
+                borderRadius: "clamp(4px, 0.5vw, 8px)",
+                padding: "clamp(6px, 0.8vw, 12px) clamp(10px, 1.2vw, 18px)",
+              }}>
+                <p style={{
+                  margin: 0,
+                  fontSize: "clamp(9px, 1.05vw, 17px)",
+                  fontWeight: 700,
+                  color: "#151515",
+                }}>
+                  Risk: NFC competes with core A2A business for funding
+                </p>
+              </div>
             </div>
 
             {/* Vipps MobilePay */}
@@ -193,17 +205,23 @@ function SlideCompetitors() {
                 <li className="ps-bullet">Only Norway heavily supported by banks so far</li>
                 <li className="ps-bullet">Validates Walt&rsquo;s technical pathway</li>
               </ul>
-              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
-                Risk: NFC expansion depends on bank consortium priorities
-              </p>
+              <div style={{
+                marginTop: "clamp(8px, 1vw, 16px)",
+                background: "var(--orange-primary)",
+                borderRadius: "clamp(4px, 0.5vw, 8px)",
+                padding: "clamp(6px, 0.8vw, 12px) clamp(10px, 1.2vw, 18px)",
+              }}>
+                <p style={{
+                  margin: 0,
+                  fontSize: "clamp(9px, 1.05vw, 17px)",
+                  fontWeight: 700,
+                  color: "#151515",
+                }}>
+                  Risk: NFC expansion depends on bank consortium priorities
+                </p>
+              </div>
             </div>
 
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-body">
-              Neither offers on-device-only, zero-collection, open-source payments.
-              They are the defaults &mdash; Walt is for people who don&rsquo;t want to be tracked.
-            </p>
           </div>
         </div>
       </div>
