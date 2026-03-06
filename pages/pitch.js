@@ -141,55 +141,25 @@ function SlideWhyNow() {
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Why Now?</h2>
-        <div className="ps-content">
-          <div className="ps-cols-3" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-            <div className="ps-card">
-              <p className="ps-card-h">PRIVACY AWARENESS SURGING</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>500K+</p>
-              <p className="ps-body ps-muted">
-                r/degoogle members. Wero reached 48.5M users in 18 months as
-                Europe builds its own payment rails. Digital euro incoming.
-              </p>
-            </div>
-            <div className="ps-card">
-              <p className="ps-card-h">TAP-TO-PAY EXPLODING</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>91%</p>
-              <p className="ps-body ps-muted">
-                of UK 25-34 year olds use contactless payments.
-                23.2B contactless payments in euro area, H2 2023.
-              </p>
-            </div>
-            <div className="ps-card">
-              <p className="ps-card-h">LEGISLATION</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0", fontSize: "clamp(14px, 2vw, 32px)" }}>
-                July 2025
-              </p>
-              <p className="ps-body ps-muted">
-                EU mandated NFC access (decided 2024). Apple and Google published wallet APIs
-                and allowed default-wallet switching in July 2025.
-              </p>
-            </div>
-          </div>
-          <div className="ps-cols-2">
-            <div className="ps-card">
-              <p className="ps-card-h">Privacy Alternatives Winning</p>
-              <p className="ps-body">Google Search &rarr; DuckDuckGo, ChatGPT</p>
-              <p className="ps-body">Gmail &rarr; ProtonMail, Hey.com</p>
-              <p className="ps-body">Chrome &rarr; Firefox, Brave</p>
-              <p className="ps-body">WhatsApp &rarr; Signal</p>
-            </div>
-            <div className="ps-banner">
-              <p className="ps-banner-h">The Gap</p>
-              <p className="ps-banner-body">
-                Every major Big Tech product has a privacy-focused competitor.
-                However, competition for both Google Wallet and Apple Pay was
-                only unlocked in July 2025.
-              </p>
-            </div>
+        <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+          <p className="ps-stat" style={{ fontSize: "clamp(28px, 4.5vw, 72px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
+            July 2025
+          </p>
+          <p className="ps-lead" style={{ maxWidth: "680px", marginBottom: "clamp(16px, 2.5vw, 40px)" }}>
+            EU forced Apple and Google to open NFC access.
+            <br />
+            For the first time, a privacy alternative to tap-to-pay can exist.
+          </p>
+          <div style={{ display: "flex", gap: "clamp(12px, 2vw, 32px)", flexWrap: "wrap", justifyContent: "center" }}>
+            <p className="ps-body ps-muted">Google Search &rarr; DuckDuckGo</p>
+            <p className="ps-body ps-muted">Gmail &rarr; ProtonMail</p>
+            <p className="ps-body ps-muted">Chrome &rarr; Brave</p>
+            <p className="ps-body ps-muted">WhatsApp &rarr; Signal</p>
+            <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>Apple Pay / Google Wallet &rarr; Walt</p>
           </div>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">European Central Bank</a>, <a href="#">European Commission</a>, <a href="#">US DOJ</a>
+          Sources: <a href="#">European Commission</a>, <a href="#">US DOJ</a>
         </div>
       </div>
     </div>
