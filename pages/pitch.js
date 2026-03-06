@@ -505,10 +505,10 @@ function SlideMarket() {
   const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
 
   const bubbles = [
-    { name: "Proton", users: "100M+", userDesc: "accounts", category: "EMAIL / CLOUD", cx: 250, cy: 115, r: scaleR(100) },
-    { name: "Brave", users: "101M", userDesc: "MAU", category: "BROWSER", cx: 370, cy: 305, r: scaleR(101) },
-    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", category: "SEARCH", cx: 130, cy: 305, r: scaleR(100) },
-    { name: "Signal", users: "70M+", userDesc: "MAU", category: "MESSAGING", cx: 510, cy: 160, r: scaleR(70) },
+    { name: "Proton", users: "100M+", userDesc: "accounts", category: "EMAIL / CLOUD", cx: 135, cy: 180, r: scaleR(100) },
+    { name: "Brave", users: "101M", userDesc: "MAU", category: "BROWSER", cx: 355, cy: 198, r: scaleR(101) },
+    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", category: "SEARCH", cx: 555, cy: 170, r: scaleR(100) },
+    { name: "Signal", users: "70M+", userDesc: "MAU", category: "MESSAGING", cx: 735, cy: 212, r: scaleR(70) },
   ];
 
   return (
@@ -519,7 +519,7 @@ function SlideMarket() {
           Already established pay-for-privacy market
         </p>
         <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <svg viewBox="0 0 1060 420" width="100%" style={{ display: "block" }}>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
               {bubbles.map((b) => (
                 <g key={b.name}>
@@ -531,32 +531,31 @@ function SlideMarket() {
                 </g>
               ))}
 
-              <line x1="620" y1="25" x2="620" y2="395" stroke="#e0e0e0" strokeWidth="1" strokeDasharray="4 3" />
+              <line x1="840" y1="25" x2="840" y2="395" stroke="#e0e0e0" strokeWidth="1" strokeDasharray="4 3" />
 
               {/* Subscription box */}
-              <rect x="830" y="25" width="180" height="95" rx="10" fill="#ff4800" />
-              <text x="920" y="50" textAnchor="middle" fontSize="8" fontWeight="600" fill="#151515" letterSpacing="0.1em">WALT SUBSCRIPTION</text>
-              <text x="920" y="85" textAnchor="middle" fontSize="38" fontWeight="900" fill="#151515">&#x20AC;10</text>
-              <text x="920" y="106" textAnchor="middle" fontSize="14" fill="#151515">/year</text>
+              <rect x="858" y="30" width="180" height="110" rx="10" fill="#ff4800" />
+              <text x="948" y="58" textAnchor="middle" fontSize="8" fontWeight="600" fill="#151515" letterSpacing="0.1em">WALT SUBSCRIPTION</text>
+              <text x="948" y="100" textAnchor="middle" fontSize="42" fontWeight="900" fill="#151515">&#x20AC;10</text>
+              <text x="948" y="123" textAnchor="middle" fontSize="14" fill="#151515">/year</text>
 
               {/* Walt Year 1-2 */}
-              <circle cx="680" cy="155" r={scaleR(0.5)} fill="#ff4800" opacity="0.5" />
-              <text x="695" y="143" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
-              <text x="695" y="159" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K users</text>
-              <text x="695" y="173" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
+              <circle cx="875" cy="185" r={scaleR(0.5)} fill="#ff4800" opacity="0.5" />
+              <text x="892" y="173" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
+              <text x="892" y="189" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K users</text>
+              <text x="892" y="203" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
 
               {/* Walt Year 2-4 */}
-              <circle cx="710" cy="235" r={scaleR(3)} fill="#ff4800" opacity="0.6" />
-              <text x="738" y="223" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
-              <text x="738" y="239" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
-              <text x="738" y="253" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
+              <circle cx="875" cy="255" r={scaleR(3)} fill="#ff4800" opacity="0.6" />
+              <text x="898" y="243" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
+              <text x="898" y="259" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
+              <text x="898" y="273" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
 
               {/* Walt Year 4-8 (proportionally sized, text inside) */}
-              <circle cx="800" cy="340" r={scaleR(45)} fill="#ff4800" fillOpacity="0.12" stroke="#ff4800" strokeWidth="2.5" />
-              <text x="800" y="315" textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8</text>
-              <text x="800" y="330" textAnchor="middle" fontSize="9" fontWeight="600" fill="#151515">US &#x26; Asia focus</text>
-              <text x="800" y="354" textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">45M users</text>
-              <text x="800" y="370" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
+              <circle cx="948" cy="340" r={scaleR(45)} fill="#ff4800" fillOpacity="0.12" stroke="#ff4800" strokeWidth="2.5" />
+              <text x="948" y="320" textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
+              <text x="948" y="342" textAnchor="middle" fontSize="18" fontWeight="900" fill="#151515">45M users</text>
+              <text x="948" y="358" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
             </g>
           </svg>
         </div>
