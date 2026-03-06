@@ -430,8 +430,8 @@ function SlideBuiltButLocked() {
   return (
     <div className="ps">
       <div className="ps-pad">
-        <h2 className="ps-h1">Built But Locked</h2>
-        <p className="ps-lead">The challenge is permission, not engineering.</p>
+        <h2 className="ps-h1">Challenges</h2>
+        <p className="ps-lead">Two partnerships before revenue</p>
         <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
@@ -539,7 +539,7 @@ const SLIDES = [
   { title: "The Problem", render: SlideProblem },
   { title: "The Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
-  { title: "Built But Locked", render: SlideBuiltButLocked },
+  { title: "Challenges", render: SlideBuiltButLocked },
   { title: "The Market", render: SlideMarket },
   { title: "Competitors", render: SlideCompetitors },
   { title: "The Ask", render: SlideTheAsk },
