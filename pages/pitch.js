@@ -308,16 +308,35 @@ function SlideTheAsk() {
               </p>
             </div>
             <div className="ps-card" style={{ padding: "clamp(14px, 2.2vw, 38px) clamp(16px, 2.5vw, 42px)" }}>
-              <p className="ps-card-h">Immediate Needs</p>
-              <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-                Networking and partnerships with bank representatives to unblock
-                card loading and processing in Europe.
-              </p>
-              <p className="ps-card-h">What We&rsquo;re Looking For</p>
-              <ul className="ps-bullets">
-                <li className="ps-bullet">Introductions to European bank partnership teams</li>
-                <li className="ps-bullet">Guidance on EMI licensing and Visa/Mastercard signoff</li>
-                <li className="ps-bullet">Strategic advisors with fintech and payments experience</li>
+              <p className="ps-card-h">Networking Needs</p>
+              <ul className="ps-bullets" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
+                <li className="ps-bullet ps-bullet--bold">
+                  <span>
+                    Nordic payment infrastructure
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Fidesmo, Nets/Nexi, Tietoevry
+                    </span>
+                  </span>
+                </li>
+                <li className="ps-bullet ps-bullet--bold">
+                  <span>
+                    Nordic bank cards &amp; payments leads
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Nordea, Swedbank, DNB, Lunar, SpareBank 1
+                    </span>
+                  </span>
+                </li>
+                <li className="ps-bullet ps-bullet--bold">
+                  <span>
+                    Visa &amp; Mastercard Nordic fintech leads
+                    <br />
+                    <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
+                      Wallet certification contacts
+                    </span>
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
@@ -341,9 +360,6 @@ function SlideClosing() {
           <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
           <p className="ps-body" style={{ color: "#151515" }}>walt.is</p>
         </div>
-        <p className="ps-body" style={{ color: "#151515", opacity: 0.6, marginTop: "clamp(8px, 1.2vw, 20px)" }}>
-          Embedded Engineering ApS | Copenhagen, Denmark
-        </p>
       </div>
     </div>
   );
@@ -416,6 +432,80 @@ function SlideMarket() {
   );
 }
 
+/* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
+
+function SlideBuiltButLocked() {
+  const cy = 170;
+  const r = 72;
+
+  const waltX = 130;
+  const procX = 390;
+  const bankX = 650;
+  const userX = 920;
+
+  return (
+    <div className="ps">
+      <div className="ps-pad">
+        <h2 className="ps-h1">Challenges</h2>
+        <p className="ps-lead">Two partnerships before revenue</p>
+        <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
+            <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+
+              {/* ── Connecting arrows ── */}
+              {/* Walt → Processors: solid dark */}
+              <line x1={waltX + r} y1={cy} x2={procX - r} y2={cy} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${procX - r - 2},${cy - 6} ${procX - r + 8},${cy} ${procX - r - 2},${cy + 6}`} fill="#151515" />
+              {/* Processors → Banks: dashed grey */}
+              <line x1={procX + r} y1={cy} x2={bankX - r} y2={cy} stroke="#d0d0d0" strokeWidth="2.5" strokeDasharray="10 8" />
+              <polygon points={`${bankX - r - 2},${cy - 6} ${bankX - r + 8},${cy} ${bankX - r - 2},${cy + 6}`} fill="#d0d0d0" />
+              {/* Banks → Users: dashed orange (leads to goal) */}
+              <line x1={bankX + r} y1={cy} x2={userX - r} y2={cy} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
+              <polygon points={`${userX - r - 2},${cy - 6} ${userX - r + 8},${cy} ${userX - r - 2},${cy + 6}`} fill="#ff4800" opacity="0.4" />
+
+              {/* ── Walt (solid orange, complete) ── */}
+              <circle cx={waltX} cy={cy} r={r} fill="#ff4800" />
+              <text x={waltX} y={cy - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
+              <path d={`M${waltX - 10} ${cy + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* ── Blocked nodes (dashed outline, lock icon) ── */}
+              {[
+                { cx: procX, label: "Payment Processors", sub: "Nets/Nexi · Tietoevry" },
+                { cx: bankX, label: "Issuing Banks", sub: "Per-bank approval" },
+              ].map((n) => (
+                <g key={n.label}>
+                  <circle cx={n.cx} cy={cy} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+                  {/* Lock */}
+                  <rect x={n.cx - 10} y={cy - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+                  <path d={`M${n.cx - 5} ${cy - 3} V${cy - 10} a5 5 0 0 1 10 0 V${cy - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+                  {/* Labels below */}
+                  <text x={n.cx} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">{n.label}</text>
+                  <text x={n.cx} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">{n.sub}</text>
+                </g>
+              ))}
+
+              {/* ── Users node (orange ring, the goal) ── */}
+              <circle cx={userX} cy={cy} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
+              {/* Euro symbol */}
+              <text x={userX} y={cy - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
+              <text x={userX} y={cy + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
+              {/* Labels below */}
+              <text x={userX} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
+              <text x={userX} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
+
+              {/* ── Precedent ── */}
+              <text x="530" y="374" textAnchor="middle" fontSize="11" fill="#7f7f7f">
+                Nets/Nexi alone serves 250+ Nordic banks.
+              </text>
+              <text x="530" y="392" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">One processor deal unlocks the majority of the market.</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Scaled thumbnail wrapper ─────────────────────────────────────────────── */
 
 const SLIDE_REF_WIDTH = 1200;
@@ -465,6 +555,7 @@ const SLIDES = [
   { title: "The Problem", render: SlideProblem },
   { title: "The Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
+  { title: "Challenges", render: SlideBuiltButLocked },
   { title: "The Market", render: SlideMarket },
   { title: "Competitors", render: SlideCompetitors },
   { title: "The Ask", render: SlideTheAsk },
