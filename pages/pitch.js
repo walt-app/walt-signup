@@ -93,45 +93,38 @@ function SlideSolution() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Solution</h2>
         <div className="ps-content">
-          <div className="ps-split ps-split--center">
+          <div className="ps-split ps-split--center" style={{ gridTemplateColumns: "1fr 1.4fr" }}>
             <div>
-              <p className="ps-lead">
+              <p className="ps-lead" style={{ marginBottom: "clamp(12px, 1.8vw, 28px)" }}>
                 Walt is the private alternative to Apple Pay and Google Wallet.
-              </p>
-              <p className="ps-body" style={{ marginBottom: "clamp(8px, 1.2vw, 18px)" }}>
-                A tap-to-pay wallet for Android and iOS that treats transaction data as sacred.
-                No collection. No storage. No selling.
               </p>
               <div className="ps-num-row">
                 <span className="ps-num">1</span>
-                <span className="ps-body">Transaction data stays encrypted on your device. No server-side storage</span>
+                <span className="ps-body">Transaction data encrypted on-device. Never stored on servers.</span>
               </div>
               <div className="ps-num-row">
                 <span className="ps-num">2</span>
-                <span className="ps-body">Funded by users, not data monetization</span>
-              </div>
-              <div className="ps-num-row">
-                <span className="ps-num">3</span>
-                <span className="ps-body">No AI. No premium features. Load a card, set Walt as default wallet, start tapping to pay.</span>
+                <span className="ps-body">Load a card. Tap to pay. That&rsquo;s it.</span>
               </div>
             </div>
-            <div style={{ display: "flex", gap: "clamp(6px, 1vw, 16px)", justifyContent: "center" }}>
+            <div style={{ display: "flex", gap: "clamp(8px, 1.4vw, 22px)", justifyContent: "center", alignItems: "center" }}>
               {[
                 { src: "/promo-screen.jpg", alt: "Walt home screen" },
                 { src: "/add-card.jpg", alt: "Add card screen" },
                 { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
               ].map((img) => (
                 <div key={img.src} style={{
-                  width: "clamp(70px, 10vw, 160px)",
-                  borderRadius: "clamp(4px, 0.6vw, 10px)",
-                  overflow: "hidden"
+                  width: "clamp(90px, 14vw, 220px)",
+                  borderRadius: "clamp(6px, 0.8vw, 14px)",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
                 }}>
                   <Image
                     src={img.src}
                     alt={img.alt}
-                    width={160}
-                    height={347}
-                    sizes="(max-width: 768px) 80px, 160px"
+                    width={220}
+                    height={477}
+                    sizes="(max-width: 768px) 100px, 220px"
                     style={{ width: "100%", height: "auto", display: "block" }}
                   />
                 </div>
