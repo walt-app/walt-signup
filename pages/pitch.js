@@ -529,29 +529,29 @@ function SlideMarket() {
 
               <line x1="840" y1="25" x2="840" y2="375" stroke="#e0e0e0" strokeWidth="1" strokeDasharray="4 3" />
 
+              {/* Subscription box */}
+              <rect x="858" y="30" width="180" height="110" rx="10" fill="#ff4800" />
+              <text x="948" y="58" textAnchor="middle" fontSize="8" fontWeight="600" fill="#151515" letterSpacing="0.1em">WALT SUBSCRIPTION</text>
+              <text x="948" y="100" textAnchor="middle" fontSize="42" fontWeight="900" fill="#151515">&#x20AC;10</text>
+              <text x="948" y="123" textAnchor="middle" fontSize="14" fill="#151515">/year</text>
+
               {/* Walt Year 1-2 */}
-              <circle cx="875" cy="50" r="8" fill="#ff4800" opacity="0.5" />
-              <text x="892" y="38" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
-              <text x="892" y="54" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K users</text>
-              <text x="892" y="68" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
+              <circle cx="875" cy="185" r="8" fill="#ff4800" opacity="0.5" />
+              <text x="892" y="173" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
+              <text x="892" y="189" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K users</text>
+              <text x="892" y="203" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
 
               {/* Walt Year 2-4 */}
-              <circle cx="875" cy="120" r="14" fill="#ff4800" opacity="0.6" />
-              <text x="898" y="108" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
-              <text x="898" y="124" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
-              <text x="898" y="138" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
+              <circle cx="875" cy="255" r="14" fill="#ff4800" opacity="0.6" />
+              <text x="898" y="243" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
+              <text x="898" y="259" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
+              <text x="898" y="273" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
 
               {/* Walt Year 4-8 */}
-              <circle cx="875" cy="195" r="19" fill="#ff4800" opacity="0.7" />
-              <text x="902" y="183" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
-              <text x="902" y="199" fontSize="15" fontWeight="900" fill="#151515">45M users</text>
-              <text x="902" y="213" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
-
-              {/* Subscription box */}
-              <rect x="858" y="250" width="180" height="110" rx="10" fill="#ff4800" />
-              <text x="948" y="278" textAnchor="middle" fontSize="8" fontWeight="600" fill="#151515" letterSpacing="0.1em">WALT SUBSCRIPTION</text>
-              <text x="948" y="320" textAnchor="middle" fontSize="42" fontWeight="900" fill="#151515">&#x20AC;10</text>
-              <text x="948" y="343" textAnchor="middle" fontSize="14" fill="#151515">/year</text>
+              <circle cx="875" cy="330" r="19" fill="#ff4800" opacity="0.7" />
+              <text x="902" y="318" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
+              <text x="902" y="334" fontSize="15" fontWeight="900" fill="#151515">45M users</text>
+              <text x="902" y="348" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
             </g>
           </svg>
         </div>
