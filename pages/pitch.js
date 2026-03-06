@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -162,6 +162,46 @@ function SlideWhyNow() {
 /* ─── Slide 5: Competitors ────────────────────────────────────────────────── */
 
 function SlideCompetitors() {
+  const cellStyle = {
+    padding: "clamp(6px, 0.8vw, 14px) clamp(8px, 1vw, 18px)",
+    fontSize: "clamp(9px, 1.05vw, 17px)",
+    lineHeight: 1.4,
+    color: "#151515",
+    borderBottom: "1px solid #e0e0e0",
+  };
+  const headerStyle = {
+    ...cellStyle,
+    fontWeight: 700,
+    textAlign: "center",
+    borderBottom: "2px solid #151515",
+    fontSize: "clamp(10px, 1.2vw, 20px)",
+  };
+  const labelStyle = {
+    ...cellStyle,
+    fontWeight: 600,
+    color: "#333",
+  };
+  const checkStyle = {
+    ...cellStyle,
+    textAlign: "center",
+    fontSize: "clamp(14px, 1.6vw, 26px)",
+  };
+  const textCellStyle = {
+    ...cellStyle,
+    textAlign: "center",
+    fontSize: "clamp(8px, 0.95vw, 15px)",
+    color: "#333",
+  };
+
+  const rows = [
+    { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
+    { label: "NFC tap-to-pay live today", walt: "check", wero: "", vipps: "check" },
+    { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
+    { label: "User base", walt: "Pre-launch", wero: "50M+", vipps: "12.5M" },
+    { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Free (bank-backed)", vipps: "Free (bank-backed)" },
+    { label: "Geographic focus", walt: "Nordics \u2192 Europe", wero: "DE, FR, BE", vipps: "Nordics" },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
@@ -169,59 +209,52 @@ function SlideCompetitors() {
         <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
           Competitors offering tap-to-pay as a secondary feature
         </p>
-        <div className="ps-content">
-          <div className="ps-cols-2">
+        <div className="ps-content" style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "2.2fr 1fr 1fr 1fr",
+            width: "100%",
+            maxWidth: "900px",
+            background: "#f0f0f0",
+            borderRadius: "clamp(8px, 0.9vw, 16px)",
+            overflow: "hidden",
+          }}>
+            {/* Header row */}
+            <div style={{ ...headerStyle, textAlign: "left", background: "transparent" }} />
+            <div style={{ ...headerStyle, color: "var(--orange-primary)" }}>Walt</div>
+            <div style={headerStyle}>Wero</div>
+            <div style={headerStyle}>Vipps</div>
 
-            {/* Wero */}
-            <div className="ps-card ps-card--top">
-              <p className="ps-card-title">Wero (EPI)</p>
-              <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <li className="ps-bullet">50M+ registered users</li>
-                <li className="ps-bullet">E-commerce and P2P are the primary business</li>
-                <li className="ps-bullet">No NFC tap-to-pay yet but planned 2026&#x2013;27</li>
-              </ul>
-              <div style={{
-                marginTop: "clamp(8px, 1vw, 16px)",
-                background: "var(--orange-primary)",
-                borderRadius: "clamp(4px, 0.5vw, 8px)",
-                padding: "clamp(6px, 0.8vw, 12px) clamp(10px, 1.2vw, 18px)",
-              }}>
-                <p style={{
-                  margin: 0,
-                  fontSize: "clamp(9px, 1.05vw, 17px)",
-                  fontWeight: 400,
-                  color: "#151515",
-                }}>
-                  Risk: NFC competes with core A2A business for funding
-                </p>
-              </div>
-            </div>
+            {/* Data rows */}
+            {rows.map((row, i) => {
+              const isLast = i === rows.length - 1;
+              const rowLabel = { ...labelStyle, ...(isLast && { borderBottom: "none" }) };
+              const rowCheck = { ...checkStyle, ...(isLast && { borderBottom: "none" }) };
+              const rowText = { ...textCellStyle, ...(isLast && { borderBottom: "none" }) };
 
-            {/* Vipps MobilePay */}
-            <div className="ps-card ps-card--top">
-              <p className="ps-card-title">Vipps MobilePay</p>
-              <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <li className="ps-bullet">NFC live in all four Nordic markets</li>
-                <li className="ps-bullet">Only Norway heavily supported by banks so far</li>
-                <li className="ps-bullet">Validates Walt&rsquo;s technical pathway</li>
-              </ul>
-              <div style={{
-                marginTop: "clamp(8px, 1vw, 16px)",
-                background: "var(--orange-primary)",
-                borderRadius: "clamp(4px, 0.5vw, 8px)",
-                padding: "clamp(6px, 0.8vw, 12px) clamp(10px, 1.2vw, 18px)",
-              }}>
-                <p style={{
-                  margin: 0,
-                  fontSize: "clamp(9px, 1.05vw, 17px)",
-                  fontWeight: 400,
-                  color: "#151515",
-                }}>
-                  Risk: NFC expansion depends on bank consortium priorities
-                </p>
-              </div>
-            </div>
+              const renderCell = (value, isWalt) => {
+                if (value === "check") {
+                  return (
+                    <div style={{ ...rowCheck, color: isWalt ? "var(--orange-primary)" : "#151515" }}>
+                      &#x2713;
+                    </div>
+                  );
+                }
+                if (value === "") {
+                  return <div style={rowCheck} />;
+                }
+                return <div style={rowText}>{value}</div>;
+              };
 
+              return (
+                <Fragment key={row.label}>
+                  <div style={rowLabel}>{row.label}</div>
+                  {renderCell(row.walt, true)}
+                  {renderCell(row.wero, false)}
+                  {renderCell(row.vipps, false)}
+                </Fragment>
+              );
+            })}
           </div>
         </div>
       </div>
