@@ -497,6 +497,86 @@ function SlideClosing() {
   );
 }
 
+/* ─── Slide: The Market ───────────────────────────────────────────────────── */
+
+function SlideMarket() {
+  const companies = [
+    { name: "Proton", users: "100M+ accounts", revenue: "~$100M", category: "Email / Cloud", pct: 100 },
+    { name: "Brave", users: "101M MAU", revenue: "$100M+", category: "Browser", pct: 100 },
+    { name: "DuckDuckGo", users: "100M daily searches", revenue: "$100M+", category: "Search", pct: 100 },
+    { name: "Signal", users: "70M+ MAU", revenue: "$26M", category: "Messaging", pct: 26 },
+  ];
+
+  return (
+    <div className="ps">
+      <div className="ps-pad">
+        <h2 className="ps-h1">The Market</h2>
+        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+          15&ndash;30M Europeans actively pay for privacy tools.
+          <br />
+          None of them have a privacy wallet.
+        </p>
+        <div className="ps-content">
+          <div className="ps-split" style={{ alignItems: "stretch" }}>
+            {/* Left: Privacy company revenue bars */}
+            <div className="ps-card ps-card--left" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p className="ps-card-h">Proven Privacy-Paying Market</p>
+              {companies.map((c) => (
+                <div key={c.name} style={{ marginBottom: "clamp(4px, 0.5vw, 10px)" }}>
+                  <div className="ps-bar-row">
+                    <span className="ps-bar-label">{c.name}</span>
+                    <span className="ps-bar-pct">{c.revenue}</span>
+                  </div>
+                  <div className="ps-bar">
+                    <div className="ps-bar-fill" style={{ width: `${c.pct}%` }} />
+                  </div>
+                  <p className="ps-body ps-muted" style={{ fontSize: "clamp(7px, 0.7vw, 12px)" }}>
+                    {c.users} &middot; {c.category}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Right: Price + trajectory */}
+            <div className="ps-stack">
+              <div className="ps-price-card" style={{ flex: "0 0 auto" }}>
+                <p className="ps-stat" style={{ fontSize: "clamp(28px, 4vw, 64px)" }}>&euro;10</p>
+                <p style={{
+                  fontSize: "clamp(11px, 1.3vw, 22px)",
+                  fontWeight: 400,
+                  color: "#151515",
+                  margin: "0 0 clamp(2px, 0.3vw, 6px)"
+                }}>/year</p>
+                <div className="ps-divider" />
+                <p className="ps-banner-body">The price of privacy.</p>
+              </div>
+              <div className="ps-card">
+                <p className="ps-card-h">Walt&rsquo;s Target Trajectory</p>
+                <div style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
+                  <p className="ps-label">YEAR 1&ndash;3</p>
+                  <div className="ps-stat-inline">
+                    <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.6vw, 26px)" }}>100K&ndash;500K</p>
+                    <p className="ps-stat-desc">paying users</p>
+                  </div>
+                  <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>&euro;1&ndash;5M ARR</p>
+                </div>
+                <div>
+                  <p className="ps-label">YEAR 3&ndash;7</p>
+                  <div className="ps-stat-inline">
+                    <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.6vw, 26px)" }}>1&ndash;3M</p>
+                    <p className="ps-stat-desc">paying users</p>
+                  </div>
+                  <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>&euro;10&ndash;30M ARR</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Scaled thumbnail wrapper ─────────────────────────────────────────────── */
 
 const SLIDE_REF_WIDTH = 1200;
@@ -552,6 +632,7 @@ const SLIDES = [
   { title: "Traction & Roadmap", render: SlideTraction },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
+  { title: "The Market", render: SlideMarket },
 ];
 
 /* ─── Page Component ───────────────────────────────────────────────────────── */
