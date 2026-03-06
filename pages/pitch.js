@@ -321,19 +321,19 @@ function SlideTheAsk() {
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
                   <span>
-                    Visa &amp; Mastercard Nordic fintech leads
+                    Nordic bank cards &amp; payments leads
                     <br />
                     <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
-                      Wallet certification contacts
+                      Nordea, Swedbank, DNB, Lunar, SpareBank 1
                     </span>
                   </span>
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
                   <span>
-                    Nordic bank cards &amp; payments leads
+                    Visa &amp; Mastercard Nordic fintech leads
                     <br />
                     <span className="ps-muted" style={{ fontWeight: 400, fontSize: "clamp(8px, 0.85vw, 14px)" }}>
-                      Nordea, Swedbank, DNB, Lunar, SpareBank 1
+                      Wallet certification contacts
                     </span>
                   </span>
                 </li>
