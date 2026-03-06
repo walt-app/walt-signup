@@ -341,9 +341,6 @@ function SlideClosing() {
           <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
           <p className="ps-body" style={{ color: "#151515" }}>walt.is</p>
         </div>
-        <p className="ps-body" style={{ color: "#151515", opacity: 0.6, marginTop: "clamp(8px, 1.2vw, 20px)" }}>
-          Embedded Engineering ApS | Copenhagen, Denmark
-        </p>
       </div>
     </div>
   );
