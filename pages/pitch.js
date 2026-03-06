@@ -319,8 +319,8 @@ function SlideTheAsk() {
                   <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;wallet certification contacts</span>
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
-                  Privacy ecosystem BD
-                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Proton, Mullvad VPN cross-promotion</span>
+                  Nordic bank cards &amp; payments leads
+                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Swedbank, DNB, Lunar, SpareBank 1</span>
                 </li>
               </ul>
             </div>
