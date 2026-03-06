@@ -20,7 +20,7 @@ import fs from "fs";
 import path from "path";
 
 const BASE_URL = "http://localhost:3099/pitch";
-const SLIDE_COUNT = 10;
+const SLIDE_COUNT = 9;
 const SLIDE_WIDTH = 1920;
 const SLIDE_HEIGHT = 1080;
 const OUTPUT_DIR = path.resolve("public/pitch");

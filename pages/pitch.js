@@ -192,59 +192,7 @@ function SlideWhyNow() {
   );
 }
 
-/* ─── Slide 5: Market Size ─────────────────────────────────────────────────── */
-
-function SlideMarketSize() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Market Size</h2>
-        <div className="ps-content" style={{ gap: "clamp(8px, 1.2vw, 20px)" }}>
-          <div className="ps-split" style={{ alignItems: "start" }}>
-            <div className="ps-stack" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">TAM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$18.7B</p>
-                  <p className="ps-body ps-muted">Global mobile wallet market (2024)</p>
-                </div>
-              </div>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">SAM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$6.9B</p>
-                  <p className="ps-body ps-muted">European Android + iOS tap-to-pay users</p>
-                </div>
-              </div>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">SOM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$34.5M</p>
-                  <p className="ps-body ps-muted">0.5% of European mobile wallet users willing to pay for privacy</p>
-                </div>
-              </div>
-            </div>
-            <div className="ps-card">
-              <p className="ps-card-h">Market Tailwinds</p>
-              <ul className="ps-bullets" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
-                <li className="ps-bullet">Euro area contactless payments growing 15.5% YoY to 29.5B transactions (ECB, H2 2024)</li>
-                <li className="ps-bullet">Pro-European, anti-American sentiment accelerating and likely for at least the next 3 years</li>
-                <li className="ps-bullet">European introduction of digital euro (potential product fit)</li>
-                <li className="ps-bullet">Wero as penetration model for European-based payment solutions</li>
-              </ul>
-            </div>
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users</p>
-            <p className="ps-banner-body">All potential Walt converts</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 6: Team ────────────────────────────────────────────────────────── */
+/* ─── Slide 5: Team ────────────────────────────────────────────────────────── */
 
 function SlideTeam() {
   return (
@@ -316,66 +264,7 @@ function SlideTeam() {
   );
 }
 
-/* ─── Slide 7: Business Model ─────────────────────────────────────────────── */
-
-function SlideBusinessModel() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Business Model</h2>
-        <p className="ps-body ps-muted" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-          Simple pricing that replaces the hidden costs of Big Tech wallets.
-        </p>
-        <div className="ps-content">
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1.5fr", gap: "clamp(8px, 1.2vw, 20px)", alignItems: "start" }}>
-            <div className="ps-price-card" style={{ height: "100%" }}>
-              <p className="ps-stat" style={{ fontSize: "clamp(32px, 5vw, 80px)" }}>&euro;10</p>
-              <p style={{
-                fontSize: "clamp(12px, 1.5vw, 24px)",
-                fontWeight: 400,
-                color: "#151515",
-                margin: "0 0 clamp(4px, 0.5vw, 8px)"
-              }}>/year</p>
-              <div className="ps-divider" />
-              <p className="ps-banner-body">
-                Privacy you can trust, funded by users who value it.
-              </p>
-            </div>
-            <div className="ps-stack">
-              <div className="ps-card">
-                <p className="ps-card-h">How Incumbents Make Money</p>
-                <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Apple Pay:</strong> charges banks 0.15% per tap-to-pay transaction (~$2.7B/yr)
-                </p>
-                <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Google Wallet:</strong> $0 fees. Monetizes your data through ads
-                </p>
-                <p className="ps-body">
-                  <strong>Walt:</strong> &euro;10/year from you. No bank fees. No data. Ever.
-                </p>
-              </div>
-              <div className="ps-card">
-                <p className="ps-card-h">Where It Goes</p>
-                <p className="ps-body ps-muted">Salary - Founder and BDR / partnerships hire</p>
-                <p className="ps-body ps-muted">Aggregator fees - Paymentology fees based on active users</p>
-              </div>
-            </div>
-            <div className="ps-card" style={{ height: "fit-content" }}>
-              <p className="ps-card-h">No Premium Model</p>
-              <p className="ps-body ps-muted">
-                Expanding the product to include more features and a premium model
-                bloats the target of the product and reduces the trust relationship
-                the product is founded on.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 10: Traction & Roadmap ─────────────────────────────────────────── */
+/* ─── Slide 6: Traction & Roadmap ─────────────────────────────────────────── */
 
 function SlideTraction() {
   return (
@@ -612,14 +501,12 @@ const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
   { title: "The Solution", render: SlideSolution },
-  { title: "Business Model", render: SlideBusinessModel },
   { title: "Why Now?", render: SlideWhyNow },
-  { title: "Market Size", render: SlideMarketSize },
+  { title: "The Market", render: SlideMarket },
   { title: "Team", render: SlideTeam },
   { title: "Traction & Roadmap", render: SlideTraction },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
-  { title: "The Market", render: SlideMarket },
 ];
 
 /* ─── Page Component ───────────────────────────────────────────────────────── */
