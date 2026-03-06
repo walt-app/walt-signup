@@ -549,13 +549,13 @@ function SlideMarket() {
               <circle cx="875" cy="255" r={scaleR(3)} fill="#ff4800" opacity="0.6" />
               <text x="898" y="243" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
               <text x="898" y="259" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
-              <text x="898" y="273" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
+              <text x="898" y="273" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;30M ARR</text>
 
               {/* Walt Year 4-8 */}
               <circle cx="875" cy="330" r={scaleR(6)} fill="#ff4800" opacity="0.7" />
               <text x="910" y="318" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
               <text x="910" y="334" fontSize="15" fontWeight="900" fill="#151515">6M users</text>
-              <text x="910" y="348" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
+              <text x="910" y="348" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;60M ARR</text>
             </g>
           </svg>
         </div>
