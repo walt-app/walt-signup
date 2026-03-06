@@ -419,215 +419,59 @@ function SlideMarket() {
 /* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
 
 function SlideBuiltButLocked() {
-  const layers = [
-    {
-      id: "walt",
-      label: "Walt",
-      desc: "Fully built. NFC tap-to-pay, card provisioning, on-device encryption. No backend. Never touches card data.",
-      color: "#16a34a",
-      bg: "#dcfce7",
-      border: "#16a34a",
-      statusLabel: "READY",
-      statusColor: "#16a34a",
-    },
-    {
-      id: "schemes",
-      label: "Card Schemes",
-      sublabel: "Visa / Mastercard",
-      desc: "Walt must be a recognized Token Requestor. Likely covered via MeaWallet (unconfirmed).",
-      color: "#a16207",
-      bg: "#fef9c3",
-      border: "#eab308",
-      statusLabel: "PROBABLE",
-      statusColor: "#a16207",
-    },
-    {
-      id: "processors",
-      label: "Payment Processors",
-      sublabel: "Nets/Nexi, Tietoevry",
-      desc: "Their systems must recognize Walt as a valid wallet destination. Nets/Nexi alone serves 250+ Nordic banks \u2014 one integration unlocks the majority of the market.",
-      color: "#dc2626",
-      bg: "#fee2e2",
-      border: "#dc2626",
-      statusLabel: "BLOCKED",
-      statusColor: "#dc2626",
-    },
-    {
-      id: "banks",
-      label: "Issuing Banks",
-      sublabel: "Bank-by-bank approval",
-      desc: "Each bank individually whitelists Walt as a card destination. Some route credit cards through subsidiaries (e.g., Swedbank \u2192 EnterCard), requiring separate sign-off.",
-      color: "#dc2626",
-      bg: "#fee2e2",
-      border: "#dc2626",
-      statusLabel: "BLOCKED",
-      statusColor: "#dc2626",
-    },
+  /* Horizontal pathway: Walt ──→ 3 barriers ──→ User */
+  const pathY = 190;
+  const waltX = 90;
+  const userX = 970;
+  const barriers = [
+    { x: 370, label: "Card Schemes", sub: "Visa / Mastercard" },
+    { x: 580, label: "Processors", sub: "Nets · Nexi · Tietoevry" },
+    { x: 790, label: "Issuing Banks", sub: "Bank-by-bank approval" },
   ];
-
-  const layerH = 68;
-  const gateH = 28;
-  const startY = 380;
-  const colX = 530;
-  const boxW = 480;
-  const descX = colX + boxW / 2;
+  const barW = 8;
+  const barH = 160;
 
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Built But Locked</h2>
-        <p className="ps-lead">Walt is fully built — the challenge is permission, not engineering.</p>
+        <p className="ps-lead">The challenge is permission, not engineering.</p>
         <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <svg viewBox="0 0 1060 440" width="100%" style={{ display: "block" }}>
-            <defs>
-              <filter id="gateShadow" x="-4%" y="-10%" width="108%" height="130%">
-                <feDropShadow dx="0" dy="1" stdDeviation="2" floodOpacity="0.12" />
-              </filter>
-            </defs>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
 
-              {/* ── User at top ── */}
-              <g>
-                <circle cx={descX} cy="30" r="16" fill="#e5e7eb" stroke="#9ca3af" strokeWidth="1.5" />
-                <line x1={descX} y1="46" x2={descX} y2="66" stroke="#9ca3af" strokeWidth="1.5" />
-                <line x1={descX - 12} y1="56" x2={descX + 12} y2="56" stroke="#9ca3af" strokeWidth="1.5" />
-                <text x={descX} y="22" textAnchor="middle" fontSize="13" fill="#9ca3af">?</text>
-                <text x={descX + 28} y="28" fontSize="11" fontWeight="600" fill="#9ca3af" textAnchor="start">USER</text>
-                <text x={descX + 28} y="42" fontSize="9" fill="#9ca3af" textAnchor="start">Wants to add bank card &amp; tap to pay</text>
-                <text x={descX - 28} y="36" fontSize="10" fontWeight="700" fill="#9ca3af" textAnchor="end">WAITING</text>
-              </g>
+              {/* ── Horizontal dashed path ── */}
+              <line x1={waltX + 70} y1={pathY} x2={userX - 36} y2={pathY} stroke="#e0e0e0" strokeWidth="2" strokeDasharray="8 6" />
 
-              {/* ── Vertical connector from user to top gate ── */}
-              <line x1={descX} y1="66" x2={descX} y2="82" stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="4 3" />
+              {/* ── Walt (left, orange, complete) ── */}
+              <circle cx={waltX + 35} cy={pathY} r="60" fill="#ff4800" />
+              <text x={waltX + 35} y={pathY - 8} textAnchor="middle" fontSize="22" fontWeight="900" fill="#151515">WALT</text>
+              <text x={waltX + 35} y={pathY + 14} textAnchor="middle" fontSize="11" fontWeight="600" fill="#151515" opacity="0.7">&#x2713; Built</text>
 
-              {/* ── Layers (bottom-to-top visually, so reverse the array) ── */}
-              {layers.slice().reverse().map((layer, i) => {
-                const y = startY - i * (layerH + gateH);
-                const boxY = y - layerH / 2;
+              {/* ── Three barriers ── */}
+              {barriers.map((b) => (
+                <g key={b.label}>
+                  <rect x={b.x - barW / 2} y={pathY - barH / 2} width={barW} height={barH} rx="4" fill="#151515" />
+                  {/* Lock icon */}
+                  <rect x={b.x - 6} y={pathY - 8} width="12" height="12" rx="2.5" fill="#333" />
+                  <path d={`M${b.x - 3.5} ${pathY - 8} V${pathY - 12} a3.5 3.5 0 0 1 7 0 V${pathY - 8}`} fill="none" stroke="#555" strokeWidth="1.8" />
+                  {/* Labels above */}
+                  <text x={b.x} y={pathY - barH / 2 - 18} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">{b.label}</text>
+                  <text x={b.x} y={pathY - barH / 2 - 4} textAnchor="middle" fontSize="9" fill="#7f7f7f">{b.sub}</text>
+                </g>
+              ))}
 
-                return (
-                  <g key={layer.id}>
-                    {/* Gate bar above (except for bottom layer = Walt) */}
-                    {layer.id !== "walt" && (() => {
-                      const gateY = boxY - gateH;
-                      return (
-                        <g filter="url(#gateShadow)">
-                          <rect x={colX} y={gateY} width={boxW} height={gateH - 4} rx="4" fill="#374151" />
-                          {/* Lock icons */}
-                          {[colX + 20, colX + boxW / 2, colX + boxW - 20].map((lx, li) => (
-                            <g key={li}>
-                              <rect x={lx - 5} y={gateY + 8} width="10" height="10" rx="2" fill="#6b7280" />
-                              <path d={`M${lx - 3} ${gateY + 8} V${gateY + 5} a3 3 0 0 1 6 0 V${gateY + 8}`} fill="none" stroke="#6b7280" strokeWidth="1.5" />
-                            </g>
-                          ))}
-                          {/* Dashed line pattern across gate */}
-                          <line x1={colX + 36} y1={gateY + 12} x2={colX + boxW / 2 - 14} y2={gateY + 12} stroke="#4b5563" strokeWidth="1" strokeDasharray="6 4" />
-                          <line x1={colX + boxW / 2 + 14} y1={gateY + 12} x2={colX + boxW - 36} y2={gateY + 12} stroke="#4b5563" strokeWidth="1" strokeDasharray="6 4" />
-                        </g>
-                      );
-                    })()}
+              {/* ── User (right, greyed out, waiting) ── */}
+              <circle cx={userX} cy={pathY - 20} r="18" fill="#e0e0e0" stroke="#d0d0d0" strokeWidth="1.5" />
+              <line x1={userX} y1={pathY + 2} x2={userX} y2={pathY + 24} stroke="#d0d0d0" strokeWidth="2" />
+              <line x1={userX - 14} y1={pathY + 12} x2={userX + 14} y2={pathY + 12} stroke="#d0d0d0" strokeWidth="2" />
+              <text x={userX} y={pathY + 46} textAnchor="middle" fontSize="10" fontWeight="600" fill="#b0b0b0" letterSpacing="0.06em">USER</text>
 
-                    {/* Connector line above the gate */}
-                    {layer.id !== "walt" && (
-                      <line
-                        x1={descX} y1={boxY - gateH - 4}
-                        x2={descX} y2={boxY - gateH}
-                        stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="4 3"
-                      />
-                    )}
-
-                    {/* Layer box */}
-                    <rect
-                      x={colX} y={boxY} width={boxW} height={layerH}
-                      rx="8" fill={layer.bg} stroke={layer.border} strokeWidth="2"
-                    />
-
-                    {/* Status badge */}
-                    <rect
-                      x={colX + boxW - 80} y={boxY + 6} width="70" height="18"
-                      rx="9" fill={layer.statusColor} opacity="0.15"
-                    />
-                    <text
-                      x={colX + boxW - 45} y={boxY + 19}
-                      textAnchor="middle" fontSize="8" fontWeight="700"
-                      fill={layer.statusColor} letterSpacing="0.06em"
-                    >
-                      {layer.statusLabel}
-                    </text>
-
-                    {/* Layer label */}
-                    <text x={colX + 16} y={boxY + 20} fontSize="14" fontWeight="800" fill={layer.color}>
-                      {layer.label}
-                    </text>
-                    {layer.sublabel && (
-                      <text x={colX + 16} y={boxY + 33} fontSize="10" fontWeight="600" fill={layer.color} opacity="0.8">
-                        {layer.sublabel}
-                      </text>
-                    )}
-
-                    {/* Description */}
-                    {(() => {
-                      const descY = layer.sublabel ? boxY + 48 : boxY + 38;
-                      const words = layer.desc.split(" ");
-                      const lines = [];
-                      let current = "";
-                      words.forEach((w) => {
-                        const test = current ? current + " " + w : w;
-                        if (test.length > 72 && current) {
-                          lines.push(current);
-                          current = w;
-                        } else {
-                          current = test;
-                        }
-                      });
-                      if (current) lines.push(current);
-                      return lines.slice(0, 2).map((line, li) => (
-                        <text
-                          key={li} x={colX + 16} y={descY + li * 13}
-                          fontSize="9" fill={layer.color} opacity="0.85"
-                        >
-                          {line}
-                        </text>
-                      ));
-                    })()}
-
-                    {/* Connector below the box to next gate (except top = banks) */}
-                    {layer.id !== "banks" && (
-                      <line
-                        x1={descX} y1={boxY + layerH}
-                        x2={descX} y2={boxY + layerH + 4}
-                        stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="4 3"
-                      />
-                    )}
-                  </g>
-                );
-              })}
-
-              {/* ── Connector from top layer (banks) to user ── */}
-              <line
-                x1={descX}
-                y1={startY - 3 * (layerH + gateH) - layerH / 2 - gateH - 4}
-                x2={descX}
-                y2="82"
-                stroke="#d1d5db" strokeWidth="1.5" strokeDasharray="4 3"
-              />
-
-              {/* ── Side labels ── */}
-              <text x={colX - 20} y={startY} textAnchor="end" fontSize="9" fontWeight="600" fill="#16a34a" letterSpacing="0.06em">PRODUCT</text>
-              <text x={colX - 20} y={startY - (layerH + gateH) * 1.5} textAnchor="end" fontSize="9" fontWeight="600" fill="#dc2626" letterSpacing="0.06em">GATEKEEPERS</text>
-
-              {/* ── Bracket line on left ── */}
-              <line x1={colX - 14} y1={startY - layerH / 2 - gateH + 10} x2={colX - 14} y2={startY - 3 * (layerH + gateH) + layerH / 2 - 10} stroke="#dc2626" strokeWidth="1.5" />
-              <line x1={colX - 14} y1={startY - layerH / 2 - gateH + 10} x2={colX - 8} y2={startY - layerH / 2 - gateH + 10} stroke="#dc2626" strokeWidth="1.5" />
-              <line x1={colX - 14} y1={startY - 3 * (layerH + gateH) + layerH / 2 - 10} x2={colX - 8} y2={startY - 3 * (layerH + gateH) + layerH / 2 - 10} stroke="#dc2626" strokeWidth="1.5" />
-
-              {/* ── Callout box ── */}
-              <rect x="40" y="340" width="420" height="80" rx="10" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
-              <rect x="40" y="340" width="4" height="80" rx="2" fill="var(--orange-primary)" />
-              <text x="58" y="362" fontSize="10" fontWeight="700" fill="#151515" letterSpacing="0.04em">PRECEDENT</text>
-              <text x="58" y="382" fontSize="9.5" fill="#333">Klarna, Vipps MobilePay, and BBVA all launched through</text>
-              <text x="58" y="396" fontSize="9.5" fill="#333">this same pathway in 2025.</text>
-              <text x="58" y="414" fontSize="10" fontWeight="700" fill="var(--orange-primary)">The door is open.</text>
+              {/* ── Precedent callout ── */}
+              <text x="530" y="345" textAnchor="middle" fontSize="11" fill="#7f7f7f">
+                Klarna, Vipps MobilePay, and BBVA all launched through this same pathway in 2025.
+              </text>
+              <text x="530" y="365" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">The door is open.</text>
             </g>
           </svg>
         </div>
