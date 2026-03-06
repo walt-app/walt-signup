@@ -501,10 +501,10 @@ function SlideClosing() {
 
 function SlideMarket() {
   const bubbles = [
-    { name: "Proton", users: "100M+", userDesc: "accounts", revenue: "~$100M", category: "EMAIL / CLOUD", cx: 135, cy: 180, r: 108 },
-    { name: "Brave", users: "101M", userDesc: "MAU", revenue: "$100M+", category: "BROWSER", cx: 355, cy: 198, r: 110 },
-    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", revenue: "$100M+", category: "SEARCH", cx: 555, cy: 170, r: 108 },
-    { name: "Signal", users: "70M+", userDesc: "MAU", revenue: "$26M", category: "MESSAGING", cx: 735, cy: 212, r: 91 },
+    { name: "Proton", users: "100M+", userDesc: "accounts", category: "EMAIL / CLOUD", cx: 135, cy: 180, r: 108 },
+    { name: "Brave", users: "101M", userDesc: "MAU", category: "BROWSER", cx: 355, cy: 198, r: 110 },
+    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", category: "SEARCH", cx: 555, cy: 170, r: 108 },
+    { name: "Signal", users: "70M+", userDesc: "MAU", category: "MESSAGING", cx: 735, cy: 212, r: 91 },
   ];
 
   return (
@@ -520,33 +520,32 @@ function SlideMarket() {
               {bubbles.map((b) => (
                 <g key={b.name}>
                   <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#ff4800" strokeWidth="2.5" />
-                  <text x={b.cx} y={b.cy - 34} textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.08em">{b.category}</text>
-                  <text x={b.cx} y={b.cy - 18} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
-                  <text x={b.cx} y={b.cy + 6} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">{b.users}</text>
-                  <text x={b.cx} y={b.cy + 20} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.userDesc}</text>
-                  <text x={b.cx} y={b.cy + 38} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">{b.revenue}</text>
-                  <text x={b.cx} y={b.cy + 50} textAnchor="middle" fontSize="8" fill="#7f7f7f">revenue</text>
+                  <text x={b.cx} y={b.cy - 22} textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.08em">{b.category}</text>
+                  <text x={b.cx} y={b.cy - 4} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
+                  <text x={b.cx} y={b.cy + 22} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">{b.users}</text>
+                  <text x={b.cx} y={b.cy + 37} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.userDesc}</text>
                 </g>
               ))}
 
               <line x1="840" y1="25" x2="840" y2="375" stroke="#e0e0e0" strokeWidth="1" strokeDasharray="4 3" />
 
               {/* Walt Year 1-2 */}
-              <circle cx="875" cy="55" r="8" fill="#ff4800" opacity="0.5" />
-              <text x="892" y="42" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
-              <text x="892" y="58" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K</text>
-              <text x="892" y="70" fontSize="9" fill="#7f7f7f">paying users</text>
-              <text x="892" y="83" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
+              <circle cx="875" cy="50" r="8" fill="#ff4800" opacity="0.5" />
+              <text x="892" y="38" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;2 &#xB7; NORDIC FOCUS</text>
+              <text x="892" y="54" fontSize="15" fontWeight="900" fill="#151515">100K&#x2013;500K users</text>
+              <text x="892" y="68" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
 
               {/* Walt Year 2-4 */}
-              <circle cx="875" cy="130" r="14" fill="#ff4800" opacity="0.6" />
-              <text x="898" y="121" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4</text>
-              <text x="898" y="136" fontSize="13" fontWeight="700" fill="#151515">Europe focus</text>
+              <circle cx="875" cy="120" r="14" fill="#ff4800" opacity="0.6" />
+              <text x="898" y="108" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
+              <text x="898" y="124" fontSize="15" fontWeight="900" fill="#151515">2M users</text>
+              <text x="898" y="138" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
 
               {/* Walt Year 4-8 */}
-              <circle cx="875" cy="190" r="19" fill="#ff4800" opacity="0.7" />
-              <text x="902" y="181" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8</text>
-              <text x="902" y="196" fontSize="13" fontWeight="700" fill="#151515">US &#x26; Asia focus</text>
+              <circle cx="875" cy="195" r="19" fill="#ff4800" opacity="0.7" />
+              <text x="902" y="183" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
+              <text x="902" y="199" fontSize="15" fontWeight="900" fill="#151515">20M users</text>
+              <text x="902" y="213" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
 
               {/* Subscription box */}
               <rect x="858" y="250" width="180" height="110" rx="10" fill="#ff4800" />
