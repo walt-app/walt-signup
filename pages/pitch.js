@@ -23,7 +23,7 @@ function SlideTitle() {
   );
 }
 
-/* ─── Slide 2: The Problem (combined with No Alternatives) ─────────────────── */
+/* ─── Slide 2: The Problem ────────────────────────────────────────────────── */
 
 function SlideProblem() {
   return (
@@ -34,32 +34,24 @@ function SlideProblem() {
           <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
             <div className="ps-card ps-card--left">
               <p className="ps-label">APPLE PAY</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~650M</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~650M users</p>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Charges banks 0.15% on tap-to-pay transaction
-              </p>
-              <p className="ps-body ps-muted">
-                ~$2.7B/year extracted from banks. Costs passed to consumers through higher fees.
+                Charges banks 0.15% per transaction &mdash; ~$2.7B/year extracted
               </p>
             </div>
             <div className="ps-card ps-card--left">
               <p className="ps-label">GOOGLE WALLET</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~520M</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
+              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~520M users</p>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Harvests transaction data to deepen user profiles and train models
-              </p>
-              <p className="ps-body ps-muted">
-                $0 fees. You&rsquo;re the product. Every purchase is used to learn about you.
+                Harvests every transaction to build ad profiles
               </p>
             </div>
           </div>
           <div className="ps-banner">
-            <p className="ps-banner-h">Every tap routes through American Big Tech</p>
+            <p className="ps-banner-h">A duopoly with no real challenger</p>
             <p className="ps-banner-body">
-              Apple extracts fees from your bank. Google extracts data from your life.
-              1.2B users. $14T processed annually. 99.6% of smartphones. No alternative.
+              Apple and Google control 99.6% of mobile tap-to-pay.
+              The remaining alternatives own a tiny fraction and are neither growing nor competing to change that.
             </p>
           </div>
         </div>
