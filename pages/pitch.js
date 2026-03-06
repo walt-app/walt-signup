@@ -26,34 +26,59 @@ function SlideTitle() {
 /* ─── Slide 2: The Problem ────────────────────────────────────────────────── */
 
 function SlideProblem() {
+  const maxR = 150;
+  const maxUsers = 650;
+  const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
+
+  const majors = [
+    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 250, cy: 200, r: scaleR(650) },
+    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 580, cy: 210, r: scaleR(520) },
+  ];
+
+  const minors = [
+    { name: "Samsung", cx: 808, cy: 165, r: scaleR(8) },
+    { name: "Garmin", cx: 855, cy: 200, r: scaleR(3) },
+    { name: "Fitbit", cx: 820, cy: 235, r: scaleR(2) },
+    { name: "Curve", cx: 870, cy: 248, r: scaleR(1.5) },
+    { name: "Xiaomi", cx: 780, cy: 225, r: scaleR(5) },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
-        <div className="ps-content">
-          <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-            <div className="ps-card ps-card--left">
-              <p className="ps-label">APPLE PAY</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~650M users</p>
-              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Charges banks 0.15% per transaction &mdash; ~$2.7B/year extracted
-              </p>
-            </div>
-            <div className="ps-card ps-card--left">
-              <p className="ps-label">GOOGLE WALLET</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~520M users</p>
-              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Harvests every transaction to build ad profiles
-              </p>
-            </div>
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-h">A duopoly with no real challenger</p>
-            <p className="ps-banner-body">
-              Apple and Google control 99.6% of mobile tap-to-pay.
-              The remaining alternatives own a tiny fraction and are neither growing nor competing to change that.
-            </p>
-          </div>
+        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+          A duopoly with no real challenger
+        </p>
+        <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
+            <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+              {majors.map((b) => (
+                <g key={b.name}>
+                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" />
+                  <text x={b.cx} y={b.cy - 28} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
+                  <text x={b.cx} y={b.cy + 2} textAnchor="middle" fontSize="28" fontWeight="900" fill="#151515">{b.users}</text>
+                  <text x={b.cx} y={b.cy + 24} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.desc}</text>
+                </g>
+              ))}
+
+              {minors.map((b) => (
+                <g key={b.name}>
+                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#d0d0d0" strokeWidth="1.5" />
+                  <text x={b.cx} y={b.cy + 3} textAnchor="middle" fontSize="6" fontWeight="600" fill="#aaa">{b.name}</text>
+                </g>
+              ))}
+
+              <text x="820" y="300" textAnchor="middle" fontSize="9" fill="#aaa" fontWeight="500">
+                Everyone else: &lt;0.4% combined
+              </text>
+
+              {/* 99.6% label */}
+              <rect x="880" y="60" width="160" height="70" rx="10" fill="#151515" />
+              <text x="960" y="88" textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.1em">DUOPOLY SHARE</text>
+              <text x="960" y="118" textAnchor="middle" fontSize="32" fontWeight="900" fill="#ff4800">99.6%</text>
+            </g>
+          </svg>
         </div>
         <div className="ps-src">
           Sources: <a href="#">CoinLaw</a>, <a href="#">WSJ / DOJ</a>, <a href="#">StatCounter</a>
