@@ -308,16 +308,20 @@ function SlideTheAsk() {
               </p>
             </div>
             <div className="ps-card" style={{ padding: "clamp(14px, 2.2vw, 38px) clamp(16px, 2.5vw, 42px)" }}>
-              <p className="ps-card-h">Immediate Needs</p>
-              <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-                Networking and partnerships with bank representatives to unblock
-                card loading and processing in Europe.
-              </p>
-              <p className="ps-card-h">What We&rsquo;re Looking For</p>
+              <p className="ps-card-h">Networking Needs</p>
               <ul className="ps-bullets">
-                <li className="ps-bullet">Introductions to European bank partnership teams</li>
-                <li className="ps-bullet">Guidance on EMI licensing and Visa/Mastercard signoff</li>
-                <li className="ps-bullet">Strategic advisors with fintech and payments experience</li>
+                <li className="ps-bullet ps-bullet--bold">
+                  Nordic payment infrastructure
+                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Fidesmo, Nets/Nexi, Tietoevry</span>
+                </li>
+                <li className="ps-bullet ps-bullet--bold">
+                  Visa &amp; Mastercard Nordic fintech leads
+                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;wallet certification contacts</span>
+                </li>
+                <li className="ps-bullet ps-bullet--bold">
+                  Privacy ecosystem BD
+                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Proton, Mullvad VPN cross-promotion</span>
+                </li>
               </ul>
             </div>
           </div>
