@@ -159,57 +159,73 @@ function SlideWhyNow() {
   );
 }
 
-/* ─── Slide 5: Traction & Roadmap ─────────────────────────────────────────── */
+/* ─── Slide 5: Competitors ────────────────────────────────────────────────── */
 
-function SlideTraction() {
+function SlideCompetitors() {
   return (
     <div className="ps">
       <div className="ps-pad">
-        <h2 className="ps-h1">Traction &amp; Roadmap</h2>
+        <h2 className="ps-h1">Competitors</h2>
+        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+          No existing player combines NFC tap-to-pay with genuine privacy
+        </p>
         <div className="ps-content">
           <div className="ps-cols-3" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+
+            {/* Curve */}
             <div className="ps-card ps-card--top">
-              <p className="ps-label">H2 2025</p>
-              <p className="ps-card-title">Foundation</p>
-              <p className="ps-body ps-muted">
-                Public waitlist live. Aggregator partnership with Paymentology in place.
-                Android application ready for card loading once banks are unlocked.
-              </p>
-            </div>
-            <div className="ps-card ps-card--top">
-              <p className="ps-label">Q1 2026</p>
-              <p className="ps-card-title">Partnerships</p>
-              <p className="ps-body ps-muted">
-                Find co-founder. First bank contract to unblock card loads.
-                Begin iOS development leveraging EU NFC access mandate.
-              </p>
-            </div>
-            <div className="ps-card ps-card--top">
-              <p className="ps-label">Q2 2026</p>
-              <p className="ps-card-title">Launch</p>
-              <p className="ps-body ps-muted">
-                First cards loaded. First transactions processed.
-                Geographic expansion begins.
-              </p>
-            </div>
-          </div>
-          <div className="ps-cols-2">
-            <div className="ps-card">
-              <p className="ps-card-h">Current Progress</p>
-              <ul className="ps-bullets">
-                <li className="ps-bullet ps-bullet--bold">Paymentology partnership for aggregator</li>
-                <li className="ps-bullet ps-bullet--bold">Android application ready for beta group testing</li>
-                <li className="ps-bullet ps-bullet--bold">Public website and signup list created</li>
-              </ul>
-            </div>
-            <div className="ps-banner" style={{ textAlign: "left" }}>
-              <p className="ps-banner-h" style={{ textAlign: "left" }}>Key Challenges Ahead</p>
+              <p className="ps-label">AGGREGATOR WALLET</p>
+              <p className="ps-card-title">Curve</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <li className="ps-bullet ps-bullet--bold" style={{ color: "#151515", textDecoration: "underline" }}>First bank partnerships</li>
-                <li className="ps-bullet ps-bullet--bold" style={{ color: "#151515" }}>Nordic marketing and customer awareness</li>
-                <li className="ps-bullet ps-bullet--bold" style={{ color: "#151515" }}>Germany, France, Belgium penetration</li>
+                <li className="ps-bullet">Retains data 10 years; shares with advertisers</li>
+                <li className="ps-bullet">NFC is a secondary feature, not core focus</li>
+                <li className="ps-bullet">Acquired by Lloyds for half its raised capital</li>
+                <li className="ps-bullet">Tap-to-pay primarily UK only</li>
               </ul>
+              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
+                Unclear NFC focus post-acquisition
+              </p>
             </div>
+
+            {/* Wero */}
+            <div className="ps-card ps-card--top">
+              <p className="ps-label">BANK CONSORTIUM</p>
+              <p className="ps-card-title">Wero (EPI)</p>
+              <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
+                <li className="ps-bullet">50M+ users via 16 bank shareholders</li>
+                <li className="ps-bullet">P2P &amp; e-commerce live (DE, FR, BE)</li>
+                <li className="ps-bullet" style={{ fontWeight: 700 }}>No NFC tap-to-pay yet &mdash; planned 2026&#x2013;27</li>
+                <li className="ps-bullet">Uses Google Analytics, Firebase, collects device data</li>
+                <li className="ps-bullet">&ldquo;Data stays in EU&rdquo; &mdash; not data minimization</li>
+              </ul>
+              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
+                When NFC launches: free, zero-friction, but bank-grade privacy
+              </p>
+            </div>
+
+            {/* Vipps MobilePay */}
+            <div className="ps-card ps-card--top">
+              <p className="ps-label">NORDIC INCUMBENT</p>
+              <p className="ps-card-title">Vipps MobilePay</p>
+              <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
+                <li className="ps-bullet">12.5M users; NFC live in all four Nordic markets</li>
+                <li className="ps-bullet">1M+ cards added to tap-to-pay in Norway</li>
+                <li className="ps-bullet">Profiles users for marketing; targeted offers</li>
+                <li className="ps-bullet">Requires Google Play Services</li>
+                <li className="ps-bullet">Owned by DNB &amp; Norwegian banking sector</li>
+              </ul>
+              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
+                Validates Walt&rsquo;s technical pathway (Visa Cloud Token + DMA NFC)
+              </p>
+            </div>
+
+          </div>
+          <div className="ps-banner">
+            <p className="ps-banner-body">
+              <strong>Walt&rsquo;s window:</strong> concrete lead before Wero NFC (est. mid-to-late 2027).
+              None offer on-device-only, zero-collection, open-source payments.
+              They are the defaults &mdash; Walt is for people who don&rsquo;t want to be tracked.
+            </p>
           </div>
         </div>
       </div>
@@ -395,7 +411,7 @@ const SLIDES = [
   { title: "The Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
   { title: "The Market", render: SlideMarket },
-  { title: "Traction & Roadmap", render: SlideTraction },
+  { title: "Competitors", render: SlideCompetitors },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
 ];
