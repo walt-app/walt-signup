@@ -320,7 +320,7 @@ function SlideTheAsk() {
                 </li>
                 <li className="ps-bullet ps-bullet--bold">
                   Nordic bank cards &amp; payments leads
-                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Swedbank, DNB, Lunar, SpareBank 1</span>
+                  <span className="ps-muted" style={{ fontWeight: 400 }}>&thinsp;&mdash;&thinsp;Nordea, Swedbank, DNB, Lunar, SpareBank 1</span>
                 </li>
               </ul>
             </div>
