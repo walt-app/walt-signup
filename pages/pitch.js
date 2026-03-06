@@ -162,96 +162,122 @@ function SlideWhyNow() {
 /* ─── Slide 5: Competitors ────────────────────────────────────────────────── */
 
 function SlideCompetitors() {
-  const cellStyle = {
-    padding: "clamp(6px, 0.8vw, 14px) clamp(8px, 1vw, 18px)",
-    fontSize: "clamp(9px, 1.05vw, 17px)",
-    lineHeight: 1.4,
-    color: "#151515",
-    borderBottom: "1px solid #e0e0e0",
-  };
-  const headerStyle = {
-    ...cellStyle,
-    fontWeight: 700,
-    textAlign: "center",
-    borderBottom: "2px solid #151515",
-    fontSize: "clamp(10px, 1.2vw, 20px)",
-  };
-  const labelStyle = {
-    ...cellStyle,
-    fontWeight: 600,
-    color: "#333",
-  };
-  const checkStyle = {
-    ...cellStyle,
-    textAlign: "center",
-    fontSize: "clamp(14px, 1.6vw, 26px)",
-  };
-  const textCellStyle = {
-    ...cellStyle,
-    textAlign: "center",
-    fontSize: "clamp(8px, 0.95vw, 15px)",
-    color: "#333",
-  };
-
   const rows = [
     { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
-    { label: "NFC tap-to-pay live today", walt: "", wero: "", vipps: "check" },
+    { label: "NFC tap-to-pay live today", walt: "", wero: "", vipps: "check-limited" },
     { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
     { label: "User base", walt: "0", wero: "50M+", vipps: "12.5M" },
     { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Merchant pays fee", vipps: "Merchant pays fee" },
     { label: "Geographic focus", walt: "Nordics \u2192 Europe", wero: "DE, FR, BE", vipps: "Nordics" },
   ];
 
+  const Check = ({ orange }) => (
+    <span style={{
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "clamp(22px, 2.4vw, 38px)",
+      height: "clamp(22px, 2.4vw, 38px)",
+      borderRadius: "50%",
+      background: orange ? "var(--orange-primary)" : "#151515",
+      flexShrink: 0,
+    }}>
+      <svg width="55%" height="55%" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8.5L6.5 12L13 4" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  );
+
+  const Dash = () => (
+    <span style={{
+      display: "inline-block",
+      width: "clamp(14px, 1.4vw, 22px)",
+      height: "2px",
+      background: "#ccc",
+      borderRadius: "1px",
+    }} />
+  );
+
+  const renderCell = (value, isWalt) => {
+    if (value === "check") return <Check orange={isWalt} />;
+    if (value === "check-limited") {
+      return (
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "clamp(4px, 0.4vw, 8px)" }}>
+          <Check orange={false} />
+          <span style={{
+            fontSize: "clamp(7px, 0.75vw, 12px)",
+            fontWeight: 500,
+            color: "#999",
+            letterSpacing: "0.02em",
+          }}>Limited</span>
+        </span>
+      );
+    }
+    if (value === "") return <Dash />;
+    return (
+      <span style={{
+        fontSize: "clamp(9px, 1vw, 16px)",
+        fontWeight: isWalt ? 600 : 400,
+        color: isWalt ? "#151515" : "#555",
+      }}>{value}</span>
+    );
+  };
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Competitors</h2>
-        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+        <p className="ps-lead" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
           Competitors offering tap-to-pay as a secondary feature
         </p>
         <div className="ps-content" style={{ display: "flex", justifyContent: "center" }}>
           <div style={{
             display: "grid",
-            gridTemplateColumns: "2.2fr 1fr 1fr 1fr",
+            gridTemplateColumns: "2.4fr 1fr 1fr 1fr",
             width: "100%",
-            maxWidth: "900px",
-            background: "#f0f0f0",
-            borderRadius: "clamp(8px, 0.9vw, 16px)",
-            overflow: "hidden",
           }}>
             {/* Header row */}
-            <div style={{ ...headerStyle, textAlign: "left", background: "transparent" }} />
-            <div style={{ ...headerStyle, color: "var(--orange-primary)" }}>Walt</div>
-            <div style={headerStyle}>Wero</div>
-            <div style={headerStyle}>Vipps</div>
+            <div style={{ padding: "clamp(10px, 1.4vw, 24px) clamp(12px, 1.6vw, 28px)" }} />
+            {["Walt", "Wero", "Vipps"].map((name) => (
+              <div key={name} style={{
+                padding: "clamp(10px, 1.4vw, 24px) clamp(8px, 1vw, 18px)",
+                textAlign: "center",
+                fontSize: "clamp(12px, 1.4vw, 24px)",
+                fontWeight: 700,
+                letterSpacing: "-0.02em",
+                color: name === "Walt" ? "var(--orange-primary)" : "#151515",
+                borderBottom: name === "Walt" ? "3px solid var(--orange-primary)" : "1px solid #ddd",
+                background: name === "Walt" ? "rgba(255, 72, 0, 0.04)" : "transparent",
+              }}>{name}</div>
+            ))}
 
             {/* Data rows */}
             {rows.map((row, i) => {
               const isLast = i === rows.length - 1;
-              const rowLabel = { ...labelStyle, ...(isLast && { borderBottom: "none" }) };
-              const rowCheck = { ...checkStyle, ...(isLast && { borderBottom: "none" }) };
-              const rowText = { ...textCellStyle, ...(isLast && { borderBottom: "none" }) };
-
-              const renderCell = (value, isWalt) => {
-                if (value === "check") {
-                  return (
-                    <div style={{ ...rowCheck, color: isWalt ? "var(--orange-primary)" : "#151515" }}>
-                      &#x2713;
-                    </div>
-                  );
-                }
-                if (value === "") {
-                  return <div style={rowCheck} />;
-                }
-                return <div style={rowText}>{value}</div>;
-              };
-
+              const border = isLast ? "none" : "1px solid #eee";
               return (
                 <Fragment key={row.label}>
-                  <div style={rowLabel}>{row.label}</div>
-                  {renderCell(row.walt, true)}
-                  {renderCell(row.wero, false)}
-                  {renderCell(row.vipps, false)}
+                  <div style={{
+                    padding: "clamp(10px, 1.2vw, 20px) clamp(12px, 1.6vw, 28px)",
+                    fontSize: "clamp(9px, 1.05vw, 17px)",
+                    fontWeight: 500,
+                    color: "#333",
+                    borderBottom: border,
+                    display: "flex",
+                    alignItems: "center",
+                  }}>{row.label}</div>
+                  {[row.walt, row.wero, row.vipps].map((val, j) => (
+                    <div key={j} style={{
+                      padding: "clamp(10px, 1.2vw, 20px) clamp(8px, 1vw, 18px)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderBottom: border,
+                      background: j === 0 ? "rgba(255, 72, 0, 0.04)" : "transparent",
+                    }}>
+                      {renderCell(val, j === 0)}
+                    </div>
+                  ))}
                 </Fragment>
               );
             })}
