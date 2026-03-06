@@ -551,11 +551,11 @@ function SlideMarket() {
               <text x="898" y="259" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
               <text x="898" y="273" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
 
-              {/* Walt Year 4-8 (proportionally sized, text inside) */}
-              <circle cx="948" cy="340" r={scaleR(45)} fill="#ff4800" fillOpacity="0.12" stroke="#ff4800" strokeWidth="2.5" />
-              <text x="948" y="320" textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
-              <text x="948" y="342" textAnchor="middle" fontSize="18" fontWeight="900" fill="#151515">45M users</text>
-              <text x="948" y="358" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
+              {/* Walt Year 4-8 */}
+              <circle cx="875" cy="330" r={scaleR(6)} fill="#ff4800" opacity="0.7" />
+              <text x="910" y="318" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
+              <text x="910" y="334" fontSize="15" fontWeight="900" fill="#151515">6M users</text>
+              <text x="910" y="348" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
             </g>
           </svg>
         </div>
