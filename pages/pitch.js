@@ -177,9 +177,9 @@ function SlideCompetitors() {
               <p className="ps-label">BANK CONSORTIUM &middot; 50M+ USERS</p>
               <p className="ps-card-title">Wero (EPI)</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <li className="ps-bullet" style={{ fontWeight: 700 }}>No NFC tap-to-pay yet &mdash; planned 2026&#x2013;27</li>
-                <li className="ps-bullet">Bank-grade privacy, not data minimization</li>
-                <li className="ps-bullet">Free &amp; zero-friction when NFC launches</li>
+                <li className="ps-bullet">50M+ registered users</li>
+                <li className="ps-bullet">E-commerce and P2P are the primary business</li>
+                <li className="ps-bullet">No NFC tap-to-pay yet but planned 2026&#x2013;27</li>
               </ul>
             </div>
 
@@ -188,8 +188,8 @@ function SlideCompetitors() {
               <p className="ps-label">NORDIC INCUMBENT &middot; 12.5M USERS</p>
               <p className="ps-card-title">Vipps MobilePay</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <li className="ps-bullet" style={{ fontWeight: 700 }}>NFC live in all four Nordic markets</li>
-                <li className="ps-bullet">Profiles users for marketing; targeted offers</li>
+                <li className="ps-bullet">NFC live in all four Nordic markets</li>
+                <li className="ps-bullet">Only Norway heavily supported by banks so far</li>
                 <li className="ps-bullet">Validates Walt&rsquo;s technical pathway</li>
               </ul>
             </div>
