@@ -30,17 +30,10 @@ function SlideProblem() {
   const maxUsers = 650;
   const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
 
-  const majors = [
-    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 250, cy: 200, r: scaleR(650) },
-    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 580, cy: 210, r: scaleR(520) },
-  ];
-
-  const minors = [
-    { name: "Samsung", cx: 808, cy: 165, r: scaleR(8) },
-    { name: "Garmin", cx: 855, cy: 200, r: scaleR(3) },
-    { name: "Fitbit", cx: 820, cy: 235, r: scaleR(2) },
-    { name: "Curve", cx: 870, cy: 248, r: scaleR(1.5) },
-    { name: "Xiaomi", cx: 780, cy: 225, r: scaleR(5) },
+  const bubbles = [
+    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 280, cy: 200, r: scaleR(650), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 620, cy: 210, r: scaleR(520), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(5), stroke: "#d0d0d0", strokeWidth: 1.5 },
   ];
 
   return (
@@ -53,30 +46,14 @@ function SlideProblem() {
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
-              {majors.map((b) => (
+              {bubbles.map((b) => (
                 <g key={b.name}>
-                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" />
+                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke={b.stroke} strokeWidth={b.strokeWidth} />
                   <text x={b.cx} y={b.cy - 28} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
                   <text x={b.cx} y={b.cy + 2} textAnchor="middle" fontSize="28" fontWeight="900" fill="#151515">{b.users}</text>
                   <text x={b.cx} y={b.cy + 24} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.desc}</text>
                 </g>
               ))}
-
-              {minors.map((b) => (
-                <g key={b.name}>
-                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#d0d0d0" strokeWidth="1.5" />
-                  <text x={b.cx} y={b.cy + 3} textAnchor="middle" fontSize="6" fontWeight="600" fill="#aaa">{b.name}</text>
-                </g>
-              ))}
-
-              <text x="820" y="300" textAnchor="middle" fontSize="9" fill="#aaa" fontWeight="500">
-                Everyone else: &lt;0.4% combined
-              </text>
-
-              {/* 99.6% label */}
-              <rect x="880" y="60" width="160" height="70" rx="10" fill="#151515" />
-              <text x="960" y="88" textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.1em">DUOPOLY SHARE</text>
-              <text x="960" y="118" textAnchor="middle" fontSize="32" fontWeight="900" fill="#ff4800">99.6%</text>
             </g>
           </svg>
         </div>
