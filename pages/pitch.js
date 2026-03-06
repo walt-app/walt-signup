@@ -23,45 +23,59 @@ function SlideTitle() {
   );
 }
 
-/* ─── Slide 2: The Problem (combined with No Alternatives) ─────────────────── */
+/* ─── Slide 2: The Problem ────────────────────────────────────────────────── */
 
 function SlideProblem() {
+  const maxR = 150;
+  const maxUsers = 650;
+  const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
+
+  const bubbles = [
+    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 280, cy: 200, r: scaleR(650), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 620, cy: 210, r: scaleR(520), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(5), stroke: "#d0d0d0", strokeWidth: 1.5 },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
-        <div className="ps-content">
-          <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-            <div className="ps-card ps-card--left">
-              <p className="ps-label">APPLE PAY</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~650M</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
-              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Charges banks 0.15% on tap-to-pay transaction
-              </p>
-              <p className="ps-body ps-muted">
-                ~$2.7B/year extracted from banks. Costs passed to consumers through higher fees.
-              </p>
-            </div>
-            <div className="ps-card ps-card--left">
-              <p className="ps-label">GOOGLE WALLET</p>
-              <p className="ps-stat" style={{ margin: "clamp(2px, 0.3vw, 6px) 0" }}>~520M</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>users worldwide</p>
-              <p className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>
-                Harvests transaction data to deepen user profiles and train models
-              </p>
-              <p className="ps-body ps-muted">
-                $0 fees. You&rsquo;re the product. Every purchase is used to learn about you.
-              </p>
-            </div>
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-h">Every tap routes through American Big Tech</p>
-            <p className="ps-banner-body">
-              Apple extracts fees from your bank. Google extracts data from your life.
-              1.2B users. $14T processed annually. 99.6% of smartphones. No alternative.
-            </p>
-          </div>
+        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+          Tap-to-pay has no private or European alternative
+        </p>
+        <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
+            <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+              {bubbles.slice(0, 2).map((b) => (
+                <g key={b.name}>
+                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke={b.stroke} strokeWidth={b.strokeWidth} />
+                  <text x={b.cx} y={b.cy - 28} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
+                  <text x={b.cx} y={b.cy + 2} textAnchor="middle" fontSize="28" fontWeight="900" fill="#151515">{b.users}</text>
+                  <text x={b.cx} y={b.cy + 24} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.desc}</text>
+                </g>
+              ))}
+
+              {/* Everyone else — tiny bubble with arrow and label below */}
+              {(() => {
+                const b = bubbles[2];
+                return (
+                  <g>
+                    <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke={b.stroke} strokeWidth={b.strokeWidth} />
+                    <line x1={b.cx} y1={b.cy + b.r + 30} x2={b.cx} y2={b.cy + b.r + 6} stroke="#aaa" strokeWidth="1.5" markerEnd="url(#arrowhead)" />
+                    <text x={b.cx} y={b.cy + b.r + 46} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
+                    <text x={b.cx} y={b.cy + b.r + 66} textAnchor="middle" fontSize="20" fontWeight="900" fill="#151515">{b.users}</text>
+                    <text x={b.cx} y={b.cy + b.r + 82} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.desc}</text>
+                  </g>
+                );
+              })()}
+
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                  <polygon points="0 0, 8 3, 0 6" fill="#aaa" />
+                </marker>
+              </defs>
+            </g>
+          </svg>
         </div>
         <div className="ps-src">
           Sources: <a href="#">CoinLaw</a>, <a href="#">WSJ / DOJ</a>, <a href="#">StatCounter</a>
@@ -79,45 +93,35 @@ function SlideSolution() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Solution</h2>
         <div className="ps-content">
-          <div className="ps-split ps-split--center">
+          <div className="ps-split ps-split--center" style={{ gridTemplateColumns: "1fr 1.4fr" }}>
             <div>
-              <p className="ps-lead">
+              <p className="ps-lead" style={{ marginBottom: "clamp(12px, 1.8vw, 28px)" }}>
                 Walt is the private alternative to Apple Pay and Google Wallet.
               </p>
-              <p className="ps-body" style={{ marginBottom: "clamp(8px, 1.2vw, 18px)" }}>
-                A tap-to-pay wallet for Android and iOS that treats transaction data as sacred.
-                No collection. No storage. No selling.
-              </p>
-              <div className="ps-num-row">
-                <span className="ps-num">1</span>
-                <span className="ps-body">Transaction data stays encrypted on your device. No server-side storage</span>
-              </div>
-              <div className="ps-num-row">
-                <span className="ps-num">2</span>
-                <span className="ps-body">Funded by users, not data monetization</span>
-              </div>
-              <div className="ps-num-row">
-                <span className="ps-num">3</span>
-                <span className="ps-body">No AI. No premium features. Load a card, set Walt as default wallet, start tapping to pay.</span>
+              <div className="ps-banner">
+                <p className="ps-banner-body">
+                  Transaction data encrypted on-device. Never stored on servers.
+                </p>
               </div>
             </div>
-            <div style={{ display: "flex", gap: "clamp(6px, 1vw, 16px)", justifyContent: "center" }}>
+            <div style={{ display: "flex", gap: "clamp(8px, 1.4vw, 22px)", justifyContent: "center", alignItems: "center" }}>
               {[
                 { src: "/promo-screen.jpg", alt: "Walt home screen" },
                 { src: "/add-card.jpg", alt: "Add card screen" },
                 { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
               ].map((img) => (
                 <div key={img.src} style={{
-                  width: "clamp(70px, 10vw, 160px)",
-                  borderRadius: "clamp(4px, 0.6vw, 10px)",
-                  overflow: "hidden"
+                  width: "clamp(90px, 14vw, 220px)",
+                  borderRadius: "clamp(6px, 0.8vw, 14px)",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
                 }}>
                   <Image
                     src={img.src}
                     alt={img.alt}
-                    width={160}
-                    height={347}
-                    sizes="(max-width: 768px) 80px, 160px"
+                    width={220}
+                    height={477}
+                    sizes="(max-width: 768px) 100px, 220px"
                     style={{ width: "100%", height: "auto", display: "block" }}
                   />
                 </div>
@@ -192,190 +196,7 @@ function SlideWhyNow() {
   );
 }
 
-/* ─── Slide 5: Market Size ─────────────────────────────────────────────────── */
-
-function SlideMarketSize() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Market Size</h2>
-        <div className="ps-content" style={{ gap: "clamp(8px, 1.2vw, 20px)" }}>
-          <div className="ps-split" style={{ alignItems: "start" }}>
-            <div className="ps-stack" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">TAM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$18.7B</p>
-                  <p className="ps-body ps-muted">Global mobile wallet market (2024)</p>
-                </div>
-              </div>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">SAM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$6.9B</p>
-                  <p className="ps-body ps-muted">European Android + iOS tap-to-pay users</p>
-                </div>
-              </div>
-              <div className="ps-card ps-card--left" style={{ padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.5vw, 26px)" }}>
-                <p className="ps-label">SOM</p>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "clamp(6px, 0.8vw, 14px)" }}>
-                  <p className="ps-stat">$34.5M</p>
-                  <p className="ps-body ps-muted">0.5% of European mobile wallet users willing to pay for privacy</p>
-                </div>
-              </div>
-            </div>
-            <div className="ps-card">
-              <p className="ps-card-h">Market Tailwinds</p>
-              <ul className="ps-bullets" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
-                <li className="ps-bullet">Euro area contactless payments growing 15.5% YoY to 29.5B transactions (ECB, H2 2024)</li>
-                <li className="ps-bullet">Pro-European, anti-American sentiment accelerating and likely for at least the next 3 years</li>
-                <li className="ps-bullet">European introduction of digital euro (potential product fit)</li>
-                <li className="ps-bullet">Wero as penetration model for European-based payment solutions</li>
-              </ul>
-            </div>
-          </div>
-          <div className="ps-banner">
-            <p className="ps-banner-h">1.2B Apple Pay + Google Wallet users</p>
-            <p className="ps-banner-body">All potential Walt converts</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 6: Team ────────────────────────────────────────────────────────── */
-
-function SlideTeam() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Team</h2>
-        <div className="ps-content">
-          <div className="ps-split ps-split--center">
-            <div className="ps-card" style={{ padding: "clamp(12px, 1.8vw, 30px) clamp(14px, 2vw, 34px)" }}>
-              <div style={{ display: "flex", gap: "clamp(8px, 1.2vw, 20px)", alignItems: "center", marginBottom: "clamp(8px, 1.2vw, 18px)" }}>
-                <div style={{
-                  width: "clamp(36px, 4vw, 64px)",
-                  height: "clamp(36px, 4vw, 64px)",
-                  borderRadius: "50%",
-                  background: "var(--orange-primary)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#fff",
-                  fontWeight: 700,
-                  fontSize: "clamp(14px, 1.6vw, 26px)",
-                  flexShrink: 0
-                }}>CB</div>
-                <div>
-                  <p className="ps-card-title">Cole Bittel</p>
-                  <p className="ps-body" style={{ fontWeight: 500, color: "var(--orange-primary)" }}>Founder</p>
-                </div>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(6px, 0.8vw, 14px) clamp(12px, 2vw, 32px)" }}>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>EXPERIENCE</p>
-                  <p className="ps-body ps-muted">Early engineer at Legora, Pleo, and Funding Circle</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>LOCATION</p>
-                  <p className="ps-body ps-muted">Copenhagen, Denmark. 7 years</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>RESIDENCY</p>
-                  <p className="ps-body ps-muted">American citizen, Danish permanent resident (citizen in ~2 years)</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>ENTITY</p>
-                  <p className="ps-body ps-muted">Embedded Engineering ApS</p>
-                </div>
-              </div>
-            </div>
-            <div className="ps-stack">
-              <p className="ps-card-h" style={{ marginBottom: 0 }}>Key Hires</p>
-              <div className="ps-card">
-                <p className="ps-card-title">BDR / Partnerships</p>
-                <p className="ps-body ps-muted">
-                  Unlocking relationships with banks, enabling bank cards across
-                  Europe to be loaded into Walt.
-                </p>
-              </div>
-              <div className="ps-card">
-                <p className="ps-card-title">Marketing</p>
-                <p className="ps-body ps-muted">
-                  Building brand awareness in privacy-conscious communities:
-                  Proton, Signal, Brave, and beyond.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 7: Business Model ─────────────────────────────────────────────── */
-
-function SlideBusinessModel() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Business Model</h2>
-        <p className="ps-body ps-muted" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-          Simple pricing that replaces the hidden costs of Big Tech wallets.
-        </p>
-        <div className="ps-content">
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1.5fr", gap: "clamp(8px, 1.2vw, 20px)", alignItems: "start" }}>
-            <div className="ps-price-card" style={{ height: "100%" }}>
-              <p className="ps-stat" style={{ fontSize: "clamp(32px, 5vw, 80px)" }}>&euro;10</p>
-              <p style={{
-                fontSize: "clamp(12px, 1.5vw, 24px)",
-                fontWeight: 400,
-                color: "#151515",
-                margin: "0 0 clamp(4px, 0.5vw, 8px)"
-              }}>/year</p>
-              <div className="ps-divider" />
-              <p className="ps-banner-body">
-                Privacy you can trust, funded by users who value it.
-              </p>
-            </div>
-            <div className="ps-stack">
-              <div className="ps-card">
-                <p className="ps-card-h">How Incumbents Make Money</p>
-                <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Apple Pay:</strong> charges banks 0.15% per tap-to-pay transaction (~$2.7B/yr)
-                </p>
-                <p className="ps-body" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>
-                  <strong>Google Wallet:</strong> $0 fees. Monetizes your data through ads
-                </p>
-                <p className="ps-body">
-                  <strong>Walt:</strong> &euro;10/year from you. No bank fees. No data. Ever.
-                </p>
-              </div>
-              <div className="ps-card">
-                <p className="ps-card-h">Where It Goes</p>
-                <p className="ps-body ps-muted">Salary - Founder and BDR / partnerships hire</p>
-                <p className="ps-body ps-muted">Aggregator fees - Paymentology fees based on active users</p>
-              </div>
-            </div>
-            <div className="ps-card" style={{ height: "fit-content" }}>
-              <p className="ps-card-h">No Premium Model</p>
-              <p className="ps-body ps-muted">
-                Expanding the product to include more features and a premium model
-                bloats the target of the product and reduces the trust relationship
-                the product is founded on.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 10: Traction & Roadmap ─────────────────────────────────────────── */
+/* ─── Slide 5: Traction & Roadmap ─────────────────────────────────────────── */
 
 function SlideTraction() {
   return (
@@ -480,9 +301,6 @@ function SlideClosing() {
       <div className="ps-pad ps-pad--center">
         <h1 className="ps-logo">WALT</h1>
         <div className="ps-divider" />
-        <p className="ps-body" style={{ color: "#151515", fontSize: "clamp(12px, 1.5vw, 24px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
-          Your daily spending reveals who you are.
-        </p>
         <p className="ps-quote">&ldquo;Transaction data is sacred.&rdquo;</p>
         <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
           <p className="ps-body" style={{ color: "#151515" }}>Cole Bittel, Founder</p>
@@ -612,14 +430,11 @@ const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
   { title: "The Solution", render: SlideSolution },
-  { title: "Business Model", render: SlideBusinessModel },
   { title: "Why Now?", render: SlideWhyNow },
-  { title: "Market Size", render: SlideMarketSize },
-  { title: "Team", render: SlideTeam },
+  { title: "The Market", render: SlideMarket },
   { title: "Traction & Roadmap", render: SlideTraction },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
-  { title: "The Market", render: SlideMarket },
 ];
 
 /* ─── Page Component ───────────────────────────────────────────────────────── */
