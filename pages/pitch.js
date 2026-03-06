@@ -500,56 +500,57 @@ function SlideClosing() {
 /* ─── Slide: The Market ───────────────────────────────────────────────────── */
 
 function SlideMarket() {
-  const companies = [
-    { name: "Proton", users: "100M+", userDesc: "accounts", revenue: "~$100M", category: "Email / Cloud" },
-    { name: "Brave", users: "101M", userDesc: "MAU", revenue: "$100M+", category: "Browser" },
-    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", revenue: "$100M+", category: "Search" },
-    { name: "Signal", users: "70M+", userDesc: "MAU", revenue: "$26M", category: "Messaging" },
+  const bubbles = [
+    { name: "Proton", users: "100M+", userDesc: "accounts", revenue: "~$100M", category: "EMAIL / CLOUD", cx: 135, cy: 180, r: 108 },
+    { name: "Brave", users: "101M", userDesc: "MAU", revenue: "$100M+", category: "BROWSER", cx: 355, cy: 198, r: 110 },
+    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", revenue: "$100M+", category: "SEARCH", cx: 555, cy: 170, r: 108 },
+    { name: "Signal", users: "70M+", userDesc: "MAU", revenue: "$26M", category: "MESSAGING", cx: 735, cy: 212, r: 91 },
   ];
 
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Market</h2>
-        <p className="ps-lead" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+        <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
           15&ndash;30M Europeans actively pay for privacy tools.
         </p>
-        <div className="ps-content" style={{ gap: "clamp(8px, 1vw, 16px)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "clamp(6px, 0.8vw, 14px)" }}>
-            {companies.map((c) => (
-              <div key={c.name} className="ps-card ps-card--top">
-                <p className="ps-label">{c.category.toUpperCase()}</p>
-                <p className="ps-card-title">{c.name}</p>
-                <p className="ps-stat" style={{ fontSize: "clamp(16px, 2.2vw, 36px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>{c.users}</p>
-                <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>{c.userDesc}</p>
-                <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>{c.revenue}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "clamp(6px, 0.8vw, 14px)" }}>
-            <div className="ps-card ps-card--top">
-              <p className="ps-label">WALT TARGET &middot; YEAR 1&ndash;3</p>
-              <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.8vw, 28px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>100K&ndash;500K</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>paying users</p>
-              <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>&euro;1&ndash;5M ARR</p>
-            </div>
-            <div className="ps-card ps-card--top">
-              <p className="ps-label">WALT TARGET &middot; YEAR 3&ndash;7</p>
-              <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.8vw, 28px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>1&ndash;3M</p>
-              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>paying users</p>
-              <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>&euro;10&ndash;30M ARR</p>
-            </div>
-            <div className="ps-price-card" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-              <p className="ps-label" style={{ color: "#151515", letterSpacing: "0.12em" }}>WALT SUBSCRIPTION</p>
-              <p className="ps-stat" style={{ fontSize: "clamp(28px, 4vw, 64px)" }}>&euro;10</p>
-              <p style={{
-                fontSize: "clamp(11px, 1.3vw, 22px)",
-                fontWeight: 400,
-                color: "#151515",
-                margin: 0
-              }}>/year</p>
-            </div>
-          </div>
+        <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
+            <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+              {bubbles.map((b) => (
+                <g key={b.name}>
+                  <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke="#ff4800" strokeWidth="2.5" />
+                  <text x={b.cx} y={b.cy - 30} textAnchor="middle" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.08em">{b.category}</text>
+                  <text x={b.cx} y={b.cy - 14} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{b.name}</text>
+                  <text x={b.cx} y={b.cy + 12} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">{b.users}</text>
+                  <text x={b.cx} y={b.cy + 27} textAnchor="middle" fontSize="10" fill="#7f7f7f">{b.userDesc}</text>
+                  <text x={b.cx} y={b.cy + 45} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">{b.revenue}</text>
+                </g>
+              ))}
+
+              <line x1="840" y1="25" x2="840" y2="375" stroke="#e0e0e0" strokeWidth="1" strokeDasharray="4 3" />
+
+              {/* Walt Year 3-7 */}
+              <circle cx="875" cy="85" r="19" fill="#ff4800" opacity="0.7" />
+              <text x="902" y="68" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 3&#x2013;7</text>
+              <text x="902" y="86" fontSize="17" fontWeight="900" fill="#151515">1&#x2013;3M</text>
+              <text x="902" y="100" fontSize="9" fill="#7f7f7f">paying users</text>
+              <text x="902" y="114" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;10&#x2013;30M ARR</text>
+
+              {/* Walt Year 1-3 */}
+              <circle cx="875" cy="170" r="8" fill="#ff4800" opacity="0.5" />
+              <text x="902" y="155" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 1&#x2013;3</text>
+              <text x="902" y="173" fontSize="17" fontWeight="900" fill="#151515">100K&#x2013;500K</text>
+              <text x="902" y="187" fontSize="9" fill="#7f7f7f">paying users</text>
+              <text x="902" y="201" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;1&#x2013;5M ARR</text>
+
+              {/* Subscription box */}
+              <rect x="858" y="240" width="180" height="115" rx="10" fill="#ff4800" />
+              <text x="948" y="270" textAnchor="middle" fontSize="8" fontWeight="600" fill="#151515" letterSpacing="0.1em">WALT SUBSCRIPTION</text>
+              <text x="948" y="315" textAnchor="middle" fontSize="42" fontWeight="900" fill="#151515">&#x20AC;10</text>
+              <text x="948" y="338" textAnchor="middle" fontSize="14" fill="#151515">/year</text>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
