@@ -174,7 +174,6 @@ function SlideCompetitors() {
 
             {/* Wero */}
             <div className="ps-card ps-card--top">
-              <p className="ps-label">BANK CONSORTIUM</p>
               <p className="ps-card-title">Wero (EPI)</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
                 <li className="ps-bullet">50M+ registered users</li>
@@ -185,7 +184,6 @@ function SlideCompetitors() {
 
             {/* Vipps MobilePay */}
             <div className="ps-card ps-card--top">
-              <p className="ps-label">NORDIC INCUMBENT</p>
               <p className="ps-card-title">Vipps MobilePay</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
                 <li className="ps-bullet">NFC live in all four Nordic markets</li>
