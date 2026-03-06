@@ -501,15 +501,10 @@ function SlideClosing() {
 
 function SlideMarket() {
   const companies = [
-    { name: "Proton", desc: "100M+ accounts · Email / Cloud", revenue: "~$100M", pct: 100 },
-    { name: "Brave", desc: "101M MAU · Browser", revenue: "$100M+", pct: 100 },
-    { name: "DuckDuckGo", desc: "100M daily searches · Search", revenue: "$100M+", pct: 100 },
-    { name: "Signal", desc: "70M+ MAU · Messaging", revenue: "$26M", pct: 26 },
-  ];
-
-  const waltTargets = [
-    { name: "Year 1\u20133", desc: "100K\u2013500K paying users", revenue: "\u20AC1\u20135M ARR", pct: 5 },
-    { name: "Year 3\u20137", desc: "1\u20133M paying users", revenue: "\u20AC10\u201330M ARR", pct: 30 },
+    { name: "Proton", users: "100M+", userDesc: "accounts", revenue: "~$100M", category: "Email / Cloud" },
+    { name: "Brave", users: "101M", userDesc: "MAU", revenue: "$100M+", category: "Browser" },
+    { name: "DuckDuckGo", users: "100M", userDesc: "daily searches", revenue: "$100M+", category: "Search" },
+    { name: "Signal", users: "70M+", userDesc: "MAU", revenue: "$26M", category: "Messaging" },
   ];
 
   return (
@@ -519,55 +514,40 @@ function SlideMarket() {
         <p className="ps-lead" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
           15&ndash;30M Europeans actively pay for privacy tools.
         </p>
-        <div className="ps-content">
-          <div className="ps-split" style={{ gridTemplateColumns: "2.5fr 1fr", alignItems: "stretch" }}>
-            <div className="ps-card ps-card--left" style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(10px, 1.4vw, 24px) clamp(12px, 1.8vw, 32px)" }}>
-              {companies.map((c) => (
-                <div key={c.name} style={{ marginBottom: "clamp(6px, 0.7vw, 12px)" }}>
-                  <div className="ps-bar-row">
-                    <span className="ps-bar-label">
-                      {c.name}
-                      <span style={{ fontWeight: 400, color: "#7f7f7f", marginLeft: "clamp(4px, 0.4vw, 8px)", fontSize: "clamp(7px, 0.7vw, 12px)" }}>
-                        {c.desc}
-                      </span>
-                    </span>
-                    <span className="ps-bar-pct">{c.revenue}</span>
-                  </div>
-                  <div className="ps-bar">
-                    <div className="ps-bar-fill" style={{ width: `${c.pct}%` }} />
-                  </div>
-                </div>
-              ))}
-              <div style={{ borderTop: "1px solid #ddd", margin: "clamp(2px, 0.3vw, 6px) 0 clamp(6px, 0.7vw, 12px)", paddingTop: "clamp(4px, 0.5vw, 8px)" }}>
-                <p className="ps-label" style={{ marginBottom: 0 }}>WALT TARGET</p>
+        <div className="ps-content" style={{ gap: "clamp(8px, 1vw, 16px)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "clamp(6px, 0.8vw, 14px)" }}>
+            {companies.map((c) => (
+              <div key={c.name} className="ps-card ps-card--top">
+                <p className="ps-label">{c.category.toUpperCase()}</p>
+                <p className="ps-card-title">{c.name}</p>
+                <p className="ps-stat" style={{ fontSize: "clamp(16px, 2.2vw, 36px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>{c.users}</p>
+                <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>{c.userDesc}</p>
+                <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>{c.revenue}</p>
               </div>
-              {waltTargets.map((w) => (
-                <div key={w.name} style={{ marginBottom: "clamp(6px, 0.7vw, 12px)" }}>
-                  <div className="ps-bar-row">
-                    <span className="ps-bar-label">
-                      {w.name}
-                      <span style={{ fontWeight: 400, color: "#7f7f7f", marginLeft: "clamp(4px, 0.4vw, 8px)", fontSize: "clamp(7px, 0.7vw, 12px)" }}>
-                        {w.desc}
-                      </span>
-                    </span>
-                    <span className="ps-bar-pct">{w.revenue}</span>
-                  </div>
-                  <div className="ps-bar">
-                    <div className="ps-bar-fill" style={{ width: `${w.pct}%`, opacity: 0.55 }} />
-                  </div>
-                </div>
-              ))}
+            ))}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "clamp(6px, 0.8vw, 14px)" }}>
+            <div className="ps-card ps-card--top">
+              <p className="ps-label">WALT TARGET &middot; YEAR 1&ndash;3</p>
+              <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.8vw, 28px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>100K&ndash;500K</p>
+              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>paying users</p>
+              <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>&euro;1&ndash;5M ARR</p>
+            </div>
+            <div className="ps-card ps-card--top">
+              <p className="ps-label">WALT TARGET &middot; YEAR 3&ndash;7</p>
+              <p className="ps-stat" style={{ fontSize: "clamp(14px, 1.8vw, 28px)", margin: "clamp(2px, 0.3vw, 6px) 0" }}>1&ndash;3M</p>
+              <p className="ps-body ps-muted" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>paying users</p>
+              <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>&euro;10&ndash;30M ARR</p>
             </div>
             <div className="ps-price-card" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+              <p className="ps-label" style={{ color: "#151515", letterSpacing: "0.12em" }}>WALT SUBSCRIPTION</p>
               <p className="ps-stat" style={{ fontSize: "clamp(28px, 4vw, 64px)" }}>&euro;10</p>
               <p style={{
                 fontSize: "clamp(11px, 1.3vw, 22px)",
                 fontWeight: 400,
                 color: "#151515",
-                margin: "0 0 clamp(2px, 0.3vw, 6px)"
+                margin: 0
               }}>/year</p>
-              <div className="ps-divider" />
-              <p className="ps-banner-body">The price of privacy.</p>
             </div>
           </div>
         </div>
