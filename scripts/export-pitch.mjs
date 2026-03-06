@@ -35,7 +35,7 @@ async function captureSlides() {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: SLIDE_WIDTH, height: SLIDE_HEIGHT });
+  await page.setViewport({ width: SLIDE_WIDTH, height: SLIDE_HEIGHT, deviceScaleFactor: 2 });
 
   console.log("Navigating to pitch page...");
   await page.goto(BASE_URL, { waitUntil: "networkidle0", timeout: 30000 });
