@@ -167,14 +167,14 @@ function SlideCompetitors() {
       <div className="ps-pad">
         <h2 className="ps-h1">Competitors</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-          No existing player combines NFC tap-to-pay with genuine privacy
+          Competitors offering tap-to-pay as a secondary feature
         </p>
         <div className="ps-content">
           <div className="ps-cols-2" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
 
             {/* Wero */}
             <div className="ps-card ps-card--top">
-              <p className="ps-label">BANK CONSORTIUM &middot; 50M+ USERS</p>
+              <p className="ps-label">BANK CONSORTIUM</p>
               <p className="ps-card-title">Wero (EPI)</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
                 <li className="ps-bullet">50M+ registered users</li>
@@ -185,7 +185,7 @@ function SlideCompetitors() {
 
             {/* Vipps MobilePay */}
             <div className="ps-card ps-card--top">
-              <p className="ps-label">NORDIC INCUMBENT &middot; 12.5M USERS</p>
+              <p className="ps-label">NORDIC INCUMBENT</p>
               <p className="ps-card-title">Vipps MobilePay</p>
               <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
                 <li className="ps-bullet">NFC live in all four Nordic markets</li>
