@@ -98,13 +98,10 @@ function SlideSolution() {
               <p className="ps-lead" style={{ marginBottom: "clamp(12px, 1.8vw, 28px)" }}>
                 Walt is the private alternative to Apple Pay and Google Wallet.
               </p>
-              <div className="ps-num-row">
-                <span className="ps-num">1</span>
-                <span className="ps-body">Transaction data encrypted on-device. Never stored on servers.</span>
-              </div>
-              <div className="ps-num-row">
-                <span className="ps-num">2</span>
-                <span className="ps-body">Load a card. Tap to pay. That&rsquo;s it.</span>
+              <div className="ps-banner">
+                <p className="ps-banner-body">
+                  Transaction data encrypted on-device. Never stored on servers.
+                </p>
               </div>
             </div>
             <div style={{ display: "flex", gap: "clamp(8px, 1.4vw, 22px)", justifyContent: "center", alignItems: "center" }}>
@@ -199,79 +196,7 @@ function SlideWhyNow() {
   );
 }
 
-/* ─── Slide 5: Team ────────────────────────────────────────────────────────── */
-
-function SlideTeam() {
-  return (
-    <div className="ps">
-      <div className="ps-pad">
-        <h2 className="ps-h1">Team</h2>
-        <div className="ps-content">
-          <div className="ps-split ps-split--center">
-            <div className="ps-card" style={{ padding: "clamp(12px, 1.8vw, 30px) clamp(14px, 2vw, 34px)" }}>
-              <div style={{ display: "flex", gap: "clamp(8px, 1.2vw, 20px)", alignItems: "center", marginBottom: "clamp(8px, 1.2vw, 18px)" }}>
-                <div style={{
-                  width: "clamp(36px, 4vw, 64px)",
-                  height: "clamp(36px, 4vw, 64px)",
-                  borderRadius: "50%",
-                  background: "var(--orange-primary)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#fff",
-                  fontWeight: 700,
-                  fontSize: "clamp(14px, 1.6vw, 26px)",
-                  flexShrink: 0
-                }}>CB</div>
-                <div>
-                  <p className="ps-card-title">Cole Bittel</p>
-                  <p className="ps-body" style={{ fontWeight: 500, color: "var(--orange-primary)" }}>Founder</p>
-                </div>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(6px, 0.8vw, 14px) clamp(12px, 2vw, 32px)" }}>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>EXPERIENCE</p>
-                  <p className="ps-body ps-muted">Early engineer at Legora, Pleo, and Funding Circle</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>LOCATION</p>
-                  <p className="ps-body ps-muted">Copenhagen, Denmark. 7 years</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>RESIDENCY</p>
-                  <p className="ps-body ps-muted">American citizen, Danish permanent resident (citizen in ~2 years)</p>
-                </div>
-                <div>
-                  <p className="ps-label" style={{ marginBottom: "clamp(2px, 0.2vw, 4px)" }}>ENTITY</p>
-                  <p className="ps-body ps-muted">Embedded Engineering ApS</p>
-                </div>
-              </div>
-            </div>
-            <div className="ps-stack">
-              <p className="ps-card-h" style={{ marginBottom: 0 }}>Key Hires</p>
-              <div className="ps-card">
-                <p className="ps-card-title">BDR / Partnerships</p>
-                <p className="ps-body ps-muted">
-                  Unlocking relationships with banks, enabling bank cards across
-                  Europe to be loaded into Walt.
-                </p>
-              </div>
-              <div className="ps-card">
-                <p className="ps-card-title">Marketing</p>
-                <p className="ps-body ps-muted">
-                  Building brand awareness in privacy-conscious communities:
-                  Proton, Signal, Brave, and beyond.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Slide 6: Traction & Roadmap ─────────────────────────────────────────── */
+/* ─── Slide 5: Traction & Roadmap ─────────────────────────────────────────── */
 
 function SlideTraction() {
   return (
@@ -510,7 +435,6 @@ const SLIDES = [
   { title: "The Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
   { title: "The Market", render: SlideMarket },
-  { title: "Team", render: SlideTeam },
   { title: "Traction & Roadmap", render: SlideTraction },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
