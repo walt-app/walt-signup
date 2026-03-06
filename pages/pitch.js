@@ -145,18 +145,11 @@ function SlideWhyNow() {
           <p className="ps-stat" style={{ fontSize: "clamp(28px, 4.5vw, 72px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
             July 2025
           </p>
-          <p className="ps-lead" style={{ maxWidth: "680px", marginBottom: "clamp(16px, 2.5vw, 40px)" }}>
+          <p className="ps-lead" style={{ maxWidth: "680px" }}>
             EU forced Apple and Google to open NFC access.
             <br />
             For the first time, a privacy alternative to tap-to-pay can exist.
           </p>
-          <div style={{ display: "flex", gap: "clamp(12px, 2vw, 32px)", flexWrap: "wrap", justifyContent: "center" }}>
-            <p className="ps-body ps-muted">Google Search &rarr; DuckDuckGo</p>
-            <p className="ps-body ps-muted">Gmail &rarr; ProtonMail</p>
-            <p className="ps-body ps-muted">Chrome &rarr; Brave</p>
-            <p className="ps-body ps-muted">WhatsApp &rarr; Signal</p>
-            <p className="ps-body" style={{ fontWeight: 700, color: "var(--orange-primary)" }}>Apple Pay / Google Wallet &rarr; Walt</p>
-          </div>
         </div>
         <div className="ps-src">
           Sources: <a href="#">European Commission</a>, <a href="#">US DOJ</a>
