@@ -538,13 +538,13 @@ function SlideMarket() {
               {/* Walt Year 2-4 */}
               <circle cx="875" cy="120" r="14" fill="#ff4800" opacity="0.6" />
               <text x="898" y="108" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 2&#x2013;4 &#xB7; EUROPE FOCUS</text>
-              <text x="898" y="124" fontSize="15" fontWeight="900" fill="#151515">2M users</text>
+              <text x="898" y="124" fontSize="15" fontWeight="900" fill="#151515">3M users</text>
               <text x="898" y="138" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;20M ARR</text>
 
               {/* Walt Year 4-8 */}
               <circle cx="875" cy="195" r="19" fill="#ff4800" opacity="0.7" />
               <text x="902" y="183" fontSize="8" fontWeight="600" fill="#7f7f7f" letterSpacing="0.06em">YEAR 4&#x2013;8 &#xB7; US &#x26; ASIA FOCUS</text>
-              <text x="902" y="199" fontSize="15" fontWeight="900" fill="#151515">20M users</text>
+              <text x="902" y="199" fontSize="15" fontWeight="900" fill="#151515">45M users</text>
               <text x="902" y="213" fontSize="11" fontWeight="700" fill="#ff4800">&#x20AC;200M ARR</text>
 
               {/* Subscription box */}
