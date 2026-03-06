@@ -180,6 +180,9 @@ function SlideCompetitors() {
                 <li className="ps-bullet">E-commerce and P2P are the primary business</li>
                 <li className="ps-bullet">No NFC tap-to-pay yet but planned 2026&#x2013;27</li>
               </ul>
+              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
+                Risk: NFC competes with core A2A business for funding
+              </p>
             </div>
 
             {/* Vipps MobilePay */}
@@ -190,6 +193,9 @@ function SlideCompetitors() {
                 <li className="ps-bullet">Only Norway heavily supported by banks so far</li>
                 <li className="ps-bullet">Validates Walt&rsquo;s technical pathway</li>
               </ul>
+              <p className="ps-body ps-muted" style={{ marginTop: "clamp(4px, 0.6vw, 10px)", fontStyle: "italic", fontSize: "clamp(8px, 1vw, 13px)" }}>
+                Risk: NFC expansion depends on bank consortium priorities
+              </p>
             </div>
 
           </div>
