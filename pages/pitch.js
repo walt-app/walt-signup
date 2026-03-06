@@ -419,17 +419,13 @@ function SlideMarket() {
 /* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
 
 function SlideBuiltButLocked() {
-  /* Horizontal pathway: Walt ──→ 3 barriers ──→ User */
-  const pathY = 190;
-  const waltX = 90;
-  const userX = 970;
-  const barriers = [
-    { x: 370, label: "Card Schemes", sub: "Visa / Mastercard" },
-    { x: 580, label: "Processors", sub: "Nets · Nexi · Tietoevry" },
-    { x: 790, label: "Issuing Banks", sub: "Bank-by-bank approval" },
+  const cy = 175;
+  const r = 90;
+  const nodes = [
+    { cx: 180, label: "WALT", filled: true },
+    { cx: 530, label: "Payment Processors", sub: "Nets/Nexi · Tietoevry", filled: false },
+    { cx: 880, label: "Issuing Banks", sub: "Per-bank approval", filled: false },
   ];
-  const barW = 8;
-  const barH = 160;
 
   return (
     <div className="ps">
@@ -440,38 +436,38 @@ function SlideBuiltButLocked() {
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
 
-              {/* ── Horizontal dashed path ── */}
-              <line x1={waltX + 70} y1={pathY} x2={userX - 36} y2={pathY} stroke="#e0e0e0" strokeWidth="2" strokeDasharray="8 6" />
+              {/* ── Connecting lines ── */}
+              {/* Walt → Processors: solid */}
+              <line x1={nodes[0].cx + r} y1={cy} x2={nodes[1].cx - r} y2={cy} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${nodes[1].cx - r - 2},${cy - 6} ${nodes[1].cx - r + 8},${cy} ${nodes[1].cx - r - 2},${cy + 6}`} fill="#151515" />
+              {/* Processors → Banks: dashed */}
+              <line x1={nodes[1].cx + r} y1={cy} x2={nodes[2].cx - r} y2={cy} stroke="#d0d0d0" strokeWidth="2.5" strokeDasharray="10 8" />
+              <polygon points={`${nodes[2].cx - r - 2},${cy - 6} ${nodes[2].cx - r + 8},${cy} ${nodes[2].cx - r - 2},${cy + 6}`} fill="#d0d0d0" />
 
-              {/* ── Walt (left, orange, complete) ── */}
-              <circle cx={waltX + 35} cy={pathY} r="60" fill="#ff4800" />
-              <text x={waltX + 35} y={pathY - 8} textAnchor="middle" fontSize="22" fontWeight="900" fill="#151515">WALT</text>
-              <text x={waltX + 35} y={pathY + 14} textAnchor="middle" fontSize="11" fontWeight="600" fill="#151515" opacity="0.7">&#x2713; Built</text>
+              {/* ── Walt node (filled, complete) ── */}
+              <circle cx={nodes[0].cx} cy={cy} r={r} fill="#ff4800" />
+              <text x={nodes[0].cx} y={cy - 10} textAnchor="middle" fontSize="28" fontWeight="900" fill="#151515">WALT</text>
+              {/* Checkmark */}
+              <path d={`M${nodes[0].cx - 12} ${cy + 18} l8 8 l16 -16`} fill="none" stroke="#151515" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
 
-              {/* ── Three barriers ── */}
-              {barriers.map((b) => (
-                <g key={b.label}>
-                  <rect x={b.x - barW / 2} y={pathY - barH / 2} width={barW} height={barH} rx="4" fill="#151515" />
-                  {/* Lock icon */}
-                  <rect x={b.x - 6} y={pathY - 8} width="12" height="12" rx="2.5" fill="#333" />
-                  <path d={`M${b.x - 3.5} ${pathY - 8} V${pathY - 12} a3.5 3.5 0 0 1 7 0 V${pathY - 8}`} fill="none" stroke="#555" strokeWidth="1.8" />
-                  {/* Labels above */}
-                  <text x={b.x} y={pathY - barH / 2 - 18} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">{b.label}</text>
-                  <text x={b.x} y={pathY - barH / 2 - 4} textAnchor="middle" fontSize="9" fill="#7f7f7f">{b.sub}</text>
+              {/* ── Blocked nodes ── */}
+              {nodes.slice(1).map((n) => (
+                <g key={n.label}>
+                  <circle cx={n.cx} cy={cy} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+                  {/* Lock icon (centered) */}
+                  <rect x={n.cx - 11} y={cy - 4} width="22" height="18" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+                  <path d={`M${n.cx - 6} ${cy - 4} V${cy - 12} a6 6 0 0 1 12 0 V${cy - 4}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+                  {/* Labels below */}
+                  <text x={n.cx} y={cy + r + 28} textAnchor="middle" fontSize="14" fontWeight="700" fill="#151515">{n.label}</text>
+                  <text x={n.cx} y={cy + r + 44} textAnchor="middle" fontSize="10" fill="#7f7f7f">{n.sub}</text>
                 </g>
               ))}
 
-              {/* ── User (right, greyed out, waiting) ── */}
-              <circle cx={userX} cy={pathY - 20} r="18" fill="#e0e0e0" stroke="#d0d0d0" strokeWidth="1.5" />
-              <line x1={userX} y1={pathY + 2} x2={userX} y2={pathY + 24} stroke="#d0d0d0" strokeWidth="2" />
-              <line x1={userX - 14} y1={pathY + 12} x2={userX + 14} y2={pathY + 12} stroke="#d0d0d0" strokeWidth="2" />
-              <text x={userX} y={pathY + 46} textAnchor="middle" fontSize="10" fontWeight="600" fill="#b0b0b0" letterSpacing="0.06em">USER</text>
-
-              {/* ── Precedent callout ── */}
-              <text x="530" y="345" textAnchor="middle" fontSize="11" fill="#7f7f7f">
-                Klarna, Vipps MobilePay, and BBVA all launched through this same pathway in 2025.
+              {/* ── Precedent ── */}
+              <text x="530" y="370" textAnchor="middle" fontSize="11" fill="#7f7f7f">
+                Klarna, Vipps MobilePay, and BBVA launched through this same pathway in 2025.
               </text>
-              <text x="530" y="365" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">The door is open.</text>
+              <text x="530" y="388" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">The door is open.</text>
             </g>
           </svg>
         </div>
