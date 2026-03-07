@@ -10,4 +10,4 @@ Privacy-first tap-to-pay wallet. Alternative to Google Wallet and Apple Pay.
 
 ## Design
 
-See @.claude/design-context.md for brand personality, aesthetic direction, and design principles.
+@.claude/design-context.md for brand personality, aesthetic direction, and design principles.
