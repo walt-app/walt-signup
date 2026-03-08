@@ -159,7 +159,7 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-  padding: var(--padding-lg) var(--padding-xl);
+  padding: calc(64px + var(--padding-lg)) var(--padding-xl) var(--padding-lg);
   background: var(--page-bg);
   color: var(--text-dark);
   min-height: auto;
@@ -167,14 +167,24 @@ h6 {
 
 /* Header */
 .site-header {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--padding-xl);
+  background: rgba(247, 247, 247, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .site-logo {
   font-family: "Geist", sans-serif;
-  font-size: 48px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.04em;
   color: var(--orange-primary);
@@ -1000,8 +1010,12 @@ h6 {
 
 /* Responsive - Mobile (375px viewport) */
 @media (max-width: 768px) {
+  .site-header {
+    padding: 0 var(--padding-md);
+  }
+
   .hero-section {
-    padding: var(--padding-lg);
+    padding: calc(64px + var(--padding-lg)) var(--padding-lg) var(--padding-lg);
   }
 
   .section {
@@ -1261,7 +1275,7 @@ h6 {
     var(--orange-gradient-start) 0%,
     var(--orange-gradient-end) 100%
   );
-  padding: var(--padding-lg) var(--padding-xl) 48px;
+  padding: calc(64px + 48px) var(--padding-xl) 48px;
 }
 
 .motivation-hero .section-shell,
@@ -1399,7 +1413,7 @@ h6 {
 
 @media (max-width: 768px) {
   .motivation-hero {
-    padding: var(--padding-lg) var(--padding-md) 36px;
+    padding: calc(64px + 36px) var(--padding-md) 36px;
   }
 
   .motivation-main {

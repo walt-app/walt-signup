@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, useRef, Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 /* ─── Slide 1: Title ───────────────────────────────────────────────────────── */
 
@@ -655,7 +654,6 @@ export default function Pitch() {
 
       <div className="deck-page">
         <section className="hero-section">
-          <Header />
           <div className="deck-hero-card">
             <h1>Pitch Deck</h1>
             <p>

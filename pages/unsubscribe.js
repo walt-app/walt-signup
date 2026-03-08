@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Unsubscribe() {
   const router = useRouter();
@@ -67,7 +66,6 @@ export default function Unsubscribe() {
       </Head>
 
       <div className="scroll-container">
-        <Header />
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">

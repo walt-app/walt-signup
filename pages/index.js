@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -319,7 +318,6 @@ export default function Home() {
         {/* Hero Section */}
         <section className="hero-section">
           <div className="hero-card">
-            <Header />
             <div className="hero-inner">
               <div className="hero-copy">
                 <div className="hero-text">

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Motivation() {
   return (
@@ -69,7 +68,6 @@ export default function Motivation() {
 
       <div className="motivation-page">
         <div className="motivation-hero">
-          <Header />
           <div className="section-shell">
             <div className="section-header">
               <h1 className="section-heading">Why Walt Exists</h1>

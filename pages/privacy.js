@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Privacy() {
   return (
@@ -23,7 +22,6 @@ export default function Privacy() {
 
       <div className="motivation-page">
         <div className="motivation-hero">
-          <Header />
           <div className="section-shell">
             <div className="section-header">
               <h1 className="section-heading">Privacy Policy</h1>
