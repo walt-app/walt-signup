@@ -317,12 +317,6 @@ export default function Home() {
       <div className="scroll-container" id="top">
         {/* Hero Section */}
         <section className="hero-section">
-          <header className="site-header">
-            <Link href="/" className="site-logo">
-              Walt
-            </Link>
-          </header>
-
           <div className="hero-card">
             <div className="hero-inner">
               <div className="hero-copy">
