@@ -9,6 +9,10 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const [formStep, setFormStep] = useState("email");
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [bank, setBank] = useState("");
 
   const uspFeatures = [
     {
@@ -152,54 +156,89 @@ export default function Home() {
     }
   };
 
+  const submitProfile = async (profileCountry, profileBank) => {
+    if (!profileCountry && !profileBank) return;
+    try {
+      await fetch("/api/update-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: submittedEmail,
+          country: profileCountry || undefined,
+          bank: profileBank || undefined,
+        }),
+      });
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
+  };
+
+  const handleSkip = async () => {
+    if (formStep === "country") {
+      setFormStep("bank");
+    } else if (formStep === "bank") {
+      if (country) {
+        await submitProfile(country, "");
+      }
+      setFormStep("done");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const emailValue = email.trim();
+    if (formStep === "email") {
+      const emailValue = email.trim();
 
-    if (!emailValue) {
-      showMessage("Please enter your email address", "error");
-      return;
-    }
+      if (!emailValue) {
+        showMessage("Please enter your email address", "error");
+        return;
+      }
 
-    if (!isValidEmail(emailValue)) {
-      showMessage("Please enter a valid email address", "error");
-      return;
-    }
+      if (!isValidEmail(emailValue)) {
+        showMessage("Please enter a valid email address", "error");
+        return;
+      }
 
-    setIsLoading(true);
+      setIsLoading(true);
 
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: emailValue }),
-      });
+      try {
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: emailValue }),
+        });
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (data.success) {
+        if (data.success) {
+          setSubmittedEmail(emailValue);
+          setEmail("");
+          setFormStep("country");
+        } else {
+          showMessage(
+            data.error || "Something went wrong. Please try again.",
+            "error",
+          );
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
         showMessage(
-          data.message || "Successfully joined the waitlist!",
-          "success",
-        );
-        setEmail("");
-      } else {
-        showMessage(
-          data.error || "Something went wrong. Please try again.",
+          "Network error. Please check your connection and try again.",
           "error",
         );
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      showMessage(
-        "Network error. Please check your connection and try again.",
-        "error",
-      );
-    } finally {
+    } else if (formStep === "country") {
+      setFormStep("bank");
+    } else if (formStep === "bank") {
+      setIsLoading(true);
+      await submitProfile(country, bank);
       setIsLoading(false);
+      setFormStep("done");
     }
   };
 
@@ -331,26 +370,68 @@ export default function Home() {
                     Tap-to-pay that doesn't track you
                   </h1>
                   <form onSubmit={handleSubmit} className="hero-form">
-                    <div className="hero-input-group">
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                        className="hero-input"
-                        required
-                      />
-                      <button
-                        type="submit"
-                        className="hero-button"
-                        disabled={isLoading}
-                      >
-                        <span>
-                          {isLoading ? "Joining..." : "Join the waitlist"}
-                        </span>
-                      </button>
+                    <div className="hero-input-group" key={formStep}>
+                      {formStep === "done" ? (
+                        <div className="hero-done">
+                          You're on the list!
+                        </div>
+                      ) : (
+                        <>
+                          <input
+                            type={formStep === "email" ? "email" : "text"}
+                            value={
+                              formStep === "email"
+                                ? email
+                                : formStep === "country"
+                                  ? country
+                                  : bank
+                            }
+                            onChange={(e) => {
+                              if (formStep === "email") setEmail(e.target.value);
+                              else if (formStep === "country") setCountry(e.target.value);
+                              else setBank(e.target.value);
+                            }}
+                            placeholder={
+                              formStep === "email"
+                                ? "Email"
+                                : formStep === "country"
+                                  ? "What country are you in?"
+                                  : "Which bank do you use?"
+                            }
+                            className="hero-input"
+                            required={formStep === "email"}
+                            autoFocus={formStep !== "email"}
+                          />
+                          <button
+                            type="submit"
+                            className="hero-button"
+                            disabled={isLoading}
+                          >
+                            <span>
+                              {formStep === "email"
+                                ? isLoading
+                                  ? "Joining..."
+                                  : "Join the waitlist"
+                                : formStep === "bank"
+                                  ? isLoading
+                                    ? "Saving..."
+                                    : "Done"
+                                  : "Next"}
+                            </span>
+                          </button>
+                        </>
+                      )}
                     </div>
-                    {message && (
+                    {(formStep === "country" || formStep === "bank") && (
+                      <button
+                        type="button"
+                        className="hero-skip"
+                        onClick={handleSkip}
+                      >
+                        Skip
+                      </button>
+                    )}
+                    {message && formStep === "email" && (
                       <div className={`form-message ${messageType}`}>
                         {message}
                       </div>
