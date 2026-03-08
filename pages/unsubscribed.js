@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function Unsubscribed() {
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function Unsubscribed() {
       </Head>
 
       <div className="scroll-container">
+        <Header />
         <div className="section hero-section">
           <div className="hero-inner">
             <div className="hero-copy">
