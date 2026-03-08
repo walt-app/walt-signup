@@ -2793,3 +2793,26 @@ h6 {
   color: #151515;
   margin: 0;
 }
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3 {
+    transition-delay: 0s;
+  }
+
+  .roadmap-current-dot {
+    animation: none;
+  }
+
+  .lightbox-overlay {
+    animation: none;
+  }
+}
