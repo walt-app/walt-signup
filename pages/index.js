@@ -473,12 +473,6 @@ export default function Home() {
                       <div className="roadmap-content">
                         <span className="roadmap-period">
                           {item.period}
-                          {item.phase === "current" && (
-                            <span className="roadmap-current-badge">
-                              <span className="roadmap-current-dot"></span>
-                              Now
-                            </span>
-                          )}
                         </span>
                         <div className="roadmap-phase">
                           <h3 className="roadmap-phase-title">{item.title}</h3>
