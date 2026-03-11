@@ -241,7 +241,7 @@ function SlideSolution() {
 
             {/* B2B — Walt for Banks */}
             <div className="ps-solution-col">
-              <span className="ps-solution-segment">B2B</span>
+              <span className="ps-solution-segment">B2B2C</span>
               <p className="ps-solution-label">Walt for Banks</p>
               <div className="ps-solution-phone ps-solution-phone--bank">
                 <FjordBankScreen />
