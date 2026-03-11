@@ -2837,22 +2837,7 @@ h6 {
 }
 
 .ps-solution-phone--bank {
-  border: clamp(2px, 0.25vw, 4px) solid var(--orange-primary);
-}
-
-.ps-solution-brand-badge {
-  position: absolute;
-  top: clamp(8px, 1vw, 16px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--orange-primary);
-  color: #fff;
-  font-size: clamp(7px, 0.7vw, 11px);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: clamp(2px, 0.25vw, 4px) clamp(6px, 0.7vw, 12px);
-  border-radius: 99px;
-  white-space: nowrap;
+  /* no extra border — the inline component handles its own styling */
 }
 
 .ps-solution-tagline {
