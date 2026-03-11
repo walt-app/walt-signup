@@ -80,37 +80,50 @@ function SlideProblem() {
   );
 }
 
-/* ─── Slide 3: The Solution (combined with Product) ────────────────────────── */
+/* ─── Slide 3: The Solution — Hero Phone + Text Card ─────────────────────── */
 
 function SlideSolution() {
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Solution</h2>
-        <p className="ps-lead">European tap-to-pay</p>
-        <div className="ps-content" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div style={{ display: "flex", gap: "clamp(12px, 2.2vw, 36px)", justifyContent: "center", alignItems: "center" }}>
-            {[
-              { src: "/promo-screen.jpg", alt: "Walt home screen" },
-              { src: "/add-card.jpg", alt: "Add card screen" },
-              { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
-            ].map((img) => (
-              <div key={img.src} style={{
-                width: "clamp(120px, 18vw, 280px)",
-                borderRadius: "clamp(8px, 1vw, 18px)",
-                overflow: "hidden",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
-              }}>
+        <p className="ps-lead">European tap-to-pay platform</p>
+        <div className="ps-content">
+          <div className="ps-split ps-split--center">
+            {/* Hero phone */}
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="ps-hero-phone">
                 <Image
-                  src={img.src}
-                  alt={img.alt}
+                  src="/promo-screen.jpg"
+                  alt="Walt app home screen"
                   width={280}
                   height={607}
-                  sizes="(max-width: 768px) 130px, 280px"
+                  sizes="220px"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
-            ))}
+            </div>
+
+            {/* Text card */}
+            <div className="ps-card ps-card--left">
+              <p className="ps-card-h">The platform play</p>
+
+              <div className="ps-solution-section">
+                <p className="ps-card-title">Walt App</p>
+                <p className="ps-body">Direct-to-consumer tap-to-pay. A privacy-first alternative to Google&nbsp;Wallet and Apple&nbsp;Pay.</p>
+              </div>
+
+              <div className="ps-solution-divider" />
+
+              <div className="ps-solution-section">
+                <p className="ps-card-title">Walt for Banks</p>
+                <p className="ps-body">Whitelabel NFC platform. Banks offer branded tap-to-pay without building the&nbsp;technology.</p>
+              </div>
+
+              <div className="ps-solution-divider" />
+
+              <p className="ps-solution-kicker">Same core technology. Two revenue streams.</p>
+            </div>
           </div>
         </div>
       </div>
