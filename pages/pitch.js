@@ -107,18 +107,6 @@ function FjordBankScreen() {
       fontWeight: 800,
       letterSpacing: "-0.02em",
     },
-    plusBtn: {
-      width: "clamp(12px, 1.4vw, 22px)",
-      height: "clamp(12px, 1.4vw, 22px)",
-      borderRadius: "50%",
-      background: "#2ecc9b",
-      display: "grid",
-      placeItems: "center",
-      fontSize: "clamp(8px, 1vw, 14px)",
-      fontWeight: 700,
-      color: "#0b2a3d",
-      lineHeight: 0,
-    },
     authSection: {
       display: "flex",
       flexDirection: "column",
@@ -189,7 +177,6 @@ function FjordBankScreen() {
     <div style={s.wrap}>
       <div style={s.header}>
         <span style={s.logo}>ABC Bank</span>
-        <span style={s.plusBtn}>+</span>
       </div>
 
       <div style={s.authSection}>
