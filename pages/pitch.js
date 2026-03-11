@@ -10,15 +10,10 @@ function SlideTitle() {
   return (
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
-        <h1 className="ps-logo">WALT</h1>
+        <h1 className="ps-logo">Walt</h1>
         <div className="ps-divider" />
-        <p className="ps-subtitle">Private tap-to-pay</p>
-        <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
-          <p className="ps-small">Cole Bittel</p>
-          <p className="ps-small">cole@walt.is</p>
-        </div>
+        <p className="ps-subtitle">Europe reclaims tap-to-pay</p>
       </div>
-      <span className="ps-watermark">walt.is</span>
     </div>
   );
 }
@@ -41,7 +36,7 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-          Tap-to-pay has no private or European alternative
+          Tap-to-pay lives with US monopolies
         </p>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
@@ -92,41 +87,30 @@ function SlideSolution() {
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Solution</h2>
-        <div className="ps-content">
-          <div className="ps-split ps-split--center" style={{ gridTemplateColumns: "1fr 1.4fr" }}>
-            <div>
-              <p className="ps-lead" style={{ marginBottom: "clamp(12px, 1.8vw, 28px)" }}>
-                Walt is the private alternative to Apple Pay and Google Wallet.
-              </p>
-              <div className="ps-banner">
-                <p className="ps-banner-body">
-                  Transaction data encrypted on-device. Never stored on servers.
-                </p>
+        <p className="ps-lead">European tap-to-pay</p>
+        <div className="ps-content" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "clamp(12px, 2.2vw, 36px)", justifyContent: "center", alignItems: "center" }}>
+            {[
+              { src: "/promo-screen.jpg", alt: "Walt home screen" },
+              { src: "/add-card.jpg", alt: "Add card screen" },
+              { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
+            ].map((img) => (
+              <div key={img.src} style={{
+                width: "clamp(120px, 18vw, 280px)",
+                borderRadius: "clamp(8px, 1vw, 18px)",
+                overflow: "hidden",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
+              }}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={280}
+                  height={607}
+                  sizes="(max-width: 768px) 130px, 280px"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
               </div>
-            </div>
-            <div style={{ display: "flex", gap: "clamp(8px, 1.4vw, 22px)", justifyContent: "center", alignItems: "center" }}>
-              {[
-                { src: "/promo-screen.jpg", alt: "Walt home screen" },
-                { src: "/add-card.jpg", alt: "Add card screen" },
-                { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
-              ].map((img) => (
-                <div key={img.src} style={{
-                  width: "clamp(90px, 14vw, 220px)",
-                  borderRadius: "clamp(6px, 0.8vw, 14px)",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
-                }}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={220}
-                    height={477}
-                    sizes="(max-width: 768px) 100px, 220px"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -166,7 +150,7 @@ function SlideCompetitors() {
     { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
     { label: "NFC tap-to-pay live today", walt: "", wero: "", vipps: "check-limited" },
     { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
-    { label: "User base", walt: "0", wero: "50M+", vipps: "12.5M" },
+    { label: "User base", walt: "0", wero: "50M", vipps: "12.5M" },
     { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Merchant pays fee", vipps: "Merchant pays fee" },
     { label: "Geographic focus", walt: "Nordics \u2192 Europe", wero: "DE, FR, BE", vipps: "Nordics" },
   ];
@@ -352,9 +336,9 @@ function SlideClosing() {
   return (
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
-        <h1 className="ps-logo">WALT</h1>
+        <h1 className="ps-logo">Walt</h1>
         <div className="ps-divider" />
-        <p className="ps-quote">&ldquo;Transaction data is sacred.&rdquo;</p>
+        <p className="ps-subtitle">Europe reclaims tap-to-pay</p>
         <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
           <p className="ps-body" style={{ color: "#151515" }}>Cole Bittel, Founder</p>
           <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
@@ -435,13 +419,13 @@ function SlideMarket() {
 /* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
 
 function SlideBuiltButLocked() {
-  const cy = 170;
   const r = 72;
 
   const waltX = 130;
-  const procX = 390;
-  const bankX = 650;
-  const userX = 920;
+  const topY = 120;
+  const botY = 280;
+  const midX = 530;
+  const userX = 930;
 
   return (
     <div className="ps">
@@ -452,52 +436,48 @@ function SlideBuiltButLocked() {
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
 
-              {/* ── Connecting arrows ── */}
-              {/* Walt → Processors: solid dark */}
-              <line x1={waltX + r} y1={cy} x2={procX - r} y2={cy} stroke="#151515" strokeWidth="2.5" />
-              <polygon points={`${procX - r - 2},${cy - 6} ${procX - r + 8},${cy} ${procX - r - 2},${cy + 6}`} fill="#151515" />
-              {/* Processors → Banks: dashed grey */}
-              <line x1={procX + r} y1={cy} x2={bankX - r} y2={cy} stroke="#d0d0d0" strokeWidth="2.5" strokeDasharray="10 8" />
-              <polygon points={`${bankX - r - 2},${cy - 6} ${bankX - r + 8},${cy} ${bankX - r - 2},${cy + 6}`} fill="#d0d0d0" />
-              {/* Banks → Users: dashed orange (leads to goal) */}
-              <line x1={bankX + r} y1={cy} x2={userX - r} y2={cy} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
-              <polygon points={`${userX - r - 2},${cy - 6} ${userX - r + 8},${cy} ${userX - r - 2},${cy + 6}`} fill="#ff4800" opacity="0.4" />
+              {/* ── Walt → Payment Infrastructure (top) ── */}
+              <line x1={waltX + r} y1={200} x2={midX - r} y2={topY} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${midX - r - 4},${topY - 4} ${midX - r + 8},${topY} ${midX - r - 2},${topY + 7}`} fill="#151515" />
+
+              {/* ── Walt → Issuing Banks (bottom) ── */}
+              <line x1={waltX + r} y1={200} x2={midX - r} y2={botY} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${midX - r - 2},${botY - 7} ${midX - r + 8},${botY} ${midX - r - 4},${botY + 4}`} fill="#151515" />
+
+              {/* ── Payment Infrastructure → Users (top) ── */}
+              <line x1={midX + r} y1={topY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
+              <polygon points={`${userX - r - 4},${200 - 6} ${userX - r + 8},${200} ${userX - r - 2},${200 + 7}`} fill="#ff4800" opacity="0.4" />
+
+              {/* ── Issuing Banks → Users (bottom) ── */}
+              <line x1={midX + r} y1={botY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
+              <polygon points={`${userX - r - 2},${200 - 7} ${userX - r + 8},${200} ${userX - r - 4},${200 + 6}`} fill="#ff4800" opacity="0.4" />
 
               {/* ── Walt (solid orange, complete) ── */}
-              <circle cx={waltX} cy={cy} r={r} fill="#ff4800" />
-              <text x={waltX} y={cy - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
-              <path d={`M${waltX - 10} ${cy + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx={waltX} cy={200} r={r} fill="#ff4800" />
+              <text x={waltX} y={200 - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
+              <path d={`M${waltX - 10} ${200 + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
 
-              {/* ── Blocked nodes (dashed outline, lock icon) ── */}
-              {[
-                { cx: procX, label: "Payment Processors", sub: "Nets/Nexi · Tietoevry" },
-                { cx: bankX, label: "Issuing Banks", sub: "Per-bank approval" },
-              ].map((n) => (
-                <g key={n.label}>
-                  <circle cx={n.cx} cy={cy} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
-                  {/* Lock */}
-                  <rect x={n.cx - 10} y={cy - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
-                  <path d={`M${n.cx - 5} ${cy - 3} V${cy - 10} a5 5 0 0 1 10 0 V${cy - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
-                  {/* Labels below */}
-                  <text x={n.cx} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">{n.label}</text>
-                  <text x={n.cx} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">{n.sub}</text>
-                </g>
-              ))}
+              {/* ── Payment Infrastructure (top, locked) ── */}
+              <circle cx={midX} cy={topY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+              <rect x={midX - 10} y={topY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+              <path d={`M${midX - 5} ${topY - 3} V${topY - 10} a5 5 0 0 1 10 0 V${topY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+              <text x={midX} y={topY - r - 22} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Payment Infrastructure</text>
+              <text x={midX} y={topY - r - 8} textAnchor="middle" fontSize="10" fill="#7f7f7f">Nets/Nexi · Tietoevry</text>
+
+              {/* ── Issuing Banks (bottom, locked) ── */}
+              <circle cx={midX} cy={botY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+              <rect x={midX - 10} y={botY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+              <path d={`M${midX - 5} ${botY - 3} V${botY - 10} a5 5 0 0 1 10 0 V${botY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+              <text x={midX} y={botY + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Issuing Banks</text>
+              <text x={midX} y={botY + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Per-bank approval</text>
 
               {/* ── Users node (orange ring, the goal) ── */}
-              <circle cx={userX} cy={cy} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
-              {/* Euro symbol */}
-              <text x={userX} y={cy - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
-              <text x={userX} y={cy + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
-              {/* Labels below */}
-              <text x={userX} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
-              <text x={userX} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
+              <circle cx={userX} cy={200} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
+              <text x={userX} y={200 - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
+              <text x={userX} y={200 + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
+              <text x={userX} y={200 + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
+              <text x={userX} y={200 + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
 
-              {/* ── Precedent ── */}
-              <text x="530" y="374" textAnchor="middle" fontSize="11" fill="#7f7f7f">
-                Nets/Nexi alone serves 250+ Nordic banks.
-              </text>
-              <text x="530" y="392" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">One processor deal unlocks the majority of the market.</text>
             </g>
           </svg>
         </div>
@@ -609,7 +589,7 @@ export default function Pitch() {
         <title>Walt Pitch Deck - Investment & Business Overview</title>
         <meta
           name="description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model for Android and iOS tap-to-pay."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://walt.is/pitch" />
@@ -619,7 +599,7 @@ export default function Pitch() {
         <meta property="og:title" content="Walt Pitch Deck" />
         <meta
           property="og:description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
         />
         <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
 
@@ -628,7 +608,7 @@ export default function Pitch() {
         <meta property="twitter:title" content="Walt Pitch Deck" />
         <meta
           property="twitter:description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
         />
         <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
 
