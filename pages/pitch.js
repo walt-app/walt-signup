@@ -87,41 +87,30 @@ function SlideSolution() {
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Solution</h2>
-        <div className="ps-content">
-          <div className="ps-split ps-split--center" style={{ gridTemplateColumns: "1fr 1.4fr" }}>
-            <div>
-              <p className="ps-lead" style={{ marginBottom: "clamp(12px, 1.8vw, 28px)" }}>
-                Walt is the private alternative to Apple Pay and Google Wallet.
-              </p>
-              <div className="ps-banner">
-                <p className="ps-banner-body">
-                  Transaction data encrypted on-device. Never stored on servers.
-                </p>
+        <p className="ps-lead">European tap-to-pay</p>
+        <div className="ps-content" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "clamp(12px, 2.2vw, 36px)", justifyContent: "center", alignItems: "center" }}>
+            {[
+              { src: "/promo-screen.jpg", alt: "Walt home screen" },
+              { src: "/add-card.jpg", alt: "Add card screen" },
+              { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
+            ].map((img) => (
+              <div key={img.src} style={{
+                width: "clamp(120px, 18vw, 280px)",
+                borderRadius: "clamp(8px, 1vw, 18px)",
+                overflow: "hidden",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
+              }}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={280}
+                  height={607}
+                  sizes="(max-width: 768px) 130px, 280px"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
               </div>
-            </div>
-            <div style={{ display: "flex", gap: "clamp(8px, 1.4vw, 22px)", justifyContent: "center", alignItems: "center" }}>
-              {[
-                { src: "/promo-screen.jpg", alt: "Walt home screen" },
-                { src: "/add-card.jpg", alt: "Add card screen" },
-                { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
-              ].map((img) => (
-                <div key={img.src} style={{
-                  width: "clamp(90px, 14vw, 220px)",
-                  borderRadius: "clamp(6px, 0.8vw, 14px)",
-                  overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
-                }}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={220}
-                    height={477}
-                    sizes="(max-width: 768px) 100px, 220px"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>
