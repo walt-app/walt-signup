@@ -2794,6 +2794,96 @@ h6 {
   margin: 0;
 }
 
+/* ── Solution slide: One Platform, Two Markets ─────────────────────────────── */
+
+.ps-solution-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 64px);
+  flex: 1;
+}
+
+.ps-solution-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+.ps-solution-segment {
+  font-size: clamp(7px, 0.7vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  margin-bottom: clamp(2px, 0.3vw, 6px);
+}
+
+.ps-solution-label {
+  font-size: clamp(11px, 1.3vw, 22px);
+  font-weight: 700;
+  color: #151515;
+  margin: 0 0 clamp(6px, 0.8vw, 14px);
+}
+
+.ps-solution-phone {
+  position: relative;
+  width: clamp(100px, 13vw, 220px);
+  border-radius: clamp(8px, 1vw, 18px);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ps-solution-phone--bank {
+  border: clamp(2px, 0.25vw, 4px) solid var(--orange-primary);
+}
+
+.ps-solution-brand-badge {
+  position: absolute;
+  top: clamp(8px, 1vw, 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange-primary);
+  color: #fff;
+  font-size: clamp(7px, 0.7vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: clamp(2px, 0.25vw, 4px) clamp(6px, 0.7vw, 12px);
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.ps-solution-tagline {
+  font-size: clamp(8px, 0.85vw, 14px);
+  font-weight: 500;
+  color: #7f7f7f;
+  margin: clamp(6px, 0.8vw, 14px) 0 0;
+}
+
+.ps-solution-foundation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(10px, 1.5vw, 24px);
+}
+
+.ps-solution-foundation-line {
+  width: clamp(200px, 40vw, 500px);
+  height: clamp(1px, 0.15vw, 2px);
+  background: #d4d4d4;
+}
+
+.ps-solution-foundation-text {
+  font-size: clamp(7px, 0.7vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7f7f7f;
+  margin: clamp(4px, 0.5vw, 8px) 0 0;
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal {

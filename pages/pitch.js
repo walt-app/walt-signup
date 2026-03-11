@@ -80,37 +80,56 @@ function SlideProblem() {
   );
 }
 
-/* ─── Slide 3: The Solution (combined with Product) ────────────────────────── */
+/* ─── Slide 3: The Solution — One Platform, Two Markets ───────────────────── */
 
 function SlideSolution() {
   return (
     <div className="ps">
       <div className="ps-pad">
-        <h2 className="ps-h1">The Solution</h2>
+        <h2 className="ps-h1">One platform, two markets</h2>
         <p className="ps-lead">European tap-to-pay</p>
-        <div className="ps-content" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div style={{ display: "flex", gap: "clamp(12px, 2.2vw, 36px)", justifyContent: "center", alignItems: "center" }}>
-            {[
-              { src: "/promo-screen.jpg", alt: "Walt home screen" },
-              { src: "/add-card.jpg", alt: "Add card screen" },
-              { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
-            ].map((img) => (
-              <div key={img.src} style={{
-                width: "clamp(120px, 18vw, 280px)",
-                borderRadius: "clamp(8px, 1vw, 18px)",
-                overflow: "hidden",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
-              }}>
+        <div className="ps-content">
+          <div className="ps-solution-layout">
+            {/* B2C — Walt App */}
+            <div className="ps-solution-col">
+              <span className="ps-solution-segment">B2C</span>
+              <p className="ps-solution-label">Walt App</p>
+              <div className="ps-solution-phone">
                 <Image
-                  src={img.src}
-                  alt={img.alt}
+                  src="/promo-screen.jpg"
+                  alt="Walt app home screen"
                   width={280}
                   height={607}
-                  sizes="(max-width: 768px) 130px, 280px"
+                  sizes="220px"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
-            ))}
+              <p className="ps-solution-tagline">Privacy-first tap-to-pay for consumers</p>
+            </div>
+
+            {/* B2B — Walt for Banks */}
+            <div className="ps-solution-col">
+              <span className="ps-solution-segment">B2B</span>
+              <p className="ps-solution-label">Walt for Banks</p>
+              <div className="ps-solution-phone ps-solution-phone--bank">
+                <Image
+                  src="/intro-screen.jpg"
+                  alt="Whitelabel tap-to-pay screen"
+                  width={280}
+                  height={607}
+                  sizes="220px"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+                <span className="ps-solution-brand-badge">Your Brand</span>
+              </div>
+              <p className="ps-solution-tagline">Whitelabel NFC platform for banks</p>
+            </div>
+          </div>
+
+          {/* Shared foundation */}
+          <div className="ps-solution-foundation">
+            <div className="ps-solution-foundation-line" />
+            <p className="ps-solution-foundation-text">Powered by Walt NFC Platform</p>
           </div>
         </div>
       </div>
@@ -533,7 +552,7 @@ function SlideThumb({ render: Render }) {
 const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
-  { title: "The Solution", render: SlideSolution },
+  { title: "One Platform, Two Markets", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
   { title: "Challenges", render: SlideBuiltButLocked },
   { title: "The Market", render: SlideMarket },
