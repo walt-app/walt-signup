@@ -1,10 +1,14 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(bd create:*)",
+      "Bash(bd dep:*)",
+      "Bash(bd show:*)",
+      "Bash(bd update:*)",
+      "Bash(bd ready:*)"
+    ],
     "additionalDirectories": [
       "/Users/bittelc/workspace/walt-market-research/"
-    ],
-    "allow": [
-      "Bash(bd create:*)"
     ]
   }
 }
