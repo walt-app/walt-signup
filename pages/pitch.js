@@ -348,9 +348,9 @@ function SlideClosing() {
   return (
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
-        <h1 className="ps-logo">WALT</h1>
+        <h1 className="ps-logo">Walt</h1>
         <div className="ps-divider" />
-        <p className="ps-quote">&ldquo;Transaction data is sacred.&rdquo;</p>
+        <p className="ps-subtitle">European tap-to-pay</p>
         <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
           <p className="ps-body" style={{ color: "#151515" }}>Cole Bittel, Founder</p>
           <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
