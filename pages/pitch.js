@@ -430,13 +430,13 @@ function SlideMarket() {
 /* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
 
 function SlideBuiltButLocked() {
-  const cy = 170;
   const r = 72;
 
   const waltX = 130;
-  const procX = 390;
-  const bankX = 650;
-  const userX = 920;
+  const topY = 120;
+  const botY = 280;
+  const midX = 530;
+  const userX = 930;
 
   return (
     <div className="ps">
@@ -447,52 +447,48 @@ function SlideBuiltButLocked() {
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
 
-              {/* ── Connecting arrows ── */}
-              {/* Walt → Processors: solid dark */}
-              <line x1={waltX + r} y1={cy} x2={procX - r} y2={cy} stroke="#151515" strokeWidth="2.5" />
-              <polygon points={`${procX - r - 2},${cy - 6} ${procX - r + 8},${cy} ${procX - r - 2},${cy + 6}`} fill="#151515" />
-              {/* Processors → Banks: dashed grey */}
-              <line x1={procX + r} y1={cy} x2={bankX - r} y2={cy} stroke="#d0d0d0" strokeWidth="2.5" strokeDasharray="10 8" />
-              <polygon points={`${bankX - r - 2},${cy - 6} ${bankX - r + 8},${cy} ${bankX - r - 2},${cy + 6}`} fill="#d0d0d0" />
-              {/* Banks → Users: dashed orange (leads to goal) */}
-              <line x1={bankX + r} y1={cy} x2={userX - r} y2={cy} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
-              <polygon points={`${userX - r - 2},${cy - 6} ${userX - r + 8},${cy} ${userX - r - 2},${cy + 6}`} fill="#ff4800" opacity="0.4" />
+              {/* ── Walt → Payment Infrastructure (top) ── */}
+              <line x1={waltX + r} y1={200} x2={midX - r} y2={topY} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${midX - r - 4},${topY - 4} ${midX - r + 8},${topY} ${midX - r - 2},${topY + 7}`} fill="#151515" />
+
+              {/* ── Walt → Issuing Banks (bottom) ── */}
+              <line x1={waltX + r} y1={200} x2={midX - r} y2={botY} stroke="#151515" strokeWidth="2.5" />
+              <polygon points={`${midX - r - 2},${botY - 7} ${midX - r + 8},${botY} ${midX - r - 4},${botY + 4}`} fill="#151515" />
+
+              {/* ── Payment Infrastructure → Users (top) ── */}
+              <line x1={midX + r} y1={topY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
+              <polygon points={`${userX - r - 4},${200 - 6} ${userX - r + 8},${200} ${userX - r - 2},${200 + 7}`} fill="#ff4800" opacity="0.4" />
+
+              {/* ── Issuing Banks → Users (bottom) ── */}
+              <line x1={midX + r} y1={botY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
+              <polygon points={`${userX - r - 2},${200 - 7} ${userX - r + 8},${200} ${userX - r - 4},${200 + 6}`} fill="#ff4800" opacity="0.4" />
 
               {/* ── Walt (solid orange, complete) ── */}
-              <circle cx={waltX} cy={cy} r={r} fill="#ff4800" />
-              <text x={waltX} y={cy - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
-              <path d={`M${waltX - 10} ${cy + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx={waltX} cy={200} r={r} fill="#ff4800" />
+              <text x={waltX} y={200 - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
+              <path d={`M${waltX - 10} ${200 + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
 
-              {/* ── Blocked nodes (dashed outline, lock icon) ── */}
-              {[
-                { cx: procX, label: "Payment Processors", sub: "Nets/Nexi · Tietoevry" },
-                { cx: bankX, label: "Issuing Banks", sub: "Per-bank approval" },
-              ].map((n) => (
-                <g key={n.label}>
-                  <circle cx={n.cx} cy={cy} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
-                  {/* Lock */}
-                  <rect x={n.cx - 10} y={cy - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
-                  <path d={`M${n.cx - 5} ${cy - 3} V${cy - 10} a5 5 0 0 1 10 0 V${cy - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
-                  {/* Labels below */}
-                  <text x={n.cx} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">{n.label}</text>
-                  <text x={n.cx} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">{n.sub}</text>
-                </g>
-              ))}
+              {/* ── Payment Infrastructure (top, locked) ── */}
+              <circle cx={midX} cy={topY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+              <rect x={midX - 10} y={topY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+              <path d={`M${midX - 5} ${topY - 3} V${topY - 10} a5 5 0 0 1 10 0 V${topY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+              <text x={midX} y={topY - r - 14} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Payment Infrastructure</text>
+              <text x={midX} y={topY - r + 2} textAnchor="middle" fontSize="10" fill="#7f7f7f">Nets/Nexi · Tietoevry</text>
+
+              {/* ── Issuing Banks (bottom, locked) ── */}
+              <circle cx={midX} cy={botY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
+              <rect x={midX - 10} y={botY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
+              <path d={`M${midX - 5} ${botY - 3} V${botY - 10} a5 5 0 0 1 10 0 V${botY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
+              <text x={midX} y={botY + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Issuing Banks</text>
+              <text x={midX} y={botY + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Per-bank approval</text>
 
               {/* ── Users node (orange ring, the goal) ── */}
-              <circle cx={userX} cy={cy} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
-              {/* Euro symbol */}
-              <text x={userX} y={cy - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
-              <text x={userX} y={cy + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
-              {/* Labels below */}
-              <text x={userX} y={cy + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
-              <text x={userX} y={cy + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
+              <circle cx={userX} cy={200} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
+              <text x={userX} y={200 - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
+              <text x={userX} y={200 + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
+              <text x={userX} y={200 + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
+              <text x={userX} y={200 + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
 
-              {/* ── Precedent ── */}
-              <text x="530" y="374" textAnchor="middle" fontSize="11" fill="#7f7f7f">
-                Nets/Nexi alone serves 250+ Nordic banks.
-              </text>
-              <text x="530" y="392" textAnchor="middle" fontSize="12" fontWeight="700" fill="#ff4800">One processor deal unlocks the majority of the market.</text>
             </g>
           </svg>
         </div>
