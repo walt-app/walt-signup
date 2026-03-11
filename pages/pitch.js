@@ -14,7 +14,6 @@ function SlideTitle() {
         <div className="ps-divider" />
         <p className="ps-subtitle">European tap-to-pay</p>
       </div>
-      <span className="ps-watermark">walt.is</span>
     </div>
   );
 }
