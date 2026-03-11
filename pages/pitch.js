@@ -10,13 +10,9 @@ function SlideTitle() {
   return (
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
-        <h1 className="ps-logo">WALT</h1>
+        <h1 className="ps-logo">Walt</h1>
         <div className="ps-divider" />
         <p className="ps-subtitle">European tap-to-pay</p>
-        <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
-          <p className="ps-small">Cole Bittel</p>
-          <p className="ps-small">cole@walt.is</p>
-        </div>
       </div>
       <span className="ps-watermark">walt.is</span>
     </div>
