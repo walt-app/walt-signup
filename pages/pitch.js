@@ -86,7 +86,7 @@ function FjordBankScreen() {
   const s = {
     wrap: {
       width: "100%",
-      aspectRatio: "280 / 607",
+      height: "100%",
       background: "linear-gradient(165deg, #0b2a3d 0%, #134e6f 50%, #1a6d94 100%)",
       display: "flex",
       flexDirection: "column",
@@ -112,13 +112,12 @@ function FjordBankScreen() {
       height: "clamp(12px, 1.4vw, 22px)",
       borderRadius: "50%",
       background: "#2ecc9b",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+      display: "grid",
+      placeItems: "center",
       fontSize: "clamp(8px, 1vw, 14px)",
       fontWeight: 700,
       color: "#0b2a3d",
-      lineHeight: 1,
+      lineHeight: 0,
     },
     card: {
       background: "rgba(255,255,255,0.12)",
@@ -195,13 +194,13 @@ function FjordBankScreen() {
   return (
     <div style={s.wrap}>
       <div style={s.header}>
-        <span style={s.logo}>Fjord Bank</span>
+        <span style={s.logo}>ABC Bank</span>
         <span style={s.plusBtn}>+</span>
       </div>
 
       <div style={s.card}>
         <p style={s.cardLabel}>Debit Card</p>
-        <p style={s.cardNumber}>Fjord Bank Visa</p>
+        <p style={s.cardNumber}>ABC Bank Visa</p>
         <div style={s.cardRow}>
           <span style={s.cardDots}>•••• 8412</span>
           <span style={s.cardBrand}>VISA</span>
@@ -247,13 +246,13 @@ function SlideSolution() {
                 <Image
                   src="/promo-screen.jpg"
                   alt="Walt app home screen"
-                  width={280}
-                  height={607}
+                  width={720}
+                  height={1688}
                   sizes="220px"
-                  style={{ width: "100%", height: "auto", display: "block" }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
               </div>
-              <p className="ps-solution-tagline">Privacy-first tap-to-pay for consumers</p>
+              <p className="ps-solution-tagline">Walt, the native app</p>
             </div>
 
             {/* B2B — Walt for Banks */}
@@ -263,15 +262,10 @@ function SlideSolution() {
               <div className="ps-solution-phone ps-solution-phone--bank">
                 <FjordBankScreen />
               </div>
-              <p className="ps-solution-tagline">Whitelabel NFC platform for banks</p>
+              <p className="ps-solution-tagline">Walt, whitelabeled</p>
             </div>
           </div>
 
-          {/* Shared foundation */}
-          <div className="ps-solution-foundation">
-            <div className="ps-solution-foundation-line" />
-            <p className="ps-solution-foundation-text">Powered by Walt NFC Platform</p>
-          </div>
         </div>
       </div>
     </div>

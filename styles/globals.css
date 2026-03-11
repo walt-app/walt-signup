@@ -2802,6 +2802,7 @@ h6 {
   align-items: flex-start;
   gap: clamp(24px, 4vw, 64px);
   flex: 1;
+  min-height: 0;
 }
 
 .ps-solution-col {
@@ -2824,6 +2825,7 @@ h6 {
 .ps-solution-label {
   font-size: clamp(11px, 1.3vw, 22px);
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: #151515;
   margin: 0 0 clamp(6px, 0.8vw, 14px);
 }
@@ -2831,6 +2833,7 @@ h6 {
 .ps-solution-phone {
   position: relative;
   width: clamp(100px, 13vw, 220px);
+  aspect-ratio: 9 / 21;
   border-radius: clamp(8px, 1vw, 18px);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -2852,6 +2855,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   margin-top: clamp(10px, 1.5vw, 24px);
+  flex-shrink: 0;
 }
 
 .ps-solution-foundation-line {
