@@ -100,7 +100,7 @@ function FjordBankScreen() {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      marginBottom: "8%",
+      marginBottom: "6%",
     },
     logo: {
       fontSize: "clamp(8px, 1.1vw, 16px)",
@@ -119,53 +119,47 @@ function FjordBankScreen() {
       color: "#0b2a3d",
       lineHeight: 0,
     },
-    card: {
-      background: "rgba(255,255,255,0.12)",
-      borderRadius: "clamp(4px, 0.6vw, 10px)",
-      padding: "6% 7%",
-      marginBottom: "5%",
+    authSection: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "6% 0",
     },
-    cardLabel: {
-      fontSize: "clamp(5px, 0.55vw, 8px)",
+    fingerprintWrap: {
+      width: "36%",
+      aspectRatio: "1",
+    },
+    prompt: {
+      fontSize: "clamp(6px, 0.7vw, 11px)",
       fontWeight: 600,
+      letterSpacing: "0.02em",
+      margin: "6% 0 0 0",
+      textAlign: "center",
+    },
+    hint: {
+      fontSize: "clamp(4.5px, 0.5vw, 7px)",
+      opacity: 0.5,
+      margin: "2% 0 0 0",
+      textAlign: "center",
+      letterSpacing: "0.02em",
+    },
+    readyPill: {
+      display: "inline-block",
+      background: "rgba(46,204,155,0.2)",
+      color: "#2ecc9b",
+      fontSize: "clamp(4px, 0.45vw, 7px)",
+      fontWeight: 700,
       letterSpacing: "0.06em",
       textTransform: "uppercase",
-      opacity: 0.7,
-      margin: "0 0 4% 0",
-    },
-    cardNumber: {
-      fontSize: "clamp(6px, 0.7vw, 11px)",
-      fontWeight: 500,
-      letterSpacing: "0.08em",
-      margin: 0,
-    },
-    cardRow: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginTop: "5%",
-    },
-    cardDots: {
-      fontSize: "clamp(6px, 0.7vw, 11px)",
-      letterSpacing: "0.1em",
-      opacity: 0.6,
-    },
-    cardBrand: {
-      fontSize: "clamp(5px, 0.6vw, 9px)",
-      fontWeight: 700,
-      letterSpacing: "0.04em",
-    },
-    nfcLabel: {
-      fontSize: "clamp(4.5px, 0.5vw, 7px)",
-      textAlign: "center",
-      opacity: 0.5,
-      margin: "0 0 6% 0",
-      letterSpacing: "0.02em",
+      padding: "2% 6%",
+      borderRadius: "clamp(2px, 0.3vw, 6px)",
+      marginTop: "4%",
     },
     sectionTitle: {
       fontSize: "clamp(5.5px, 0.65vw, 10px)",
       fontWeight: 700,
-      margin: "0 0 4% 0",
+      margin: "6% 0 4% 0",
       opacity: 0.9,
     },
     txRow: {
@@ -198,16 +192,19 @@ function FjordBankScreen() {
         <span style={s.plusBtn}>+</span>
       </div>
 
-      <div style={s.card}>
-        <p style={s.cardLabel}>Debit Card</p>
-        <p style={s.cardNumber}>ABC Bank Visa</p>
-        <div style={s.cardRow}>
-          <span style={s.cardDots}>•••• 8412</span>
-          <span style={s.cardBrand}>VISA</span>
+      <div style={s.authSection}>
+        <div style={s.fingerprintWrap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/fingerprint.svg"
+            alt="Fingerprint authentication"
+            style={{ width: "100%", height: "100%", filter: "invert(1)", opacity: 0.85 }}
+          />
         </div>
+        <p style={s.prompt}>Authenticate to pay</p>
+        <p style={s.hint}>Hold near reader</p>
+        <span style={s.readyPill}>NFC ready</span>
       </div>
-
-      <p style={s.nfcLabel}>Default for contactless payments</p>
 
       <p style={s.sectionTitle}>Latest transactions</p>
 
