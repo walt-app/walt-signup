@@ -472,8 +472,8 @@ function SlideBuiltButLocked() {
               <circle cx={midX} cy={topY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
               <rect x={midX - 10} y={topY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
               <path d={`M${midX - 5} ${topY - 3} V${topY - 10} a5 5 0 0 1 10 0 V${topY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
-              <text x={midX} y={topY - r - 14} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Payment Infrastructure</text>
-              <text x={midX} y={topY - r + 2} textAnchor="middle" fontSize="10" fill="#7f7f7f">Nets/Nexi · Tietoevry</text>
+              <text x={midX} y={topY - r - 22} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Payment Infrastructure</text>
+              <text x={midX} y={topY - r - 8} textAnchor="middle" fontSize="10" fill="#7f7f7f">Nets/Nexi · Tietoevry</text>
 
               {/* ── Issuing Banks (bottom, locked) ── */}
               <circle cx={midX} cy={botY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
