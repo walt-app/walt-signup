@@ -80,37 +80,197 @@ function SlideProblem() {
   );
 }
 
-/* ─── Slide 3: The Solution (combined with Product) ────────────────────────── */
+/* ─── Fake bank screen for whitelabel demo ────────────────────────────────── */
+
+function FjordBankScreen() {
+  const s = {
+    wrap: {
+      width: "100%",
+      aspectRatio: "280 / 607",
+      background: "linear-gradient(165deg, #0b2a3d 0%, #134e6f 50%, #1a6d94 100%)",
+      display: "flex",
+      flexDirection: "column",
+      padding: "8%",
+      boxSizing: "border-box",
+      fontFamily: "'Geist', -apple-system, sans-serif",
+      color: "#fff",
+      overflow: "hidden",
+    },
+    header: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: "8%",
+    },
+    logo: {
+      fontSize: "clamp(8px, 1.1vw, 16px)",
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
+    },
+    plusBtn: {
+      width: "clamp(12px, 1.4vw, 22px)",
+      height: "clamp(12px, 1.4vw, 22px)",
+      borderRadius: "50%",
+      background: "#2ecc9b",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "clamp(8px, 1vw, 14px)",
+      fontWeight: 700,
+      color: "#0b2a3d",
+      lineHeight: 1,
+    },
+    card: {
+      background: "rgba(255,255,255,0.12)",
+      borderRadius: "clamp(4px, 0.6vw, 10px)",
+      padding: "6% 7%",
+      marginBottom: "5%",
+    },
+    cardLabel: {
+      fontSize: "clamp(5px, 0.55vw, 8px)",
+      fontWeight: 600,
+      letterSpacing: "0.06em",
+      textTransform: "uppercase",
+      opacity: 0.7,
+      margin: "0 0 4% 0",
+    },
+    cardNumber: {
+      fontSize: "clamp(6px, 0.7vw, 11px)",
+      fontWeight: 500,
+      letterSpacing: "0.08em",
+      margin: 0,
+    },
+    cardRow: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginTop: "5%",
+    },
+    cardDots: {
+      fontSize: "clamp(6px, 0.7vw, 11px)",
+      letterSpacing: "0.1em",
+      opacity: 0.6,
+    },
+    cardBrand: {
+      fontSize: "clamp(5px, 0.6vw, 9px)",
+      fontWeight: 700,
+      letterSpacing: "0.04em",
+    },
+    nfcLabel: {
+      fontSize: "clamp(4.5px, 0.5vw, 7px)",
+      textAlign: "center",
+      opacity: 0.5,
+      margin: "0 0 6% 0",
+      letterSpacing: "0.02em",
+    },
+    sectionTitle: {
+      fontSize: "clamp(5.5px, 0.65vw, 10px)",
+      fontWeight: 700,
+      margin: "0 0 4% 0",
+      opacity: 0.9,
+    },
+    txRow: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "baseline",
+      padding: "3% 0",
+      borderBottom: "1px solid rgba(255,255,255,0.1)",
+    },
+    txName: {
+      fontSize: "clamp(5px, 0.58vw, 9px)",
+      fontWeight: 600,
+      margin: 0,
+    },
+    txDate: {
+      fontSize: "clamp(4px, 0.45vw, 7px)",
+      opacity: 0.5,
+      margin: "1px 0 0 0",
+    },
+    txAmount: {
+      fontSize: "clamp(5px, 0.58vw, 9px)",
+      fontWeight: 600,
+    },
+  };
+
+  return (
+    <div style={s.wrap}>
+      <div style={s.header}>
+        <span style={s.logo}>Fjord Bank</span>
+        <span style={s.plusBtn}>+</span>
+      </div>
+
+      <div style={s.card}>
+        <p style={s.cardLabel}>Debit Card</p>
+        <p style={s.cardNumber}>Fjord Bank Visa</p>
+        <div style={s.cardRow}>
+          <span style={s.cardDots}>•••• 8412</span>
+          <span style={s.cardBrand}>VISA</span>
+        </div>
+      </div>
+
+      <p style={s.nfcLabel}>Default for contactless payments</p>
+
+      <p style={s.sectionTitle}>Latest transactions</p>
+
+      {[
+        { name: "Café Bryggen", date: "10 Mar 14:22", amount: "48,00 kr." },
+        { name: "Irma Østerbro", date: "9 Mar 18:05", amount: "127,50 kr." },
+        { name: "DSB Rejsekort", date: "9 Mar 08:31", amount: "36,00 kr." },
+      ].map((tx) => (
+        <div key={tx.name} style={s.txRow}>
+          <div>
+            <p style={s.txName}>{tx.name}</p>
+            <p style={s.txDate}>{tx.date}</p>
+          </div>
+          <span style={s.txAmount}>{tx.amount}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Slide 3: The Solution — One Platform, Two Markets ───────────────────── */
 
 function SlideSolution() {
   return (
     <div className="ps">
       <div className="ps-pad">
-        <h2 className="ps-h1">The Solution</h2>
+        <h2 className="ps-h1">Solution</h2>
         <p className="ps-lead">European tap-to-pay</p>
-        <div className="ps-content" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div style={{ display: "flex", gap: "clamp(12px, 2.2vw, 36px)", justifyContent: "center", alignItems: "center" }}>
-            {[
-              { src: "/promo-screen.jpg", alt: "Walt home screen" },
-              { src: "/add-card.jpg", alt: "Add card screen" },
-              { src: "/intro-screen.jpg", alt: "Tap to pay screen" },
-            ].map((img) => (
-              <div key={img.src} style={{
-                width: "clamp(120px, 18vw, 280px)",
-                borderRadius: "clamp(8px, 1vw, 18px)",
-                overflow: "hidden",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
-              }}>
+        <div className="ps-content">
+          <div className="ps-solution-layout">
+            {/* B2C — Walt App */}
+            <div className="ps-solution-col">
+              <span className="ps-solution-segment">B2C</span>
+              <p className="ps-solution-label">Walt App</p>
+              <div className="ps-solution-phone">
                 <Image
-                  src={img.src}
-                  alt={img.alt}
+                  src="/promo-screen.jpg"
+                  alt="Walt app home screen"
                   width={280}
                   height={607}
-                  sizes="(max-width: 768px) 130px, 280px"
+                  sizes="220px"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
-            ))}
+              <p className="ps-solution-tagline">Privacy-first tap-to-pay for consumers</p>
+            </div>
+
+            {/* B2B — Walt for Banks */}
+            <div className="ps-solution-col">
+              <span className="ps-solution-segment">B2B</span>
+              <p className="ps-solution-label">Walt for Banks</p>
+              <div className="ps-solution-phone ps-solution-phone--bank">
+                <FjordBankScreen />
+              </div>
+              <p className="ps-solution-tagline">Whitelabel NFC platform for banks</p>
+            </div>
+          </div>
+
+          {/* Shared foundation */}
+          <div className="ps-solution-foundation">
+            <div className="ps-solution-foundation-line" />
+            <p className="ps-solution-foundation-text">Powered by Walt NFC Platform</p>
           </div>
         </div>
       </div>
@@ -533,7 +693,7 @@ function SlideThumb({ render: Render }) {
 const SLIDES = [
   { title: "Walt", render: SlideTitle },
   { title: "The Problem", render: SlideProblem },
-  { title: "The Solution", render: SlideSolution },
+  { title: "Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
   { title: "Challenges", render: SlideBuiltButLocked },
   { title: "The Market", render: SlideMarket },
