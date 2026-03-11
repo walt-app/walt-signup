@@ -12,7 +12,7 @@ function SlideTitle() {
       <div className="ps-pad ps-pad--center">
         <h1 className="ps-logo">WALT</h1>
         <div className="ps-divider" />
-        <p className="ps-subtitle">Private tap-to-pay</p>
+        <p className="ps-subtitle">European tap-to-pay</p>
         <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
           <p className="ps-small">Cole Bittel</p>
           <p className="ps-small">cole@walt.is</p>
@@ -609,7 +609,7 @@ export default function Pitch() {
         <title>Walt Pitch Deck - Investment & Business Overview</title>
         <meta
           name="description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model for Android and iOS tap-to-pay."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://walt.is/pitch" />
@@ -619,7 +619,7 @@ export default function Pitch() {
         <meta property="og:title" content="Walt Pitch Deck" />
         <meta
           property="og:description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
         />
         <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
 
@@ -628,7 +628,7 @@ export default function Pitch() {
         <meta property="twitter:title" content="Walt Pitch Deck" />
         <meta
           property="twitter:description"
-          content="Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
         />
         <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
 
