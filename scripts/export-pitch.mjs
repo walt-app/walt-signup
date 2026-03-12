@@ -40,7 +40,7 @@ const DECKS = {
   },
   "reading-deck": {
     url: `http://localhost:${PORT}/reading-deck`,
-    slideCount: 11,
+    slideCount: 12,
     outputDir: path.resolve("public/reading-deck"),
     screenshotsDir: path.resolve("/tmp/reading-deck-slides"),
     pdfName: "reading-deck.pdf",
