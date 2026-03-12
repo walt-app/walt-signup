@@ -57,8 +57,8 @@ function SlideProblem() {
               <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Google Wallet</p>
                 <ul className="ps-bullets" style={{ color: "#ccc" }}>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Charges banks nothing</li>
                   <li className="ps-bullet" style={{ color: "#ccc" }}>Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Estimated &euro;1B+ annually in ad value from European payment data<Ref n={7} /><Ref n={8} /></li>
                 </ul>
               </div>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.5vw, 8px)" }}>
@@ -196,6 +196,8 @@ function SlideReferences() {
               <li className="ps-body">Swiss antitrust investigation via Finews (~0.05&ndash;0.12% issuer fee); EU Interchange Fee Regulation 2015/751 constraints; Walt market research estimates</li>
               <li className="ps-body">Oliver Wyman, European Apple Pay fee revenue estimate (February 2025)</li>
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
+              <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
+              <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
             </ol>
           </div>
         </div>
