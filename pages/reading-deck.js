@@ -588,7 +588,24 @@ export default function ReadingDeck() {
         </Head>
       }
       activeDeck="reading-deck"
-      downloads={null}
+      downloads={
+        <>
+          <a
+            href="/reading-deck/reading-deck.pdf"
+            className="pitch-download-button outline"
+            download="Walt-Reading-Deck.pdf"
+          >
+            Download PDF
+          </a>
+          <a
+            href="/reading-deck/walt-reading-deck.pptx"
+            className="pitch-download-button outline"
+            download="Walt-Reading-Deck.pptx"
+          >
+            Download PowerPoint
+          </a>
+        </>
+      }
       footerVariant="reading-deck"
     />
   );
