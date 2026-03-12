@@ -25,21 +25,20 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
-          Two US companies control every tap
+          Tap-to-pay lives with Google and Apple
         </p>
         <div className="ps-content">
           <div className="ps-split">
             <div className="ps-stack ps-gap-sm">
               <div className="ps-card ps-card--left">
-                <p className="ps-card-h">Duopoly scale</p>
-                <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>1.0&ndash;1.3B</p>
-                <p className="ps-body">combined users globally</p>
+                <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>200&ndash;250M</p>
+                <p className="ps-body">Europeans use Apple Pay or Google Wallet for mobile payments</p>
                 <p className="ps-stat" style={{ fontSize: "clamp(14px, 2vw, 32px)", marginTop: "clamp(4px, 0.5vw, 8px)" }}>&euro;8.3T</p>
-                <p className="ps-body">in digital wallet transactions (2025)</p>
+                <p className="ps-body">in digital wallet transactions globally (2025)</p>
               </div>
               <div className="ps-card">
                 <p className="ps-card-h">Everyone else</p>
-                <p className="ps-body">&lt;0.4% combined market share. No privacy-first NFC wallet exists.</p>
+                <p className="ps-body">&lt;0.4% combined market share. No legitimate tap-to-pay alternative exists for either iPhone or Android.</p>
               </div>
             </div>
             <div className="ps-stack ps-gap-sm">
@@ -52,14 +51,14 @@ function SlideProblem() {
                 <p className="ps-body">Harvests every transaction for ad profiles. Extracts &euro;15&ndash;30 per active user per year in advertising value.</p>
               </div>
               <div className="ps-card ps-card--left">
-                <p className="ps-card-h">Curve Pay</p>
-                <p className="ps-body">Biometric scans, geo-location, behavioral tracking retained 10 years. Shared with ad companies.</p>
+                <p className="ps-card-h">The only alternative</p>
+                <p className="ps-body">Go back to using physical cards or cash. For Europeans who care about privacy, there is no tap-to-pay option at all.</p>
               </div>
             </div>
           </div>
         </div>
         <div className="ps-src">
-          Sources: CoinLaw, WSJ / DOJ, StatCounter, Curve Privacy Policy (Jan 2026)
+          Sources: Flagship Advisory Partners, CoinLaw, WSJ / DOJ, Mordor Intelligence
         </div>
       </div>
     </div>
