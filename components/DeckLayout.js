@@ -5,7 +5,7 @@ import Footer from "./Footer";
 /* ─── Deck type definitions ────────────────────────────────────────────────── */
 
 const DECK_TYPES = [
-  { id: "pitch", label: "Investor Deck", href: "/pitch" },
+  { id: "pitch", label: "Presentation Deck", href: "/pitch" },
   { id: "reading-deck", label: "Reading Deck", href: "/reading-deck" },
 ];
 
@@ -125,12 +125,6 @@ export default function DeckLayout({
                   </Link>
                 ))}
               </nav>
-              <button
-                className="deck-present-button"
-                onClick={() => enterPresentation(0)}
-              >
-                Start Presentation
-              </button>
               {downloads}
             </div>
           </div>
