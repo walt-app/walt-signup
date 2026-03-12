@@ -2,6 +2,13 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import Footer from "./Footer";
 
+/* ─── Deck type definitions ────────────────────────────────────────────────── */
+
+const DECK_TYPES = [
+  { id: "pitch", label: "Pitch Deck", href: "/pitch" },
+  { id: "reading-deck", label: "Reading Deck", href: "/reading-deck" },
+];
+
 /* ─── Scaled thumbnail wrapper ─────────────────────────────────────────────── */
 
 const SLIDE_REF_WIDTH = 1200;
@@ -49,7 +56,7 @@ function SlideThumb({ render: Render }) {
 export default function DeckLayout({
   slides,
   head,
-  heroTitle,
+  activeDeck = "pitch",
   heroDescription,
   downloads,
   footerVariant = "pitch",
@@ -91,6 +98,7 @@ export default function DeckLayout({
   }, [mode, exitPresentation, goNext, goPrev]);
 
   const SlideComponent = slides[currentSlide]?.render;
+  const activeLabel = DECK_TYPES.find((d) => d.id === activeDeck)?.label;
 
   return (
     <>
@@ -105,7 +113,19 @@ export default function DeckLayout({
           </header>
 
           <div className="deck-hero-card">
-            <h1>{heroTitle}</h1>
+            <nav className="deck-type-nav" aria-label="Deck type">
+              {DECK_TYPES.map((deck) => (
+                <Link
+                  key={deck.id}
+                  href={deck.href}
+                  className={`deck-type-option${deck.id === activeDeck ? " active" : ""}`}
+                  aria-current={deck.id === activeDeck ? "page" : undefined}
+                >
+                  {deck.label}
+                </Link>
+              ))}
+            </nav>
+            <h1>{activeLabel}</h1>
             <p>{heroDescription}</p>
             <div className="pitch-downloads">
               <button
