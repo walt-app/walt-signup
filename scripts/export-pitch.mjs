@@ -1,16 +1,20 @@
 /**
- * Export pitch deck slides as PDF and PPTX from the live web-based deck.
+ * Export slide decks as PDF and PPTX from the live web-based deck.
  *
  * Prerequisites:
  *   npm install puppeteer pptxgenjs pdf-lib
  *   Dev server running (npm run dev -- -p 3099)
  *
  * Usage:
- *   node scripts/export-pitch.mjs
+ *   node scripts/export-pitch.mjs                # exports both decks
+ *   node scripts/export-pitch.mjs pitch          # exports investor deck only
+ *   node scripts/export-pitch.mjs reading-deck   # exports reading deck only
  *
  * Output:
  *   public/pitch/pitch-deck.pdf
  *   public/pitch/walt-pitch.pptx
+ *   public/reading-deck/reading-deck.pdf
+ *   public/reading-deck/walt-reading-deck.pptx
  */
 
 import puppeteer from "puppeteer";
@@ -19,15 +23,35 @@ import { PDFDocument } from "pdf-lib";
 import fs from "fs";
 import path from "path";
 
-const BASE_URL = "http://localhost:3099/pitch";
-const SLIDE_COUNT = 9;
+const PORT = 3099;
 const SLIDE_WIDTH = 1920;
 const SLIDE_HEIGHT = 1080;
-const OUTPUT_DIR = path.resolve("public/pitch");
-const SCREENSHOTS_DIR = path.resolve("/tmp/pitch-slides");
 
-async function captureSlides() {
-  fs.mkdirSync(SCREENSHOTS_DIR, { recursive: true });
+const DECKS = {
+  pitch: {
+    url: `http://localhost:${PORT}/pitch`,
+    slideCount: 9,
+    outputDir: path.resolve("public/pitch"),
+    screenshotsDir: path.resolve("/tmp/pitch-slides"),
+    pdfName: "pitch-deck.pdf",
+    pptxName: "walt-pitch.pptx",
+    title: "Walt Presentation Deck",
+    subject: "Walt Presentation Deck",
+  },
+  "reading-deck": {
+    url: `http://localhost:${PORT}/reading-deck`,
+    slideCount: 11,
+    outputDir: path.resolve("public/reading-deck"),
+    screenshotsDir: path.resolve("/tmp/reading-deck-slides"),
+    pdfName: "reading-deck.pdf",
+    pptxName: "walt-reading-deck.pptx",
+    title: "Walt Reading Deck",
+    subject: "Walt Reading Deck",
+  },
+};
+
+async function captureSlides(deck) {
+  fs.mkdirSync(deck.screenshotsDir, { recursive: true });
 
   const browser = await puppeteer.launch({
     headless: true,
@@ -37,8 +61,8 @@ async function captureSlides() {
   const page = await browser.newPage();
   await page.setViewport({ width: SLIDE_WIDTH, height: SLIDE_HEIGHT, deviceScaleFactor: 2 });
 
-  console.log("Navigating to pitch page...");
-  await page.goto(BASE_URL, { waitUntil: "networkidle0", timeout: 30000 });
+  console.log(`Navigating to ${deck.url}...`);
+  await page.goto(deck.url, { waitUntil: "networkidle0", timeout: 30000 });
 
   // Enter presentation mode by clicking the first slide thumbnail
   console.log("Entering presentation mode...");
@@ -61,13 +85,13 @@ async function captureSlides() {
 
   const screenshots = [];
 
-  for (let i = 0; i < SLIDE_COUNT; i++) {
-    console.log(`Capturing slide ${i + 1}/${SLIDE_COUNT}...`);
+  for (let i = 0; i < deck.slideCount; i++) {
+    console.log(`Capturing slide ${i + 1}/${deck.slideCount}...`);
     await new Promise((r) => setTimeout(r, 500));
 
     // Screenshot the slide element (.ps) inside the presentation content
     const slideEl = await page.$(".deck-pres-content > .ps");
-    const filePath = path.join(SCREENSHOTS_DIR, `slide-${String(i + 1).padStart(2, "0")}.png`);
+    const filePath = path.join(deck.screenshotsDir, `slide-${String(i + 1).padStart(2, "0")}.png`);
 
     if (slideEl) {
       await slideEl.screenshot({ path: filePath, type: "png" });
@@ -82,7 +106,7 @@ async function captureSlides() {
 
     screenshots.push(filePath);
 
-    if (i < SLIDE_COUNT - 1) {
+    if (i < deck.slideCount - 1) {
       await page.keyboard.press("ArrowRight");
       await new Promise((r) => setTimeout(r, 300));
     }
@@ -93,7 +117,7 @@ async function captureSlides() {
   return screenshots;
 }
 
-async function generatePDF(screenshots) {
+async function generatePDF(deck, screenshots) {
   console.log("Generating PDF...");
   const pdfDoc = await PDFDocument.create();
 
@@ -112,21 +136,22 @@ async function generatePDF(screenshots) {
     page.drawImage(image, { x, y, width: scaled.width, height: scaled.height });
   }
 
+  fs.mkdirSync(deck.outputDir, { recursive: true });
   const pdfBytes = await pdfDoc.save();
-  const outPath = path.join(OUTPUT_DIR, "pitch-deck.pdf");
+  const outPath = path.join(deck.outputDir, deck.pdfName);
   fs.writeFileSync(outPath, pdfBytes);
   console.log(`PDF saved: ${outPath} (${(pdfBytes.length / 1024 / 1024).toFixed(2)} MB)`);
 }
 
-async function generatePPTX(screenshots) {
+async function generatePPTX(deck, screenshots) {
   console.log("Generating PPTX...");
   const pptx = new PptxGenJS();
 
   pptx.layout = "LAYOUT_WIDE";
   pptx.author = "Walt";
   pptx.company = "Embedded Engineering ApS";
-  pptx.subject = "Walt Pitch Deck";
-  pptx.title = "Walt - Private Tap-to-Pay";
+  pptx.subject = deck.subject;
+  pptx.title = deck.title;
 
   for (const imgPath of screenshots) {
     const slide = pptx.addSlide();
@@ -144,19 +169,36 @@ async function generatePPTX(screenshots) {
     });
   }
 
-  const outPath = path.join(OUTPUT_DIR, "walt-pitch.pptx");
+  fs.mkdirSync(deck.outputDir, { recursive: true });
+  const outPath = path.join(deck.outputDir, deck.pptxName);
   await pptx.writeFile({ fileName: outPath });
   console.log(`PPTX saved: ${outPath}`);
 }
 
+async function exportDeck(deckId) {
+  const deck = DECKS[deckId];
+  if (!deck) {
+    console.error(`Unknown deck: ${deckId}. Use: ${Object.keys(DECKS).join(", ")}`);
+    process.exit(1);
+  }
+
+  console.log(`\n=== Exporting ${deck.title} ===\n`);
+  const screenshots = await captureSlides(deck);
+  await generatePDF(deck, screenshots);
+  await generatePPTX(deck, screenshots);
+  console.log(`\nDone! Files updated in ${deck.outputDir}/`);
+}
+
 async function main() {
-  console.log("=== Walt Pitch Deck Export ===\n");
+  const arg = process.argv[2];
 
-  const screenshots = await captureSlides();
-  await generatePDF(screenshots);
-  await generatePPTX(screenshots);
-
-  console.log("\nDone! Files updated in public/pitch/");
+  if (arg) {
+    await exportDeck(arg);
+  } else {
+    for (const deckId of Object.keys(DECKS)) {
+      await exportDeck(deckId);
+    }
+  }
 }
 
 main().catch((err) => {

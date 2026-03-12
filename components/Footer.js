@@ -16,6 +16,16 @@ export default function Footer({ variant = "default" }) {
         { label: "Updates", href: "/updates" },
         { label: "Privacy", href: "/privacy" },
       ]
+    : variant === "reading-deck"
+    ? [
+
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/walt-app/" },
+        { label: "Home", href: "/" },
+        { label: "Pitch Deck", href: "/pitch" },
+        { label: "Motivation", href: "/motivation" },
+        { label: "Updates", href: "/updates" },
+        { label: "Privacy", href: "/privacy" },
+      ]
     : variant === "updates"
     ? [
 
@@ -41,7 +51,7 @@ export default function Footer({ variant = "default" }) {
         { label: "Privacy", href: "/privacy" },
       ];
 
-  const footerClass = variant === "motivation" || variant === "pitch" || variant === "updates" || variant === "privacy"
+  const footerClass = variant === "motivation" || variant === "pitch" || variant === "reading-deck" || variant === "updates" || variant === "privacy"
     ? `site-footer ${variant}-footer-override`
     : "site-footer";
 
