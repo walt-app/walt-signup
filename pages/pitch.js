@@ -1,8 +1,7 @@
-import { useState, useEffect, useCallback, useRef, Fragment } from "react";
+import { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import Footer from "../components/Footer";
+import DeckLayout from "../components/DeckLayout";
 
 /* ─── Slide 1: Title ───────────────────────────────────────────────────────── */
 
@@ -624,48 +623,6 @@ function SlideBuiltButLocked() {
   );
 }
 
-/* ─── Scaled thumbnail wrapper ─────────────────────────────────────────────── */
-
-const SLIDE_REF_WIDTH = 1200;
-
-function SlideThumb({ render: Render }) {
-  const ref = useRef(null);
-  const [scale, setScale] = useState(0);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const ro = new ResizeObserver((entries) => {
-      const w = entries[0].contentRect.width;
-      setScale(w / SLIDE_REF_WIDTH);
-    });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        position: "relative",
-        width: "100%",
-        aspectRatio: "16 / 9",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          width: SLIDE_REF_WIDTH,
-          transformOrigin: "top left",
-          transform: `scale(${scale})`,
-        }}
-      >
-        <Render />
-      </div>
-    </div>
-  );
-}
-
 /* ─── Slide Array ──────────────────────────────────────────────────────────── */
 
 const SLIDES = [
@@ -683,209 +640,79 @@ const SLIDES = [
 /* ─── Page Component ───────────────────────────────────────────────────────── */
 
 export default function Pitch() {
-  const [mode, setMode] = useState("grid");
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const goNext = useCallback(
-    () => setCurrentSlide((i) => Math.min(i + 1, SLIDES.length - 1)),
-    []
-  );
-  const goPrev = useCallback(
-    () => setCurrentSlide((i) => Math.max(i - 1, 0)),
-    []
-  );
-  const exitPresentation = useCallback(() => setMode("grid"), []);
-
-  const enterPresentation = useCallback((index) => {
-    setCurrentSlide(index);
-    setMode("present");
-  }, []);
-
-  useEffect(() => {
-    if (mode !== "present") return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") exitPresentation();
-      if (e.key === "ArrowRight" || e.key === " ") {
-        e.preventDefault();
-        goNext();
-      }
-      if (e.key === "ArrowLeft") goPrev();
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [mode, exitPresentation, goNext, goPrev]);
-
-  const SlideComponent = SLIDES[currentSlide]?.render;
-
   return (
-    <>
-      <Head>
-        <title>Walt Pitch Deck - Investment & Business Overview</title>
-        <meta
-          name="description"
-          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://walt.is/pitch" />
+    <DeckLayout
+      slides={SLIDES}
+      head={
+        <Head>
+          <title>Walt Pitch Deck - Investment & Business Overview</title>
+          <meta
+            name="description"
+            content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet technology, roadmap, and business model."
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="canonical" href="https://walt.is/pitch" />
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://walt.is/pitch" />
-        <meta property="og:title" content="Walt Pitch Deck" />
-        <meta
-          property="og:description"
-          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
-        />
-        <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://walt.is/pitch" />
+          <meta property="og:title" content="Walt Pitch Deck" />
+          <meta
+            property="og:description"
+            content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          />
+          <meta property="og:image" content="https://walt.is/pitch/slide-01.jpg" />
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://walt.is/pitch" />
-        <meta property="twitter:title" content="Walt Pitch Deck" />
-        <meta
-          property="twitter:description"
-          content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
-        />
-        <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://walt.is/pitch" />
+          <meta property="twitter:title" content="Walt Pitch Deck" />
+          <meta
+            property="twitter:description"
+            content="European tap-to-pay — Review Walt's pitch deck covering market opportunity, privacy-first mobile wallet, and business model."
+          />
+          <meta property="twitter:image" content="https://walt.is/pitch/slide-01.jpg" />
 
-        <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Walt Pitch Deck",
-              "description": "Walt's comprehensive pitch deck for investors",
-              "url": "https://walt.is/pitch",
-              "publisher": {
-                "@type": "Organization",
-                "name": "Walt",
-                "url": "https://walt.is"
-              }
-            })
-          }}
-        />
-      </Head>
-
-      <div className="deck-page">
-        <section className="hero-section">
-          <header className="site-header">
-            <Link href="/" className="site-logo">
-              Walt
-            </Link>
-          </header>
-
-          <div className="deck-hero-card">
-            <h1>Pitch Deck</h1>
-            <p>
-              A comprehensive overview of Walt&rsquo;s mission to bring privacy-first
-              mobile payments to Android and iOS.
-            </p>
-            <div className="pitch-downloads">
-              <button
-                className="deck-present-button"
-                onClick={() => enterPresentation(0)}
-              >
-                Start Presentation
-              </button>
-              <a
-                href="/pitch/pitch-deck.pdf"
-                className="pitch-download-button outline"
-                download="Walt-Pitch-Deck.pdf"
-              >
-                Download PDF
-              </a>
-              <a
-                href="/pitch/walt-pitch.pptx"
-                className="pitch-download-button outline"
-                download="Walt-Pitch.pptx"
-              >
-                Download PowerPoint
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="deck-slides-section">
-          <div className="deck-grid">
-            {SLIDES.map((slide, index) => (
-              <button
-                key={index}
-                className="deck-grid-item"
-                onClick={() => enterPresentation(index)}
-                aria-label={`View slide ${index + 1}: ${slide.title}`}
-              >
-                <div className="deck-slide-number">{index + 1}</div>
-                <SlideThumb render={slide.render} />
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {mode === "present" && (
-          <div className="deck-presentation" onClick={exitPresentation}>
-            <button
-              className="deck-pres-close"
-              onClick={exitPresentation}
-              aria-label="Exit presentation"
-            >
-              &times;
-            </button>
-            {currentSlide > 0 && (
-              <button
-                className="deck-pres-arrow deck-pres-prev"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goPrev();
-                }}
-                aria-label="Previous slide"
-              >
-                &#8249;
-              </button>
-            )}
-            <div
-              className="deck-pres-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <SlideComponent />
-              <div className="deck-pres-counter">
-                {currentSlide + 1} / {SLIDES.length}
-              </div>
-            </div>
-            {currentSlide < SLIDES.length - 1 && (
-              <button
-                className="deck-pres-arrow deck-pres-next"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goNext();
-                }}
-                aria-label="Next slide"
-              >
-                &#8250;
-              </button>
-            )}
-            <div className="deck-pres-dots">
-              {SLIDES.map((_, i) => (
-                <button
-                  key={i}
-                  className={`deck-pres-dot${i === currentSlide ? " active" : ""}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentSlide(i);
-                  }}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        <Footer variant="pitch" />
-      </div>
-    </>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Walt Pitch Deck",
+                "description": "Walt's comprehensive pitch deck for investors",
+                "url": "https://walt.is/pitch",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Walt",
+                  "url": "https://walt.is"
+                }
+              })
+            }}
+          />
+        </Head>
+      }
+      heroTitle="Pitch Deck"
+      heroDescription="A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS."
+      downloads={
+        <>
+          <a
+            href="/pitch/pitch-deck.pdf"
+            className="pitch-download-button outline"
+            download="Walt-Pitch-Deck.pdf"
+          >
+            Download PDF
+          </a>
+          <a
+            href="/pitch/walt-pitch.pptx"
+            className="pitch-download-button outline"
+            download="Walt-Pitch.pptx"
+          >
+            Download PowerPoint
+          </a>
+        </>
+      }
+      footerVariant="pitch"
+    />
   );
 }
