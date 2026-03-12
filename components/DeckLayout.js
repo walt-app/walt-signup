@@ -113,6 +113,8 @@ export default function DeckLayout({
           </header>
 
           <div className="deck-hero-card">
+            <h1>{activeLabel}</h1>
+            <p>{heroDescription}</p>
             <nav className="deck-type-nav" aria-label="Deck type">
               {DECK_TYPES.map((deck) => (
                 <Link
@@ -125,8 +127,6 @@ export default function DeckLayout({
                 </Link>
               ))}
             </nav>
-            <h1>{activeLabel}</h1>
-            <p>{heroDescription}</p>
             <div className="pitch-downloads">
               <button
                 className="deck-present-button"

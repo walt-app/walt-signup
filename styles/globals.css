@@ -1762,7 +1762,7 @@ h6 {
   background: rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-pill);
   padding: 3px;
-  margin-bottom: var(--gap-md);
+  margin-bottom: var(--gap-lg);
 }
 
 .deck-type-option {
