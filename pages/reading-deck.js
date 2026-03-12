@@ -49,11 +49,17 @@ function SlideProblem() {
             <div className="ps-stack">
               <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Apple Pay</p>
-                <p className="ps-body" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction.<Ref n={4} /> Extracts &euro;300&ndash;500M from European transactions.<Ref n={5} /></p>
+                <ul className="ps-bullets" style={{ color: "#ccc" }}>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction<Ref n={4} /></li>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M from European transactions<Ref n={5} /></li>
+                </ul>
               </div>
               <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Google Wallet</p>
-                <p className="ps-body" style={{ color: "#ccc" }}>Charges banks nothing. Instead harvests every transaction for ad profiles, extracting &euro;15&ndash;30 per active user per year in advertising value.<Ref n={6} /></p>
+                <ul className="ps-bullets" style={{ color: "#ccc" }}>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Charges banks nothing</li>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
+                </ul>
               </div>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.5vw, 8px)" }}>
                 The only alternative is to go back to physical cards or cash. For Europeans who care about privacy, there is no tap-to-pay option at all.
