@@ -2677,7 +2677,7 @@ h6 {
 }
 
 .ps-gap-sm {
-  gap: clamp(6px, 0.8vw, 14px);
+  gap: clamp(10px, 1.3vw, 22px);
 }
 
 .ps-gap-lg {
