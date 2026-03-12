@@ -5,7 +5,7 @@ import Footer from "./Footer";
 /* ─── Deck type definitions ────────────────────────────────────────────────── */
 
 const DECK_TYPES = [
-  { id: "pitch", label: "Pitch Deck", href: "/pitch" },
+  { id: "pitch", label: "Investor Deck", href: "/pitch" },
   { id: "reading-deck", label: "Reading Deck", href: "/reading-deck" },
 ];
 
@@ -57,7 +57,6 @@ export default function DeckLayout({
   slides,
   head,
   activeDeck = "pitch",
-  heroDescription,
   downloads,
   footerVariant = "pitch",
 }) {
@@ -98,7 +97,6 @@ export default function DeckLayout({
   }, [mode, exitPresentation, goNext, goPrev]);
 
   const SlideComponent = slides[currentSlide]?.render;
-  const activeLabel = DECK_TYPES.find((d) => d.id === activeDeck)?.label;
 
   return (
     <>
@@ -113,21 +111,20 @@ export default function DeckLayout({
           </header>
 
           <div className="deck-hero-card">
-            <h1>{activeLabel}</h1>
-            <p>{heroDescription}</p>
-            <nav className="deck-type-nav" aria-label="Deck type">
-              {DECK_TYPES.map((deck) => (
-                <Link
-                  key={deck.id}
-                  href={deck.href}
-                  className={`deck-type-option${deck.id === activeDeck ? " active" : ""}`}
-                  aria-current={deck.id === activeDeck ? "page" : undefined}
-                >
-                  {deck.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="pitch-downloads">
+            <h1>Slide Decks</h1>
+            <div className="deck-actions">
+              <nav className="deck-type-nav" aria-label="Deck type">
+                {DECK_TYPES.map((deck) => (
+                  <Link
+                    key={deck.id}
+                    href={deck.href}
+                    className={`deck-type-option${deck.id === activeDeck ? " active" : ""}`}
+                    aria-current={deck.id === activeDeck ? "page" : undefined}
+                  >
+                    {deck.label}
+                  </Link>
+                ))}
+              </nav>
               <button
                 className="deck-present-button"
                 onClick={() => enterPresentation(0)}

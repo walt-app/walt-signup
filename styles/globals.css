@@ -1751,18 +1751,25 @@ h6 {
 .deck-hero-card {
   max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: var(--gap-xl) var(--gap-lg);
+  padding: var(--gap-lg) var(--gap-lg) var(--gap-xl);
   text-align: center;
 }
 
 /* ── Deck type segmented control ─────────────────────────────────────────── */
+
+.deck-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-sm);
+  flex-wrap: wrap;
+}
 
 .deck-type-nav {
   display: inline-flex;
   background: rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-pill);
   padding: 3px;
-  margin-bottom: var(--gap-lg);
 }
 
 .deck-type-option {

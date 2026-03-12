@@ -588,7 +588,6 @@ export default function ReadingDeck() {
         </Head>
       }
       activeDeck="reading-deck"
-      heroDescription="A detailed overview of Walt's market opportunity, product architecture, competitive landscape, and roadmap for bringing privacy-first tap-to-pay to Europe."
       downloads={null}
       footerVariant="reading-deck"
     />

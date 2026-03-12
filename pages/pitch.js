@@ -693,7 +693,6 @@ export default function Pitch() {
         </Head>
       }
       activeDeck="pitch"
-      heroDescription="A comprehensive overview of Walt's mission to bring privacy-first mobile payments to Android and iOS."
       downloads={
         <>
           <a
