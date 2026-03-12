@@ -2518,6 +2518,8 @@ h6 {
   font-weight: 600;
   line-height: 1.3;
   color: var(--orange-primary);
+  padding-bottom: clamp(12px, 1.6vw, 26px);
+  border-bottom: 1.5px solid #e5e5e5;
   margin: 0 0 clamp(16px, 2.2vw, 36px);
 }
 
