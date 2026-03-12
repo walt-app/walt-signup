@@ -1748,10 +1748,15 @@ h6 {
   background: var(--page-bg);
 }
 
+.deck-page .hero-section {
+  padding: var(--gap-sm) var(--padding-xl) 0;
+  gap: 0;
+}
+
 .deck-hero-card {
   max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: var(--gap-lg) var(--gap-lg) var(--gap-xl);
+  padding: var(--gap-md) var(--gap-lg) var(--gap-lg);
   text-align: center;
 }
 
@@ -1801,9 +1806,9 @@ h6 {
 /* ── End segmented control ───────────────────────────────────────────────── */
 
 .deck-hero-card h1 {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
   color: var(--text-dark);
   margin-bottom: var(--gap-sm);
 }
@@ -1849,7 +1854,7 @@ h6 {
 .deck-slides-section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--gap-lg) var(--gap-xxl);
+  padding: var(--gap-sm) var(--gap-lg) var(--gap-xxl);
   width: 100%;
 }
 
@@ -2422,11 +2427,11 @@ h6 {
 /* Mobile Responsive - Pitch Deck */
 @media (max-width: 768px) {
   .deck-hero-card {
-    padding: var(--gap-lg) var(--gap-md);
+    padding: var(--gap-sm) var(--gap-md) var(--gap-md);
   }
 
   .deck-slides-section {
-    padding: 0 var(--gap-md) var(--gap-xl);
+    padding: var(--gap-xs) var(--gap-md) var(--gap-xl);
   }
 
   .deck-grid {
