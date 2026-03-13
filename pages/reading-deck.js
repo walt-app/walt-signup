@@ -180,10 +180,10 @@ function SlideSolution() {
 function SlideWhyNow() {
   const events = [
     {
-      year: "Mar 2024",
-      title: "Apple opens iPhone NFC",
-      desc: <>iOS 17.4 ships HCE APIs &mdash; entirely private tap-to-pay wallets become possible on iPhone in the EEA for the first time<Ref n={9} /></>,
-      era: "inflection",
+      year: "2014\u20132024",
+      title: "iPhone NFC locked",
+      desc: <>Apple restricts iPhone NFC exclusively to Apple Pay. No third-party wallet can offer tap-to-pay on iPhone for a decade<Ref n={9} /></>,
+      era: "before",
     },
     {
       year: "2024",
@@ -232,18 +232,16 @@ function SlideWhyNow() {
               gridColumn: "1 / -1",
               gridRow: "2",
               height: "clamp(2px, 0.18vw, 3px)",
-              background: "linear-gradient(to right, #d5d5d5 0%, #d5d5d5 4%, var(--orange-primary) 10%, var(--orange-primary) 100%)",
+              background: "linear-gradient(to right, #d5d5d5 0%, #d5d5d5 18%, var(--orange-primary) 28%, var(--orange-primary) 100%)",
               borderRadius: "2px",
             }} />
 
             {events.map((event, i) => {
               const above = i % 2 === 0;
               const col = i + 1;
-              const isInflection = event.era === "inflection";
+              const isBefore = event.era === "before";
               const isLaunch = event.era === "launch";
-              const dotSize = isInflection
-                ? "clamp(12px, 1.1vw, 18px)"
-                : isLaunch
+              const dotSize = isLaunch
                   ? "clamp(10px, 0.9vw, 15px)"
                   : "clamp(7px, 0.65vw, 11px)";
 
@@ -256,14 +254,11 @@ function SlideWhyNow() {
                     width: dotSize,
                     height: dotSize,
                     borderRadius: "50%",
-                    background: "var(--orange-primary)",
+                    background: isBefore ? "#999" : "var(--orange-primary)",
                     justifySelf: "center",
                     alignSelf: "center",
                     zIndex: 1,
                     border: "clamp(2px, 0.18vw, 3px) solid #fff",
-                    boxShadow: isInflection
-                      ? "0 0 0 clamp(3px, 0.3vw, 6px) rgba(255, 72, 0, 0.18)"
-                      : "none",
                   }} />
 
                   {/* Event label — alternates above and below the track */}
@@ -281,7 +276,7 @@ function SlideWhyNow() {
                       fontWeight: 700,
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
-                      color: isInflection ? "var(--orange-primary)" : "#151515",
+                      color: isBefore ? "#aaa" : "#151515",
                       margin: "0 0 clamp(2px, 0.25vw, 4px)",
                     }}>{event.year}</p>
                     <p style={{
