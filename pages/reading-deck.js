@@ -319,33 +319,6 @@ function SlideMarket() {
                   </div>
                 ))}
               </div>
-
-              {/* Pricing validation */}
-              <div style={{
-                background: "#151515",
-                padding: "clamp(10px, 1.2vw, 20px) clamp(12px, 1.5vw, 26px)",
-                borderRadius: "clamp(4px, 0.5vw, 8px)",
-              }}>
-                <p style={{
-                  color: "#fff",
-                  fontWeight: 600,
-                  fontSize: "clamp(9px, 1.05vw, 17px)",
-                  letterSpacing: "-0.01em",
-                  margin: 0,
-                }}>
-                  Walt at{" "}
-                  <span style={{ color: "#ff4800", fontWeight: 800 }}>&euro;10/year</span>{" "}
-                  costs less than the data it protects
-                </p>
-                <p style={{
-                  color: "#999",
-                  fontSize: "clamp(7px, 0.8vw, 13px)",
-                  margin: 0,
-                  marginTop: "clamp(3px, 0.3vw, 6px)",
-                }}>
-                  Google extracts est. &euro;15&ndash;30/yr per active European wallet user in ad value<Ref n={7} />
-                </p>
-              </div>
             </div>
           </div>
         </div>
