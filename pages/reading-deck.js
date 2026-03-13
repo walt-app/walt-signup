@@ -278,7 +278,7 @@ function SlideMarket() {
                   PROVEN DEMAND
                 </p>
                 <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.4vw, 8px)" }}>
-                  3 privacy companies have crossed $100M in annual revenue<Ref n={10} />
+                  3 privacy companies have crossed $100M in annual revenue<Ref n={9} />
                 </p>
               </div>
 
@@ -393,7 +393,6 @@ function SlideReferences() {
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
               <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
               <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
-              <li className="ps-body">Eurobarometer 2025 (81% digital privacy concern); Cisco Consumer Privacy Survey 2023 (&ldquo;Privacy Actives&rdquo; segmentation); Eurostat digital privacy measures (2024)</li>
               <li className="ps-body">Proton AG annual report (2024), Brave Software financial disclosures (2024), DuckDuckGo revenue estimates (2024), Signal Foundation Form 990 (2024)</li>
             </ol>
           </div>
