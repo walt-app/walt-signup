@@ -619,145 +619,133 @@ function SlideMarket() {
 /* ─── Slide 8: Competitors ────────────────────────────────────────────────── */
 
 function SlideCompetitors() {
+  const rows = [
+    { label: "NFC tap-to-pay is core product", walt: "check", apple: "", google: "", wero: "", curve: "" },
+    { label: "NFC on both Android and iPhone", walt: "check", apple: "note-iPhone only", google: "note-Android only", wero: "note-Planned 2026\u201327", curve: "check" },
+    { label: "Works on degoogled Android", walt: "check", apple: "", google: "", wero: "", curve: "" },
+    { label: "Private, no data collection", walt: "check", apple: "", google: "", wero: "", curve: "" },
+    { label: "User base", walt: "Pre-launch", apple: "650\u2013800M", google: "200\u2013250M", wero: "50M+", curve: "6M+" },
+    { label: "Consumer price", walt: "\u20AC10/yr", apple: "Free", google: "Free", wero: "Free", curve: "\u20AC0\u201318/mo" },
+    { label: "Revenue model", walt: "Subscription", apple: "Bank interchange", google: "Ad data", wero: "Bank consortium", curve: "Subs + data" },
+    { label: "European-owned", walt: "check", apple: "", google: "", wero: "check", curve: "" },
+  ];
+
+  const Check = ({ orange }) => (
+    <span style={{
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "clamp(18px, 2vw, 32px)",
+      height: "clamp(18px, 2vw, 32px)",
+      borderRadius: "50%",
+      background: orange ? "var(--orange-primary)" : "#151515",
+      flexShrink: 0,
+    }}>
+      <svg width="55%" height="55%" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8.5L6.5 12L13 4" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  );
+
+  const Dash = () => (
+    <span style={{
+      display: "inline-block",
+      width: "clamp(12px, 1.2vw, 20px)",
+      height: "2px",
+      background: "#ccc",
+      borderRadius: "1px",
+    }} />
+  );
+
+  const renderCell = (value, isWalt) => {
+    if (value === "check") return <Check orange={isWalt} />;
+    if (value.startsWith("note-")) {
+      return (
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "clamp(3px, 0.3vw, 6px)" }}>
+          <Dash />
+          <span style={{
+            fontSize: "clamp(6px, 0.65vw, 10px)",
+            fontWeight: 500,
+            color: "#999",
+            letterSpacing: "0.02em",
+          }}>{value.replace("note-", "")}</span>
+        </span>
+      );
+    }
+    if (value === "") return <Dash />;
+    return (
+      <span style={{
+        fontSize: "clamp(8px, 0.9vw, 14px)",
+        fontWeight: isWalt ? 600 : 400,
+        color: isWalt ? "#151515" : "#555",
+      }}>{value}</span>
+    );
+  };
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Competitors</h2>
-        <p className="ps-lead">
-          Walt occupies an uncontested position in European mobile payments
+        <p className="ps-lead" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
+          No competitor combines privacy, cross-platform NFC, and aligned incentives
         </p>
-        <div className="ps-content">
+        <div className="ps-content" style={{ display: "flex", justifyContent: "center" }}>
           <div style={{
             display: "grid",
-            gridTemplateColumns: "1.15fr 1fr",
-            gap: "clamp(16px, 2.8vw, 44px)",
-            alignItems: "start",
+            gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1fr 1fr",
+            width: "100%",
           }}>
-            {/* ── Left: Positioning chart ── */}
-            <div>
-              <p className="ps-label" style={{
-                color: "#ff4800",
-                letterSpacing: "0.1em",
-                fontSize: "clamp(7px, 0.8vw, 13px)",
-                marginBottom: "clamp(6px, 0.7vw, 12px)",
-              }}>
-                COMPETITIVE POSITIONING
-              </p>
-              <svg viewBox="0 0 480 310" width="100%" style={{ display: "block" }}>
-                <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
-                  {/* Background */}
-                  <rect x="45" y="8" width="425" height="272" fill="#fafafa" rx="3" />
+            {/* Header row */}
+            <div style={{ padding: "clamp(8px, 1vw, 18px) clamp(8px, 1vw, 18px)" }} />
+            {[
+              { name: "Walt", isWalt: true },
+              { name: "Apple Pay" },
+              { name: "Google Wallet" },
+              { name: "Wero" },
+              { name: "Curve" },
+            ].map((col) => (
+              <div key={col.name} style={{
+                padding: "clamp(8px, 1vw, 18px) clamp(4px, 0.5vw, 10px)",
+                textAlign: "center",
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 700,
+                letterSpacing: "-0.02em",
+                color: col.isWalt ? "var(--orange-primary)" : "#151515",
+                borderBottom: col.isWalt ? "3px solid var(--orange-primary)" : "1px solid #ddd",
+                background: col.isWalt ? "rgba(255, 72, 0, 0.04)" : "transparent",
+              }}>{col.name}</div>
+            ))}
 
-                  {/* Quadrant dividers */}
-                  <line x1="258" y1="8" x2="258" y2="280" stroke="#e8e8e8" strokeWidth="1" strokeDasharray="5,5" />
-                  <line x1="45" y1="144" x2="470" y2="144" stroke="#e8e8e8" strokeWidth="1" strokeDasharray="5,5" />
-
-                  {/* Walt's quadrant — highlighted */}
-                  <rect x="258" y="8" width="212" height="136" fill="rgba(255,72,0,0.04)" />
-
-                  {/* Y-axis label */}
-                  <text x="28" y="144" textAnchor="middle" fontSize="6.5" fill="#ccc" fontWeight="600" letterSpacing="0.08em" transform="rotate(-90, 28, 144)">
-                    DATA COLLECTION  &larr;              &rarr;  PRIVACY
-                  </text>
-
-                  {/* X-axis labels */}
-                  <text x="152" y="300" textAnchor="middle" fontSize="6.5" fill="#ccc" fontWeight="500">Single / no NFC</text>
-                  <text x="380" y="300" textAnchor="middle" fontSize="6.5" fill="#ccc" fontWeight="500">Cross-platform NFC</text>
-
-                  {/* Legend */}
-                  <circle cx="420" cy="296" r="3" fill="#ddd" />
-                  <text x="428" y="299" fontSize="5.5" fill="#ccc">= user base</text>
-
-                  {/* ── Bubbles ── */}
-
-                  {/* Apple Pay */}
-                  <circle cx="155" cy="65" r="30" fill="#e8e8e8" />
-                  <text x="155" y="61" textAnchor="middle" fontSize="9" fontWeight="700" fill="#444">Apple Pay</text>
-                  <text x="155" y="73" textAnchor="middle" fontSize="7.5" fill="#999">650&ndash;800M</text>
-
-                  {/* Google Wallet */}
-                  <circle cx="155" cy="255" r="25" fill="#e8e8e8" />
-                  <text x="155" y="251" textAnchor="middle" fontSize="9" fontWeight="700" fill="#444">Google</text>
-                  <text x="155" y="263" textAnchor="middle" fontSize="7.5" fill="#999">200&ndash;250M</text>
-
-                  {/* Wero */}
-                  <circle cx="90" cy="185" r="20" fill="#e8e8e8" />
-                  <text x="90" y="183" textAnchor="middle" fontSize="8.5" fontWeight="700" fill="#444">Wero</text>
-                  <text x="90" y="194" textAnchor="middle" fontSize="7" fill="#999">50M+</text>
-
-                  {/* Vipps MobilePay */}
-                  <circle cx="345" cy="158" r="14" fill="#e8e8e8" />
-                  <text x="345" y="156" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#444">Vipps</text>
-                  <text x="345" y="166" textAnchor="middle" fontSize="6.5" fill="#999">12.5M</text>
-
-                  {/* Curve */}
-                  <circle cx="345" cy="232" r="12" fill="#e8e8e8" />
-                  <text x="345" y="229" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#444">Curve</text>
-                  <text x="345" y="240" textAnchor="middle" fontSize="6.5" fill="#999">6M+</text>
-
-                  {/* Walt */}
-                  <circle cx="420" cy="38" r="13" fill="#ff4800" />
-                  <text x="420" y="36" textAnchor="middle" fontSize="9" fontWeight="800" fill="#fff">Walt</text>
-                  <text x="420" y="58" textAnchor="middle" fontSize="7" fontWeight="600" fill="#ff4800">Pre-launch</text>
-                </g>
-              </svg>
-            </div>
-
-            {/* ── Right: Analysis ── */}
-            <div className="ps-stack" style={{ gap: "clamp(12px, 1.6vw, 28px)" }}>
-              <div>
-                <p className="ps-label" style={{
-                  color: "#ff4800",
-                  letterSpacing: "0.1em",
-                  fontSize: "clamp(7px, 0.8vw, 13px)",
-                }}>
-                  NO COMPETITOR COMBINES
-                </p>
-                <ul className="ps-bullets" style={{ marginTop: "clamp(4px, 0.5vw, 8px)" }}>
-                  <li className="ps-bullet" style={{ fontWeight: 600, color: "#151515" }}>
-                    Privacy-first &mdash; no data leaves the device
-                  </li>
-                  <li className="ps-bullet" style={{ fontWeight: 600, color: "#151515" }}>
-                    Cross-platform NFC &mdash; Android, iPhone, degoogled
-                  </li>
-                  <li className="ps-bullet" style={{ fontWeight: 600, color: "#151515" }}>
-                    &euro;10/yr subscription &mdash; user-funded, not ad-funded
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="ps-label" style={{
-                  color: "#ff4800",
-                  letterSpacing: "0.1em",
-                  fontSize: "clamp(7px, 0.8vw, 13px)",
-                  marginBottom: "clamp(4px, 0.5vw, 8px)",
-                }}>
-                  STRUCTURAL BARRIERS TO PRIVACY
-                </p>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  {[
-                    { name: "Apple Pay", barrier: "Locked to iPhone. Growing $96B Services/ad revenue creates conflicts." },
-                    { name: "Google", barrier: "77% of Alphabet revenue from ads. Payment data feeds ad targeting." },
-                    { name: "Wero", barrier: "Bank consortium, NFC planned 2026\u201327. Standard bank-grade privacy." },
-                    { name: "Curve", barrier: "Biometrics, geo, behavior shared with advertisers. Acquired by Lloyds." },
-                    { name: "Vipps", barrier: "Nordic-only. Merchant-fee model. Standard privacy practices." },
-                  ].map((c, i, arr) => (
-                    <div key={c.name} style={{
-                      padding: "clamp(5px, 0.65vw, 11px) 0",
-                      borderBottom: i < arr.length - 1 ? "1px solid #eee" : "none",
-                      display: "grid",
-                      gridTemplateColumns: "1.1fr 3fr",
-                      gap: "clamp(4px, 0.5vw, 10px)",
-                      alignItems: "baseline",
+            {/* Data rows */}
+            {rows.map((row, i) => {
+              const isLast = i === rows.length - 1;
+              const border = isLast ? "none" : "1px solid #eee";
+              return (
+                <Fragment key={row.label}>
+                  <div style={{
+                    padding: "clamp(7px, 0.9vw, 16px) clamp(8px, 1vw, 18px)",
+                    fontSize: "clamp(8px, 0.9vw, 14px)",
+                    fontWeight: 500,
+                    color: "#333",
+                    borderBottom: border,
+                    display: "flex",
+                    alignItems: "center",
+                  }}>{row.label}</div>
+                  {[row.walt, row.apple, row.google, row.wero, row.curve].map((val, j) => (
+                    <div key={j} style={{
+                      padding: "clamp(7px, 0.9vw, 16px) clamp(4px, 0.5vw, 10px)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderBottom: border,
+                      background: j === 0 ? "rgba(255, 72, 0, 0.04)" : "transparent",
                     }}>
-                      <span className="ps-body" style={{ fontWeight: 600, color: "#151515" }}>{c.name}</span>
-                      <span className="ps-body" style={{ color: "#7f7f7f" }}>{c.barrier}</span>
+                      {renderCell(val, j === 0)}
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
+                </Fragment>
+              );
+            })}
           </div>
         </div>
       </div>
