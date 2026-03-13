@@ -265,9 +265,6 @@ function SlideMarket() {
                   <text x="200" y="206" textAnchor="middle" fontSize="9" fill="#151515" opacity="0.65">European focus &middot; &euro;250M ARR</text>
                 </g>
               </svg>
-              <p className="ps-body" style={{ color: "#7f7f7f", fontSize: "clamp(7px, 0.8vw, 13px)", marginTop: "clamp(6px, 0.7vw, 12px)" }}>
-                81% of EU internet users express concern about digital privacy.<Ref n={9} />
-              </p>
             </div>
 
             {/* ── Right: Proof the market pays ── */}
@@ -351,9 +348,6 @@ function SlideMarket() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="ps-src">
-          Sources: Eurobarometer 2025, Cisco Privacy Survey, Proton AG, Brave, DuckDuckGo, Signal Foundation
         </div>
       </div>
     </div>
