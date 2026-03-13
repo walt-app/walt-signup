@@ -5,7 +5,11 @@
       "Bash(bd dep:*)",
       "Bash(bd show:*)",
       "Bash(bd update:*)",
-      "Bash(bd ready:*)"
+      "Bash(bd ready:*)",
+      "Bash(bd list:*)",
+      "Bash(npx next:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ],
     "additionalDirectories": [
       "/Users/bittelc/workspace/walt-market-research/"
