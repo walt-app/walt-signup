@@ -194,7 +194,7 @@ function SlideWhyNow() {
     {
       year: "Dec 2024",
       title: "First alternative launches",
-      desc: <>Vipps MobilePay goes live as the first Apple Pay alternative on iPhone &mdash; 200K cards activated in 24 hours<Ref n={11} /></>,
+      desc: <>Vipps MobilePay goes live as the first Apple Pay alternative on iPhone. 200K cards activated in 24 hours<Ref n={11} /></>,
       era: "after",
     },
     {
@@ -308,9 +308,8 @@ function SlideWhyNow() {
             maxWidth: "85%",
             alignSelf: "center",
           }}>
-            In twelve months, Apple opened iPhone NFC, the EU mandated privacy-by-design
-            wallets, and the first alternatives proved the market. Walt is the first entirely
-            private tap-to-pay wallet &mdash; built for 15&ndash;30M privacy-conscious Europeans.<Ref n={13} />
+            For the first time, a completely private tap-to-pay wallet is possible on every
+            smartphone in Europe. Walt is that wallet.
           </p>
         </div>
       </div>
