@@ -342,40 +342,85 @@ function SlideChallenges() {
         <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
           {/* ── Concept: chain diagram + explanation ── */}
           <div>
-            {/* Chain diagram — full-width, the visual anchor of this slide */}
+            {/* Chain diagram — the missing middle piece */}
             <div style={{
               display: "flex",
               alignItems: "center",
-              gap: "clamp(3px, 0.4vw, 8px)",
+              gap: "clamp(6px, 0.7vw, 12px)",
               marginBottom: "clamp(10px, 1.4vw, 22px)",
             }}>
-              {[
-                { label: "Walt", accent: true },
-                { label: "Tokenization provider", highlight: true },
-                { label: "Visa / Mastercard" },
-                { label: "Issuing banks" },
-              ].map((node, i, arr) => (
-                <Fragment key={i}>
-                  <span style={{
-                    padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
-                    background: node.accent ? "var(--orange-primary)" : node.highlight ? "#151515" : "#f0f0f0",
-                    color: node.accent ? "#fff" : node.highlight ? "#fff" : "#333",
-                    borderRadius: "clamp(5px, 0.5vw, 10px)",
-                    fontSize: "clamp(8px, 0.95vw, 15px)",
-                    fontWeight: 600,
-                    letterSpacing: "-0.01em",
-                    whiteSpace: "nowrap",
-                  }}>{node.label}</span>
-                  {i < arr.length - 1 && (
-                    <span style={{
-                      color: "#ccc",
-                      fontSize: "clamp(12px, 1.4vw, 22px)",
-                      lineHeight: 1,
-                      flexShrink: 0,
-                    }}>&rarr;</span>
-                  )}
-                </Fragment>
-              ))}
+              {/* Walt — solid, ready */}
+              <span style={{
+                padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                background: "var(--orange-primary)",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(8px, 0.95vw, 15px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+              }}>Walt</span>
+
+              {/* Broken connector */}
+              <span style={{
+                color: "#d4d4d4",
+                fontSize: "clamp(10px, 1.1vw, 18px)",
+                lineHeight: 1,
+                letterSpacing: "clamp(1px, 0.15vw, 3px)",
+              }}>&#xB7;&#xB7;&#xB7;</span>
+
+              {/* Tokenization provider — dashed outline, the gap */}
+              <span style={{
+                padding: "clamp(5px, 0.6vw, 11px) clamp(9px, 1.1vw, 19px)",
+                background: "transparent",
+                border: "clamp(1.5px, 0.15vw, 2.5px) dashed #bbb",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                color: "#999",
+                fontSize: "clamp(8px, 0.95vw, 15px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+              }}>Tokenization provider</span>
+
+              {/* Broken connector */}
+              <span style={{
+                color: "#d4d4d4",
+                fontSize: "clamp(10px, 1.1vw, 18px)",
+                lineHeight: 1,
+                letterSpacing: "clamp(1px, 0.15vw, 3px)",
+              }}>&#xB7;&#xB7;&#xB7;</span>
+
+              {/* Visa/MC — solid, exists but unreachable */}
+              <span style={{
+                padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                background: "#f0f0f0",
+                color: "#999",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(8px, 0.95vw, 15px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+              }}>Visa / Mastercard</span>
+
+              {/* Solid connector — this link works */}
+              <span style={{
+                color: "#ccc",
+                fontSize: "clamp(12px, 1.4vw, 22px)",
+                lineHeight: 1,
+                flexShrink: 0,
+              }}>&rarr;</span>
+
+              {/* Banks — solid, exists but unreachable */}
+              <span style={{
+                padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                background: "#f0f0f0",
+                color: "#999",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(8px, 0.95vw, 15px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+              }}>Issuing banks</span>
             </div>
             <p className="ps-body" style={{ maxWidth: "88%" }}>
               To enable tap-to-pay, Walt needs a <strong style={{ color: "#151515" }}>tokenization provider</strong>: a company certified by Visa and Mastercard that converts card numbers into secure payment tokens, connecting a wallet to the banking system. The EU opened iPhone NFC to third parties in 2024, but no provider yet offers a production-ready SDK for independent phone wallets.
