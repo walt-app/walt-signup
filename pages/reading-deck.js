@@ -620,14 +620,14 @@ function SlideMarket() {
 
 function SlideCompetitors() {
   const rows = [
-    { label: "NFC tap-to-pay is core product", walt: "check", apple: "", google: "", wero: "", curve: "" },
-    { label: "NFC on both Android and iPhone", walt: "check", apple: "note-iPhone only", google: "note-Android only", wero: "note-Planned 2026\u201327", curve: "check" },
-    { label: "Works on degoogled Android", walt: "check", apple: "", google: "", wero: "", curve: "" },
-    { label: "Private, no data collection", walt: "check", apple: "", google: "", wero: "", curve: "" },
-    { label: "User base", walt: "Pre-launch", apple: "650\u2013800M", google: "200\u2013250M", wero: "50M+", curve: "6M+" },
-    { label: "Consumer price", walt: "\u20AC10/yr", apple: "Free", google: "Free", wero: "Free", curve: "\u20AC0\u201318/mo" },
-    { label: "Revenue model", walt: "Subscription", apple: "Bank interchange", google: "Ad data", wero: "Bank consortium", curve: "Subs + data" },
-    { label: "European-owned", walt: "check", apple: "", google: "", wero: "check", curve: "" },
+    { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
+    { label: "NFC on both Android and iPhone", walt: "check", wero: "note-Planned 2026\u201327", vipps: "check" },
+    { label: "Works on degoogled Android", walt: "check", wero: "", vipps: "" },
+    { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
+    { label: "User base", walt: "Pre-launch", wero: "50M+", vipps: "12.5M" },
+    { label: "Consumer price", walt: "\u20AC10/yr", wero: "Free", vipps: "Free" },
+    { label: "Revenue model", walt: "Subscription", wero: "Bank consortium", vipps: "Merchant fee" },
+    { label: "European-owned", walt: "check", wero: "check", vipps: "check" },
   ];
 
   const Check = ({ orange }) => (
@@ -692,17 +692,15 @@ function SlideCompetitors() {
         <div className="ps-content" style={{ display: "flex", justifyContent: "center" }}>
           <div style={{
             display: "grid",
-            gridTemplateColumns: "2.2fr 1fr 1fr 1fr 1fr 1fr",
+            gridTemplateColumns: "2.4fr 1fr 1fr 1fr",
             width: "100%",
           }}>
             {/* Header row */}
             <div style={{ padding: "clamp(8px, 1vw, 18px) clamp(8px, 1vw, 18px)" }} />
             {[
               { name: "Walt", isWalt: true },
-              { name: "Apple Pay" },
-              { name: "Google Wallet" },
               { name: "Wero" },
-              { name: "Curve" },
+              { name: "Vipps MobilePay" },
             ].map((col) => (
               <div key={col.name} style={{
                 padding: "clamp(8px, 1vw, 18px) clamp(4px, 0.5vw, 10px)",
@@ -731,7 +729,7 @@ function SlideCompetitors() {
                     display: "flex",
                     alignItems: "center",
                   }}>{row.label}</div>
-                  {[row.walt, row.apple, row.google, row.wero, row.curve].map((val, j) => (
+                  {[row.walt, row.wero, row.vipps].map((val, j) => (
                     <div key={j} style={{
                       padding: "clamp(7px, 0.9vw, 16px) clamp(4px, 0.5vw, 10px)",
                       display: "flex",
