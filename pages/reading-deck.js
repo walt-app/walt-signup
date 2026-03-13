@@ -247,19 +247,33 @@ function SlideWhyNow() {
 
               return (
                 <Fragment key={i}>
-                  {/* Dot on track */}
-                  <div style={{
-                    gridColumn: col,
-                    gridRow: 2,
-                    width: dotSize,
-                    height: dotSize,
-                    borderRadius: "50%",
-                    background: isBefore ? "#999" : "var(--orange-primary)",
-                    justifySelf: "center",
-                    alignSelf: "center",
-                    zIndex: 1,
-                    border: "clamp(2px, 0.18vw, 3px) solid #fff",
-                  }} />
+                  {/* Track marker — bar for era, dot for point-in-time */}
+                  {isBefore ? (
+                    <div style={{
+                      gridColumn: col,
+                      gridRow: 2,
+                      height: "clamp(5px, 0.45vw, 7px)",
+                      background: "#c5c5c5",
+                      borderRadius: "clamp(3px, 0.25vw, 4px)",
+                      justifySelf: "stretch",
+                      alignSelf: "center",
+                      zIndex: 1,
+                      margin: "0 clamp(6px, 0.8vw, 14px)",
+                    }} />
+                  ) : (
+                    <div style={{
+                      gridColumn: col,
+                      gridRow: 2,
+                      width: dotSize,
+                      height: dotSize,
+                      borderRadius: "50%",
+                      background: "var(--orange-primary)",
+                      justifySelf: "center",
+                      alignSelf: "center",
+                      zIndex: 1,
+                      border: "clamp(2px, 0.18vw, 3px) solid #fff",
+                    }} />
+                  )}
 
                   {/* Event label — alternates above and below the track */}
                   <div style={{
