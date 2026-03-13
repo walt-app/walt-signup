@@ -130,7 +130,7 @@ function SlideSolution() {
                 </p>
                 <ul className="ps-bullets">
                   <li className="ps-bullet">
-                    Entire app is tap-to-pay — one workflow, nothing else
+                    Entire app is tap-to-pay. One workflow, nothing else
                   </li>
                   <li className="ps-bullet">
                     One pricing model, no tiers, no extra features to upsell
@@ -937,7 +937,7 @@ function SlideReferences() {
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
               <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
               <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
-              <li className="ps-body">European Commission, Case AT.40452 &mdash; Apple mobile payments (2020&ndash;2024); Apple restricted iPhone NFC to Apple Pay from 2014 until iOS 17.4 (March 2024)</li>
+              <li className="ps-body">European Commission, Case AT.40452, Apple mobile payments (2020&ndash;2024); Apple restricted iPhone NFC to Apple Pay from 2014 until iOS 17.4 (March 2024)</li>
               <li className="ps-body">Regulation (EU) 2024/1183 amending Regulation (EU) No 910/2014 (eIDAS 2.0), establishing the European Digital Identity Wallet framework (entered into force May 20, 2024)</li>
               <li className="ps-body">Vipps MobilePay press release (December 9, 2024); Thales and Vipps, &ldquo;NFC Payments on iOS reaching one million users&rdquo; (May 2025)</li>
               <li className="ps-body">Vipps MobilePay first contactless NFC transaction via Apple HCE APIs (January 2025)</li>
