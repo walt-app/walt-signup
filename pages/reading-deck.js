@@ -93,7 +93,7 @@ function SlideSolution() {
             display: "grid",
             gridTemplateColumns: "0.8fr 1fr",
             gap: "clamp(16px, 2.5vw, 40px)",
-            alignItems: "center",
+            alignItems: "start",
             height: "100%",
           }}>
             {/* Key differentiators */}
