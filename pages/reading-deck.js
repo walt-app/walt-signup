@@ -32,7 +32,7 @@ function SlideProblem() {
           Tap-to-pay in Europe lives with Google and Apple
         </p>
         <div className="ps-content">
-          <div className="ps-split">
+          <div className="ps-split" style={{ flex: "none" }}>
             <div className="ps-stack">
               <div>
                 <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>200&ndash;250M</p>
@@ -47,18 +47,18 @@ function SlideProblem() {
               </p>
             </div>
             <div className="ps-stack">
-              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+              <div className="ps-card">
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Apple Pay</p>
-                <ul className="ps-bullets" style={{ color: "#ccc" }}>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction<Ref n={4} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M annually from European transactions<Ref n={5} /></li>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">Charges European banks ~0.05% per transaction<Ref n={4} /></li>
+                  <li className="ps-bullet">Extracts &euro;300&ndash;500M annually from European transactions<Ref n={5} /></li>
                 </ul>
               </div>
-              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+              <div className="ps-card">
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Google Wallet</p>
-                <ul className="ps-bullets" style={{ color: "#ccc" }}>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Estimated &euro;1B+ annually in ad value from European payment data<Ref n={7} /><Ref n={8} /></li>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
+                  <li className="ps-bullet">Estimated &euro;1B+ annually in ad value from European payment data<Ref n={7} /><Ref n={8} /></li>
                 </ul>
               </div>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.5vw, 8px)" }}>
@@ -93,12 +93,12 @@ function SlideSolution() {
             display: "grid",
             gridTemplateColumns: "0.8fr 1fr",
             gap: "clamp(16px, 2.5vw, 40px)",
-            alignItems: "center",
+            alignItems: "start",
             height: "100%",
           }}>
             {/* Key differentiators */}
-            <div className="ps-stack">
-              <div className="ps-card">
+            <div className="ps-stack" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
                   Privacy by design
                 </p>
@@ -109,21 +109,31 @@ function SlideSolution() {
                   <li className="ps-bullet">
                     No ad profiling, no data harvesting, no third-party sharing
                   </li>
-                  <li className="ps-bullet">
-                    Funded by members at &euro;10 a year
-                  </li>
                 </ul>
               </div>
-              <div className="ps-card">
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
                   Built for Europe
                 </p>
                 <ul className="ps-bullets">
                   <li className="ps-bullet">
-                    Founded in Copenhagen, launching across the Nordics
+                    Founded in Copenhagen to establish European sovereignty
                   </li>
                   <li className="ps-bullet">
                     No dependency on US cloud providers for core infrastructure
+                  </li>
+                </ul>
+              </div>
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
+                <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
+                  Simplicity
+                </p>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">
+                    Entire app is tap-to-pay. One workflow, nothing else
+                  </li>
+                  <li className="ps-bullet">
+                    One pricing model, no tiers, no extra features to upsell
                   </li>
                 </ul>
               </div>
@@ -897,6 +907,13 @@ function SlideClosing() {
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
         <h1 className="ps-logo">Walt</h1>
+        <div className="ps-divider" />
+        <p className="ps-subtitle">Europe reclaims tap-to-pay</p>
+        <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
+          <p className="ps-body" style={{ color: "#151515" }}>Cole Bittel, Founder</p>
+          <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
+          <p className="ps-body" style={{ color: "#151515" }}>walt.is</p>
+        </div>
       </div>
     </div>
   );
@@ -920,7 +937,7 @@ function SlideReferences() {
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
               <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
               <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
-              <li className="ps-body">European Commission, Case AT.40452 &mdash; Apple mobile payments (2020&ndash;2024); Apple restricted iPhone NFC to Apple Pay from 2014 until iOS 17.4 (March 2024)</li>
+              <li className="ps-body">European Commission, Case AT.40452, Apple mobile payments (2020&ndash;2024); Apple restricted iPhone NFC to Apple Pay from 2014 until iOS 17.4 (March 2024)</li>
               <li className="ps-body">Regulation (EU) 2024/1183 amending Regulation (EU) No 910/2014 (eIDAS 2.0), establishing the European Digital Identity Wallet framework (entered into force May 20, 2024)</li>
               <li className="ps-body">Vipps MobilePay press release (December 9, 2024); Thales and Vipps, &ldquo;NFC Payments on iOS reaching one million users&rdquo; (May 2025)</li>
               <li className="ps-body">Vipps MobilePay first contactless NFC transaction via Apple HCE APIs (January 2025)</li>
