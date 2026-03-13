@@ -31,7 +31,7 @@ function SlideProblem() {
         <p className="ps-lead">
           Tap-to-pay in Europe lives with Google and Apple
         </p>
-        <div className="ps-content">
+        <div className="ps-content" style={{ justifyContent: "center" }}>
           <div className="ps-split">
             <div className="ps-stack">
               <div>
@@ -47,18 +47,18 @@ function SlideProblem() {
               </p>
             </div>
             <div className="ps-stack">
-              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+              <div className="ps-card">
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Apple Pay</p>
-                <ul className="ps-bullets" style={{ color: "#ccc" }}>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction<Ref n={4} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M annually from European transactions<Ref n={5} /></li>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">Charges European banks ~0.05% per transaction<Ref n={4} /></li>
+                  <li className="ps-bullet">Extracts &euro;300&ndash;500M annually from European transactions<Ref n={5} /></li>
                 </ul>
               </div>
-              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+              <div className="ps-card">
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Google Wallet</p>
-                <ul className="ps-bullets" style={{ color: "#ccc" }}>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Estimated &euro;1B+ annually in ad value from European payment data<Ref n={7} /><Ref n={8} /></li>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">Harvests every transaction for ad profiles and selling to 3rd parties<Ref n={6} /></li>
+                  <li className="ps-bullet">Estimated &euro;1B+ annually in ad value from European payment data<Ref n={7} /><Ref n={8} /></li>
                 </ul>
               </div>
               <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.5vw, 8px)" }}>
@@ -109,9 +109,6 @@ function SlideSolution() {
                   <li className="ps-bullet">
                     No ad profiling, no data harvesting, no third-party sharing
                   </li>
-                  <li className="ps-bullet">
-                    Funded by members at &euro;10 a year
-                  </li>
                 </ul>
               </div>
               <div className="ps-card">
@@ -124,6 +121,19 @@ function SlideSolution() {
                   </li>
                   <li className="ps-bullet">
                     No dependency on US cloud providers for core infrastructure
+                  </li>
+                </ul>
+              </div>
+              <div className="ps-card">
+                <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
+                  Simplicity
+                </p>
+                <ul className="ps-bullets">
+                  <li className="ps-bullet">
+                    Entire app is tap-to-pay — one workflow, nothing else
+                  </li>
+                  <li className="ps-bullet">
+                    One pricing model, no tiers, no extra features to upsell
                   </li>
                 </ul>
               </div>
@@ -897,6 +907,13 @@ function SlideClosing() {
     <div className="ps ps--accent">
       <div className="ps-pad ps-pad--center">
         <h1 className="ps-logo">Walt</h1>
+        <div className="ps-divider" />
+        <p className="ps-subtitle">Europe reclaims tap-to-pay</p>
+        <div style={{ marginTop: "clamp(16px, 2.5vw, 40px)" }}>
+          <p className="ps-body" style={{ color: "#151515" }}>Cole Bittel, Founder</p>
+          <p className="ps-body" style={{ color: "#151515" }}>cole@walt.is</p>
+          <p className="ps-body" style={{ color: "#151515" }}>walt.is</p>
+        </div>
       </div>
     </div>
   );
