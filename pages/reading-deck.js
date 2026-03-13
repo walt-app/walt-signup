@@ -91,7 +91,7 @@ function SlideSolution() {
         <div className="ps-content">
           <div style={{
             display: "grid",
-            gridTemplateColumns: "1.15fr 1fr",
+            gridTemplateColumns: "0.8fr 1fr",
             gap: "clamp(16px, 2.5vw, 40px)",
             alignItems: "center",
             height: "100%",
@@ -104,13 +104,13 @@ function SlideSolution() {
                 </p>
                 <ul className="ps-bullets">
                   <li className="ps-bullet">
-                    Transaction data stays on the device. No cloud storage, no server-side logs
+                    Transaction data stays on the device. No centralized database, no server-side logs
                   </li>
                   <li className="ps-bullet">
                     No ad profiling, no data harvesting, no third-party sharing
                   </li>
                   <li className="ps-bullet">
-                    Funded by members at 10 euros a year
+                    Funded by members at &euro;10 a year
                   </li>
                 </ul>
               </div>
@@ -148,7 +148,7 @@ function SlideSolution() {
                 >
                   <div
                     className="ps-solution-phone"
-                    style={{ width: "clamp(72px, 8.5vw, 145px)" }}
+                    style={{ width: "clamp(85px, 11vw, 185px)" }}
                   >
                     <Image
                       src={screen.src}
