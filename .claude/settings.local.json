@@ -9,7 +9,10 @@
       "Bash(bd list:*)",
       "Bash(npx next:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git -C /Users/bittelc/workspace/walt-website/walt-website-main worktree list)",
+      "Bash(git -C /Users/bittelc/workspace/walt-website/walt-website-main branch -a)",
+      "Bash(git fetch:*)"
     ],
     "additionalDirectories": [
       "/Users/bittelc/workspace/walt-market-research/"
