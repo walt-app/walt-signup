@@ -178,10 +178,140 @@ function SlideSolution() {
 /* ─── Slide 4: Why Now? ───────────────────────────────────────────────────── */
 
 function SlideWhyNow() {
+  const events = [
+    {
+      year: "2014\u20132024",
+      title: "iPhone NFC locked",
+      desc: <>Apple restricts iPhone NFC exclusively to Apple Pay. No third-party wallet can offer tap-to-pay on iPhone for a decade<Ref n={9} /></>,
+      era: "before",
+    },
+    {
+      year: "2024",
+      title: "EUDI wallet mandate",
+      desc: <>EU regulation mandates privacy-by-design digital wallets across all 27 member states<Ref n={10} /></>,
+      era: "after",
+    },
+    {
+      year: "Dec 2024",
+      title: "First alternative launches",
+      desc: <>Vipps MobilePay goes live as the first Apple Pay alternative on iPhone. 200K cards activated in 24 hours<Ref n={11} /></>,
+      era: "after",
+    },
+    {
+      year: "Jan 2025",
+      title: "First NFC transaction",
+      desc: <>First third-party contactless payment completed on iPhone via the new NFC APIs<Ref n={12} /></>,
+      era: "after",
+    },
+    {
+      year: "Mar 2025",
+      title: "Walt",
+      desc: <>The first entirely private tap-to-pay wallet enters the market</>,
+      era: "launch",
+    },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Why Now?</h2>
+        <p className="ps-lead">
+          EU regulation opens tap-to-pay to third-party wallets
+        </p>
+        <div className="ps-content">
+          {/* Timeline: 3-row grid (above labels, track, below labels) × 5 columns */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gridTemplateRows: "1fr auto 1fr",
+            flex: 1,
+            position: "relative",
+          }}>
+            {/* Horizontal track — short gray lead-in → orange from first milestone onward */}
+            <div style={{
+              gridColumn: "1 / -1",
+              gridRow: "2",
+              height: "clamp(2px, 0.18vw, 3px)",
+              background: "linear-gradient(to right, #d5d5d5 0%, #d5d5d5 18%, var(--orange-primary) 28%, var(--orange-primary) 100%)",
+              borderRadius: "2px",
+            }} />
+
+            {events.map((event, i) => {
+              const above = i % 2 === 0;
+              const col = i + 1;
+              const isBefore = event.era === "before";
+              const isLaunch = event.era === "launch";
+              const dotSize = isLaunch
+                  ? "clamp(10px, 0.9vw, 15px)"
+                  : "clamp(7px, 0.65vw, 11px)";
+
+              return (
+                <Fragment key={i}>
+                  {/* Dot on track — skip for era-length events */}
+                  {!isBefore && (
+                    <div style={{
+                      gridColumn: col,
+                      gridRow: 2,
+                      width: dotSize,
+                      height: dotSize,
+                      borderRadius: "50%",
+                      background: "var(--orange-primary)",
+                      justifySelf: "center",
+                      alignSelf: "center",
+                      zIndex: 1,
+                      border: "clamp(2px, 0.18vw, 3px) solid #fff",
+                    }} />
+                  )}
+
+                  {/* Event label — alternates above and below the track */}
+                  <div style={{
+                    gridColumn: col,
+                    gridRow: above ? 1 : 3,
+                    alignSelf: above ? "end" : "start",
+                    textAlign: "center",
+                    padding: above
+                      ? "0 clamp(2px, 0.3vw, 6px) clamp(10px, 1.2vw, 20px)"
+                      : "clamp(10px, 1.2vw, 20px) clamp(2px, 0.3vw, 6px) 0",
+                  }}>
+                    <p style={{
+                      fontSize: "clamp(7px, 0.75vw, 12px)",
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
+                      color: isBefore ? "#aaa" : "#151515",
+                      margin: "0 0 clamp(2px, 0.25vw, 4px)",
+                    }}>{event.year}</p>
+                    <p style={{
+                      fontSize: "clamp(8px, 0.9vw, 14px)",
+                      fontWeight: 700,
+                      color: "#151515",
+                      margin: "0 0 clamp(1px, 0.15vw, 3px)",
+                      lineHeight: 1.3,
+                    }}>{event.title}</p>
+                    <p style={{
+                      fontSize: "clamp(6.5px, 0.7vw, 11px)",
+                      fontWeight: 400,
+                      color: "#7f7f7f",
+                      margin: 0,
+                      lineHeight: 1.45,
+                    }}>{event.desc}</p>
+                  </div>
+                </Fragment>
+              );
+            })}
+          </div>
+
+          {/* Conclusion */}
+          <p className="ps-body" style={{
+            fontWeight: 600,
+            textAlign: "center",
+            maxWidth: "85%",
+            alignSelf: "center",
+          }}>
+            For the first time, a completely private tap-to-pay wallet is possible on every
+            smartphone in Europe.
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -278,7 +408,7 @@ function SlideMarket() {
                   PROVEN DEMAND
                 </p>
                 <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.4vw, 8px)" }}>
-                  3 privacy companies have crossed $100M in annual revenue<Ref n={9} />
+                  3 privacy companies have crossed $100M in annual revenue<Ref n={14} />
                 </p>
               </div>
 
@@ -393,6 +523,11 @@ function SlideReferences() {
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
               <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
               <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
+              <li className="ps-body">European Commission, Case AT.40452 &mdash; Apple mobile payments (2020&ndash;2024); Apple restricted iPhone NFC to Apple Pay from 2014 until iOS 17.4 (March 2024)</li>
+              <li className="ps-body">Regulation (EU) 2024/1183 amending Regulation (EU) No 910/2014 (eIDAS 2.0), establishing the European Digital Identity Wallet framework (entered into force May 20, 2024)</li>
+              <li className="ps-body">Vipps MobilePay press release (December 9, 2024); Thales and Vipps, &ldquo;NFC Payments on iOS reaching one million users&rdquo; (May 2025)</li>
+              <li className="ps-body">Vipps MobilePay first contactless NFC transaction via Apple HCE APIs (January 2025)</li>
+              <li className="ps-body">Proton, Tuta, Brave, and Mullvad adoption data; Walt European &ldquo;Privacy Active&rdquo; market sizing research (2025)</li>
               <li className="ps-body">Proton AG annual report (2024), Brave Software financial disclosures (2024), DuckDuckGo revenue estimates (2024), Signal Foundation Form 990 (2024)</li>
             </ol>
           </div>
