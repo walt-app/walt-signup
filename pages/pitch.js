@@ -289,7 +289,7 @@ function SlideCompetitors() {
     { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
     { label: "User base", walt: "0", wero: "50M", vipps: "12.5M" },
     { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Merchant pays fee", vipps: "Merchant pays fee" },
-    { label: "Geographic focus", walt: "Nordics \u2192 Europe", wero: "DE, FR, BE", vipps: "Nordics" },
+    { label: "Geographic focus", walt: "Europe", wero: "DE, FR, BE", vipps: "Nordics" },
   ];
 
   const Check = ({ orange }) => (
