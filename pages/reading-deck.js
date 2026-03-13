@@ -51,7 +51,7 @@ function SlideProblem() {
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Apple Pay</p>
                 <ul className="ps-bullets" style={{ color: "#ccc" }}>
                   <li className="ps-bullet" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction<Ref n={4} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M from European transactions<Ref n={5} /></li>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M annually from European transactions (POS, in-app, and web)<Ref n={5} /></li>
                 </ul>
               </div>
               <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
@@ -285,7 +285,7 @@ function SlideReferences() {
               <li className="ps-body">Worldpay Global Payments Report 2025 (digital wallets = 14% of European POS value across 14 markets incl. UK); ECB SPACE 2024 (7% of POS value in euro area via mobile devices); ECB Payment Statistics H2 2024</li>
               <li className="ps-body">CoinLaw, &ldquo;Apple Pay vs Google Pay Statistics&rdquo; (2026); StatCounter mobile payment share data</li>
               <li className="ps-body">Swiss antitrust investigation via Finews (~0.05&ndash;0.12% issuer fee); EU Interchange Fee Regulation 2015/751 constraints; Walt market research estimates</li>
-              <li className="ps-body">Oliver Wyman, European Apple Pay fee revenue estimate (February 2025)</li>
+              <li className="ps-body">Oliver Wyman, &ldquo;Third-Party Access To Apple Pay Could Alter Mobile Payments&rdquo; (February 2025). Covers all Apple Pay channels: NFC tap-to-pay, in-app, and web commerce. POS-only share is ~&euro;50&ndash;90M.</li>
               <li className="ps-body">DOJ v. Apple antitrust complaint (March 2024); WSJ reporting on Google ad-profile monetization of payment data</li>
               <li className="ps-body">Alphabet 10-K (2024): EMEA revenue $102B; Proton data valuation methodology estimates &euro;15&ndash;30 ad value per European wallet user per year</li>
               <li className="ps-body">European Google Wallet adoption estimates (40&ndash;80M active users) derived from Statista country adoption surveys and PYMNTS tap-to-pay usage data</li>
