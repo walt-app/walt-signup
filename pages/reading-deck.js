@@ -76,7 +76,7 @@ function SlideProblem() {
 
 function SlideSolution() {
   const screens = [
-    { src: "/promo-screen.jpg", alt: "Walt privacy promise screen", label: "Learn" },
+    { src: "/promo-screen.jpg", alt: "Walt privacy promise screen", label: "Download" },
     { src: "/add-card.jpg", alt: "Add a card to Walt", label: "Add card" },
     { src: "/intro-screen.jpg", alt: "Walt wallet ready to tap", label: "Tap to pay" },
   ];
@@ -104,13 +104,13 @@ function SlideSolution() {
                 </p>
                 <ul className="ps-bullets">
                   <li className="ps-bullet">
-                    Transaction data stays on the device — no cloud storage, no server-side logs
+                    Transaction data stays on the device. No cloud storage, no server-side logs
                   </li>
                   <li className="ps-bullet">
                     No ad profiling, no data harvesting, no third-party sharing
                   </li>
                   <li className="ps-bullet">
-                    Funded by members at &euro;10/year, not by monetizing user data
+                    Funded by members at 10 euros a year
                   </li>
                 </ul>
               </div>
@@ -123,10 +123,7 @@ function SlideSolution() {
                     Founded in Copenhagen, launching across the Nordics
                   </li>
                   <li className="ps-bullet">
-                    Enabled by July 2025 EU regulation opening NFC access on iPhone and Android
-                  </li>
-                  <li className="ps-bullet">
-                    European data residency — no transatlantic data transfers
+                    No dependency on US cloud providers for core infrastructure
                   </li>
                 </ul>
               </div>
