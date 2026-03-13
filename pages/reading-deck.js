@@ -309,7 +309,7 @@ function SlideWhyNow() {
             alignSelf: "center",
           }}>
             For the first time, a completely private tap-to-pay wallet is possible on every
-            smartphone in Europe. Walt is that wallet.
+            smartphone in Europe.
           </p>
         </div>
       </div>
