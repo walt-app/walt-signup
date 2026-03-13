@@ -342,72 +342,39 @@ function SlideChallenges() {
         <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
           {/* ── Concept: chain diagram + explanation ── */}
           <div>
-            {/* Chain diagram — vertical stack with revenue/users on far left */}
+            {/* Chain diagram — Walt → stack → Revenue/Users */}
             <div style={{
               display: "flex",
-              alignItems: "stretch",
+              alignItems: "center",
               gap: "clamp(10px, 1.2vw, 20px)",
               marginBottom: "clamp(10px, 1.4vw, 22px)",
             }}>
-              {/* Left: Walt + Revenue/Users */}
-              <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                justifyContent: "center",
-                gap: "clamp(4px, 0.5vw, 8px)",
-              }}>
-                <span style={{
-                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
-                  background: "var(--orange-primary)",
-                  color: "#fff",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                }}>Walt</span>
-                <div style={{ display: "flex", gap: "clamp(4px, 0.4vw, 8px)" }}>
-                  <span style={{
-                    padding: "clamp(3px, 0.35vw, 6px) clamp(6px, 0.7vw, 12px)",
-                    background: "var(--orange-primary)",
-                    color: "#fff",
-                    borderRadius: "clamp(3px, 0.3vw, 6px)",
-                    fontSize: "clamp(6px, 0.7vw, 11px)",
-                    fontWeight: 600,
-                    whiteSpace: "nowrap",
-                    opacity: 0.8,
-                  }}>Revenue</span>
-                  <span style={{
-                    padding: "clamp(3px, 0.35vw, 6px) clamp(6px, 0.7vw, 12px)",
-                    background: "var(--orange-primary)",
-                    color: "#fff",
-                    borderRadius: "clamp(3px, 0.3vw, 6px)",
-                    fontSize: "clamp(6px, 0.7vw, 11px)",
-                    fontWeight: 600,
-                    whiteSpace: "nowrap",
-                    opacity: 0.8,
-                  }}>Users</span>
-                </div>
-              </div>
+              {/* Walt — ready */}
+              <span style={{
+                padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                background: "var(--orange-primary)",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(8px, 0.95vw, 15px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+              }}>Walt</span>
 
               {/* Broken connector */}
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <span style={{
-                  color: "#d4d4d4",
-                  fontSize: "clamp(10px, 1.1vw, 18px)",
-                  lineHeight: 1,
-                  letterSpacing: "clamp(1px, 0.15vw, 3px)",
-                }}>&#xB7;&#xB7;&#xB7;</span>
-              </div>
+              <span style={{
+                color: "#d4d4d4",
+                fontSize: "clamp(10px, 1.1vw, 18px)",
+                lineHeight: 1,
+                letterSpacing: "clamp(1px, 0.15vw, 3px)",
+              }}>&#xB7;&#xB7;&#xB7;</span>
 
-              {/* Middle: vertical stack — tokenization provider (gap), then Visa/MC and Banks (in place) */}
+              {/* Vertical stack — tokenization provider (gap), Visa/MC and Banks (in place) */}
               <div style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "clamp(4px, 0.5vw, 8px)",
               }}>
-                {/* Tokenization provider — dashed, the missing piece */}
                 <span style={{
                   padding: "clamp(5px, 0.6vw, 11px) clamp(9px, 1.1vw, 19px)",
                   background: "transparent",
@@ -420,8 +387,6 @@ function SlideChallenges() {
                   whiteSpace: "nowrap",
                   textAlign: "center",
                 }}>Tokenization provider</span>
-
-                {/* Visa/MC — solid, in place */}
                 <span style={{
                   padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
                   background: "#151515",
@@ -433,8 +398,6 @@ function SlideChallenges() {
                   whiteSpace: "nowrap",
                   textAlign: "center",
                 }}>Visa / Mastercard</span>
-
-                {/* Issuing banks — solid, in place */}
                 <span style={{
                   padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
                   background: "#151515",
@@ -446,6 +409,44 @@ function SlideChallenges() {
                   whiteSpace: "nowrap",
                   textAlign: "center",
                 }}>Issuing banks</span>
+              </div>
+
+              {/* Broken connector */}
+              <span style={{
+                color: "#d4d4d4",
+                fontSize: "clamp(10px, 1.1vw, 18px)",
+                lineHeight: 1,
+                letterSpacing: "clamp(1px, 0.15vw, 3px)",
+              }}>&#xB7;&#xB7;&#xB7;</span>
+
+              {/* Revenue + Users — the destination, blocked */}
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "clamp(4px, 0.4vw, 8px)",
+              }}>
+                <span style={{
+                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                  background: "var(--orange-primary)",
+                  color: "#fff",
+                  borderRadius: "clamp(5px, 0.5vw, 10px)",
+                  fontSize: "clamp(8px, 0.95vw, 15px)",
+                  fontWeight: 600,
+                  letterSpacing: "-0.01em",
+                  whiteSpace: "nowrap",
+                  opacity: 0.5,
+                }}>Revenue</span>
+                <span style={{
+                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                  background: "var(--orange-primary)",
+                  color: "#fff",
+                  borderRadius: "clamp(5px, 0.5vw, 10px)",
+                  fontSize: "clamp(8px, 0.95vw, 15px)",
+                  fontWeight: 600,
+                  letterSpacing: "-0.01em",
+                  whiteSpace: "nowrap",
+                  opacity: 0.5,
+                }}>Users</span>
               </div>
             </div>
             <p className="ps-body" style={{ maxWidth: "88%" }}>
