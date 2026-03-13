@@ -621,13 +621,11 @@ function SlideMarket() {
 function SlideCompetitors() {
   const rows = [
     { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
-    { label: "NFC on both Android and iPhone", walt: "check", wero: "note-Planned 2026\u201327", vipps: "check" },
-    { label: "Works on degoogled Android", walt: "check", wero: "", vipps: "" },
+    { label: "NFC tap-to-pay live today", walt: "", wero: "", vipps: "check-limited" },
     { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
-    { label: "User base", walt: "Pre-launch", wero: "50M+", vipps: "12.5M" },
-    { label: "Consumer price", walt: "\u20AC10/yr", wero: "Free", vipps: "Free" },
-    { label: "Revenue model", walt: "Subscription", wero: "Bank consortium", vipps: "Merchant fee" },
-    { label: "European-owned", walt: "check", wero: "check", vipps: "check" },
+    { label: "User base", walt: "0", wero: "50M", vipps: "12.5M" },
+    { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Merchant pays fee", vipps: "Merchant pays fee" },
+    { label: "Geographic focus", walt: "Nordics \u2192 Europe", wero: "DE, FR, BE", vipps: "Nordics" },
   ];
 
   const Check = ({ orange }) => (
@@ -635,8 +633,8 @@ function SlideCompetitors() {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      width: "clamp(18px, 2vw, 32px)",
-      height: "clamp(18px, 2vw, 32px)",
+      width: "clamp(22px, 2.4vw, 38px)",
+      height: "clamp(22px, 2.4vw, 38px)",
       borderRadius: "50%",
       background: orange ? "var(--orange-primary)" : "#151515",
       flexShrink: 0,
@@ -650,7 +648,7 @@ function SlideCompetitors() {
   const Dash = () => (
     <span style={{
       display: "inline-block",
-      width: "clamp(12px, 1.2vw, 20px)",
+      width: "clamp(14px, 1.4vw, 22px)",
       height: "2px",
       background: "#ccc",
       borderRadius: "1px",
@@ -659,23 +657,23 @@ function SlideCompetitors() {
 
   const renderCell = (value, isWalt) => {
     if (value === "check") return <Check orange={isWalt} />;
-    if (value.startsWith("note-")) {
+    if (value === "check-limited") {
       return (
-        <span style={{ display: "inline-flex", alignItems: "center", gap: "clamp(3px, 0.3vw, 6px)" }}>
-          <Dash />
+        <span style={{ display: "inline-flex", alignItems: "center", gap: "clamp(4px, 0.4vw, 8px)" }}>
+          <Check orange={false} />
           <span style={{
-            fontSize: "clamp(6px, 0.65vw, 10px)",
+            fontSize: "clamp(7px, 0.75vw, 12px)",
             fontWeight: 500,
             color: "#999",
             letterSpacing: "0.02em",
-          }}>{value.replace("note-", "")}</span>
+          }}>Limited</span>
         </span>
       );
     }
     if (value === "") return <Dash />;
     return (
       <span style={{
-        fontSize: "clamp(8px, 0.9vw, 14px)",
+        fontSize: "clamp(9px, 1vw, 16px)",
         fontWeight: isWalt ? 600 : 400,
         color: isWalt ? "#151515" : "#555",
       }}>{value}</span>
@@ -687,7 +685,7 @@ function SlideCompetitors() {
       <div className="ps-pad">
         <h2 className="ps-h1">Competitors</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(8px, 1.2vw, 20px)" }}>
-          No competitor combines privacy, cross-platform NFC, and aligned incentives
+          Competitors offering tap-to-pay as a secondary feature
         </p>
         <div className="ps-content" style={{ display: "flex", justifyContent: "center" }}>
           <div style={{
@@ -696,22 +694,18 @@ function SlideCompetitors() {
             width: "100%",
           }}>
             {/* Header row */}
-            <div style={{ padding: "clamp(8px, 1vw, 18px) clamp(8px, 1vw, 18px)" }} />
-            {[
-              { name: "Walt", isWalt: true },
-              { name: "Wero" },
-              { name: "Vipps MobilePay" },
-            ].map((col) => (
-              <div key={col.name} style={{
-                padding: "clamp(8px, 1vw, 18px) clamp(4px, 0.5vw, 10px)",
+            <div style={{ padding: "clamp(10px, 1.4vw, 24px) clamp(12px, 1.6vw, 28px)" }} />
+            {["Walt", "Wero", "Vipps"].map((name) => (
+              <div key={name} style={{
+                padding: "clamp(10px, 1.4vw, 24px) clamp(8px, 1vw, 18px)",
                 textAlign: "center",
-                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontSize: "clamp(12px, 1.4vw, 24px)",
                 fontWeight: 700,
                 letterSpacing: "-0.02em",
-                color: col.isWalt ? "var(--orange-primary)" : "#151515",
-                borderBottom: col.isWalt ? "3px solid var(--orange-primary)" : "1px solid #ddd",
-                background: col.isWalt ? "rgba(255, 72, 0, 0.04)" : "transparent",
-              }}>{col.name}</div>
+                color: name === "Walt" ? "var(--orange-primary)" : "#151515",
+                borderBottom: name === "Walt" ? "3px solid var(--orange-primary)" : "1px solid #ddd",
+                background: name === "Walt" ? "rgba(255, 72, 0, 0.04)" : "transparent",
+              }}>{name}</div>
             ))}
 
             {/* Data rows */}
@@ -721,8 +715,8 @@ function SlideCompetitors() {
               return (
                 <Fragment key={row.label}>
                   <div style={{
-                    padding: "clamp(7px, 0.9vw, 16px) clamp(8px, 1vw, 18px)",
-                    fontSize: "clamp(8px, 0.9vw, 14px)",
+                    padding: "clamp(10px, 1.2vw, 20px) clamp(12px, 1.6vw, 28px)",
+                    fontSize: "clamp(9px, 1.05vw, 17px)",
                     fontWeight: 500,
                     color: "#333",
                     borderBottom: border,
@@ -731,7 +725,7 @@ function SlideCompetitors() {
                   }}>{row.label}</div>
                   {[row.walt, row.wero, row.vipps].map((val, j) => (
                     <div key={j} style={{
-                      padding: "clamp(7px, 0.9vw, 16px) clamp(4px, 0.5vw, 10px)",
+                      padding: "clamp(10px, 1.2vw, 20px) clamp(8px, 1vw, 18px)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
