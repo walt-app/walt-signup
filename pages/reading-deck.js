@@ -622,12 +622,12 @@ function SlideCompetitors() {
 
 function SlideTraction() {
   const milestones = [
-    { text: "Android app built with aggregator SDK", done: true },
-    { text: "Tokenization partner secured (MeaWallet)", done: true },
-    { text: "End-to-end PCI compliance", done: true },
-    { text: "Launch market identified (Finland)", done: true },
-    { text: "Production-ready tokenization SDK", done: false },
-    { text: "First issuing bank partnership", done: false },
+    { key: "apps", text: "Android and iPhone apps built", done: true },
+    { key: "pci", text: "End-to-end PCI compliance", done: true },
+    { key: "reddit", text: <>Organic customer validation (<a href="https://www.reddit.com/r/BuyFromEU/comments/1rkh4cu/eu_based_privacy_focused_tap_to_pay_coming/" target="_blank" rel="noopener noreferrer" style={{ color: "#ff4800", textDecoration: "none" }}>r/BuyFromEU</a>)</>, done: true },
+    { key: "tokenization", text: "Tokenization provider partnership", done: false },
+    { key: "cards", text: "First cards loaded", done: false },
+    { key: "transaction", text: "First tap-to-pay transaction", done: false },
   ];
 
   const phases = [
@@ -707,7 +707,7 @@ function SlideTraction() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.35vw, 6px)" }}>
                   {milestones.map((m) => (
-                    <div key={m.text} style={{
+                    <div key={m.key} style={{
                       display: "flex",
                       alignItems: "center",
                       gap: "clamp(4px, 0.5vw, 8px)",
