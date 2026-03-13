@@ -216,7 +216,7 @@ function SlideWhyNow() {
       <div className="ps-pad">
         <h2 className="ps-h1">Why Now?</h2>
         <p className="ps-lead">
-          Before 2024, an entirely private tap-to-pay wallet was technically impossible on iPhone
+          EU regulation opens tap-to-pay to third-party wallets
         </p>
         <div className="ps-content">
           {/* Timeline: 3-row grid (above labels, track, below labels) × 5 columns */}
