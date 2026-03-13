@@ -387,8 +387,8 @@ function SlideChallenges() {
             {/* IDEMIA */}
             <div style={{ display: "flex", flexDirection: "column", gap: "clamp(6px, 0.7vw, 12px)" }}>
               <div>
-                <p className="ps-label">IDEMIA</p>
-                <p className="ps-card-title">Full SDK, enterprise only</p>
+                <p className="ps-card-title">IDEMIA</p>
+                <p className="ps-label">Full SDK, enterprise only</p>
               </div>
               <p className="ps-body">
                 World&rsquo;s largest independent token service provider. Launched Tap&nbsp;&amp;&nbsp;Pay SDKs for both iOS and Android.
@@ -407,14 +407,14 @@ function SlideChallenges() {
               paddingLeft: "clamp(10px, 1.2vw, 20px)",
             }}>
               <div>
-                <p className="ps-label">Fidesmo</p>
-                <p className="ps-card-title">860+ banks, no phone SDK</p>
+                <p className="ps-card-title">Fidesmo</p>
+                <p className="ps-label">860+ banks, no phone SDK</p>
               </div>
               <p className="ps-body">
                 Certified Token Requestor for Visa and Mastercard with pre-approved issuers across Europe, including key Nordic banks.
               </p>
               <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600 }}>
-                Phone SDK in development with Mastercard. Currently wearables only. Expected summer 2026.
+                Wearables only.
               </p>
             </div>
 
@@ -427,8 +427,8 @@ function SlideChallenges() {
               paddingLeft: "clamp(10px, 1.2vw, 20px)",
             }}>
               <div>
-                <p className="ps-label">Paymentology</p>
-                <p className="ps-card-title">HCE SDK, not production-ready</p>
+                <p className="ps-card-title">Paymentology</p>
+                <p className="ps-label">HCE SDK, not production-ready</p>
               </div>
               <p className="ps-body">
                 Global card issuing processor. Subsidiary MeaWallet provides an HCE SDK and tokenization infrastructure.
