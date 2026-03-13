@@ -332,10 +332,89 @@ function SlideProduct() {
 /* ─── Slide 6: Challenges ─────────────────────────────────────────────────── */
 
 function SlideChallenges() {
+  const challenges = [
+    {
+      title: "Issuer approval is bank-by-bank",
+      risk: "Each bank must approve Walt\u2019s Token Requestor ID before its cards work. Coverage won\u2019t be universal at launch.",
+      response: "MeaWallet handles scheme certification. Fidesmo partnership provides access to ~860 pre-approved issuers, including key Nordic banks.",
+    },
+    {
+      title: "Trust without open source",
+      risk: "MeaWallet\u2019s proprietary payment SDK prevents full open-sourcing \u2014 the privacy community\u2019s strongest trust signal.",
+      response: "Independent security audit (Cure53-tier), published architecture whitepaper, and European jurisdiction with GDPR enforcement.",
+    },
+    {
+      title: "Competing with \u201Cfree\u201D",
+      risk: "Google Wallet and Apple Pay cost nothing. Walt must convince users to pay for a right they\u2019re giving away.",
+      response: "\u20AC10/year sits at the proven willingness-to-pay threshold (Bundesbank study). 79% cheaper than Proton Mail.",
+    },
+    {
+      title: "Closing window",
+      risk: "Wero\u2019s NFC rollout (2026\u20132027), the EUDI wallet mandate, and the digital euro will reshape European payments.",
+      response: "2\u20133 year head start. These initiatives normalize non-Big-Tech wallets, expanding Walt\u2019s addressable market.",
+    },
+    {
+      title: "Solo operator",
+      risk: "One-person team constrains development pace, marketing reach, and support capacity.",
+      response: "Break-even at 3,000 subscribers (\u20AC30K/year). MeaWallet SDK handles payment infrastructure complexity.",
+    },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Challenges</h2>
+        <p className="ps-lead">
+          Known risks and how Walt addresses each one
+        </p>
+        <div className="ps-content">
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "clamp(8px, 1vw, 16px)",
+            marginBottom: "clamp(8px, 1vw, 16px)",
+          }}>
+            {challenges.slice(0, 3).map((c) => (
+              <div key={c.title} className="ps-card ps-card--left" style={{
+                padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.4vw, 24px)",
+                display: "flex",
+                flexDirection: "column",
+              }}>
+                <p className="ps-card-h" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>{c.title}</p>
+                <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.7vw, 10px)", flex: 1 }}>{c.risk}</p>
+                <div style={{ borderTop: "1px solid #ddd", paddingTop: "clamp(5px, 0.6vw, 10px)" }}>
+                  <p className="ps-body" style={{ color: "#555", fontSize: "clamp(8px, 0.9vw, 15px)" }}>
+                    <span style={{ color: "var(--orange-primary)", fontWeight: 700, marginRight: "clamp(2px, 0.2vw, 4px)" }}>&rarr;</span>
+                    {c.response}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(8px, 1vw, 16px)",
+            maxWidth: "67%",
+          }}>
+            {challenges.slice(3).map((c) => (
+              <div key={c.title} className="ps-card ps-card--left" style={{
+                padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.4vw, 24px)",
+                display: "flex",
+                flexDirection: "column",
+              }}>
+                <p className="ps-card-h" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>{c.title}</p>
+                <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.7vw, 10px)", flex: 1 }}>{c.risk}</p>
+                <div style={{ borderTop: "1px solid #ddd", paddingTop: "clamp(5px, 0.6vw, 10px)" }}>
+                  <p className="ps-body" style={{ color: "#555", fontSize: "clamp(8px, 0.9vw, 15px)" }}>
+                    <span style={{ color: "var(--orange-primary)", fontWeight: 700, marginRight: "clamp(2px, 0.2vw, 4px)" }}>&rarr;</span>
+                    {c.response}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
