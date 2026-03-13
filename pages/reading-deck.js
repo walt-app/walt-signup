@@ -342,110 +342,111 @@ function SlideChallenges() {
         <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
           {/* ── Concept: chain diagram + explanation ── */}
           <div>
-            {/* Chain diagram — Walt → stack → Revenue/Users */}
+            {/* Chain diagram — horizontal layout spanning full width */}
             <div style={{
               display: "flex",
               alignItems: "center",
-              gap: "clamp(10px, 1.2vw, 20px)",
               marginBottom: "clamp(10px, 1.4vw, 22px)",
             }}>
               {/* Walt — ready */}
               <span style={{
-                padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                padding: "clamp(7px, 0.8vw, 14px) clamp(14px, 1.6vw, 28px)",
                 background: "var(--orange-primary)",
                 color: "#fff",
                 borderRadius: "clamp(5px, 0.5vw, 10px)",
-                fontSize: "clamp(8px, 0.95vw, 15px)",
-                fontWeight: 600,
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 700,
                 letterSpacing: "-0.01em",
                 whiteSpace: "nowrap",
+                flexShrink: 0,
               }}>Walt</span>
 
               {/* Broken connector */}
-              <span style={{
-                color: "#d4d4d4",
-                fontSize: "clamp(10px, 1.1vw, 18px)",
-                lineHeight: 1,
-                letterSpacing: "clamp(1px, 0.15vw, 3px)",
-              }}>&#xB7;&#xB7;&#xB7;</span>
-
-              {/* Vertical stack — tokenization provider (gap), Visa/MC and Banks (in place) */}
-              <div style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "clamp(4px, 0.5vw, 8px)",
-              }}>
-                <span style={{
-                  padding: "clamp(5px, 0.6vw, 11px) clamp(9px, 1.1vw, 19px)",
-                  background: "transparent",
-                  border: "clamp(1.5px, 0.15vw, 2.5px) dashed #bbb",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  color: "#999",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                  textAlign: "center",
-                }}>Tokenization provider</span>
-                <span style={{
-                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
-                  background: "#151515",
-                  color: "#fff",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                  textAlign: "center",
-                }}>Visa / Mastercard</span>
-                <span style={{
-                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
-                  background: "#151515",
-                  color: "#fff",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                  textAlign: "center",
-                }}>Issuing banks</span>
+              <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 clamp(2px, 0.3vw, 6px)" }}>
+                <span style={{ color: "#d4d4d4", fontSize: "clamp(12px, 1.4vw, 22px)", lineHeight: 1, letterSpacing: "clamp(2px, 0.3vw, 6px)" }}>&#xB7;&#xB7;&#xB7;</span>
               </div>
 
-              {/* Broken connector */}
+              {/* Tokenization provider — dashed (the missing piece) */}
               <span style={{
-                color: "#d4d4d4",
-                fontSize: "clamp(10px, 1.1vw, 18px)",
-                lineHeight: 1,
-                letterSpacing: "clamp(1px, 0.15vw, 3px)",
-              }}>&#xB7;&#xB7;&#xB7;</span>
+                padding: "clamp(7px, 0.8vw, 14px) clamp(10px, 1.2vw, 20px)",
+                background: "transparent",
+                border: "clamp(1.5px, 0.15vw, 2.5px) dashed #bbb",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                color: "#999",
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}>Tokenization provider</span>
 
-              {/* Revenue + Users — the destination, blocked */}
+              {/* Solid connector */}
+              <div style={{ flex: 0.5, height: "clamp(1.5px, 0.12vw, 2px)", background: "#151515", margin: "0 clamp(2px, 0.2vw, 4px)" }} />
+
+              {/* Visa / Mastercard — in place */}
+              <span style={{
+                padding: "clamp(7px, 0.8vw, 14px) clamp(10px, 1.2vw, 20px)",
+                background: "#151515",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}>Visa / Mastercard</span>
+
+              {/* Solid connector */}
+              <div style={{ flex: 0.5, height: "clamp(1.5px, 0.12vw, 2px)", background: "#151515", margin: "0 clamp(2px, 0.2vw, 4px)" }} />
+
+              {/* Issuing banks — in place */}
+              <span style={{
+                padding: "clamp(7px, 0.8vw, 14px) clamp(10px, 1.2vw, 20px)",
+                background: "#151515",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}>Issuing banks</span>
+
+              {/* Broken connector */}
+              <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 clamp(2px, 0.3vw, 6px)" }}>
+                <span style={{ color: "#d4d4d4", fontSize: "clamp(12px, 1.4vw, 22px)", lineHeight: 1, letterSpacing: "clamp(2px, 0.3vw, 6px)" }}>&#xB7;&#xB7;&#xB7;</span>
+              </div>
+
+              {/* Revenue + Users — blocked destination */}
               <div style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "clamp(4px, 0.4vw, 8px)",
+                gap: "clamp(3px, 0.3vw, 6px)",
+                flexShrink: 0,
               }}>
                 <span style={{
-                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                  padding: "clamp(5px, 0.5vw, 9px) clamp(10px, 1.2vw, 20px)",
                   background: "var(--orange-primary)",
                   color: "#fff",
                   borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
+                  fontSize: "clamp(9px, 1.1vw, 18px)",
                   fontWeight: 600,
                   letterSpacing: "-0.01em",
                   whiteSpace: "nowrap",
-                  opacity: 0.5,
+                  opacity: 0.45,
+                  textAlign: "center",
                 }}>Revenue</span>
                 <span style={{
-                  padding: "clamp(6px, 0.7vw, 12px) clamp(10px, 1.2vw, 20px)",
+                  padding: "clamp(5px, 0.5vw, 9px) clamp(10px, 1.2vw, 20px)",
                   background: "var(--orange-primary)",
                   color: "#fff",
                   borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(8px, 0.95vw, 15px)",
+                  fontSize: "clamp(9px, 1.1vw, 18px)",
                   fontWeight: 600,
                   letterSpacing: "-0.01em",
                   whiteSpace: "nowrap",
-                  opacity: 0.5,
+                  opacity: 0.45,
+                  textAlign: "center",
                 }}>Users</span>
               </div>
             </div>
