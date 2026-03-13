@@ -633,23 +633,23 @@ function SlideTraction() {
   const phases = [
     {
       label: "PHASE 1",
-      market: "Finland",
-      target: "Launch market",
-      detail: "Highest digital sovereignty score in Europe (DSI 64.5). 92.6% of internet users take data protective measures.",
+      market: "Privacy communities",
+      target: "Early adopters & beta",
+      detail: "Organic word-of-mouth in privacy-focused communities. Early adopters sign up for the beta program.",
       active: true,
     },
     {
       label: "PHASE 2",
-      market: "Broader Nordics",
-      target: "Sweden, Denmark, Norway",
-      detail: "High iPhone share (56\u201363%) makes cross-platform Walt more valuable. Strong institutional privacy culture.",
+      market: "Organic European growth",
+      target: "Niche communities",
+      detail: "Expand across Europe through organic discovery in communities like Reddit, Mastodon, and privacy forums.",
       active: false,
     },
     {
       label: "PHASE 3",
-      market: "Europe",
-      target: "25M target market",
-      detail: "Germany is the largest single opportunity. 61.6% Android, highest privacy consciousness in Europe.",
+      market: "High-visibility channels",
+      target: "Scaled distribution",
+      detail: "Targeted reach across privacy-aligned platforms: Proton, Brave, DuckDuckGo, and similar channels.",
       active: false,
     },
   ];
@@ -752,7 +752,7 @@ function SlideTraction() {
                 fontSize: "clamp(7px, 0.8vw, 13px)",
                 marginBottom: "clamp(8px, 1vw, 16px)",
               }}>
-                GEOGRAPHIC EXPANSION
+                GO-TO-MARKET
               </p>
               <div style={{
                 display: "flex",
