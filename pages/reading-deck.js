@@ -378,7 +378,7 @@ function SlideChallenges() {
               ))}
             </div>
             <p className="ps-body" style={{ maxWidth: "88%" }}>
-              To enable tap-to-pay, Walt needs a <strong style={{ color: "#151515" }}>tokenization provider</strong> &mdash; a company certified by Visa and Mastercard that converts card numbers into secure payment tokens, connecting a wallet to the banking system. The EU opened iPhone NFC to third parties in 2024, but no provider yet offers a production-ready SDK for independent phone wallets.
+              To enable tap-to-pay, Walt needs a <strong style={{ color: "#151515" }}>tokenization provider</strong>: a company certified by Visa and Mastercard that converts card numbers into secure payment tokens, connecting a wallet to the banking system. The EU opened iPhone NFC to third parties in 2024, but no provider yet offers a production-ready SDK for independent phone wallets.
             </p>
           </div>
 
