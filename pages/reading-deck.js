@@ -342,11 +342,12 @@ function SlideChallenges() {
         <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
           {/* ── Concept: chain diagram + explanation ── */}
           <div>
-            {/* Chain diagram — grid layout spanning full width */}
+            {/* Chain diagram — centered with connecting lines */}
             <div style={{
-              display: "grid",
-              gridTemplateColumns: "auto 1fr auto 1fr auto",
+              display: "flex",
               alignItems: "center",
+              justifyContent: "center",
+              gap: "0",
               marginBottom: "clamp(10px, 1.4vw, 22px)",
             }}>
               {/* Walt — ready */}
@@ -359,18 +360,18 @@ function SlideChallenges() {
                 fontWeight: 700,
                 letterSpacing: "-0.01em",
                 whiteSpace: "nowrap",
+                flexShrink: 0,
               }}>Walt</span>
 
-              {/* Broken connector */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 clamp(4px, 0.5vw, 10px)" }}>
-                <span style={{ color: "#d4d4d4", fontSize: "clamp(12px, 1.4vw, 22px)", lineHeight: 1, letterSpacing: "clamp(2px, 0.3vw, 6px)" }}>&#xB7;&#xB7;&#xB7;</span>
-              </div>
+              {/* Line connector */}
+              <div style={{ width: "clamp(24px, 3.5vw, 56px)", height: "clamp(1.5px, 0.15vw, 2.5px)", background: "#d4d4d4", flexShrink: 0 }} />
 
               {/* Vertical stack — tokenization provider (gap), Visa/MC and Banks (in place) */}
               <div style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "clamp(4px, 0.5vw, 8px)",
+                flexShrink: 0,
               }}>
                 <span style={{
                   padding: "clamp(7px, 0.8vw, 14px) clamp(12px, 1.4vw, 24px)",
@@ -405,47 +406,22 @@ function SlideChallenges() {
                 }}>Issuing banks</span>
               </div>
 
-              {/* Broken connector */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 clamp(4px, 0.5vw, 10px)" }}>
-                <span style={{ color: "#d4d4d4", fontSize: "clamp(12px, 1.4vw, 22px)", lineHeight: 1, letterSpacing: "clamp(2px, 0.3vw, 6px)" }}>&#xB7;&#xB7;&#xB7;</span>
-              </div>
+              {/* Line connector */}
+              <div style={{ width: "clamp(24px, 3.5vw, 56px)", height: "clamp(1.5px, 0.15vw, 2.5px)", background: "#d4d4d4", flexShrink: 0 }} />
 
-              {/* Revenue + Users — blocked destination */}
-              <div style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "clamp(4px, 0.4vw, 8px)",
-                alignItems: "center",
-              }}>
-                <span style={{
-                  padding: "clamp(8px, 0.9vw, 16px) clamp(16px, 2vw, 36px)",
-                  background: "var(--orange-primary)",
-                  color: "#fff",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(9px, 1.1vw, 18px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                  opacity: 0.45,
-                  width: "100%",
-                  textAlign: "center",
-                  boxSizing: "border-box",
-                }}>Revenue</span>
-                <span style={{
-                  padding: "clamp(8px, 0.9vw, 16px) clamp(16px, 2vw, 36px)",
-                  background: "var(--orange-primary)",
-                  color: "#fff",
-                  borderRadius: "clamp(5px, 0.5vw, 10px)",
-                  fontSize: "clamp(9px, 1.1vw, 18px)",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  whiteSpace: "nowrap",
-                  opacity: 0.45,
-                  width: "100%",
-                  textAlign: "center",
-                  boxSizing: "border-box",
-                }}>Users</span>
-              </div>
+              {/* Revenue / Users — blocked destination */}
+              <span style={{
+                padding: "clamp(8px, 0.9vw, 16px) clamp(16px, 2vw, 36px)",
+                background: "var(--orange-primary)",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(9px, 1.1vw, 18px)",
+                fontWeight: 600,
+                letterSpacing: "-0.01em",
+                whiteSpace: "nowrap",
+                opacity: 0.45,
+                flexShrink: 0,
+              }}>Revenue / Users</span>
             </div>
             <p className="ps-body" style={{ maxWidth: "88%" }}>
               To enable tap-to-pay, Walt needs a <strong style={{ color: "#151515" }}>tokenization provider</strong>: a company certified by Visa and Mastercard that converts card numbers into secure payment tokens, connecting a wallet to the banking system. The EU opened iPhone NFC to third parties in 2024, but no provider yet offers a production-ready SDK for independent phone wallets.
