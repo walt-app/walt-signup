@@ -255,19 +255,18 @@ function SlideMarket() {
                   {/* SAM */}
                   <polygon points="60,75 340,75 285,140 115,140" fill="rgba(255,72,0,0.20)" stroke="rgba(255,72,0,0.32)" strokeWidth="1.5" />
                   <text x="200" y="92" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#999" letterSpacing="0.1em">SERVICEABLE MARKET</text>
-                  <text x="200" y="115" textAnchor="middle" fontSize="20" fontWeight="900" fill="#151515" letterSpacing="-0.02em">15&ndash;30M</text>
-                  <text x="200" y="131" textAnchor="middle" fontSize="9" fill="#7f7f7f">multi-tool privacy users &middot; &euro;150&ndash;300M</text>
+                  <text x="200" y="115" textAnchor="middle" fontSize="20" fontWeight="900" fill="#151515" letterSpacing="-0.02em">50M</text>
+                  <text x="200" y="131" textAnchor="middle" fontSize="9" fill="#7f7f7f">privacy-conscious Europeans &middot; &euro;500M</text>
 
                   {/* SOM */}
                   <polygon points="115,150 285,150 260,215 140,215" fill="#ff4800" />
-                  <text x="200" y="167" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#151515" letterSpacing="0.1em">INITIAL TARGET</text>
-                  <text x="200" y="190" textAnchor="middle" fontSize="18" fontWeight="900" fill="#151515" letterSpacing="-0.02em">100K&ndash;500K</text>
-                  <text x="200" y="206" textAnchor="middle" fontSize="9" fill="#151515" opacity="0.65">years 1&ndash;3 &middot; &euro;1&ndash;5M ARR</text>
+                  <text x="200" y="167" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#151515" letterSpacing="0.1em">TARGET MARKET</text>
+                  <text x="200" y="190" textAnchor="middle" fontSize="18" fontWeight="900" fill="#151515" letterSpacing="-0.02em">25M</text>
+                  <text x="200" y="206" textAnchor="middle" fontSize="9" fill="#151515" opacity="0.65">European focus &middot; &euro;250M ARR</text>
                 </g>
               </svg>
               <p className="ps-body" style={{ color: "#7f7f7f", fontSize: "clamp(7px, 0.8vw, 13px)", marginTop: "clamp(6px, 0.7vw, 12px)" }}>
-                81% of EU internet users express concern about digital privacy.<Ref n={9} />{" "}
-                Derived from: Proton 30&ndash;40M EU, Signal 10&ndash;20M EU, Brave ~12M EU.
+                81% of EU internet users express concern about digital privacy.<Ref n={9} />
               </p>
             </div>
 
