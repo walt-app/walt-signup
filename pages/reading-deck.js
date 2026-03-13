@@ -51,7 +51,7 @@ function SlideProblem() {
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Apple Pay</p>
                 <ul className="ps-bullets" style={{ color: "#ccc" }}>
                   <li className="ps-bullet" style={{ color: "#ccc" }}>Charges European banks ~0.05% per transaction<Ref n={4} /></li>
-                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M annually from European transactions (POS, in-app, and web)<Ref n={5} /></li>
+                  <li className="ps-bullet" style={{ color: "#ccc" }}>Extracts &euro;300&ndash;500M annually from European transactions<Ref n={5} /></li>
                 </ul>
               </div>
               <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
