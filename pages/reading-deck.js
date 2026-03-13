@@ -332,87 +332,99 @@ function SlideProduct() {
 /* ─── Slide 6: Challenges ─────────────────────────────────────────────────── */
 
 function SlideChallenges() {
-  const challenges = [
-    {
-      title: "Issuer approval is bank-by-bank",
-      risk: "Each bank must approve Walt\u2019s Token Requestor ID before its cards work. Coverage won\u2019t be universal at launch.",
-      response: "MeaWallet handles scheme certification. Fidesmo partnership provides access to ~860 pre-approved issuers, including key Nordic banks.",
-    },
-    {
-      title: "Trust without open source",
-      risk: "MeaWallet\u2019s proprietary payment SDK prevents full open-sourcing \u2014 the privacy community\u2019s strongest trust signal.",
-      response: "Independent security audit (Cure53-tier), published architecture whitepaper, and European jurisdiction with GDPR enforcement.",
-    },
-    {
-      title: "Competing with \u201Cfree\u201D",
-      risk: "Google Wallet and Apple Pay cost nothing. Walt must convince users to pay for a right they\u2019re giving away.",
-      response: "\u20AC10/year sits at the proven willingness-to-pay threshold (Bundesbank study). 79% cheaper than Proton Mail.",
-    },
-    {
-      title: "Closing window",
-      risk: "Wero\u2019s NFC rollout (2026\u20132027), the EUDI wallet mandate, and the digital euro will reshape European payments.",
-      response: "2\u20133 year head start. These initiatives normalize non-Big-Tech wallets, expanding Walt\u2019s addressable market.",
-    },
-    {
-      title: "Solo operator",
-      risk: "One-person team constrains development pace, marketing reach, and support capacity.",
-      response: "Break-even at 3,000 subscribers (\u20AC30K/year). MeaWallet SDK handles payment infrastructure complexity.",
-    },
-  ];
-
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Challenges</h2>
         <p className="ps-lead">
-          Known risks and how Walt addresses each one
+          The infrastructure for third-party phone wallets is still being built
         </p>
         <div className="ps-content">
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "clamp(8px, 1vw, 16px)",
-            marginBottom: "clamp(8px, 1vw, 16px)",
-          }}>
-            {challenges.slice(0, 3).map((c) => (
-              <div key={c.title} className="ps-card ps-card--left" style={{
-                padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.4vw, 24px)",
-                display: "flex",
-                flexDirection: "column",
-              }}>
-                <p className="ps-card-h" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>{c.title}</p>
-                <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.7vw, 10px)", flex: 1 }}>{c.risk}</p>
-                <div style={{ borderTop: "1px solid #ddd", paddingTop: "clamp(5px, 0.6vw, 10px)" }}>
-                  <p className="ps-body" style={{ color: "#555", fontSize: "clamp(8px, 0.9vw, 15px)" }}>
-                    <span style={{ color: "var(--orange-primary)", fontWeight: 700, marginRight: "clamp(2px, 0.2vw, 4px)" }}>&rarr;</span>
-                    {c.response}
-                  </p>
-                </div>
+          <div className="ps-split" style={{ alignItems: "start" }}>
+            {/* Left: concept explanation */}
+            <div className="ps-stack">
+              <div>
+                <p className="ps-body" style={{ marginBottom: "clamp(8px, 1vw, 16px)" }}>
+                  The EU forced Apple to open iPhone NFC in 2024, enabling independent wallets for the first time. But a wallet app cannot connect to banks alone.
+                </p>
+                <p className="ps-body" style={{ marginBottom: "clamp(8px, 1vw, 16px)" }}>
+                  It needs a <strong style={{ color: "#151515" }}>tokenization service provider</strong> &mdash; a company certified by Visa and Mastercard that converts card numbers into secure payment tokens. These providers are the bridge between a wallet and the banking system.
+                </p>
+                <p className="ps-body">
+                  This market barely existed before 2024. The providers that have the certification and bank relationships are still adapting their infrastructure for the new phone wallet use case.
+                </p>
               </div>
-            ))}
-          </div>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "clamp(8px, 1vw, 16px)",
-            maxWidth: "67%",
-          }}>
-            {challenges.slice(3).map((c) => (
-              <div key={c.title} className="ps-card ps-card--left" style={{
-                padding: "clamp(8px, 1.2vw, 20px) clamp(10px, 1.4vw, 24px)",
+              {/* Simple flow diagram */}
+              <div style={{
                 display: "flex",
-                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "clamp(4px, 0.5vw, 10px)",
+                padding: "clamp(10px, 1.4vw, 24px) 0",
               }}>
-                <p className="ps-card-h" style={{ marginBottom: "clamp(3px, 0.4vw, 6px)" }}>{c.title}</p>
-                <p className="ps-body" style={{ marginBottom: "clamp(6px, 0.7vw, 10px)", flex: 1 }}>{c.risk}</p>
-                <div style={{ borderTop: "1px solid #ddd", paddingTop: "clamp(5px, 0.6vw, 10px)" }}>
-                  <p className="ps-body" style={{ color: "#555", fontSize: "clamp(8px, 0.9vw, 15px)" }}>
-                    <span style={{ color: "var(--orange-primary)", fontWeight: 700, marginRight: "clamp(2px, 0.2vw, 4px)" }}>&rarr;</span>
-                    {c.response}
-                  </p>
-                </div>
+                {[
+                  { label: "Walt", accent: true },
+                  { arrow: true },
+                  { label: "Tokenization\nProvider", accent: false },
+                  { arrow: true },
+                  { label: "Visa / MC", accent: false },
+                  { arrow: true },
+                  { label: "Banks", accent: false },
+                ].map((item, i) =>
+                  item.arrow ? (
+                    <span key={i} style={{
+                      color: "#bbb",
+                      fontSize: "clamp(10px, 1.2vw, 20px)",
+                      lineHeight: 1,
+                    }}>&rarr;</span>
+                  ) : (
+                    <span key={i} style={{
+                      display: "inline-block",
+                      padding: "clamp(4px, 0.5vw, 8px) clamp(8px, 0.8vw, 14px)",
+                      background: item.accent ? "var(--orange-primary)" : "#f0f0f0",
+                      color: item.accent ? "#fff" : "#333",
+                      borderRadius: "clamp(4px, 0.4vw, 8px)",
+                      fontSize: "clamp(7px, 0.75vw, 12px)",
+                      fontWeight: 600,
+                      textAlign: "center",
+                      whiteSpace: "pre-line",
+                      lineHeight: 1.3,
+                    }}>{item.label}</span>
+                  )
+                )}
               </div>
-            ))}
+            </div>
+
+            {/* Right: three provider cards */}
+            <div className="ps-stack ps-gap-sm">
+              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+                <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>IDEMIA</p>
+                <p className="ps-body" style={{ color: "#ccc", marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
+                  World&rsquo;s largest independent token service provider. Full Tap&nbsp;&amp;&nbsp;Pay SDK for both iOS and Android.
+                </p>
+                <p className="ps-body" style={{ color: "#999" }}>
+                  <strong style={{ color: "#fff" }}>Blocker:</strong> Enterprise-only. Not willing to engage with early-stage startups.
+                </p>
+              </div>
+              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+                <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Fidesmo</p>
+                <p className="ps-body" style={{ color: "#ccc", marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
+                  Certified Token Requestor (Visa + Mastercard) with 860+ pre-approved European issuers, including key Nordic banks.
+                </p>
+                <p className="ps-body" style={{ color: "#999" }}>
+                  <strong style={{ color: "#fff" }}>Blocker:</strong> Phone wallet SDK in development with Mastercard. Currently wearables only. Expected summer 2026.
+                </p>
+              </div>
+              <div className="ps-card" style={{ background: "#151515", color: "#fff" }}>
+                <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>Paymentology</p>
+                <p className="ps-body" style={{ color: "#ccc", marginBottom: "clamp(4px, 0.5vw, 8px)" }}>
+                  Global card issuing processor with tokenization infrastructure and the MeaWallet HCE SDK.
+                </p>
+                <p className="ps-body" style={{ color: "#999" }}>
+                  <strong style={{ color: "#fff" }}>Blocker:</strong> Phone wallet SDK not yet production-ready for third-party tap-to-pay use cases.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
