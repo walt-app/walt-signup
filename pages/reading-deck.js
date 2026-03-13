@@ -39,7 +39,7 @@ function SlideProblem() {
                 <p className="ps-body">Europeans use Apple Pay or Google Wallet for in-store purchases<Ref n={1} /></p>
               </div>
               <div>
-                <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>&euro;500B+</p>
+                <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>&euro;700B+</p>
                 <p className="ps-body">in mobile wallet payments at European point-of-sale terminals (2024)<Ref n={2} /></p>
               </div>
               <p className="ps-body" style={{ color: "#7f7f7f", marginTop: "clamp(4px, 0.5vw, 8px)" }}>
@@ -282,7 +282,7 @@ function SlideReferences() {
           <div className="ps-stack ps-gap-sm" style={{ maxWidth: "85%" }}>
             <ol style={{ margin: 0, paddingLeft: "clamp(14px, 1.5vw, 24px)", display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)" }}>
               <li className="ps-body">Flagship Advisory Partners, &ldquo;6 Years After the EU Launch of Apple Pay: Over 44% of Europeans Use Mobile Wallets&rdquo; (2023); Mordor Intelligence, &ldquo;Europe Mobile Payments Market&rdquo; (2025)</li>
-              <li className="ps-body">ECB SPACE 2024 (7% of POS value via mobile devices); ECB Payment Statistics H2 2024; Mordor Intelligence, &ldquo;Europe Mobile Payments Market&rdquo; (2025)</li>
+              <li className="ps-body">Worldpay Global Payments Report 2025 (digital wallets = 14% of European POS value across 14 markets incl. UK); ECB SPACE 2024 (7% of POS value in euro area via mobile devices); ECB Payment Statistics H2 2024</li>
               <li className="ps-body">CoinLaw, &ldquo;Apple Pay vs Google Pay Statistics&rdquo; (2026); StatCounter mobile payment share data</li>
               <li className="ps-body">Swiss antitrust investigation via Finews (~0.05&ndash;0.12% issuer fee); EU Interchange Fee Regulation 2015/751 constraints; Walt market research estimates</li>
               <li className="ps-body">Oliver Wyman, European Apple Pay fee revenue estimate (February 2025)</li>
