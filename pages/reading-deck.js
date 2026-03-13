@@ -31,8 +31,8 @@ function SlideProblem() {
         <p className="ps-lead">
           Tap-to-pay in Europe lives with Google and Apple
         </p>
-        <div className="ps-content" style={{ justifyContent: "center" }}>
-          <div className="ps-split">
+        <div className="ps-content">
+          <div className="ps-split" style={{ flex: "none" }}>
             <div className="ps-stack">
               <div>
                 <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>200&ndash;250M</p>
@@ -97,8 +97,8 @@ function SlideSolution() {
             height: "100%",
           }}>
             {/* Key differentiators */}
-            <div className="ps-stack">
-              <div className="ps-card">
+            <div className="ps-stack" style={{ gap: "clamp(6px, 0.8vw, 14px)" }}>
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
                   Privacy by design
                 </p>
@@ -111,20 +111,20 @@ function SlideSolution() {
                   </li>
                 </ul>
               </div>
-              <div className="ps-card">
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
                   Built for Europe
                 </p>
                 <ul className="ps-bullets">
                   <li className="ps-bullet">
-                    Founded in Copenhagen, launching across the Nordics
+                    Founded in Copenhagen to establish European sovereignty
                   </li>
                   <li className="ps-bullet">
                     No dependency on US cloud providers for core infrastructure
                   </li>
                 </ul>
               </div>
-              <div className="ps-card">
+              <div className="ps-card" style={{ padding: "clamp(8px, 1.1vw, 18px) clamp(10px, 1.4vw, 24px)" }}>
                 <p className="ps-card-h" style={{ color: "var(--orange-primary)" }}>
                   Simplicity
                 </p>
