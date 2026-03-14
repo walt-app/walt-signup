@@ -7,85 +7,106 @@ export default function SlideMarket() {
         <div className="ps-content">
           <div style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "clamp(16px, 2.8vw, 44px)",
+            gridTemplateColumns: "1fr 1.2fr",
+            gap: "clamp(24px, 3.5vw, 56px)",
             alignItems: "center",
           }}>
 
-            {/* ── Left: Market Sizing Funnel ── */}
-            <div>
+            {/* ── Left: Target Market + Pricing ── */}
+            <div className="ps-stack" style={{ gap: "clamp(14px, 1.8vw, 28px)", alignItems: "center", textAlign: "center" }}>
               <p className="ps-label" style={{
                 color: "#ff4800",
                 letterSpacing: "0.1em",
                 fontSize: "clamp(7px, 0.8vw, 13px)",
-                marginBottom: "clamp(6px, 0.7vw, 12px)",
               }}>
-                MARKET SIZING AT &euro;10/YEAR
+                TARGET MARKET
               </p>
-              <svg viewBox="0 0 400 220" width="100%" style={{ display: "block" }}>
-                <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
-                  {/* TAM */}
-                  <polygon points="5,0 395,0 340,65 60,65" fill="rgba(255,72,0,0.08)" stroke="rgba(255,72,0,0.18)" strokeWidth="1.5" />
-                  <text x="200" y="17" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#999" letterSpacing="0.1em">TOTAL ADDRESSABLE MARKET</text>
-                  <text x="200" y="40" textAnchor="middle" fontSize="22" fontWeight="900" fill="#151515" letterSpacing="-0.02em">100&ndash;150M</text>
-                  <text x="200" y="56" textAnchor="middle" fontSize="9" fill="#7f7f7f">&euro;1.0&ndash;1.5B</text>
 
-                  {/* SAM */}
-                  <polygon points="60,75 340,75 285,140 115,140" fill="rgba(255,72,0,0.20)" stroke="rgba(255,72,0,0.32)" strokeWidth="1.5" />
-                  <text x="200" y="92" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#999" letterSpacing="0.1em">SERVICEABLE MARKET</text>
-                  <text x="200" y="115" textAnchor="middle" fontSize="20" fontWeight="900" fill="#151515" letterSpacing="-0.02em">50M</text>
-                  <text x="200" y="131" textAnchor="middle" fontSize="9" fill="#7f7f7f">&euro;500M</text>
+              <div>
+                <span style={{
+                  fontSize: "clamp(40px, 6vw, 96px)",
+                  fontWeight: 900,
+                  color: "#151515",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1,
+                  display: "block",
+                }}>25M</span>
+                <p className="ps-body" style={{ color: "#7f7f7f", marginTop: "clamp(2px, 0.3vw, 6px)" }}>
+                  privacy-conscious Europeans
+                </p>
+              </div>
 
-                  {/* SOM */}
-                  <polygon points="115,150 285,150 260,215 140,215" fill="#ff4800" />
-                  <text x="200" y="167" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="#151515" letterSpacing="0.1em">TARGET MARKET</text>
-                  <text x="200" y="190" textAnchor="middle" fontSize="18" fontWeight="900" fill="#151515" letterSpacing="-0.02em">25M</text>
-                  <text x="200" y="206" textAnchor="middle" fontSize="9" fill="#151515" opacity="0.65">&euro;250M ARR</text>
-                </g>
-              </svg>
+              {/* €10/year pricing badge */}
+              <div style={{
+                background: "#ff4800",
+                borderRadius: "clamp(8px, 0.9vw, 14px)",
+                padding: "clamp(10px, 1.2vw, 20px) clamp(20px, 2.5vw, 40px)",
+                display: "inline-flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}>
+                <span style={{
+                  fontSize: "clamp(7px, 0.7vw, 11px)",
+                  fontWeight: 700,
+                  color: "#151515",
+                  letterSpacing: "0.1em",
+                  marginBottom: "clamp(2px, 0.2vw, 4px)",
+                }}>WALT MEMBERSHIP</span>
+                <span style={{
+                  fontSize: "clamp(28px, 3.8vw, 60px)",
+                  fontWeight: 900,
+                  color: "#151515",
+                  lineHeight: 1,
+                }}>&euro;10</span>
+                <span style={{
+                  fontSize: "clamp(11px, 1.2vw, 20px)",
+                  fontWeight: 500,
+                  color: "#151515",
+                }}>/year</span>
+              </div>
+
+              <p style={{
+                fontSize: "clamp(16px, 2vw, 32px)",
+                fontWeight: 700,
+                color: "#151515",
+                lineHeight: 1.2,
+              }}>&euro;250M ARR</p>
             </div>
 
-            {/* ── Right: Proof the market pays ── */}
+            {/* ── Right: European privacy market proof ── */}
             <div className="ps-stack" style={{
-              gap: "clamp(12px, 1.5vw, 24px)",
+              gap: "clamp(16px, 2vw, 32px)",
               justifyContent: "center",
             }}>
-              <div>
-                <p className="ps-label" style={{
-                  color: "#ff4800",
-                  letterSpacing: "0.1em",
-                  fontSize: "clamp(7px, 0.8vw, 13px)",
-                }}>
-                  PROVEN DEMAND
-                </p>
-              </div>
-
-              <div>
-                <span className="ps-stat" style={{ color: "#151515" }}>$300M+</span>
-                <p className="ps-body" style={{ color: "#7f7f7f", marginTop: "clamp(2px, 0.3vw, 6px)" }}>
-                  combined annual revenue across 4 privacy-first companies
-                </p>
-              </div>
-
-              <div style={{
-                display: "flex",
-                gap: "clamp(8px, 1vw, 18px)",
-                flexWrap: "wrap",
-                alignItems: "baseline",
+              <p className="ps-label" style={{
+                color: "#ff4800",
+                letterSpacing: "0.1em",
+                fontSize: "clamp(7px, 0.8vw, 13px)",
               }}>
-                {["Proton", "Brave", "DuckDuckGo", "Signal"].map((name, i) => (
-                  <span key={name} style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "clamp(8px, 1vw, 18px)",
-                  }}>
-                    <span className="ps-body" style={{ fontWeight: 700 }}>{name}</span>
-                    {i < 3 && (
-                      <span style={{ color: "#d4d4d4", fontSize: "clamp(8px, 0.9vw, 14px)" }}>&middot;</span>
-                    )}
-                  </span>
-                ))}
-              </div>
+                PROVEN DEMAND IN EUROPE
+              </p>
+
+              {[
+                { name: "Proton", stat: "~40M", desc: "European accounts", rev: "~$97M" },
+                { name: "Brave", stat: "~15M", desc: "European MAU", rev: "~$100M" },
+                { name: "DuckDuckGo", stat: "~20M", desc: "European daily searches", rev: "~$100M" },
+              ].map((c) => (
+                <div key={c.name} style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  borderBottom: "1px solid #eee",
+                  paddingBottom: "clamp(8px, 1vw, 16px)",
+                }}>
+                  <div>
+                    <span className="ps-body" style={{ fontWeight: 700 }}>{c.name}</span>
+                    <span className="ps-body" style={{ color: "#7f7f7f", marginLeft: "clamp(6px, 0.7vw, 12px)" }}>
+                      {c.stat} {c.desc}
+                    </span>
+                  </div>
+                  <span className="ps-body" style={{ fontWeight: 700, color: "#ff4800" }}>{c.rev}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
