@@ -21,13 +21,13 @@ function SlideTitle() {
 
 function SlideProblem() {
   const maxR = 150;
-  const maxUsers = 650;
+  const maxUsers = 150;
   const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
 
   const bubbles = [
-    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 280, cy: 200, r: scaleR(650), stroke: "#151515", strokeWidth: 2.5 },
-    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 620, cy: 210, r: scaleR(520), stroke: "#151515", strokeWidth: 2.5 },
-    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(5), stroke: "#d0d0d0", strokeWidth: 1.5 },
+    { name: "Apple Pay", users: "150M", desc: "Charges banks ~0.05% per transaction", cx: 280, cy: 200, r: scaleR(150), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Google Wallet", users: "80M", desc: "Harvests every transaction", cx: 620, cy: 210, r: scaleR(80), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(1), stroke: "#d0d0d0", strokeWidth: 1.5 },
   ];
 
   return (
@@ -35,7 +35,7 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-          Tap-to-pay lives with US monopolies
+          Tap-to-pay in Europe lives with Google and Apple
         </p>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
@@ -72,183 +72,114 @@ function SlideProblem() {
           </svg>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">CoinLaw</a>, <a href="#">WSJ / DOJ</a>, <a href="#">StatCounter</a>
+          Sources: <a href="#">Flagship Advisory Partners</a>, <a href="#">Worldpay</a>, <a href="#">CoinLaw</a>, <a href="#">StatCounter</a>
         </div>
       </div>
     </div>
   );
 }
 
-/* ─── Fake bank screen for whitelabel demo ────────────────────────────────── */
-
-function FjordBankScreen() {
-  const s = {
-    wrap: {
-      width: "100%",
-      height: "100%",
-      background: "linear-gradient(165deg, #0b2a3d 0%, #134e6f 50%, #1a6d94 100%)",
-      display: "flex",
-      flexDirection: "column",
-      padding: "8%",
-      boxSizing: "border-box",
-      fontFamily: "'Geist', -apple-system, sans-serif",
-      color: "#fff",
-      overflow: "hidden",
-    },
-    header: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: "6%",
-    },
-    logo: {
-      fontSize: "clamp(8px, 1.1vw, 16px)",
-      fontWeight: 800,
-      letterSpacing: "-0.02em",
-    },
-    authSection: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "6% 0",
-    },
-    fingerprintWrap: {
-      width: "36%",
-      aspectRatio: "1",
-    },
-    prompt: {
-      fontSize: "clamp(6px, 0.7vw, 11px)",
-      fontWeight: 600,
-      letterSpacing: "0.02em",
-      margin: "6% 0 0 0",
-      textAlign: "center",
-    },
-    hint: {
-      fontSize: "clamp(4.5px, 0.5vw, 7px)",
-      opacity: 0.5,
-      margin: "2% 0 0 0",
-      textAlign: "center",
-      letterSpacing: "0.02em",
-    },
-    readyPill: {
-      display: "inline-block",
-      background: "rgba(46,204,155,0.2)",
-      color: "#2ecc9b",
-      fontSize: "clamp(4px, 0.45vw, 7px)",
-      fontWeight: 700,
-      letterSpacing: "0.06em",
-      textTransform: "uppercase",
-      padding: "2% 6%",
-      borderRadius: "clamp(2px, 0.3vw, 6px)",
-      marginTop: "4%",
-    },
-    sectionTitle: {
-      fontSize: "clamp(5.5px, 0.65vw, 10px)",
-      fontWeight: 700,
-      margin: "6% 0 4% 0",
-      opacity: 0.9,
-    },
-    txRow: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "baseline",
-      padding: "3% 0",
-      borderBottom: "1px solid rgba(255,255,255,0.1)",
-    },
-    txName: {
-      fontSize: "clamp(5px, 0.58vw, 9px)",
-      fontWeight: 600,
-      margin: 0,
-    },
-    txDate: {
-      fontSize: "clamp(4px, 0.45vw, 7px)",
-      opacity: 0.5,
-      margin: "1px 0 0 0",
-    },
-    txAmount: {
-      fontSize: "clamp(5px, 0.58vw, 9px)",
-      fontWeight: 600,
-    },
-  };
-
-  return (
-    <div style={s.wrap}>
-      <div style={s.header}>
-        <span style={s.logo}>ABC Bank</span>
-      </div>
-
-      <div style={s.authSection}>
-        <div style={s.fingerprintWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/fingerprint.svg"
-            alt="Fingerprint authentication"
-            style={{ width: "100%", height: "100%", filter: "invert(1)", opacity: 0.85 }}
-          />
-        </div>
-        <p style={s.prompt}>Authenticate to pay</p>
-        <p style={s.hint}>Hold near reader</p>
-        <span style={s.readyPill}>NFC ready</span>
-      </div>
-
-      <p style={s.sectionTitle}>Latest transactions</p>
-
-      {[
-        { name: "Café Bryggen", date: "10 Mar 14:22", amount: "48,00 kr." },
-        { name: "Irma Østerbro", date: "9 Mar 18:05", amount: "127,50 kr." },
-        { name: "DSB Rejsekort", date: "9 Mar 08:31", amount: "36,00 kr." },
-      ].map((tx) => (
-        <div key={tx.name} style={s.txRow}>
-          <div>
-            <p style={s.txName}>{tx.name}</p>
-            <p style={s.txDate}>{tx.date}</p>
-          </div>
-          <span style={s.txAmount}>{tx.amount}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ─── Slide 3: The Solution — One Platform, Two Markets ───────────────────── */
+/* ─── Slide 3: Solution ───────────────────────────────────────────────────── */
 
 function SlideSolution() {
+  const screens = [
+    { src: "/promo-screen.jpg", alt: "Walt privacy promise screen", label: "Download" },
+    { src: "/add-card.jpg", alt: "Add a card to Walt", label: "Add card" },
+    { src: "/intro-screen.jpg", alt: "Walt wallet ready to tap", label: "Tap to pay" },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Solution</h2>
-        <p className="ps-lead">European tap-to-pay</p>
+        <p className="ps-lead">
+          A European, privacy-first alternative to Apple Pay and Google Wallet
+        </p>
         <div className="ps-content">
-          <div className="ps-solution-layout">
-            {/* B2C — Walt App */}
-            <div className="ps-solution-col">
-              <span className="ps-solution-segment">B2C</span>
-              <p className="ps-solution-label">Walt App</p>
-              <div className="ps-solution-phone">
-                <Image
-                  src="/promo-screen.jpg"
-                  alt="Walt app home screen"
-                  width={720}
-                  height={1688}
-                  sizes="220px"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-              </div>
-              <p className="ps-solution-tagline">Walt, the native app</p>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "auto 1fr",
+            gap: "clamp(24px, 4vw, 64px)",
+            alignItems: "center",
+            justifyContent: "center",
+            maxWidth: "90%",
+            margin: "0 auto",
+          }}>
+            {/* Left: 3 phone screens */}
+            <div style={{
+              display: "flex",
+              gap: "clamp(6px, 0.8vw, 14px)",
+              alignItems: "flex-start",
+            }}>
+              {screens.map((screen) => (
+                <div
+                  key={screen.label}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "clamp(6px, 0.7vw, 12px)",
+                  }}
+                >
+                  <div
+                    className="ps-solution-phone"
+                    style={{ width: "clamp(100px, 13vw, 220px)" }}
+                  >
+                    <Image
+                      src={screen.src}
+                      alt={screen.alt}
+                      width={720}
+                      height={1688}
+                      sizes="180px"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  <p className="ps-solution-tagline">{screen.label}</p>
+                </div>
+              ))}
             </div>
 
-            {/* B2B — Walt for Banks */}
-            <div className="ps-solution-col">
-              <span className="ps-solution-segment">B2B2C</span>
-              <p className="ps-solution-label">Walt for Banks</p>
-              <div className="ps-solution-phone ps-solution-phone--bank">
-                <FjordBankScreen />
-              </div>
-              <p className="ps-solution-tagline">Walt, whitelabeled</p>
+            {/* Right: differentiators */}
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "clamp(20px, 2.8vw, 44px)",
+            }}>
+              {[
+                { heading: "Privacy by design", detail: "No data collection, no ad profiling, no third-party sharing" },
+                { heading: "Built for Europe", detail: "Founded in Copenhagen. No dependency on US infrastructure" },
+                { heading: "Simple", detail: "One workflow, one price. Just tap-to-pay" },
+              ].map((item) => (
+                <div key={item.heading}>
+                  <div style={{
+                    width: "clamp(20px, 2.2vw, 36px)",
+                    height: "clamp(2px, 0.2vw, 3px)",
+                    background: "#ff4800",
+                    marginBottom: "clamp(6px, 0.7vw, 12px)",
+                  }} />
+                  <p style={{
+                    fontSize: "clamp(12px, 1.5vw, 24px)",
+                    fontWeight: 700,
+                    color: "#151515",
+                    letterSpacing: "-0.02em",
+                    margin: "0 0 clamp(2px, 0.25vw, 4px)",
+                  }}>{item.heading}</p>
+                  <p style={{
+                    fontSize: "clamp(8px, 0.9vw, 15px)",
+                    fontWeight: 400,
+                    color: "#7f7f7f",
+                    margin: 0,
+                    lineHeight: 1.45,
+                  }}>{item.detail}</p>
+                </div>
+              ))}
             </div>
           </div>
-
         </div>
       </div>
     </div>
