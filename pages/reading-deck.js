@@ -1008,19 +1008,6 @@ function SlideTraction() {
 /* ─── Slide 10: The Ask ───────────────────────────────────────────────────── */
 
 function SlideTheAsk() {
-  const resources = [
-    {
-      label: "TOKEN REQUESTOR",
-      title: "Tokenization provider",
-      desc: "Pay the certified Token Requestor to activate Visa and Mastercard tokenization \u2014 the missing link to enable live tap-to-pay transactions.",
-    },
-    {
-      label: "DISTRIBUTION",
-      title: "Proton & Brave advertising",
-      desc: "Targeted campaigns on privacy-aligned platforms where Walt\u2019s core audience already lives \u2014 reaching 200M+ privacy-conscious users.",
-    },
-  ];
-
   return (
     <div className="ps">
       <div className="ps-pad">
@@ -1028,42 +1015,83 @@ function SlideTheAsk() {
         <p className="ps-lead">
           Expand the investor network for a Q3/Q4 2026 funding round
         </p>
-        <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
-          {/* ── Primary ask ── */}
-          <div>
-            <p className="ps-body" style={{ maxWidth: "88%" }}>
-              Walt is seeking introductions to investors aligned with privacy, open platforms, and European digital sovereignty. The goal is to close a funding round in <strong style={{ color: "#151515" }}>Q3 or Q4 2026</strong> to take the product from beta to scaled distribution.
-            </p>
-          </div>
+        <div className="ps-content" style={{ gap: "clamp(16px, 2vw, 32px)" }}>
+          {/* ── Split: left = the ask, right = use of resources ── */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "0.85fr 1.15fr",
+            gap: "clamp(16px, 2.8vw, 44px)",
+            alignItems: "start",
+            flex: 1,
+          }}>
 
-          {/* ── Use of resources ── */}
-          <div>
-            <p className="ps-label" style={{
-              color: "#ff4800",
-              letterSpacing: "0.1em",
-              fontSize: "clamp(7px, 0.8vw, 13px)",
-              marginBottom: "clamp(8px, 1vw, 16px)",
-            }}>
-              USE OF RESOURCES
-            </p>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "clamp(16px, 2.5vw, 40px)",
-            }}>
-              {resources.map((r) => (
-                <div key={r.label} style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "clamp(6px, 0.7vw, 12px)",
+            {/* ── Left: The Ask ── */}
+            <div className="ps-stack" style={{ gap: "clamp(10px, 1.3vw, 22px)" }}>
+              <div>
+                <p className="ps-label" style={{
+                  color: "#ff4800",
+                  letterSpacing: "0.1em",
+                  fontSize: "clamp(7px, 0.8vw, 13px)",
+                  marginBottom: "clamp(4px, 0.4vw, 8px)",
                 }}>
-                  <div>
-                    <p className="ps-card-title">{r.title}</p>
-                    <p className="ps-label">{r.label}</p>
-                  </div>
-                  <p className="ps-body">{r.desc}</p>
+                  TIMELINE
+                </p>
+                <p className="ps-stat" style={{ fontSize: "clamp(18px, 2.5vw, 40px)" }}>Q3/Q4 2026</p>
+                <p className="ps-body" style={{ color: "#7f7f7f", marginTop: "clamp(2px, 0.2vw, 4px)" }}>
+                  Funding round to take Walt from beta to scaled distribution
+                </p>
+              </div>
+              <div>
+                <p className="ps-label" style={{
+                  color: "#999",
+                  letterSpacing: "0.08em",
+                  marginBottom: "clamp(6px, 0.6vw, 10px)",
+                }}>
+                  WHAT WE NEED
+                </p>
+                <p className="ps-body">
+                  Introductions to investors aligned with <strong style={{ color: "#151515" }}>privacy</strong>, <strong style={{ color: "#151515" }}>open platforms</strong>, and <strong style={{ color: "#151515" }}>European digital sovereignty</strong>.
+                </p>
+              </div>
+            </div>
+
+            {/* ── Right: Use of resources ── */}
+            <div>
+              <p className="ps-label" style={{
+                color: "#ff4800",
+                letterSpacing: "0.1em",
+                fontSize: "clamp(7px, 0.8vw, 13px)",
+                marginBottom: "clamp(8px, 1vw, 16px)",
+              }}>
+                USE OF RESOURCES
+              </p>
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "clamp(10px, 1.2vw, 20px)",
+              }}>
+                {/* Token Requestor */}
+                <div className="ps-card" style={{
+                  padding: "clamp(10px, 1.4vw, 24px) clamp(12px, 1.6vw, 28px)",
+                }}>
+                  <p className="ps-label" style={{ marginBottom: "clamp(3px, 0.3vw, 6px)" }}>TOKEN REQUESTOR</p>
+                  <p className="ps-card-title" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>Tokenization provider</p>
+                  <p className="ps-body">
+                    Pay the certified Token Requestor to activate Visa and Mastercard tokenization&thinsp;&mdash;&thinsp;the missing link to enable live tap-to-pay.
+                  </p>
                 </div>
-              ))}
+
+                {/* Distribution */}
+                <div className="ps-card" style={{
+                  padding: "clamp(10px, 1.4vw, 24px) clamp(12px, 1.6vw, 28px)",
+                }}>
+                  <p className="ps-label" style={{ marginBottom: "clamp(3px, 0.3vw, 6px)" }}>DISTRIBUTION</p>
+                  <p className="ps-card-title" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>Proton &amp; Brave advertising</p>
+                  <p className="ps-body">
+                    Targeted campaigns on privacy-aligned platforms where Walt&rsquo;s core audience already lives&thinsp;&mdash;&thinsp;reaching 200M+ privacy-conscious users.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
