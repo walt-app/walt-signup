@@ -101,6 +101,9 @@ function SlideSolution() {
             gridTemplateColumns: "auto 1fr",
             gap: "clamp(24px, 4vw, 64px)",
             alignItems: "center",
+            justifyContent: "center",
+            maxWidth: "90%",
+            margin: "0 auto",
           }}>
             {/* Left: 3 phone screens */}
             <div style={{
