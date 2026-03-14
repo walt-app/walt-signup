@@ -1008,10 +1008,65 @@ function SlideTraction() {
 /* ─── Slide 10: The Ask ───────────────────────────────────────────────────── */
 
 function SlideTheAsk() {
+  const resources = [
+    {
+      label: "TOKEN REQUESTOR",
+      title: "Tokenization provider",
+      desc: "Pay the certified Token Requestor to activate Visa and Mastercard tokenization \u2014 the missing link to enable live tap-to-pay transactions.",
+    },
+    {
+      label: "DISTRIBUTION",
+      title: "Proton & Brave advertising",
+      desc: "Targeted campaigns on privacy-aligned platforms where Walt\u2019s core audience already lives \u2014 reaching 200M+ privacy-conscious users.",
+    },
+  ];
+
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">The Ask</h2>
+        <p className="ps-lead">
+          Expand the investor network for a Q3/Q4 2026 funding round
+        </p>
+        <div className="ps-content" style={{ gap: "clamp(16px, 2.2vw, 36px)" }}>
+          {/* ── Primary ask ── */}
+          <div>
+            <p className="ps-body" style={{ maxWidth: "88%" }}>
+              Walt is seeking introductions to investors aligned with privacy, open platforms, and European digital sovereignty. The goal is to close a funding round in <strong style={{ color: "#151515" }}>Q3 or Q4 2026</strong> to take the product from beta to scaled distribution.
+            </p>
+          </div>
+
+          {/* ── Use of resources ── */}
+          <div>
+            <p className="ps-label" style={{
+              color: "#ff4800",
+              letterSpacing: "0.1em",
+              fontSize: "clamp(7px, 0.8vw, 13px)",
+              marginBottom: "clamp(8px, 1vw, 16px)",
+            }}>
+              USE OF RESOURCES
+            </p>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "clamp(16px, 2.5vw, 40px)",
+            }}>
+              {resources.map((r) => (
+                <div key={r.label} style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "clamp(6px, 0.7vw, 12px)",
+                }}>
+                  <div>
+                    <p className="ps-card-title">{r.title}</p>
+                    <p className="ps-label">{r.label}</p>
+                  </div>
+                  <p className="ps-body">{r.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
