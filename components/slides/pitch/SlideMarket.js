@@ -78,14 +78,6 @@ export default function SlideMarket() {
               gap: "clamp(16px, 2vw, 32px)",
               justifyContent: "center",
             }}>
-              <p className="ps-label" style={{
-                color: "#ff4800",
-                letterSpacing: "0.1em",
-                fontSize: "clamp(7px, 0.8vw, 13px)",
-              }}>
-                PROVEN DEMAND IN EUROPE
-              </p>
-
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {/* Table header */}
                 <div style={{

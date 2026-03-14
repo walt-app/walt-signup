@@ -84,19 +84,6 @@ export default function SlideMarket() {
 
             {/* ── Right: European privacy market proof ── */}
             <div className="ps-stack" style={{ gap: "clamp(10px, 1.2vw, 20px)" }}>
-              <div>
-                <p className="ps-label" style={{
-                  color: "#ff4800",
-                  letterSpacing: "0.1em",
-                  fontSize: "clamp(7px, 0.8vw, 13px)",
-                }}>
-                  PROVEN DEMAND IN EUROPE
-                </p>
-                <p className="ps-body" style={{ fontWeight: 600, color: "#151515", marginTop: "clamp(4px, 0.4vw, 8px)" }}>
-                  Privacy companies already serve tens of millions of Europeans<Ref n={14} />
-                </p>
-              </div>
-
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {/* Table header */}
                 <div style={{
