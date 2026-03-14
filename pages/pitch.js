@@ -563,30 +563,46 @@ function SlideChallenges() {
             }}>Revenue / Users</span>
           </div>
 
-          {/* ── Three providers ── */}
-          <div className="ps-cols-3">
-            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)" }}>
-              <p className="ps-card-title">IDEMIA</p>
-              <p className="ps-label">Full SDK, enterprise only</p>
-              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
-                Will not engage with early-stage startups.
-              </p>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)", borderLeft: "1.5px solid #e5e5e5", paddingLeft: "clamp(10px, 1.2vw, 20px)" }}>
-              <p className="ps-card-title">Fidesmo</p>
-              <p className="ps-label">860+ banks, no phone SDK</p>
-              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
-                Wearables only.
-              </p>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)", borderLeft: "1.5px solid #e5e5e5", paddingLeft: "clamp(10px, 1.2vw, 20px)" }}>
-              <p className="ps-card-title">Paymentology</p>
-              <p className="ps-label">HCE SDK, not production-ready</p>
-              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
-                Phone wallet SDK not yet production-ready.
-              </p>
-            </div>
+          {/* ── Three providers — none available ── */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "clamp(12px, 2vw, 36px)",
+          }}>
+            {["IDEMIA", "Fidesmo", "Paymentology"].map((name) => (
+              <span key={name} style={{
+                position: "relative",
+                padding: "clamp(8px, 0.9vw, 16px) clamp(20px, 2.6vw, 44px)",
+                background: "#f5f5f5",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(10px, 1.2vw, 20px)",
+                fontWeight: 600,
+                color: "#bbb",
+                letterSpacing: "-0.01em",
+              }}>
+                {name}
+                <span style={{
+                  position: "absolute",
+                  left: "12%",
+                  right: "12%",
+                  top: "50%",
+                  height: "clamp(1.5px, 0.15vw, 2.5px)",
+                  background: "#ccc",
+                  borderRadius: "1px",
+                }} />
+              </span>
+            ))}
           </div>
+          <p style={{
+            textAlign: "center",
+            fontSize: "clamp(9px, 1vw, 17px)",
+            fontWeight: 500,
+            color: "#999",
+            margin: 0,
+          }}>
+            No tokenization provider currently offers a production-ready SDK for independent phone wallets.
+          </p>
 
         </div>
       </div>
