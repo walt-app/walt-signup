@@ -1021,7 +1021,7 @@ function SlideTheAsk() {
             display: "grid",
             gridTemplateColumns: "0.85fr 1.15fr",
             gap: "clamp(16px, 2.8vw, 44px)",
-            alignItems: "start",
+            alignItems: "center",
             flex: 1,
           }}>
 
@@ -1077,7 +1077,7 @@ function SlideTheAsk() {
                   <p className="ps-label" style={{ marginBottom: "clamp(3px, 0.3vw, 6px)" }}>TOKEN REQUESTOR</p>
                   <p className="ps-card-title" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>Tokenization provider</p>
                   <p className="ps-body">
-                    Pay the certified Token Requestor to activate Visa and Mastercard tokenization&thinsp;&mdash;&thinsp;the missing link to enable live tap-to-pay.
+                    Pay the certified Token Requestor to activate Visa and Mastercard tokenization. The missing link to enable live tap-to-pay.
                   </p>
                 </div>
 
@@ -1088,7 +1088,7 @@ function SlideTheAsk() {
                   <p className="ps-label" style={{ marginBottom: "clamp(3px, 0.3vw, 6px)" }}>DISTRIBUTION</p>
                   <p className="ps-card-title" style={{ marginBottom: "clamp(4px, 0.5vw, 8px)" }}>Proton &amp; Brave advertising</p>
                   <p className="ps-body">
-                    Targeted campaigns on privacy-aligned platforms where Walt&rsquo;s core audience already lives&thinsp;&mdash;&thinsp;reaching 200M+ privacy-conscious users.
+                    Targeted campaigns on privacy-aligned platforms where Walt&rsquo;s core audience already lives. Reaching 200M+ privacy-conscious users.
                   </p>
                 </div>
               </div>
