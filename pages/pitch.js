@@ -194,12 +194,13 @@ function SlideWhyNow() {
       <div className="ps-pad">
         <h2 className="ps-h1">Why Now?</h2>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-          <p className="ps-stat" style={{ fontSize: "clamp(24px, 3.8vw, 60px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
-            EU forced Apple &amp; Google to open their wallet APIs
+          <p className="ps-stat" style={{ fontSize: "clamp(28px, 4.5vw, 72px)", marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
+            July 2024
           </p>
-          <p className="ps-lead" style={{ maxWidth: "800px" }}>
-            The EUDI wallet mandate and antitrust rulings require NFC access for third-party wallets across all 27 member states.
-            <br />
+          <p className="ps-lead" style={{ maxWidth: "780px" }}>
+            EU&rsquo;s EUDI wallet mandate forced Apple and Google to open their NFC APIs to third-party wallets.
+          </p>
+          <p style={{ maxWidth: "780px", textAlign: "center", fontSize: "clamp(11px, 1.3vw, 22px)", fontWeight: 400, color: "#555", margin: 0 }}>
             For the first time, a privacy alternative to tap-to-pay can exist.
           </p>
         </div>
