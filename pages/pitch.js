@@ -485,70 +485,109 @@ function SlideMarket() {
   );
 }
 
-/* ─── Slide: Built But Locked ─────────────────────────────────────────────── */
+/* ─── Slide: Challenges ───────────────────────────────────────────────────── */
 
-function SlideBuiltButLocked() {
-  const r = 72;
-
-  const waltX = 130;
-  const topY = 120;
-  const botY = 280;
-  const midX = 530;
-  const userX = 930;
-
+function SlideChallenges() {
   return (
     <div className="ps">
       <div className="ps-pad">
         <h2 className="ps-h1">Challenges</h2>
-        <p className="ps-lead">Two partnerships before revenue</p>
-        <div className="ps-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
-            <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+        <p className="ps-lead">Walt needs a tokenization provider to enable tap-to-pay</p>
+        <div className="ps-content" style={{ gap: "clamp(20px, 2.8vw, 44px)" }}>
 
-              {/* ── Walt → Payment Infrastructure (top) ── */}
-              <line x1={waltX + r} y1={200} x2={midX - r} y2={topY} stroke="#151515" strokeWidth="2.5" />
-              <polygon points={`${midX - r - 4},${topY - 4} ${midX - r + 8},${topY} ${midX - r - 2},${topY + 7}`} fill="#151515" />
+          {/* ── Chain diagram ── */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 0,
+          }}>
+            {/* Walt — ready */}
+            <span style={{
+              padding: "clamp(8px, 0.9vw, 16px) clamp(16px, 2vw, 36px)",
+              background: "var(--orange-primary)",
+              color: "#fff",
+              borderRadius: "clamp(5px, 0.5vw, 10px)",
+              fontSize: "clamp(10px, 1.2vw, 20px)",
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+              whiteSpace: "nowrap",
+            }}>Walt</span>
 
-              {/* ── Walt → Issuing Banks (bottom) ── */}
-              <line x1={waltX + r} y1={200} x2={midX - r} y2={botY} stroke="#151515" strokeWidth="2.5" />
-              <polygon points={`${midX - r - 2},${botY - 7} ${midX - r + 8},${botY} ${midX - r - 4},${botY + 4}`} fill="#151515" />
+            <div style={{ width: "clamp(24px, 3.5vw, 56px)", height: "clamp(1.5px, 0.15vw, 2.5px)", background: "#d4d4d4" }} />
 
-              {/* ── Payment Infrastructure → Users (top) ── */}
-              <line x1={midX + r} y1={topY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
-              <polygon points={`${userX - r - 4},${200 - 6} ${userX - r + 8},${200} ${userX - r - 2},${200 + 7}`} fill="#ff4800" opacity="0.4" />
+            {/* Middle stack — tokenization provider (missing) + Visa/MC + Banks (in place) */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)" }}>
+              <span style={{
+                padding: "clamp(7px, 0.8vw, 14px) clamp(12px, 1.4vw, 24px)",
+                background: "transparent",
+                border: "clamp(1.5px, 0.15vw, 2.5px) dashed #bbb",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                color: "#999",
+                fontSize: "clamp(10px, 1.2vw, 20px)",
+                fontWeight: 600,
+                textAlign: "center",
+              }}>Tokenization provider</span>
+              <span style={{
+                padding: "clamp(8px, 0.9vw, 16px) clamp(12px, 1.4vw, 24px)",
+                background: "#151515",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(10px, 1.2vw, 20px)",
+                fontWeight: 600,
+                textAlign: "center",
+              }}>Visa / Mastercard</span>
+              <span style={{
+                padding: "clamp(8px, 0.9vw, 16px) clamp(12px, 1.4vw, 24px)",
+                background: "#151515",
+                color: "#fff",
+                borderRadius: "clamp(5px, 0.5vw, 10px)",
+                fontSize: "clamp(10px, 1.2vw, 20px)",
+                fontWeight: 600,
+                textAlign: "center",
+              }}>Issuing banks</span>
+            </div>
 
-              {/* ── Issuing Banks → Users (bottom) ── */}
-              <line x1={midX + r} y1={botY} x2={userX - r} y2={200} stroke="#ff4800" strokeWidth="2.5" strokeDasharray="10 8" opacity="0.4" />
-              <polygon points={`${userX - r - 2},${200 - 7} ${userX - r + 8},${200} ${userX - r - 4},${200 + 6}`} fill="#ff4800" opacity="0.4" />
+            <div style={{ width: "clamp(24px, 3.5vw, 56px)", height: "clamp(1.5px, 0.15vw, 2.5px)", background: "#d4d4d4" }} />
 
-              {/* ── Walt (solid orange, complete) ── */}
-              <circle cx={waltX} cy={200} r={r} fill="#ff4800" />
-              <text x={waltX} y={200 - 8} textAnchor="middle" fontSize="24" fontWeight="900" fill="#151515">WALT</text>
-              <path d={`M${waltX - 10} ${200 + 16} l7 7 l13 -13`} fill="none" stroke="#151515" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Revenue / Users — blocked */}
+            <span style={{
+              padding: "clamp(8px, 0.9vw, 16px) clamp(16px, 2vw, 36px)",
+              background: "var(--orange-primary)",
+              color: "#fff",
+              borderRadius: "clamp(5px, 0.5vw, 10px)",
+              fontSize: "clamp(10px, 1.2vw, 20px)",
+              fontWeight: 600,
+              whiteSpace: "nowrap",
+              opacity: 0.45,
+            }}>Revenue / Users</span>
+          </div>
 
-              {/* ── Payment Infrastructure (top, locked) ── */}
-              <circle cx={midX} cy={topY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
-              <rect x={midX - 10} y={topY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
-              <path d={`M${midX - 5} ${topY - 3} V${topY - 10} a5 5 0 0 1 10 0 V${topY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
-              <text x={midX} y={topY - r - 22} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Payment Infrastructure</text>
-              <text x={midX} y={topY - r - 8} textAnchor="middle" fontSize="10" fill="#7f7f7f">Nets/Nexi · Tietoevry</text>
+          {/* ── Three providers ── */}
+          <div className="ps-cols-3">
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)" }}>
+              <p className="ps-card-title">IDEMIA</p>
+              <p className="ps-label">Full SDK, enterprise only</p>
+              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
+                Will not engage with early-stage startups.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)", borderLeft: "1.5px solid #e5e5e5", paddingLeft: "clamp(10px, 1.2vw, 20px)" }}>
+              <p className="ps-card-title">Fidesmo</p>
+              <p className="ps-label">860+ banks, no phone SDK</p>
+              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
+                Wearables only.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(4px, 0.5vw, 8px)", borderLeft: "1.5px solid #e5e5e5", paddingLeft: "clamp(10px, 1.2vw, 20px)" }}>
+              <p className="ps-card-title">Paymentology</p>
+              <p className="ps-label">HCE SDK, not production-ready</p>
+              <p className="ps-body" style={{ color: "var(--orange-primary)", fontWeight: 600, margin: 0 }}>
+                Phone wallet SDK not yet production-ready.
+              </p>
+            </div>
+          </div>
 
-              {/* ── Issuing Banks (bottom, locked) ── */}
-              <circle cx={midX} cy={botY} r={r} fill="#f0f0f0" stroke="#151515" strokeWidth="2.5" strokeDasharray="12 8" />
-              <rect x={midX - 10} y={botY - 3} width="20" height="16" rx="3" fill="none" stroke="#151515" strokeWidth="2.5" />
-              <path d={`M${midX - 5} ${botY - 3} V${botY - 10} a5 5 0 0 1 10 0 V${botY - 3}`} fill="none" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" />
-              <text x={midX} y={botY + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#151515">Issuing Banks</text>
-              <text x={midX} y={botY + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Per-bank approval</text>
-
-              {/* ── Users node (orange ring, the goal) ── */}
-              <circle cx={userX} cy={200} r={r} fill="#ffffff" stroke="#ff4800" strokeWidth="3" />
-              <text x={userX} y={200 - 4} textAnchor="middle" fontSize="36" fontWeight="900" fill="#ff4800">&#x20AC;</text>
-              <text x={userX} y={200 + 22} textAnchor="middle" fontSize="10" fontWeight="600" fill="#ff4800">10/year</text>
-              <text x={userX} y={200 + r + 26} textAnchor="middle" fontSize="13" fontWeight="700" fill="#ff4800">Users</text>
-              <text x={userX} y={200 + r + 42} textAnchor="middle" fontSize="10" fill="#7f7f7f">Subscription revenue</text>
-
-            </g>
-          </svg>
         </div>
       </div>
     </div>
@@ -562,7 +601,7 @@ const SLIDES = [
   { title: "The Problem", render: SlideProblem },
   { title: "Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
-  { title: "Challenges", render: SlideBuiltButLocked },
+  { title: "Challenges", render: SlideChallenges },
   { title: "The Market", render: SlideMarket },
   { title: "Competitors", render: SlideCompetitors },
   { title: "The Ask", render: SlideTheAsk },
