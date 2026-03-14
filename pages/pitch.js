@@ -194,17 +194,17 @@ function SlideWhyNow() {
       <div className="ps-pad">
         <h2 className="ps-h1">Why Now?</h2>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-          <p className="ps-stat" style={{ fontSize: "clamp(28px, 4.5vw, 72px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
-            January 2025
+          <p className="ps-stat" style={{ fontSize: "clamp(24px, 3.8vw, 60px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
+            EU forced Apple &amp; Google to open their wallet APIs
           </p>
-          <p className="ps-lead" style={{ maxWidth: "720px" }}>
-            First 3rd party open wallet (MobilePay) to make a tap-to-pay transaction.
+          <p className="ps-lead" style={{ maxWidth: "800px" }}>
+            The EUDI wallet mandate and antitrust rulings require NFC access for third-party wallets across all 27 member states.
             <br />
             For the first time, a privacy alternative to tap-to-pay can exist.
           </p>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">European Commission</a>, <a href="#">Vipps MobilePay</a>
+          Sources: <a href="#">European Commission, Case AT.40452</a>, <a href="#">Regulation (EU) 2024/1183</a>
         </div>
       </div>
     </div>
