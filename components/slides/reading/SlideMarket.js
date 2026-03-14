@@ -3,8 +3,9 @@ import Ref from "../shared/Ref";
 export default function SlideMarket() {
   const companies = [
     { name: "Proton", eu: "~40M", euDesc: "European accounts", rev: "~$97M", revNote: "(2024)" },
-    { name: "Brave", eu: "~15M", euDesc: "European MAU", rev: "~$100M", revNote: "(annualized)" },
-    { name: "DuckDuckGo", eu: "~20M", euDesc: "European daily searches", rev: "est. $100M+", revNote: "" },
+    { name: "Brave", eu: "~25M", euDesc: "European MAU", rev: "~$100M", revNote: "(annualized)" },
+    { name: "DuckDuckGo", eu: "~20M", euDesc: "European daily searches", rev: "~$150M", revNote: "" },
+    { name: "Signal", eu: "~15M", euDesc: "European MAU", rev: "~$26M", revNote: "(donations)" },
   ];
 
   return (
