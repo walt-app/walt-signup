@@ -201,7 +201,7 @@ function SlideWhyNow() {
             EU&rsquo;s EUDI wallet mandate forced Apple and Google to open their NFC APIs to third-party wallets.
           </p>
           <p style={{ maxWidth: "780px", textAlign: "center", fontSize: "clamp(11px, 1.3vw, 22px)", fontWeight: 400, color: "#555", margin: 0 }}>
-            For the first time, a privacy alternative to tap-to-pay can exist.
+            January 2025: Apple and Google comply with mandate and expose APIs
           </p>
         </div>
         <div className="ps-src">
