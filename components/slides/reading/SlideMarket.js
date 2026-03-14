@@ -138,14 +138,6 @@ export default function SlideMarket() {
                 ))}
               </div>
 
-              <p style={{
-                fontSize: "clamp(6px, 0.6vw, 10px)",
-                color: "#999",
-                marginTop: "clamp(2px, 0.2vw, 4px)",
-              }}>
-                European user estimates based on regional traffic and distribution data.
-                Proton confirms ~40% EU user base. Brave ~2.5&ndash;5% EU browser share.
-              </p>
             </div>
           </div>
         </div>
