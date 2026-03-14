@@ -18,7 +18,7 @@ const SLIDES = [
   { title: "Why Now?", render: SlideWhyNow },
   { title: "Challenges", render: SlideChallenges },
   { title: "The Market", render: SlideMarket },
-  { title: "Competitors", render: SlideCompetitors },
+  { title: "Competitors", render: () => <SlideCompetitors excludeRows={["Private, no data collection"]} /> },
   { title: "The Ask", render: SlideTheAsk },
   { title: "Walt", render: SlideClosing },
 ];

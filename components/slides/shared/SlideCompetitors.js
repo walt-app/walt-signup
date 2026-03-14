@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
-export default function SlideCompetitors() {
-  const rows = [
+export default function SlideCompetitors({ excludeRows = [] } = {}) {
+  const allRows = [
     { label: "NFC tap-to-pay is core product", walt: "check", wero: "", vipps: "" },
     { label: "NFC tap-to-pay live today", walt: "", wero: "", vipps: "check-limited" },
     { label: "Private, no data collection", walt: "check", wero: "", vipps: "" },
@@ -9,6 +9,8 @@ export default function SlideCompetitors() {
     { label: "Revenue model", walt: "\u20AC10/yr subscription", wero: "Merchant pays fee", vipps: "Merchant pays fee" },
     { label: "Geographic focus", walt: "Europe", wero: "DE, FR, BE", vipps: "Nordics" },
   ];
+
+  const rows = allRows.filter((r) => !excludeRows.includes(r.label));
 
   const Check = ({ orange }) => (
     <span style={{
