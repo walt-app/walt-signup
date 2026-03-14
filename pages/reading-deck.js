@@ -5,7 +5,6 @@ import SlideTitle from "../components/slides/shared/SlideTitle";
 import SlideProblem from "../components/slides/reading/SlideProblem";
 import SlideSolution from "../components/slides/reading/SlideSolution";
 import SlideWhyNow from "../components/slides/reading/SlideWhyNow";
-import SlideProduct from "../components/slides/reading/SlideProduct";
 import SlideChallenges from "../components/slides/reading/SlideChallenges";
 import SlideMarket from "../components/slides/reading/SlideMarket";
 import SlideCompetitors from "../components/slides/shared/SlideCompetitors";
@@ -19,7 +18,6 @@ const SLIDES = [
   { title: "The Problem", render: SlideProblem },
   { title: "Solution", render: SlideSolution },
   { title: "Why Now?", render: SlideWhyNow },
-  { title: "Product Deep-Dive", render: SlideProduct },
   { title: "Challenges", render: SlideChallenges },
   { title: "The Market", render: SlideMarket },
   { title: "Competitors", render: SlideCompetitors },
