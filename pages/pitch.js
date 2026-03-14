@@ -21,13 +21,13 @@ function SlideTitle() {
 
 function SlideProblem() {
   const maxR = 150;
-  const maxUsers = 650;
+  const maxUsers = 150;
   const scaleR = (users) => Math.round(maxR * Math.sqrt(users / maxUsers));
 
   const bubbles = [
-    { name: "Apple Pay", users: "~650M", desc: "Charges banks 0.15% per transaction", cx: 280, cy: 200, r: scaleR(650), stroke: "#151515", strokeWidth: 2.5 },
-    { name: "Google Wallet", users: "~520M", desc: "Harvests every transaction for ad profiles", cx: 620, cy: 210, r: scaleR(520), stroke: "#151515", strokeWidth: 2.5 },
-    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(5), stroke: "#d0d0d0", strokeWidth: 1.5 },
+    { name: "Apple Pay", users: "~150M", desc: "Charges banks ~0.05% per transaction", cx: 280, cy: 200, r: scaleR(150), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Google Wallet", users: "~80M", desc: "Harvests every transaction for ad profiles", cx: 620, cy: 210, r: scaleR(80), stroke: "#151515", strokeWidth: 2.5 },
+    { name: "Everyone else", users: "<0.4%", desc: "combined market share", cx: 870, cy: 200, r: scaleR(1), stroke: "#d0d0d0", strokeWidth: 1.5 },
   ];
 
   return (
@@ -35,11 +35,14 @@ function SlideProblem() {
       <div className="ps-pad">
         <h2 className="ps-h1">The Problem</h2>
         <p className="ps-lead" style={{ marginBottom: "clamp(6px, 0.8vw, 14px)" }}>
-          Tap-to-pay lives with US monopolies
+          Tap-to-pay in Europe lives with Google and Apple
         </p>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <svg viewBox="0 0 1060 400" width="100%" style={{ display: "block" }}>
             <g fontFamily="'Geist', -apple-system, BlinkMacSystemFont, sans-serif">
+              {/* €700B+ context line */}
+              <text x="530" y="30" textAnchor="middle" fontSize="11" fill="#7f7f7f">{"\u20AC"}700B+ in mobile wallet payments at European POS terminals (2024)</text>
+
               {bubbles.slice(0, 2).map((b) => (
                 <g key={b.name}>
                   <circle cx={b.cx} cy={b.cy} r={b.r} fill="#f0f0f0" stroke={b.stroke} strokeWidth={b.strokeWidth} />
@@ -72,7 +75,7 @@ function SlideProblem() {
           </svg>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">CoinLaw</a>, <a href="#">WSJ / DOJ</a>, <a href="#">StatCounter</a>
+          Sources: <a href="#">Flagship Advisory Partners</a>, <a href="#">Worldpay</a>, <a href="#">CoinLaw</a>, <a href="#">StatCounter</a>
         </div>
       </div>
     </div>
