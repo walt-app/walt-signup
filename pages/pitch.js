@@ -195,16 +195,16 @@ function SlideWhyNow() {
         <h2 className="ps-h1">Why Now?</h2>
         <div className="ps-content" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
           <p className="ps-stat" style={{ fontSize: "clamp(28px, 4.5vw, 72px)", marginBottom: "clamp(4px, 0.6vw, 10px)" }}>
-            July 2025
+            January 2025
           </p>
-          <p className="ps-lead" style={{ maxWidth: "680px" }}>
-            EU forced Apple and Google to open NFC access.
+          <p className="ps-lead" style={{ maxWidth: "720px" }}>
+            First 3rd party open wallet (MobilePay) to make a tap-to-pay transaction.
             <br />
             For the first time, a privacy alternative to tap-to-pay can exist.
           </p>
         </div>
         <div className="ps-src">
-          Sources: <a href="#">European Commission</a>, <a href="#">US DOJ</a>
+          Sources: <a href="#">European Commission</a>, <a href="#">Vipps MobilePay</a>
         </div>
       </div>
     </div>
