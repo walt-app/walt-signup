@@ -87,10 +87,10 @@ export default function SlideMarket() {
               </p>
 
               {[
-                { name: "Proton", stat: "~40M", desc: "European accounts", rev: "~$97M" },
-                { name: "Brave", stat: "~25M", desc: "European MAU", rev: "~$100M" },
-                { name: "DuckDuckGo", stat: "~20M", desc: "European daily searches", rev: "~$150M" },
-                { name: "Signal", stat: "~15M", desc: "European MAU", rev: "~$26M" },
+                { name: "Proton", stat: "40M", desc: "European accounts", rev: "$97M" },
+                { name: "Brave", stat: "25M", desc: "European MAU", rev: "$100M" },
+                { name: "DuckDuckGo", stat: "20M", desc: "European daily searches", rev: "$150M" },
+                { name: "Signal", stat: "15M", desc: "European MAU", rev: "$26M" },
               ].map((c) => (
                 <div key={c.name} style={{
                   display: "flex",
