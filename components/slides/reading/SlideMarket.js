@@ -105,7 +105,7 @@ export default function SlideMarket() {
                   padding: "clamp(4px, 0.5vw, 8px) 0",
                   borderBottom: "1.5px solid #d4d4d4",
                 }}>
-                  {["Company", "European Users", "Revenue"].map((h, i) => (
+                  {["Company", "European MAU", "Revenue"].map((h, i) => (
                     <span key={h} style={{
                       fontSize: "clamp(6px, 0.65vw, 10px)",
                       fontWeight: 700,

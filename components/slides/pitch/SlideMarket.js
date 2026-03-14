@@ -86,28 +86,45 @@ export default function SlideMarket() {
                 PROVEN DEMAND IN EUROPE
               </p>
 
-              {[
-                { name: "Proton", stat: "40M", desc: "European accounts", rev: "$97M" },
-                { name: "Brave", stat: "25M", desc: "European MAU", rev: "$100M" },
-                { name: "DuckDuckGo", stat: "20M", desc: "European daily searches", rev: "$150M" },
-                { name: "Signal", stat: "15M", desc: "European MAU", rev: "$26M" },
-              ].map((c) => (
-                <div key={c.name} style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  borderBottom: "1px solid #eee",
-                  paddingBottom: "clamp(8px, 1vw, 16px)",
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                {/* Table header */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1.4fr 1fr 1fr",
+                  padding: "clamp(4px, 0.5vw, 8px) 0",
+                  borderBottom: "1.5px solid #d4d4d4",
                 }}>
-                  <div>
-                    <span className="ps-body" style={{ fontWeight: 700 }}>{c.name}</span>
-                    <span className="ps-body" style={{ color: "#7f7f7f", marginLeft: "clamp(6px, 0.7vw, 12px)" }}>
-                      {c.stat} {c.desc}
-                    </span>
-                  </div>
-                  <span className="ps-body" style={{ fontWeight: 700, color: "#ff4800" }}>{c.rev}</span>
+                  {["Company", "European MAU", "Revenue"].map((h, i) => (
+                    <span key={h} style={{
+                      fontSize: "clamp(6px, 0.65vw, 10px)",
+                      fontWeight: 700,
+                      color: "#999",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      textAlign: i === 2 ? "right" : "left",
+                    }}>{h}</span>
+                  ))}
                 </div>
-              ))}
+                {/* Table rows */}
+                {[
+                  { name: "Proton", stat: "40M", rev: "$97M" },
+                  { name: "Brave", stat: "25M", rev: "$100M" },
+                  { name: "DuckDuckGo", stat: "20M", rev: "$150M" },
+                  { name: "Signal", stat: "15M", rev: "$26M" },
+                ].map((c, i) => (
+                  <div key={c.name} style={{
+                    display: "grid",
+                    gridTemplateColumns: "1.4fr 1fr 1fr",
+                    padding: "clamp(6px, 0.7vw, 12px) 0",
+                    borderBottom: i < 3 ? "1px solid #eee" : "none",
+                    alignItems: "baseline",
+                  }}>
+                    <span className="ps-body" style={{ fontWeight: 600 }}>{c.name}</span>
+                    <span className="ps-body" style={{ fontWeight: 700 }}>{c.stat}</span>
+                    <span className="ps-body" style={{ fontWeight: 700, color: "#ff4800", textAlign: "right" }}>{c.rev}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
